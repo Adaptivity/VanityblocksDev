@@ -1,6 +1,7 @@
 package vanityblocks;
 
 import vanityblocks.WorldGen.MarbleGen;
+import vanityblocks.WorldGen.VillageModHandler;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -88,8 +89,8 @@ public class VanityBlocksStorage {
 		BlockRegistration.addForestryRecipes();
 		Dungeonlootspawning.chestHooks();
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));
-		VillagerRegistry.instance().registerVillagerType(78943, "/mods/vanityblocks/textures/mob/villager.png");
-//		VanityblocksTab.init(VanityBlocksVanity.VanityDesignblock, 1, 0);
+//		VillagerRegistry.instance().registerVillagerType(78943, "/mods/vanityblocks/textures/mob/villager.png");
+        VillagerRegistry.instance().registerVillageCreationHandler(new VillageModHandler());
 		LanguageRegistry.instance().addStringLocalization("itemGroup.vanityblocks", "en_US", "Anarchys Vanity Blocks");
 	}
     public static CreativeTabs tabCustom = new CreativeTabs("vanityblocks") {

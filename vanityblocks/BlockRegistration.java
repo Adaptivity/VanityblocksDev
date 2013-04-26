@@ -7,6 +7,7 @@ import net.minecraftforge.liquids.LiquidDictionary;
 import net.minecraftforge.liquids.LiquidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -22,12 +23,12 @@ public class BlockRegistration {
 	
 	String[] vannilastorageBlockNames = { 
 		"Sugar Cane Block", "Coal Block", "Charcoal Block", "Enderpearl Block", "Slime Block",
-		"Bale of Wheat", "Sugar Block", "Cocoa Block", "Blaze Block", "Leather Block", "Bone Block"
+		"Bale of Wheat", "Sugar Block", "Cocoa Block", "Blaze Block", "Leather Block", "Bone Block", "Clay Brick"
 	};
 	String[] modstorageBlockNames = { 
 		"Tin Block", "Copper Block", "Silver Block",
 		"Lead Block", "Nikolite Block", "Nickel Block", "Electrum Block",
-		"Platinum Block", "Invar Block", "Brass Block", "Coal Coke Block", "Osmium Block"
+		"Platinum Block", "Invar Block", "Brass Block", "Coal Coke Block", "Osmium Block", "Rubber Block"
 	};
 	String[] forestrystorageBlockNames = { 
 			"Apatite Block", "Honey Block", "Honeydew Block",
@@ -47,6 +48,7 @@ public class BlockRegistration {
 	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 8), "Blaze Block");
 	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 9), "Leather Block");
 	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 10), "Bone Block");
+	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 11), "Clay Brick");
 	
 /*############# Adds vannila blocks to Ore Dictionary ###### */
 	OreDictionary.registerOre("blockCoal", new ItemStack(StorageBlock,1,0));
@@ -60,6 +62,7 @@ public class BlockRegistration {
 	OreDictionary.registerOre("blockBlazerod", new ItemStack(StorageBlock,1,8));
 	OreDictionary.registerOre("blockLeather", new ItemStack(StorageBlock,1,9));
 	OreDictionary.registerOre("blockBone", new ItemStack(StorageBlock,1,10));
+	OreDictionary.registerOre("blockClayBrick", new ItemStack(StorageBlock,1,11));
 
 /* ########### Modded #### */ 
 	GameRegistry.registerBlock(StorageBlockMod, vanityblocks.StorageItemModBlock.class, "Modded Storage Block");
@@ -75,7 +78,8 @@ public class BlockRegistration {
 	LanguageRegistry.addName(new ItemStack(StorageBlockMod, 1, 9), "Coal Coke Block");
 	LanguageRegistry.addName(new ItemStack(StorageBlockMod, 1, 10), "Brass Block");
 	LanguageRegistry.addName(new ItemStack(StorageBlockMod, 1, 11), "Osmium Block");
-	
+	LanguageRegistry.addName(new ItemStack(StorageBlockMod, 1, 12), "Rubber Block");
+
 /* ############ Adds modblocks to Ore Dictionary	 ####### */
 	OreDictionary.registerOre("blockTin", new ItemStack(StorageBlockMod,1,0));
 	OreDictionary.registerOre("blockCopper", new ItemStack(StorageBlockMod,1,1));
@@ -89,13 +93,14 @@ public class BlockRegistration {
 	OreDictionary.registerOre("blockCoalcoke", new ItemStack(StorageBlockMod,1,9));
 	OreDictionary.registerOre("blockBrass", new ItemStack(StorageBlockMod,1,10));
 	OreDictionary.registerOre("blockOsmium", new ItemStack(StorageBlockMod,1,11));
-	
+	OreDictionary.registerOre("blockRubber", new ItemStack(StorageBlockMod,1,12));
+
 /* ########### Forestry Blocks #### */ 
-	GameRegistry.registerBlock(ForestryBlock, vanityblocks.StorageItemForestryBlock.class, "ForestryStorage Block");
-	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 0), "Apatite Block");
-	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 1), "Honey Block");
-	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 2), "Honeydew Block");
-	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 3), "Peat Block");
+//	GameRegistry.registerBlock(ForestryBlock, vanityblocks.StorageItemForestryBlock.class, "ForestryStorage Block");
+//	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 0), "Apatite Block");
+//	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 1), "Honey Block");
+//	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 2), "Honeydew Block");
+//	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 3), "Peat Block");
 //	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 4), "Nikolite Block");
 //	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 5), "Nickel Block");
 //	LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 6), "Electrum Block");
@@ -161,7 +166,7 @@ public static void addVanillaRecipes()
         if (Storageprops.enableenderpearl) {
         	if (Storageprops.dragoneggrecipe) {
     		GameRegistry.addRecipe(new ItemStack(Block.dragonEgg,1), new Object [] {"xxx", "xyx", "xxx", 'x', new ItemStack(StorageBlock,1,2), 'y', Item.egg});
-       }
+        }
         }
         if (Storageprops.enableblaze) {
     		GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 8), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.blazeRod)});
@@ -174,6 +179,12 @@ public static void addVanillaRecipes()
         if (Storageprops.enablebone) {
     		GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 10), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.bone)});
     		GameRegistry.addShapelessRecipe(new ItemStack(Item.bone, 9), new ItemStack(StorageBlock,1,10));		
+       }
+        if (Storageprops.enableclaybrick) {
+        	GameRegistry.addRecipe(new ItemStack(StorageBlock, 4, 11), new Object [] {"xx", "xx", 'x', new ItemStack(Block.blockClay)});
+        	GameRegistry.addShapelessRecipe(new ItemStack(Block.blockClay), new ItemStack(StorageBlock,1,11));
+        	GameRegistry.addShapelessRecipe(new ItemStack(Item.clay,4), new ItemStack(Block.blockClay));
+        	GameRegistry.addRecipe(new ItemStack(Item.clay,16), new Object [] {"xx", "xx", 'x', new ItemStack(StorageBlock, 1, 11)});
        }
 	}
 public static void addModRecipes() {
@@ -288,6 +299,16 @@ public static void addModRecipes() {
 	    GameRegistry.addShapelessRecipe(result, new ItemStack(StorageBlockMod, 1, 11));
 		}
 		}
+		if (Storageprops.enablerubber) {
+		if (!OreDictionary.getOres("itemRubber").isEmpty()) {		
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(StorageBlockMod, 1, 12), "xxx", "xxx", "xxx", 'x', "itemRubber"));	
+		ItemStack rubberitem;
+		rubberitem = OreDictionary.getOres("itemRubber").get(0);
+		ItemStack result = rubberitem.copy();
+		result.stackSize = 9;
+	    GameRegistry.addShapelessRecipe(result, new ItemStack(StorageBlockMod, 1, 12));
+		}
+		}
 //		if (Loader.isModLoaded("Railcraft")) {
         if (Storageprops.enablecoalcoke) {
             try {
@@ -312,6 +333,13 @@ public static void addModRecipes() {
      }
 }
 public static void addForestryRecipes() {
+	if (Loader.isModLoaded("Forestry")) {
+		try {
+		GameRegistry.registerBlock(ForestryBlock, vanityblocks.StorageItemForestryBlock.class, "ForestryStorage Block");
+		LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 0), "Apatite Block");
+		LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 1), "Honey Block");
+		LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 2), "Honeydew Block");
+		LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 3), "Peat Block");			
 		if (Storageprops.enableapatite) {
         if (!OreDictionary.getOres("gemApatite").isEmpty()) {		
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock,1,0), "xxx", "xxx", "xxx", 'x', "gemApatite"));	
@@ -352,7 +380,12 @@ public static void addForestryRecipes() {
 		result.stackSize = 9;
 		GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock,1,3));
 		}
-		}			
+		}
+		}
+    catch (Exception e) {
+       // pokemon!
+   }
+}
 }
 public static Block StorageBlock;
 public static Block StorageBlockMod;

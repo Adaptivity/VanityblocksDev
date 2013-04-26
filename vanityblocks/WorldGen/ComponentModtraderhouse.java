@@ -47,7 +47,8 @@ public class ComponentModtraderhouse extends ComponentVillage
                 return true;
             }
 
-            this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 7 - 1, 0);
+ //           this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 7 - 1, 0);
+            this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 4, 0);
         }
 
         this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 1, 1, 7, 4, 4, 0, 0, false);
@@ -138,6 +139,6 @@ public class ComponentModtraderhouse extends ComponentVillage
      */
     protected int getVillagerType(int par1)
     {
-        return par1 == 0 ? 4 : 0;
+        return 56789;
     }
 }

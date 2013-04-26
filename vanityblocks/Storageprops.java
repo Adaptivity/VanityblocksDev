@@ -39,11 +39,11 @@ public class Storageprops {
 		enablecopper = config.get(category1,"Enable Copper Block crafting?", true).getBoolean(true);
 		enablesilver = config.get(category1,"Enable Silver Block crafting?", true).getBoolean(true);
 		enablelead = config.get(category1,"Enable Lead Block crafting?", true).getBoolean(true);
-		enablenikolite = config.get(category1,"Enable Nikolite Block crafting?", true).getBoolean(true);
 		enablenickel = config.get(category1,"Enable Nickel Block crafting?", true).getBoolean(true);
 		enableelectrum = config.get(category1,"Enable Electrum Block crafting?", true).getBoolean(true);
 		enableplatinum = config.get(category1,"Enable Platinum/shiny Block crafting?", true).getBoolean(true);
-		enableinvar = config.get(category1,"Enable Invar Block crafting?", true).getBoolean(true);
+		enablerubber = config.get(category1,"Enable Rubber Block crafting?",true).getBoolean(true);
+		enableclaybrick = config.get(category1, "Enable clay brick crafting", true).getBoolean(true);
 		enablemeltingcore = config.get(category1, "Enable Melting Core crafting?", true).getBoolean(true);
 		enablelavalamp = config.get(category1,"Enable Lavalamp crafting?", true).getBoolean(true);
 
@@ -55,6 +55,8 @@ public class Storageprops {
 		enablehoneydrop = config.get(category2,"Enable Honeydrop Block from Forestry?", true).getBoolean(true);
 		enablehoneydew = config.get(category2,"Enable Honeydew Block from Forestry?", true).getBoolean(true);
 		enablepeat = config.get(category2,"Enable Peat Block from Forestry?", true).getBoolean(true);
+		enableinvar = config.get(category1,"Enable Invar Block from Thermal Expansion?", true).getBoolean(true);
+		enablenikolite = config.get(category1,"Enable Nikolite Block from Redpower?", true).getBoolean(true);
 
 		String category3 = "Recipe enable or disable";
 		dragoneggrecipe = config.get(category3,"Crafting Dragon Egg(Requires Ender Pearl Block enabled)", true).getBoolean(true);
@@ -62,6 +64,7 @@ public class Storageprops {
 		fleshtoleather = config.get(category3,"Zombie flesh cooks into leather", true).getBoolean(true);
 		quartzblocktoquartz = config.get(category3, "Quartz block decraft to nether quartz", true).getBoolean(true);
 		greendye = config.get(category3, "Make green dye from blue and yellow dye?", true).getBoolean(true);
+		wooltostring = config.get(category3, "Allow wool to decraft to string?", true).getBoolean(true);
 		
 		String category4 = "Random things";
 		dungeonlootenablevannila= config.get(category4,"Allow vannila storage blocks to spawn in dungeon loot?", true).getBoolean(true);
@@ -121,11 +124,13 @@ public class Storageprops {
 	public static boolean enableplatinum;
 	public static boolean enableinvar;
 	public static boolean enablebrass;
+	public static boolean enablerubber;
 	public static boolean enableosmium;
 	public static boolean enableapatite;
 	public static boolean enablehoneydrop;
 	public static boolean enablehoneydew;
 	public static boolean enablepeat;
+	public static boolean enableclaybrick;
 	public static boolean enablemeltingcore;
 	public static boolean enablelavalamp;
 	public static boolean dragoneggrecipe;
@@ -133,6 +138,7 @@ public class Storageprops {
 	public static boolean fleshtoleather;
 	public static boolean quartzblocktoquartz;
 	public static boolean greendye;
+	public static boolean wooltostring;
 	public static boolean enablecoalcoke;
 	public static boolean storageblocking;
 	public static boolean dungeonlootenablevannila;

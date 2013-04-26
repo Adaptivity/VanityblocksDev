@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
@@ -25,7 +26,7 @@ public class StorageBlockMod extends Block {
 	@Override
 	public void registerIcons(IconRegister par1IconRegister)
 		{
-		iconBuffer = new Icon[13]; 
+		iconBuffer = new Icon[14]; 
 		        
 		iconBuffer[1] = par1IconRegister.registerIcon("vanityblocks:tinblock"); 
 		iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:copperblock"); 
@@ -39,6 +40,7 @@ public class StorageBlockMod extends Block {
 		iconBuffer[10] = par1IconRegister.registerIcon("vanityblocks:coalcokeblock"); 
 		iconBuffer[11] = par1IconRegister.registerIcon("vanityblocks:brassblock");
 		iconBuffer[12] = par1IconRegister.registerIcon("vanityblocks:osmiumblock");
+		iconBuffer[13] = par1IconRegister.registerIcon("vanityblocks:rubberblock");
 		}
 	@Override
 	public Icon getIcon (int side, int metadata) {
@@ -78,6 +80,9 @@ public class StorageBlockMod extends Block {
 		if (metadata == 11){
 			return iconBuffer[12];
 		}
+		if (metadata ==12){
+			return iconBuffer[13];
+		}
 		return blockIcon;
 		}
 //	public int getBlockTextureFromSideAndMetadata (int side, int metadata) {
@@ -95,11 +100,31 @@ public class StorageBlockMod extends Block {
 	public int damageDropped (int metadata) {
 		return metadata;
 	}
-	
+//	@Override
+//    public void onEntityWalking(World world, int i, int j, int k, Entity entity)
+//    {
+//		if (metadata == 12) {
+ //       double boost = 2.2D;
+//        if(world.getBlockMetadata(i, j, k) == 12)
+//            boost = 2.65D;
+//          double mY = entity.motionY;
+//        double mY = Math.abs(entity.motionY);
+//        double mZ = Math.abs(entity.motionZ);
+//        if(mX < 0.3D)
+//        {
+//            entity.motionX *= boost;
+//        }
+ //       if(mY < 0.0D)
+//        {
+//            entity.motionY *= boost;
+  //      	entity.motionY = Math.abs(mY*boost);
+ //       }
+ //   }
+ 
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int ix = 0; ix < 12; ix++) {
-			//12 for current
+		for (int ix = 0; ix < 13; ix++) {
+			//13 for current
 			subItems.add(new ItemStack(this, 1, ix));
 		}
 	}

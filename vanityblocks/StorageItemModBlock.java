@@ -14,7 +14,7 @@ public class StorageItemModBlock extends ItemBlock {
 	private final static String[] subNames = {
 		"Tin Block", "Copper Block", "Silver Block",
 		"Lead Block", "Nikolite Block", "Nickel Block", "Electrum Block",
-		"Platinum Block", "Invar Block", "Brass Block", "Coal Coke block", "Osmium Block", "", "", "", ""
+		"Platinum Block", "Invar Block", "Brass Block", "Coal Coke block", "Osmium Block", "Rubber Block", "", "", ""
 	};
 
 	public StorageItemModBlock(int id) {
@@ -68,10 +68,9 @@ public class StorageItemModBlock extends ItemBlock {
     	case 11:
     		list.add("From a mod called Universal Electricity");
     		break;
- /*   	case 12:
-    		list.add("Some mods call it Shiny");
+    	case 12:
     		break;
-    	case 13:
+ /*   	case 13:
     		list.add("Some mods call it Shiny");
     		break;
     	case 14:

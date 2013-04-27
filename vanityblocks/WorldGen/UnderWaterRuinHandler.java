@@ -19,15 +19,15 @@ public class UnderWaterRuinHandler implements IWorldGenerator
 	  } 
 	 } 
 	  
-	  private void generateSurface(World world, Random random, int blockX, int blockZ)  
+	  private void generateSurface(World world, Random rand, int y, int z)  
 	 { 
-	      for (int i = 0; i < Storageprops.ruinrarity; i++) 
-	        { 
-	  int Xcoord1 = blockX + random.nextInt(16) + 8; 
-	  int Ycoord1 = random.nextInt(11) + 60; 
-	  int Zcoord1 = blockZ + random.nextInt(16) + 8; 
-	     
-	  (new StructureUnderWaterRuin()).generate(world, random, Xcoord1, Ycoord1, Zcoord1); 
+//	      for (int i = 0; i < Storageprops.ruinrarity; i++) 
+          for(int a = 0; a < Storageprops.ruinrarity; a++)
+              {
+                 int RandPosX = y + rand.nextInt(16);
+                 int RandPosY = rand.nextInt(16);
+                 int RandPosZ = z + rand.nextInt(16);
+                 (new StructureUnderWaterRuin()).generate(world, rand, RandPosX, RandPosY, RandPosZ);
 	 } 
 	 } 
 	}

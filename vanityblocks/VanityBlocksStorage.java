@@ -2,6 +2,7 @@ package vanityblocks;
 
 import vanityblocks.WorldGen.AVillageTrades;
 import vanityblocks.WorldGen.MarbleGen;
+import vanityblocks.WorldGen.UnderWaterRuinHandler;
 import vanityblocks.WorldGen.VillageModHandler;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -90,6 +91,7 @@ public class VanityBlocksStorage {
 		BlockRegistration.addForestryRecipes();
 		Dungeonlootspawning.chestHooks();
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));
+		GameRegistry.registerWorldGenerator(new UnderWaterRuinHandler());
 		// ### Villager/village Related
 //		AVillageTrades trades = new AVillageTrades();
 //		VillagerRegistry.instance().registerVillagerType(56789, "/mods/vanityblocks/textures/mob/villager.png");

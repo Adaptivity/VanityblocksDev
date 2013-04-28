@@ -22,15 +22,16 @@ public class UnderWaterRuinHandler implements IWorldGenerator {
 	private void generateSurface(World world, Random rand, int y, int z) {
 		// for (int i = 0; i < Storageprops.ruinrarity; i++)
 		if (world.getWorldChunkManager().getBiomeGenAt(y, z).biomeName.equals("Ocean")) {
-		if(rand.nextInt(10)==1) {
+		if(rand.nextInt(60)==1) {
+		//rand.nextInt(10)==1 the 10 stands for a 1 in 10 chance
 			int RandPosX = y + rand.nextInt(16);
-
 			int RandPosZ = z + rand.nextInt(16);
 			for(int height = 70; height>0; height--)
 			{
 				if(world.getBlockId(RandPosX, height, RandPosZ)== Block.sand.blockID || world.getBlockId(RandPosX, height, RandPosZ)== Block.dirt.blockID)
 				{
-					(new StructureUnderWaterRuin()).generate(world, rand, RandPosX, height, RandPosZ);
+				(new StructureUnderWaterRuin()).generate(world, rand, RandPosX, height + 1, RandPosZ);
+//testing purposes					(new StructureUnderWaterRuin()).generate(world, rand, RandPosX, 64 , RandPosZ); 
 					break;
 				}
 			}

@@ -20,7 +20,7 @@ public class BlockRegistration {
 	StorageBlockMod = new StorageBlockMod(StorageBlockModId);
 	ForestryBlockId = Storageprops.forestryblockconfig;
 	ForestryBlock = new ForestryBlock(ForestryBlockId);
-	
+
 	String[] vannilastorageBlockNames = { 
 		"Sugar Cane Block", "Coal Block", "Charcoal Block", "Enderpearl Block", "Slime Block",
 		"Bale of Wheat", "Sugar Block", "Cocoa Block", "Blaze Block", "Leather Block", "Bone Block", "Clay Brick"

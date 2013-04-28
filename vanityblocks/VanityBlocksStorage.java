@@ -52,8 +52,8 @@ Vanity - Chiseled sandstone blocks, chairs? coral blocks/generation, redstone la
 Add new module, integration, dusts and such for gregtech, 
 spling wants enchant for bow that teleports the mob, and potion of swimming,  ..SubSide.. Anarchy, you could make it that only if they are in water, they get a speed potion boost.
 To add info to the bottom of blocks = https://github.com/mDiyo/Natura/blob/master/mods/natura/blocks/CloudItem.java
-Next up
-rubber(ic2)-itemRubber,
+ADD STONEHENGE!!!!!!!!!!
+!!!!!!!!
  */
 
 

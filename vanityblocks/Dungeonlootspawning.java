@@ -192,6 +192,11 @@ public class Dungeonlootspawning {
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,10),3,5,9));
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,11),3,5,9));
 		}
+//	    final String VANITYBLOCKSRUIN            = "vanityblocksruinchest";
+//		if (Storageprops.generateruin) {
+//			ChestGenHooks.addInfo
+//			ChestGenHooks.addInfo(VANITYBLOCKSRUIN, WorldGen.StructureUnderWaterRuin[], 3, 3)
+//		}
 	}
 
 }

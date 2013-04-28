@@ -84,9 +84,9 @@ public class Storageprops {
 		blackmarblevein = config.get(category6,"VeinThickness- How big of a vien of black marble should spawn,say you want 50 in a vein, do 25",24).getInt();
 		blackmarblerarity = config.get(category6,"Rarity- How often should black marble generate in a chunk, good value is below 5",1).getInt();
 		
-//		String category7 = "World Generation - Underwater Ruins";
-//		generateruin = config.get(category7,"Allow Underwater Ruins to generate?", true).getBoolean(true);
-//		ruinrarity = config.get(category7, "Ruin rarity?",12).getInt();
+		String category7 = "World Generation - Underwater Ruins";
+		generateruin = config.get(category7,"Allow Underwater Ruins to generate?", true).getBoolean(true);
+		ruinrarity = config.get(category7, "Ruin rarity?",20).getInt();
 //		String category7 = "Texture swapping";
 //		Property blackmarbletextures = config.get(category6,"Do you want to use my textures for black marble or alt textures? type true for mine, false for alt",true);
 //		blackmarbletextures.comment = "Type true for main textures, false for alt textures";

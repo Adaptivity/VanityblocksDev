@@ -86,7 +86,6 @@ public class Storageprops {
 		
 		String category7 = "World Generation - Underwater Ruins";
 		generateruin = config.get(category7,"Allow Underwater Ruins to generate?", true).getBoolean(true);
-		ruinrarity = config.get(category7, "Ruin rarity?",20).getInt();
 //		String category7 = "Texture swapping";
 //		Property blackmarbletextures = config.get(category6,"Do you want to use my textures for black marble or alt textures? type true for mine, false for alt",true);
 //		blackmarbletextures.comment = "Type true for main textures, false for alt textures";
@@ -157,5 +156,4 @@ public class Storageprops {
 	public static int blackmarblevein;
 	public static int blackmarblerarity;
 	public static boolean generateruin;
-	public static int ruinrarity;
 }

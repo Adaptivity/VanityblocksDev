@@ -4,11 +4,14 @@ package vanityblocks;
 import static net.minecraftforge.common.ForgeDirection.UP;
 
 import java.util.List;
+
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -62,6 +65,26 @@ public class StorageBlock extends Block {
 
 		return 2f;
 	}
+    @Override
+    public void onEntityCollidedWithBlock (World world, int x, int y, int z, Entity entity)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+        if (meta == 2)
+        {
+            if (entity.motionY < 0)
+                entity.motionY *= -1.2F;
+            entity.fallDistance = 0;
+        }
+    }
+    @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool (World world, int x, int y, int z)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+        if (meta == 2)
+            return AxisAlignedBB.getBoundingBox(x, y, z, (double) x + 1.0D, (double) y + 0.625D, (double) z + 1.0D);
+        return super.getCollisionBoundingBoxFromPool(world, x, y, z);
+    }
+    
     private Icon[] iconBuffer;
    @Override
    public void registerIcons(IconRegister par1IconRegister)

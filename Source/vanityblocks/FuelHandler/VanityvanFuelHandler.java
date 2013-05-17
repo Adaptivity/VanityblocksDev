@@ -1,6 +1,6 @@
 package vanityblocks.FuelHandler;
 
-import vanityblocks.BlockRegistration;
+import vanityblocks.Registrations.StorageBlocksRegistration;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;
 
@@ -8,7 +8,7 @@ public class VanityvanFuelHandler implements IFuelHandler {
 	@Override
 	public int getBurnTime(ItemStack fuel) {
 //		int var1 = fuel.itemID;
-		if (fuel.itemID == BlockRegistration.StorageBlock.blockID){
+		if (fuel.itemID == StorageBlocksRegistration.StorageBlock.blockID){
 		if (fuel.getItemDamage() == (0)){
 			return 14400;
 		}

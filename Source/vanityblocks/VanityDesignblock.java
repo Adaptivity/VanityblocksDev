@@ -19,7 +19,7 @@ public class VanityDesignblock extends Block {
 		super(id, Material.rock);
 //		setBlockName("storageblock");
 //		setCreativeTab(CreativeTabs.tabBlock);
-		setCreativeTab(vanityblocks.VanityBlocksStorage.tabCustom);
+		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 	}
 //    public float getLightValue(int md) {
 //    	switch(md) {

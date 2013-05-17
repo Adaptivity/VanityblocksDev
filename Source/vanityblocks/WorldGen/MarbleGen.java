@@ -4,7 +4,7 @@ package vanityblocks.WorldGen;
 import java.util.Random;
 
 import vanityblocks.Storageprops;
-import vanityblocks.VanityBlocksVanity;
+import vanityblocks.Registrations.VanityBlocksRegistration;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -21,8 +21,8 @@ public class MarbleGen implements IWorldGenerator
 		{
 			//cobalt = new ManhattanOreGenerator(TContent.oreSlag.blockID, 1, 2, 4, 100, true, false, Block.netherrack.blockID);
 			//ardite = new ManhattanOreGenerator(TContent.oreSlag.blockID, 2, 2, 4, 100, true, false, Block.netherrack.blockID);
-			marble = new WorldGenMinable(VanityBlocksVanity.VanityDesignworldblock.blockID, 0, (Storageprops.marblevein), Block.stone.blockID);
-			blackmarble = new WorldGenMinable(VanityBlocksVanity.VanityDesignworldblock.blockID, 5, (Storageprops.blackmarblevein), Block.stone.blockID);
+			marble = new WorldGenMinable(vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignworldblock.blockID, 0, (Storageprops.marblevein), Block.stone.blockID);
+			blackmarble = new WorldGenMinable(vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignworldblock.blockID, 3, (Storageprops.blackmarblevein), Block.stone.blockID);
 		}
 		
 		public void generate (Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)

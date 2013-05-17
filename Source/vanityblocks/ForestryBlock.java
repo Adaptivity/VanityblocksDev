@@ -17,7 +17,7 @@ public class ForestryBlock extends Block {
 		super(id, Material.rock);
 //        setHardness(3.0F);
 //		setCreativeTab(CreativeTabs.tabBlock);
-		setCreativeTab(vanityblocks.VanityBlocksStorage.tabCustom);
+		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 
 	}
     private Icon[] iconBuffer;

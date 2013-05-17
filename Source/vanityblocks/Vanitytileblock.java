@@ -19,7 +19,7 @@ public class Vanitytileblock extends BlockContainer {
 		super(id, Material.rock);
 //		setBlockName("storageblock");
 //		setCreativeTab(CreativeTabs.tabBlock);
-		setCreativeTab(vanityblocks.VanityBlocksStorage.tabCustom);
+		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 
 	}
     private Icon[] iconBuffer;

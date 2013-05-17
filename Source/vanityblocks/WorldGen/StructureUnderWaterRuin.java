@@ -2,9 +2,10 @@ package vanityblocks.WorldGen;
 
 import java.util.Random;
 
-import vanityblocks.BlockRegistration;
+import vanityblocks.Registrations.StorageBlocksRegistration;
 
 import net.minecraft.block.Block;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
@@ -105,6 +106,7 @@ public class StructureUnderWaterRuin extends WorldGenerator {
 //		ChestGenHooks dungeonloot = ChestGenHooks.getInfo("UnderwaterruinChest");
 		ChestGenHooks dungeonloot = ChestGenHooks.getInfo("dungeonChest");
 		if (chest != null) WeightedRandomChestContent.generateChestContents(rand, dungeonloot.getItems(rand), chest, dungeonloot.getCount(rand));
+//		UnderwaterRuinLoot.fillChest(chest, 5, 0.5F);		
 
 		world.setBlock(x + 1,  y + 1,  z + 3, Block.cobblestone.blockID);
 		

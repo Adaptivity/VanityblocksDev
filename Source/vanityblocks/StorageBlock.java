@@ -22,7 +22,7 @@ public class StorageBlock extends Block {
 		super(id, Material.rock);
 //		setBlockName("storageblock");
 //		setCreativeTab(CreativeTabs.tabBlock);
-		setCreativeTab(vanityblocks.VanityBlocksStorage.tabCustom);
+		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 		}
 	@Override
 	public boolean isFireSource(World world, int x, int y, int z, int metadata, ForgeDirection side)

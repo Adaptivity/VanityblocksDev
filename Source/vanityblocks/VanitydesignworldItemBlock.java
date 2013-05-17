@@ -11,8 +11,8 @@ import net.minecraft.item.ItemStack;
 public class VanitydesignworldItemBlock extends ItemBlock {
 	
 	private final static String[] subNames = {
-		"Marble", "Marble Brick", "Chiseled Marble", "Marble Slab", "Marble Stair", 
-		"Ashford Black Marble", "Ashford Black Marble Brick", "Chiseled Ashford Black Marble", "Ashford Black Marble Slab", "Ashford Black Marble Stair",
+		"Marble", "Marble Brick", "Chiseled Marble",  
+		"Ashford Black Marble", "Ashford Black Marble Brick", "Chiseled Ashford Black Marble", 
 		"", "", "", "", "", "", "", "", ""
 	};
 
@@ -49,22 +49,14 @@ public class VanitydesignworldItemBlock extends ItemBlock {
 	    	case 2:
 	    		break;
 	    	case 3:
-	    		list.add("Ignore for now, placeholder.");
+//	    		list.add("Ignore for now, placeholder.");
 	    		break;
 	    	case 4:
-	    		list.add("Ignore for now, placeholder.");
+//	    		list.add("Ignore for now, placeholder.");
 	    		break;
 	    	case 5:
 	    		break;
 	    	case 6:
-	    		break;
-	    	case 7:
-	    		break;
-	    	case 8:
-	    		list.add("Ignore for now, placeholder.");
-	    		break;
-	    	case 9:
-	    		list.add("Ignore for now, placeholder.");
 	    		break;
 	    	}
 		} 

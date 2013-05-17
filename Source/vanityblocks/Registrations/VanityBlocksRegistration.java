@@ -42,17 +42,6 @@ public class VanityBlocksRegistration {
 	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 3), "Ashford Black Marble");
 	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 4), "Ashford Black Marble Brick");
 	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 5), "Chiseled Ashford Black Marble");
-	/*
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 0), "Marble");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 1), "Marble Brick");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 2), "Chiseled Marble");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 3), "Marble Slab");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 4), "Marble Stair");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 5), "Ashford Black Marble");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 6), "Ashford Black Marble Brick");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 7), "Chiseled Ashford Black Marble");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 8), "Ashford Black Marble Slab");
-	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 9), "Ashford Black Marble Stair"); */
 	}
 	public static void addVanityRecipes() {
 		ItemStack glasspane = new ItemStack(Block.thinGlass);

@@ -46,13 +46,9 @@ public class VanityDesignworldblock extends Block {
 	        iconBuffer[1] = par1IconRegister.registerIcon("vanityblocks:marble"); 
 	        iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:marblebrick");
 	        iconBuffer[3] = par1IconRegister.registerIcon("vanityblocks:marblechisel");
-	        iconBuffer[4] = par1IconRegister.registerIcon("vanityblocks:temp");
-	        iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:temp");
-	        iconBuffer[6] = par1IconRegister.registerIcon("vanityblocks:blackmarble");
-	        iconBuffer[7] = par1IconRegister.registerIcon("vanityblocks:blackmarblebrick");
-	        iconBuffer[8] = par1IconRegister.registerIcon("vanityblocks:blackmarblechisel");
-	        iconBuffer[9] = par1IconRegister.registerIcon("vanityblocks:blacktemp");
-	        iconBuffer[10] = par1IconRegister.registerIcon("vanityblocks:blacktemp");
+	        iconBuffer[4] = par1IconRegister.registerIcon("vanityblocks:blackmarble");
+	        iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:blackmarblebrick");
+	        iconBuffer[6] = par1IconRegister.registerIcon("vanityblocks:blackmarblechisel");
 	    }
 	@Override
 	public Icon getIcon (int side, int metadata) {
@@ -77,15 +73,6 @@ public class VanityDesignworldblock extends Block {
 		if (metadata == 6) {
 			return iconBuffer[7];
 		}
-		if (metadata == 7) {
-			return iconBuffer[8];
-		}
-		if (metadata == 8) {
-			return iconBuffer[9];
-		}
-		if (metadata == 9) {
-			return iconBuffer[10];
-		}
 		return blockIcon;
 	}
 	@Override
@@ -94,7 +81,7 @@ public class VanityDesignworldblock extends Block {
 	}
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int ix = 0; ix < 10; ix++) {
+		for (int ix = 0; ix < 6; ix++) {
 			subItems.add(new ItemStack(this, 1, ix));
 		}
 	}

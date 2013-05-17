@@ -26,7 +26,7 @@ public class StorageBlockMod extends Block {
 	@Override
 	public void registerIcons(IconRegister par1IconRegister)
 		{
-		iconBuffer = new Icon[14]; 
+		iconBuffer = new Icon[12]; 
 		        
 		iconBuffer[1] = par1IconRegister.registerIcon("vanityblocks:tinblock"); 
 		iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:copperblock"); 
@@ -37,10 +37,8 @@ public class StorageBlockMod extends Block {
 		iconBuffer[7] = par1IconRegister.registerIcon("vanityblocks:electrumblock"); 
 		iconBuffer[8] = par1IconRegister.registerIcon("vanityblocks:platinumblock"); 
 		iconBuffer[9] = par1IconRegister.registerIcon("vanityblocks:invarblock");
-		iconBuffer[10] = par1IconRegister.registerIcon("vanityblocks:coalcokeblock"); 
-		iconBuffer[11] = par1IconRegister.registerIcon("vanityblocks:brassblock");
-		iconBuffer[12] = par1IconRegister.registerIcon("vanityblocks:osmiumblock");
-		iconBuffer[13] = par1IconRegister.registerIcon("vanityblocks:rubberblock");
+		iconBuffer[10] = par1IconRegister.registerIcon("vanityblocks:brassblock");
+		iconBuffer[11] = par1IconRegister.registerIcon("vanityblocks:rubberblock");
 		}
 	@Override
 	public Icon getIcon (int side, int metadata) {
@@ -76,12 +74,6 @@ public class StorageBlockMod extends Block {
 		}
 		if (metadata == 10){
 			return iconBuffer[11];
-		}
-		if (metadata == 11){
-			return iconBuffer[12];
-		}
-		if (metadata ==12){
-			return iconBuffer[13];
 		}
 		return blockIcon;
 		}
@@ -123,7 +115,7 @@ public class StorageBlockMod extends Block {
  
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int ix = 0; ix < 13; ix++) {
+		for (int ix = 0; ix < 11; ix++) {
 			//13 for current
 			subItems.add(new ItemStack(this, 1, ix));
 		}

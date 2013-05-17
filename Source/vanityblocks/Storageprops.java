@@ -24,11 +24,11 @@ public class Storageprops {
 
 		String category1 = "Blocks Enable or disable";
 //		storageblocking = config.get(category1,"Storage blocks enabled?", true).getBoolean(true);
-		enablecoal = config.get(category1,"Enable Coal Block crafting?", true).getBoolean(true);
+//		enablecoal = config.get(category1,"Enable Coal Block crafting?", true).getBoolean(true);
 		enablecharcoal = config.get(category1,"Enable CharCoal Block crafting?", true).getBoolean(true);
     	enableenderpearl = config.get(category1,"Enable Ender Parl Block crafting?", true).getBoolean(true);
     	enableslime = config.get(category1,"Enable Slime Block crafting?", true).getBoolean(true);
-    	enablewheatbale = config.get(category1, "Enable Wheat Bale crafting?", true).getBoolean(true);
+ //   	enablewheatbale = config.get(category1, "Enable Wheat Bale crafting?", true).getBoolean(true);
     	enablesugar = config.get(category1, "Enable Sugar Block crafting?", true).getBoolean(true);
     	enablesugarcane = config.get(category1, "Enable Sugar Cane Block crafting?", true).getBoolean(true);
     	enablecocoa = config.get(category1, "Enable Cocoa Block crafting?", true).getBoolean(true);
@@ -48,8 +48,8 @@ public class Storageprops {
 		enablelavalamp = config.get(category1,"Enable Lavalamp crafting?", true).getBoolean(true);
 
 		String category2 = "Specific Blocks mod compatibility";
-		enablecoalcoke = config.get(category2,"Enable CoalCoke Block from Railcraft?", true).getBoolean(true);
-		enableosmium = config.get(category2,"Enable Osmium Block from Universal Electricity?",true).getBoolean(true);
+//		enablecoalcoke = config.get(category2,"Enable CoalCoke Block from Railcraft?", true).getBoolean(true);
+//		enableosmium = config.get(category2,"Enable Osmium Block from Universal Electricity?",true).getBoolean(true);
 		enablebrass = config.get(category2,"Enable Brass Block from various mods?", true).getBoolean(true);
 		enableapatite = config.get(category2,"Enable Apatite block from Forestry?", true).getBoolean(true);
 		enablehoneydrop = config.get(category2,"Enable Honeydrop Block from Forestry?", true).getBoolean(true);
@@ -109,11 +109,11 @@ public class Storageprops {
 	public static int vanitydesignconfig;
 	public static int vanitydesignworldconfig;
 	public static boolean enablesugarcane;
-	public static boolean enablecoal;
+//	public static boolean enablecoal;
 	public static boolean enablecharcoal;
 	public static boolean enableenderpearl;
 	public static boolean enableslime;
-	public static boolean enablewheatbale;
+//	public static boolean enablewheatbale;
 	public static boolean enablesugar;
 	public static boolean enablecocoa;
 	public static boolean enableblaze;
@@ -130,7 +130,7 @@ public class Storageprops {
 	public static boolean enableinvar;
 	public static boolean enablebrass;
 	public static boolean enablerubber;
-	public static boolean enableosmium;
+//	public static boolean enableosmium;
 	public static boolean enableapatite;
 	public static boolean enablehoneydrop;
 	public static boolean enablehoneydew;

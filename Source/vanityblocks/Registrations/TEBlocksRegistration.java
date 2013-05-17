@@ -18,7 +18,7 @@ public class TEBlocksRegistration {
 	public static Block Vanitytileblock;
 	public static int VanitytileblockId;
 	
-	public static void vanityregistration() {
+	public static void teregistration() {
 		
 		VanitytileblockId = Storageprops.vanityentityconfig;
 		Vanitytileblock = new Vanitytileblock(VanitytileblockId);
@@ -26,11 +26,13 @@ public class TEBlocksRegistration {
 		String[] vannilastorageBlockNames = { 
 			"Melting Core" 
 		};
+		
 	GameRegistry.registerBlock(Vanitytileblock, vanityblocks.VanitytileItemBlock.class, "Vanity TE ");
 	GameRegistry.registerTileEntity(TileMeltingcore.class,"Vanityblocks MeltingCore");
 	LanguageRegistry.addName(new ItemStack(Vanitytileblock, 1, 0), "Melting Core");
+	
 	}
-	public static void addVanityRecipes() {
+	public static void addTeRecipes() {
 		{
 			/*############### Vannila Storage blocking ####### */
 			if (Storageprops.enablemeltingcore) {

@@ -1,5 +1,5 @@
 1.6
-V4.0: 
+V4.0: Condensed down three modules to single mod. Moved some files around. Changed some metadatas
 Todo: Condensed the mods down to a single "Mod". Removed coal block and wheat block for the vanilla version. Added steps and slabs of the marble blocks. Add a mushroom biome underground in mushroom biome similiar to terraria
 well, not te has storage blocks, bye electrum, invar, tin, copper, lead, silver, nickle, platinum, mekanism didnt have a storage block for osmium, now it does, bye osmium, 1.6 vannila adds coal block and wheat block, bye them, railcraft added coal coke block, bye it
 add config for dungeon loot raritys

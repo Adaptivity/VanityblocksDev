@@ -16,16 +16,16 @@ public class Dungeonlootspawning {
 	if (Storageprops.dungeonlootenablevannila) {
 //		System.out.println("yes this was called");
 // 		Adds storage vannila blocks to dungeon loots
-		if (Storageprops.enablecoal) {
-		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),1,2,4));
-		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,4,9));
-		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),6,7,9));
-		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,0),3,5,6));
-		}
+//		if (Storageprops.enablecoal) {
+//		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),1,2,4));
+//		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,4,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),6,7,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,0),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,0),3,5,6));
+//		}
 		if (Storageprops.enablecharcoal ) {
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,1),1,2,4));
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,1),3,5,9));
@@ -54,16 +54,16 @@ public class Dungeonlootspawning {
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,3),3,5,9));
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,3),3,5,9));		
 		}
-		if (Storageprops.enablewheatbale) {
-		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,6));
-		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,4,9));
-		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),4,8,9));
-		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
-		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));		
-		}
+//		if (Storageprops.enablewheatbale) {
+//		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,6));
+//		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,4,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),4,8,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));
+//		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,4),3,5,9));		
+//		}
 		if (Storageprops.enablesugar) {
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,5),3,4,9));
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,5),3,5,9));
@@ -157,7 +157,9 @@ public class Dungeonlootspawning {
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,3),3,5,9));
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,3),3,5,9));
 		}
+		if (Loader.isModLoaded("RedPowerCore")) {
 		if (Storageprops.enablenikolite) {
+		try {
 			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,4),1,2,4));
 			ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,4),3,5,9));
 			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,4),3,4,9));;
@@ -166,6 +168,11 @@ public class Dungeonlootspawning {
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,4),3,5,9));
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,4),3,5,9));
 		}
+			catch (Exception e) {
+			// pokemon
+			}
+		}
+	}
 		if (Storageprops.enablenickel) {
 			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,5),1,2,4));
 			ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,5),3,5,9));
@@ -211,15 +218,6 @@ public class Dungeonlootspawning {
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,10),3,5,9));
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,10),3,5,9));
 		}
-		if (Storageprops.enableosmium) {
-			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,11),1,2,4));
-			ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,11),3,5,9));
-			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,11),3,4,9));
-			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,11),6,7,9));
-			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,11),3,5,9));
-			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,11),3,5,9));
-			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,11),3,5,9));
-		}
 		if (Storageprops.enablerubber) {
 			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,12),1,2,4));
 			ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,12),3,5,9));
@@ -229,49 +227,6 @@ public class Dungeonlootspawning {
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,12),3,5,9));
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,12),3,5,9));
 		}
-		if (Loader.isModLoaded("Railcraft")) {
-			if (Storageprops.enablecoalcoke) {
-			try {
-			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,9),1,2,4));
-			ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,9),3,5,9));
-			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,9),3,4,9));
-			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,9),6,7,9));
-			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,9),3,5,9));
-			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,9),3,5,9));
-			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlockMod,0,9),3,5,9));
-			}
-			catch (Exception e) {
-			// pokemon
-			}
-			}
-		}
 	}
 }
-/*		if (Storageprops.generateruin) {
-		//adds vanilla blocks to ruins loot       
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,0),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,1),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,2),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,3),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,4),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,5),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,6),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,7),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,8),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,9),3,5,9));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlock,0,10),3,5,9));
-		//Adds mod blocks to ruins loot
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,0),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,1),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,2),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,3),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,4),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,5),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,6),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,7),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,8),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,9),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,10),1,2,4));
-		ChestGenHooks.getInfo(Underwaterruinchest).addItem(new WeightedRandomChestContent(new ItemStack(BlockRegistration.StorageBlockMod,0,11),1,2,4));
-		} */
 }

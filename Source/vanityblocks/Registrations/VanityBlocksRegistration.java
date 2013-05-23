@@ -31,7 +31,7 @@ public class VanityBlocksRegistration {
 	VanityDesignworldblock = new VanityDesignworldblock(VanityDesignworldId);
 	
 	VanityDesignworldslabId = Storageprops.vanitydesignworldslabconfig;
-	VanityDesignworldslabblock = new MarbleSlab(VanityDesignworldslabId, true);
+	VanityDesignworldslabblock = new MarbleSlab(VanityDesignworldslabId);
 	
 	String[] vanitydesignBlockNames = {
 			"Lava Lamp"

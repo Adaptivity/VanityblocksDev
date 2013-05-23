@@ -93,7 +93,11 @@ public class Storageprops {
 		String category7 = "World Generation - Underwater Ruins";
 		generateruin = config.get(category7,"Allow Underwater Ruins to generate?", true).getBoolean(true);
 		ruinchance = config.get(category7, "One in how many chance of the ruins to generate. Such as 20 will make it a 1 in 20, play in ssp to find a good value(i suggest 75+)",75).getInt();
-//		String category7 = "Texture swapping";
+		
+		String category8 = "World Generation - Slabs/stairs";
+		marbleslabs = config.get(category8,"Allow to make Marble slabs?", true).getBoolean(true);
+		
+		//		String category7 = "Texture swapping";
 //		Property blackmarbletextures = config.get(category6,"Do you want to use my textures for black marble or alt textures? type true for mine, false for alt",true);
 //		blackmarbletextures.comment = "Type true for main textures, false for alt textures";
 
@@ -165,4 +169,5 @@ public class Storageprops {
 	public static int blackmarblerarity;
 	public static boolean generateruin;
 	public static int ruinchance;
+	public static boolean marbleslabs;
 }

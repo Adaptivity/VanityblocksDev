@@ -35,7 +35,7 @@ public class StorageBlocksRegistration {
 	String[] modstorageBlockNames = { 
 		"Tin Block", "Copper Block", "Silver Block",
 		"Lead Block", "Nikolite Block", "Nickel Block", "Electrum Block",
-		"Platinum Block", "Invar Block", "Brass Block", "Coal Coke Block", "Osmium Block", "Rubber Block"
+		"Platinum Block", "Invar Block", "Brass Block", "Rubber Block", "", ""
 	};
 	String[] forestrystorageBlockNames = { 
 			"Apatite Block", "Honey Block", "Honeydew Block",

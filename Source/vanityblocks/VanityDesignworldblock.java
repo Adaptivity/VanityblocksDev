@@ -41,7 +41,7 @@ public class VanityDesignworldblock extends Block {
    @Override
    public void registerIcons(IconRegister par1IconRegister)
 	    {
-	        iconBuffer = new Icon[11]; 
+	        iconBuffer = new Icon[7]; 
 	        
 	        iconBuffer[1] = par1IconRegister.registerIcon("vanityblocks:marble"); 
 	        iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:marblebrick");

@@ -20,7 +20,7 @@ public class Storageprops {
 		vanitydesignconfig = config.getBlock(category,"Vanity design blocks",3055).getInt(3055);
 		vanitydesignworldconfig = config.getBlock(category,"Vanity Blocks World Generation blocks",3058).getInt(3058);
 		vanityentityconfig = config.getBlock(category, "Vanity Blocks Tile Entity(such as melting core)",3060).getInt(3058);
-
+		vanitydesignworldslabconfig = config.getBlock(category, "Vanity Blocks World Gen slabs", 3061).getInt(3061);
 
 		String category1 = "Blocks Enable or disable";
 //		storageblocking = config.get(category1,"Storage blocks enabled?", true).getBoolean(true);
@@ -82,6 +82,7 @@ public class Storageprops {
 		marblevein = config.get(category5,"VeinThickness- How big of a vien of marble should spawn,say you want 50 in a vein, do 25",24).getInt();
 		marblerarity = config.get(category5,"Rarity- How often should marble generate in a chunk, good value is below 5",1).getInt();
 		
+		
 		String category6 = "World Generation - Black Marble";
 		generateblackmarble = config.get(category6,"Allow Ashford Black Marble to generate in the world?", true).getBoolean(true);
 		blackmarbleheight = config.get(category6,"Height-How low should the black marble generate?",10).getInt();
@@ -108,6 +109,7 @@ public class Storageprops {
 	public static int vanityentityconfig;
 	public static int vanitydesignconfig;
 	public static int vanitydesignworldconfig;
+	public static int vanitydesignworldslabconfig;
 	public static boolean enablesugarcane;
 //	public static boolean enablecoal;
 	public static boolean enablecharcoal;

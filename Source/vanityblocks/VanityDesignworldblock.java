@@ -34,7 +34,7 @@ public class VanityDesignworldblock extends Block {
 	{
 //		return !isActive(par1World.getBlockMetadata(par2, par3, par4)) ? 0 : 3;
 		int metadata = par1World.getBlockMetadata(par2, par3, par4);
-		if (metadata == 0) return 1.5f;
+		if (metadata == 0) return 2f;
 		return 2f;
 	}
     private Icon[] iconBuffer;

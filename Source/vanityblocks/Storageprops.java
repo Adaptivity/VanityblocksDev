@@ -95,7 +95,7 @@ public class Storageprops {
 		ruinchance = config.get(category7, "One in how many chance of the ruins to generate. Such as 20 will make it a 1 in 20, play in ssp to find a good value(i suggest 75+)",75).getInt();
 		
 		String category8 = "World Generation - Slabs/stairs";
-		marbleslabs = config.get(category8,"Allow to make Marble slabs?", true).getBoolean(true);
+		marbleslabs = config.get(category8,"Allowed to make Marble slabs?", true).getBoolean(true);
 		
 		//		String category7 = "Texture swapping";
 //		Property blackmarbletextures = config.get(category6,"Do you want to use my textures for black marble or alt textures? type true for mine, false for alt",true);

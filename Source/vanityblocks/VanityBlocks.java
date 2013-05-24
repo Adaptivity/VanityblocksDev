@@ -87,11 +87,20 @@ public class VanityBlocks {
 	public void load(FMLInitializationEvent event) {
      	proxy.registerRenderInformation();
 		proxy.addNames();
+		/* ########### Storage Block Registration ######### */
 		StorageBlocksRegistration.blockregistration();
 		StorageBlocksRegistration.addVanillaRecipes();
+		/* ####### Furnace melting Registration ### */
 		FurnaceMelting.addFurnaceMelts();
+		/* Vanity Block Registrations */
 		VanityBlocksRegistration.vanityregistration();
+		VanityBlocksRegistration.addVanityRecipes();
+		/* ######## Tile Entity Registration ###### */
 		TEBlocksRegistration.teregistration();
+		TEBlocksRegistration.addTeRecipes();
+		
+		
+		/* ######################## World Gen Registration ###### */
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));
 		GameRegistry.registerWorldGenerator(new UnderWaterRuinHandler());
 		GameRegistry.registerFuelHandler(new VanityvanFuelHandler());

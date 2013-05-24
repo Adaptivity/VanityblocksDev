@@ -1,6 +1,6 @@
 1.6
-V4.0: Condensed down three modules to single mod. Moved some files around. Changed some metadatas. Removed duplicate blocks- coal, wheat, coal coke, osmium(main mods added them). Added the bouncing effect to entities on slime blocks(mobs/players/blocks/items). Added Liquid destroying capabilities to Melting Core.
-Todo: Added steps and slabs of the marble blocks. 
+V4.0: Condensed down three modules to single mod. Moved some files around. Changed some metadatas. Removed duplicate blocks- coal, wheat, coal coke, osmium(main mods added them). Added the bouncing effect to entities on slime blocks(mobs/players/blocks/items). Added Liquid destroying capabilities to Melting Core. Added slabs for the marble types(what a pain).
+Todo: Added steps of the marble blocks. 
 Add a mushroom biome underground in mushroom biome similiar to terraria
 well, not te has storage blocks, bye electrum, invar, tin, copper, lead, silver, nickle, platinum
 add config for dungeon loot raritys

@@ -359,7 +359,7 @@ public static void addForestryRecipes() {
 		}
 		}
 		if (Storageprops.enablepeat) {
-		OreDictionary.registerOre("brickPeat", new ItemStack(Item.arrow));	
+//		OreDictionary.registerOre("brickPeat", new ItemStack(Item.arrow));	
 	    if (!OreDictionary.getOres("brickPeat").isEmpty()) {		
 	    GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock,1,3), "xxx", "xxx", "xxx", 'x', "brickPeat"));	
 	    ItemStack brickPeat;

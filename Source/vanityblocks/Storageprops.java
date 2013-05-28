@@ -13,14 +13,24 @@ public class Storageprops {
         Configuration config = new Configuration(new File(DefaultProps.FILE_CONFIG));
 
 		config.load();
-		String category = "Block id's";		
-		storageblockconfig = config.getBlock(category,"Vannila Storage Blocks",3050).getInt(3050);
-		storageblockmodconfig = config.getBlock(category,"Modded Storage Blocks",3051).getInt(3051);
-		forestryblockconfig = config.getBlock(category,"Forestry Storage Blocks",3053).getInt(3053);
-		vanitydesignconfig = config.getBlock(category,"Vanity design blocks",3055).getInt(3055);
-		vanitydesignworldconfig = config.getBlock(category,"Vanity Blocks World Generation blocks",3058).getInt(3058);
-		vanityentityconfig = config.getBlock(category, "Vanity Blocks Tile Entity(such as melting core)",3060).getInt(3058);
-		vanitydesignworldslabconfig = config.getBlock(category, "Vanity Blocks World Gen slabs", 3061).getInt(3061);
+		String blocks = "Block id's";		
+		storageblockconfig = config.getBlock(blocks,"Vannila Storage Blocks",3050).getInt(3050);
+		storageblockmodconfig = config.getBlock(blocks,"Modded Storage Blocks",3051).getInt(3051);
+		forestryblockconfig = config.getBlock(blocks,"Forestry Storage Blocks",3053).getInt(3053);
+		vanitydesignconfig = config.getBlock(blocks,"Vanity design blocks",3055).getInt(3055);
+		vanitydesignworldconfig = config.getBlock(blocks,"Vanity Blocks World Generation blocks",3058).getInt(3058);
+		vanityentityconfig = config.getBlock(blocks, "Vanity Blocks Tile Entity(such as melting core)",3060).getInt(3058);
+		vanitydesignworldslabconfig = config.getBlock(blocks, "Vanity Blocks World Gen slabs", 3061).getInt(3061);
+		
+		String items = "Item id's";
+		//config.getItem("Patterns and Misc", "Tinker's Manual", 14018).getInt(14018); use a second "" to add it to a sub category
+		enablerupees = config.get(items, "Enabled the Rupees?", true).getBoolean(true);
+        greenrupee1 = config.getItem(items, "Green Rupee - 1 Rupees", 19000).getInt(19000);
+        bluerupee5 = config.getItem(items, "Blue Rupee - 5 Rupees", 19001).getInt(19001);
+        redrupee20 = config.getItem(items, "Red Rupee - 20 Rupees", 19002).getInt(19002);
+        biggreenrupee50 = config.getItem(items, "Big Green Rupee - 50 Rupees", 19003).getInt(19003);
+        bigbluerupee100 = config.getItem(items, "Big Blue Rupee - 100 Rupees", 19004).getInt(19004);
+        bigredrupee200 = config.getItem(items, "Big Red Rupee - 200 Rupees", 19005).getInt(19005);
 
 		String category1 = "Blocks Enable or disable";
 //		storageblocking = config.get(category1,"Storage blocks enabled?", true).getBoolean(true);
@@ -92,7 +102,7 @@ public class Storageprops {
 		
 		String category7 = "World Generation - Underwater Ruins";
 		generateruin = config.get(category7,"Allow Underwater Ruins to generate?", true).getBoolean(true);
-		ruinchance = config.get(category7, "One in how many chance of the ruins to generate. Such as 20 will make it a 1 in 20, play in ssp to find a good value(i suggest 75+)",75).getInt();
+		ruinchance = config.get(category7, "One in how many chance of the ruins to generate. Such as 20 will make it a 1 in 20, play in ssp to find a good value(i suggest 150+)",150).getInt();
 		
 		String category8 = "World Generation - Slabs/stairs";
 		marbleslabs = config.get(category8,"Allowed to make Marble slabs?", true).getBoolean(true);
@@ -106,7 +116,7 @@ public class Storageprops {
 
 		config.save();
 	}
-
+//#### Block id ints and booleans###
 	public static int storageblockconfig;
 	public static int storageblockmodconfig;
 	public static int forestryblockconfig;
@@ -115,11 +125,9 @@ public class Storageprops {
 	public static int vanitydesignworldconfig;
 	public static int vanitydesignworldslabconfig;
 	public static boolean enablesugarcane;
-//	public static boolean enablecoal;
 	public static boolean enablecharcoal;
 	public static boolean enableenderpearl;
 	public static boolean enableslime;
-//	public static boolean enablewheatbale;
 	public static boolean enablesugar;
 	public static boolean enablecocoa;
 	public static boolean enableblaze;
@@ -136,7 +144,6 @@ public class Storageprops {
 	public static boolean enableinvar;
 	public static boolean enablebrass;
 	public static boolean enablerubber;
-//	public static boolean enableosmium;
 	public static boolean enableapatite;
 	public static boolean enablehoneydrop;
 	public static boolean enablehoneydew;
@@ -145,18 +152,30 @@ public class Storageprops {
 	public static boolean gregtechcompat;
 	public static boolean enablemeltingcore;
 	public static boolean enablelavalamp;
+// #### Recipe booleans
+	public static boolean magmacreamtoslime;
 	public static boolean dragoneggrecipe;
 	public static boolean arrowtofeather;
 	public static boolean fleshtoleather;
 	public static boolean quartzblocktoquartz;
 	public static boolean greendye;
 	public static boolean wooltostring;
-	public static boolean magmacreamtoslime;
 	public static boolean enablecoalcoke;
 	public static boolean storageblocking;
 	public static boolean dungeonlootenablevannila;
 	public static boolean dungeonlootenablemod;
 	public static boolean furnacemelts;
+	
+// #####  Rupee id ints and booleans ###
+	public static boolean enablerupees;
+	public static int greenrupee1;
+	public static int bluerupee5;
+	public static int redrupee20;
+	public static int biggreenrupee50;
+	public static int bigbluerupee100;
+	public static int bigredrupee200;	
+
+//#### World gen ints and booleans	
 	public static boolean generatemarble;
 	public static int marbleheight;
 	public static int marblerange;

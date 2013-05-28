@@ -3,6 +3,7 @@ package vanityblocks;
 import vanityblocks.FuelHandler.VanityForestryFuelHandler;
 import vanityblocks.FuelHandler.VanitymodFuelHandler;
 import vanityblocks.FuelHandler.VanityvanFuelHandler;
+import vanityblocks.Registrations.ItemRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
 import vanityblocks.Registrations.TEBlocksRegistration;
 import vanityblocks.Registrations.VanityBlocksRegistration;
@@ -20,6 +21,7 @@ import net.minecraftforge.liquids.LiquidDictionary;
 import net.minecraftforge.liquids.LiquidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import cpw.mods.fml.common.FMLLog;
 //import railcraft.common.api.crafting.RailcraftCraftingManager;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -98,6 +100,8 @@ public class VanityBlocks {
 		/* ######## Tile Entity Registration ###### */
 		TEBlocksRegistration.teregistration();
 		TEBlocksRegistration.addTeRecipes();
+		/* Item Registration */
+		ItemRegistration.itemregistration();
 		
 		
 		/* ######################## World Gen Registration ###### */
@@ -125,5 +129,6 @@ public class VanityBlocks {
 //		Dungeonlootspawning.chestHooks();
 		GameRegistry.registerFuelHandler(new VanityForestryFuelHandler());
 //		GameRegistry.registerFuelHandler(new VanitymodFuelHandler());
+		FMLLog.info("Vanity Blocks seems to have loaded well.!");
 	}
 }

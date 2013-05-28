@@ -18,9 +18,22 @@ public class greenrupee extends Item
         this.setHasSubtypes(true);
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
     }
-
-    public void registerIcons(IconRegister iconRegister)
-    {
-             itemIcon = iconRegister.registerIcon("vanityblocks:greenrupee1");
-    }
+    @SideOnly(Side.CLIENT)
+    private Icon[] iconBuffer;
+   @Override
+   public void registerIcons(IconRegister par1IconRegister)
+	    {
+	        iconBuffer = new Icon[1]; 
+	        
+			iconBuffer[0] = par1IconRegister.registerIcon("vanityblocks:greenrupee1"); 
+	    }
+	@Override
+	public Icon getIcon () {
+			return iconBuffer[0];
+		}
+//		return itemIcon;
 }
+ //   public void registerIcons(IconRegister iconRegister)
+  //  {
+ //            itemIcon = iconRegister.registerIcon("vanityblocks:greenrupee1");
+ //   }

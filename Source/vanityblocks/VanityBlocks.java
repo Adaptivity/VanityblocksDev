@@ -101,8 +101,10 @@ public class VanityBlocks {
 		TEBlocksRegistration.teregistration();
 		TEBlocksRegistration.addTeRecipes();
 		/* Item Registration */
+		if (Storageprops.enablerupees) {
 		ItemRegistration.itemregistration();
-		
+		ItemRegistration.addrupeerecipes();
+		}
 		
 		/* ######################## World Gen Registration ###### */
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));

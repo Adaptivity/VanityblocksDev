@@ -10,11 +10,11 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class greenrupee extends Item
+public class bluerupee extends Item
 {
 	public Icon[] icons;
-	public String[] textureNames = new String[] { "greenrupee1" };
-    public greenrupee(int par1)
+	public String[] textureNames = new String[] { "bluerupee5" };
+    public bluerupee(int par1)
     {
         super(par1);
         this.setHasSubtypes(true);
@@ -35,7 +35,7 @@ public class greenrupee extends Item
 
         for (int i = 0; i < this.icons.length; ++i)
         {
-            this.icons[i] = iconRegister.registerIcon("vanityblocks:greenrupee1");
+            this.icons[i] = iconRegister.registerIcon("vanityblocks:bluerupee5");
         }
     }
 }

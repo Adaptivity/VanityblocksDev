@@ -56,7 +56,7 @@ public class Storageprops {
 		enableclaybrick = config.get(category1, "Enable clay brick crafting", true).getBoolean(true);
 		enablemeltingcore = config.get(category1, "Enable Melting Core crafting?", true).getBoolean(true);
 		enablelavalamp = config.get(category1,"Enable Lavalamp crafting?", true).getBoolean(true);
-
+		enablewhitesoulsand = config.get(category1, "Enable White Soul sand?", true).getBoolean(true);
 		String category2 = "Specific Blocks mod compatibility";
 //		enablecoalcoke = config.get(category2,"Enable CoalCoke Block from Railcraft?", true).getBoolean(true);
 //		enableosmium = config.get(category2,"Enable Osmium Block from Universal Electricity?",true).getBoolean(true);
@@ -152,6 +152,7 @@ public class Storageprops {
 	public static boolean gregtechcompat;
 	public static boolean enablemeltingcore;
 	public static boolean enablelavalamp;
+	public static boolean enablewhitesoulsand;
 // #### Recipe booleans
 	public static boolean magmacreamtoslime;
 	public static boolean dragoneggrecipe;

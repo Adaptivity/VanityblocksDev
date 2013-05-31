@@ -3,7 +3,7 @@ package vanityblocks;
 import vanityblocks.FuelHandler.VanityForestryFuelHandler;
 import vanityblocks.FuelHandler.VanitymodFuelHandler;
 import vanityblocks.FuelHandler.VanityvanFuelHandler;
-import vanityblocks.Registrations.ItemRegistration;
+import vanityblocks.Registrations.RupeeRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
 import vanityblocks.Registrations.TEBlocksRegistration;
 import vanityblocks.Registrations.VanityBlocksRegistration;
@@ -102,8 +102,8 @@ public class VanityBlocks {
 		TEBlocksRegistration.addTeRecipes();
 		/* Item Registration */
 		if (Storageprops.enablerupees) {
-		ItemRegistration.itemregistration();
-		ItemRegistration.addrupeerecipes();
+		RupeeRegistration.rupeeregistration();
+		RupeeRegistration.addrupeerecipes();
 		}
 		
 		/* ######################## World Gen Registration ###### */

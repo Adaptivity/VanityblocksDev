@@ -63,11 +63,13 @@ public class VanityBlocksRegistration {
 	LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 5), "Chiseled Ashford Black Marble Slab");	
 	}
 	public static void addVanityRecipes() {
+		//##### This is Vanity Block Recipes
 		ItemStack glasspane = new ItemStack(Block.thinGlass);
 		ItemStack lavabukkit = new ItemStack(Item.bucketLava);
         if (Storageprops.enablelavalamp) {
     	GameRegistry.addRecipe(new ItemStack(VanityDesignblock, 4, 0), "zxz", "xyx", "zxz", 'x', glasspane, 'y', lavabukkit , 'z', Block.stone);
         }
+        //##### This is world gen recipes for marble/black marble
         if (Storageprops.generatemarble) {
         GameRegistry.addRecipe(new ItemStack(VanityDesignworldblock, 4, 1), "xx", "xx",  'x', new ItemStack(VanityDesignworldblock,0,0));
         GameRegistry.addShapelessRecipe(new ItemStack(VanityDesignworldblock, 1, 0), new ItemStack(VanityDesignworldblock,0,1));
@@ -88,6 +90,7 @@ public class VanityBlocksRegistration {
         GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 4), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,4));
         GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 5), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,5));
         }
+        /* This is Random Recipes */
     	if (Storageprops.arrowtofeather) {
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.feather,1), new ItemStack(Item.arrow,1));
     	}

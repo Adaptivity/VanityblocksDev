@@ -3,6 +3,7 @@ package vanityblocks;
 import vanityblocks.FuelHandler.VanityForestryFuelHandler;
 import vanityblocks.FuelHandler.VanitymodFuelHandler;
 import vanityblocks.FuelHandler.VanityvanFuelHandler;
+import vanityblocks.Registrations.GeneralItemRegistration;
 import vanityblocks.Registrations.RupeeRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
 import vanityblocks.Registrations.TEBlocksRegistration;
@@ -100,7 +101,10 @@ public class VanityBlocks {
 		/* ######## Tile Entity Registration ###### */
 		TEBlocksRegistration.teregistration();
 		TEBlocksRegistration.addTeRecipes();
-		/* Item Registration */
+		/* General Item Registrations */
+		GeneralItemRegistration.generalitemregistration();
+		GeneralItemRegistration.additemrecipes();
+		/* Rupee Registration */
 		if (Storageprops.enablerupees) {
 		RupeeRegistration.rupeeregistration();
 		RupeeRegistration.addrupeerecipes();

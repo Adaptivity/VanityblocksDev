@@ -130,7 +130,7 @@ public static void addVanillaRecipes()
 		}
         if (Storageprops.enableenderpearl) {
         if (Storageprops.dragoneggrecipe) {
-    	GameRegistry.addRecipe(new ItemStack(Block.dragonEgg,1), new Object [] {"xxx", "xyx", "xxx", 'x', new ItemStack(StorageBlock,1,2), 'y', Item.egg});
+    	GameRegistry.addRecipe(new ItemStack(Block.dragonEgg,1), new Object [] {"xxx", "xyx", "xxx", 'x', new ItemStack(StorageBlock,1,1), 'y', Item.egg});
         }
         }
         if (Storageprops.enableblaze) {

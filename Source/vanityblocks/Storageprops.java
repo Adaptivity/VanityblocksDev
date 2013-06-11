@@ -31,7 +31,13 @@ public class Storageprops {
         biggreenrupee50 = config.getItem(items, "Big Green Rupee - 50 Rupees", 19003).getInt(19003);
         bigbluerupee100 = config.getItem(items, "Big Blue Rupee - 100 Rupees", 19004).getInt(19004);
         bigredrupee200 = config.getItem(items, "Big Red Rupee - 200 Rupees", 19005).getInt(19005);
-
+        
+        String generalitems = "General Item config";
+        enableflintitem = config.get(generalitems, "Enable Flint Item?", true).getBoolean(true);
+        flintitem = config.getItem(generalitems, "Flint Storage Item Id", 19010).getInt(19010);
+        enablecoalstorageitem = config.get(generalitems, "Enable the coal storage item?", true).getBoolean(true);
+        coalstorageitem = config.getItem(generalitems, "Coal Storage Item Id", 19009).getInt(19009);
+        
 		String category1 = "Blocks Enable or disable";
 //		storageblocking = config.get(category1,"Storage blocks enabled?", true).getBoolean(true);
 //		enablecoal = config.get(category1,"Enable Coal Block crafting?", true).getBoolean(true);
@@ -166,6 +172,11 @@ public class Storageprops {
 	public static boolean dungeonlootenablevannila;
 	public static boolean dungeonlootenablemod;
 	public static boolean furnacemelts;
+// #### General Item ints and booleans ####
+	public static boolean enableflintitem;
+	public static boolean enablecoalstorageitem;
+	public static int flintitem;
+	public static int coalstorageitem;
 	
 // #####  Rupee id ints and booleans ###
 	public static boolean enablerupees;

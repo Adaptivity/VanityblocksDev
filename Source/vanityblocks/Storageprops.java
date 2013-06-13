@@ -85,6 +85,7 @@ public class Storageprops {
 		greendye = config.get(category3, "Make green dye from blue and yellow dye?", true).getBoolean(true);
 		wooltostring = config.get(category3, "Allow wool to decraft to string?", true).getBoolean(true);
 		magmacreamtoslime = config.get(category3, "Allow Magma cream to slimeball recipe?", true).getBoolean(true);
+		saddletoleather = config.get(category3, "Allow saddles to break down to leather?", true).getBoolean(true);
 		
 		String category4 = "Random things";
 		dungeonlootenablevannila= config.get(category4,"Allow vannila storage blocks to spawn in dungeon loot?", true).getBoolean(true);
@@ -172,6 +173,7 @@ public class Storageprops {
 	public static boolean dungeonlootenablevannila;
 	public static boolean dungeonlootenablemod;
 	public static boolean furnacemelts;
+	public static boolean saddletoleather;
 // #### General Item ints and booleans ####
 	public static boolean enableflintitem;
 	public static boolean enablecoalstorageitem;

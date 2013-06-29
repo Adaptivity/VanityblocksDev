@@ -15,7 +15,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class MarbleWall extends BlockWall
 {
-    public MarbleWall(int vanityDesignworldWallId, int par1, Block par2Block)
+    public MarbleWall (int par1, Block par2Block)
     {
         super(par1, par2Block);
     }    

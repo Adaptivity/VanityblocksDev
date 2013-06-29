@@ -34,6 +34,10 @@ public class StorageBlock extends Block {
         {
             return true;
         }
+        if (metadata == 0 && side == UP)
+        {
+            return true;
+        }
         return false;
     }
 	public int getLightValue (IBlockAccess world, int x, int y, int z)

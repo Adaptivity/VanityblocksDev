@@ -60,7 +60,6 @@ public class VanityBlocksRegistration {
 	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 4), "Ashford Black Marble Brick");
 	LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 5), "Chiseled Ashford Black Marble");
 	
-	
 	/* ######################################### Block Registration of Slabs ############ */
 	GameRegistry.registerBlock(VanityDesignworldslabblock, ItemBlockMarbleSlab.class, "Vanity Blocks World Block slabs");
 	LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 0), "Marble Slab");

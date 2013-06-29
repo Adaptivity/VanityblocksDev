@@ -14,14 +14,16 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class MarbleWall extends BlockWall
-{
+{	
+	@SideOnly(Side.CLIENT)
+	private Icon icon[];
     public MarbleWall (int par1, Block par2Block)
     {
         super(par1, par2Block);
+        this.setHardness(par2Block.blockHardness);
+        this.setResistance(par2Block.blockResistance / 3.0F);
+        this.setStepSound(par2Block.stepSound);
     }    
-
-	@SideOnly(Side.CLIENT)
-    private Icon icon[];
     
 	@Override
     public Icon getIcon(int side, int meta)

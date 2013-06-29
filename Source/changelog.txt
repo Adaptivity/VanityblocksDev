@@ -7,6 +7,7 @@ add config for dungeon loot raritys
 Add compatibility for exbl/bop?
 Add a Mossy tree/mossy planks?
 Add another structure like a fall out shelter?
+add fences to marble/ashford
 1.5.1
 V:3.2.4: Added config option to change if blocks are ore dictioned(only relevant if gregtech is added)
 V:3.2.3: Added Furnace recipes to get iron/gold back from doors, armor etc(must not be damaged). Added magma cream to slime ball recipe. Added rarity config option for the underwater ruins(it works like a 1 in? chance, such as setting it to 100, its a 1 in 100 chance per chunk). Added the coal coke and peat blocks to Fuel handlers correctly. Updated to 1.5.2, also used srg_names, so it may work on new versions(not a garrentee). Fixed a structure generation problem with ruins that went 1 block down incorrectly. Changed the dungeon loot spawns to only spawn what is enabled(example, if enderpearl blocks are disabled, they wont spawn in dungeons, etc).

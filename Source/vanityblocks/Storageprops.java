@@ -21,6 +21,7 @@ public class Storageprops {
 		vanitydesignworldconfig = config.getBlock(blocks,"Vanity Blocks World Generation blocks",3058).getInt(3058);
 		vanityentityconfig = config.getBlock(blocks, "Vanity Blocks Tile Entity(such as melting core)",3060).getInt(3058);
 		vanitydesignworldslabconfig = config.getBlock(blocks, "Vanity Blocks World Gen slabs", 3061).getInt(3061);
+		vanitydesignworldWallconfig = config.getBlock(blocks, "Vanity Blocks World Gen walls", 3062).getInt(3062);
 		
 		String items = "Item id's";
 		//config.getItem("Patterns and Misc", "Tinker's Manual", 14018).getInt(14018); use a second "" to add it to a sub category
@@ -111,8 +112,9 @@ public class Storageprops {
 		generateruin = config.get(category7,"Allow Underwater Ruins to generate?", true).getBoolean(true);
 		ruinchance = config.get(category7, "One in how many chance of the ruins to generate. Such as 20 will make it a 1 in 20, play in ssp to find a good value(i suggest 150+)",150).getInt();
 		
-		String category8 = "World Generation - Slabs/stairs";
+		String category8 = "World Generation - Slabs/stairs/Walls";
 		marbleslabs = config.get(category8,"Allowed to make Marble slabs?", true).getBoolean(true);
+		marblewalls = config.get(category8, "Allowed to make Marble Walls?", true).getBoolean(true);
 		
 		//		String category7 = "Texture swapping";
 //		Property blackmarbletextures = config.get(category6,"Do you want to use my textures for black marble or alt textures? type true for mine, false for alt",true);
@@ -131,6 +133,7 @@ public class Storageprops {
 	public static int vanitydesignconfig;
 	public static int vanitydesignworldconfig;
 	public static int vanitydesignworldslabconfig;
+	public static int vanitydesignworldWallconfig;
 	public static boolean enablesugarcane;
 	public static boolean enablecharcoal;
 	public static boolean enableenderpearl;
@@ -203,4 +206,5 @@ public class Storageprops {
 	public static boolean generateruin;
 	public static int ruinchance;
 	public static boolean marbleslabs;
+	public static boolean marblewalls;
 }

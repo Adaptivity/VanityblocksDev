@@ -39,7 +39,7 @@ public class VanityBlocksRegistration {
 	
 	VanityDesignworldWallId = Storageprops.vanitydesignworldWallconfig;
 	VanityDesignworldWallblock = new MarbleWall(VanityDesignworldWallId);
-	
+
 //	String[] vanitydesignBlockNames = {
 //			"Lava Lamp"
 //	};		

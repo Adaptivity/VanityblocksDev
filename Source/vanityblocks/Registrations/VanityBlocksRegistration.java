@@ -38,7 +38,7 @@ public class VanityBlocksRegistration {
 	VanityDesignworldslabblock = new Marbleslab(VanityDesignworldslabId);	
 	
 	VanityDesignworldWallId = Storageprops.vanitydesignworldWallconfig;
-	VanityDesignworldWallblock = new MarbleWall(VanityDesignworldWallId);
+	VanityDesignworldWallblock = new MarbleWall(VanityDesignworldWallId, VanityDesignworldblock);
 
 //	String[] vanitydesignBlockNames = {
 //			"Lava Lamp"
@@ -107,7 +107,7 @@ public class VanityBlocksRegistration {
         GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 5), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,5));
         }
         if (Storageprops.generatemarble && Storageprops.generateblackmarble && Storageprops.marblewalls)  {
-        
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 1, 0), "xxx",  'x', new ItemStack(Item.feather));
         }
         /* This is Random Recipes */
     	if (Storageprops.arrowtofeather) {

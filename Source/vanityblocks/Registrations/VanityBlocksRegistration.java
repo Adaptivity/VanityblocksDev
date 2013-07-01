@@ -99,15 +99,20 @@ public class VanityBlocksRegistration {
         
         /* Marble Slabs */
         if (Storageprops.generatemarble && Storageprops.generateblackmarble && Storageprops.marbleslabs)  {
-        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 0), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,0));
-        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 1), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,1));
-        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 2), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,2));
-        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 3), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,3));
-        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 4), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,4));
-        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 5), "xxx",  'x', new ItemStack(VanityDesignworldblock,0,5));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 0), "xxx", 'x', new ItemStack(VanityDesignworldblock,0,0));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 1), "xxx", 'x', new ItemStack(VanityDesignworldblock,0,1));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 2), "xxx", 'x', new ItemStack(VanityDesignworldblock,0,2));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 3), "xxx", 'x', new ItemStack(VanityDesignworldblock,0,3));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 4), "xxx", 'x', new ItemStack(VanityDesignworldblock,0,4));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldslabblock, 6, 5), "xxx", 'x', new ItemStack(VanityDesignworldblock,0,5));
         }
         if (Storageprops.generatemarble && Storageprops.generateblackmarble && Storageprops.marblewalls)  {
-        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 1, 0), "xxx",  'x', new ItemStack(Item.feather));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 6, 0), "xxx", "xxx", 'x', new ItemStack(VanityDesignworldblock,0,0));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 6, 1), "xxx", "xxx", 'x', new ItemStack(VanityDesignworldblock,0,1));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 6, 2), "xxx", "xxx", 'x', new ItemStack(VanityDesignworldblock,0,2));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 6, 3), "xxx", "xxx", 'x', new ItemStack(VanityDesignworldblock,0,3));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 6, 4), "xxx", "xxx", 'x', new ItemStack(VanityDesignworldblock,0,4));
+        GameRegistry.addRecipe(new ItemStack(VanityDesignworldWallblock, 6, 5), "xxx", "xxx", 'x', new ItemStack(VanityDesignworldblock,0,5));
         }
         /* This is Random Recipes */
     	if (Storageprops.arrowtofeather) {

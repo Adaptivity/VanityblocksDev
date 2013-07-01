@@ -82,12 +82,14 @@ public class MarbleWall extends BlockWall
 		}
 		return blockIcon;
 	} 
-//    @Override
-//   public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-//  {
-//        par3List.add(new ItemStack(par1, 1, 0));
-//        par3List.add(new ItemStack(par1, 1, 1));
-//        par3List.add(new ItemStack(par1, 1, 2));
-//       par3List.add(new ItemStack(par1, 1, 3));
-//    }
+    @Override
+   public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
+  {
+        par3List.add(new ItemStack(par1, 1, 0));
+        par3List.add(new ItemStack(par1, 1, 1));
+        par3List.add(new ItemStack(par1, 1, 2));
+        par3List.add(new ItemStack(par1, 1, 3));
+        par3List.add(new ItemStack(par1, 1, 4));
+        par3List.add(new ItemStack(par1, 1, 5));
+    }
 }

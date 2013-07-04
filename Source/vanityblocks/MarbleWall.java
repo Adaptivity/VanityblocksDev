@@ -15,7 +15,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class MarbleWall extends BlockWall
 {	
-	@SideOnly(Side.CLIENT)
     public MarbleWall (int par1, Block par2Block)
     {
         super(par1, par2Block);
@@ -82,6 +81,7 @@ public class MarbleWall extends BlockWall
 		}
 		return blockIcon;
 	} 
+	@SideOnly(Side.CLIENT)
     @Override
    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
   {

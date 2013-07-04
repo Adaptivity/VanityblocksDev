@@ -8,6 +8,7 @@ import vanityblocks.ForestryBlock;
 import vanityblocks.StorageBlock;
 import vanityblocks.StorageBlockMod;
 import vanityblocks.Storageprops;
+import vanityblocks.Items.arrowstorageitem;
 import vanityblocks.Items.bigbluerupee;
 import vanityblocks.Items.biggreenrupee;
 import vanityblocks.Items.bigredrupee;
@@ -22,7 +23,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class GeneralItemRegistration {
 	public static Item flintitem;
 	public static Item coalstorageitem;
-
+    public static Item arrowstorageitem;
 	
 	public static void generalitemregistration() {
 		if (Storageprops.enableflintitem) {
@@ -30,22 +31,29 @@ public class GeneralItemRegistration {
 			LanguageRegistry.addName(flintitem, "Flint Storage Item");
 		}
 		if (Storageprops.enablecoalstorageitem) {
-			coalstorageitem = new coalstorageitem(Storageprops.coalstorageitem -256).setUnlocalizedName("CoalStorageItem");
+			coalstorageitem = new coalstorageitem(Storageprops.coalstorageitem - 256).setUnlocalizedName("CoalStorageItem");
 			LanguageRegistry.addName(coalstorageitem, "Coal Storage Item( 8pieces )");			
+		}
+		if (Storageprops.enablearrowstorageitem) {
+			arrowstorageitem = new arrowstorageitem(Storageprops.arrowstorageitem - 256).setUnlocalizedName("ArrowStorageItem");
+			LanguageRegistry.addName(arrowstorageitem, "Arrow Storage Item");
 		}
 }
 	public static void additemrecipes() {
 	
 	if (Storageprops.enableflintitem) {		
-	// ############# to make the Blue Rupees
+	// ############# to make the flint item
 	GameRegistry.addRecipe(new ItemStack(flintitem,1), "xxx", "xxx", "xxx", 'x', new ItemStack(Item.flint,1));
 	GameRegistry.addShapelessRecipe(new ItemStack(Item.flint,9), new ItemStack(flintitem));
 //	GameRegistry.addShapelessRecipe(new ItemStack(bluerupee5), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1));
 	}
 	if (Storageprops.enablecoalstorageitem) {
-		GameRegistry.addRecipe(new ItemStack(coalstorageitem,1), "xxx", "x x", "xxx", 'x', new ItemStack(Item.coal,1));
-		GameRegistry.addShapelessRecipe(new ItemStack(Item.coal,8), new ItemStack(coalstorageitem));
-	
+	GameRegistry.addRecipe(new ItemStack(coalstorageitem,1), "xxx", "x x", "xxx", 'x', new ItemStack(Item.coal,1));
+	GameRegistry.addShapelessRecipe(new ItemStack(Item.coal,8), new ItemStack(coalstorageitem));
+	}
+	if (Storageprops.enablearrowstorageitem) {
+	GameRegistry.addRecipe(new ItemStack(arrowstorageitem,1), "xxx", "xxx", "xxx", 'x', new ItemStack(Item.arrow,1));
+	GameRegistry.addShapelessRecipe(new ItemStack(Item.arrow,9), new ItemStack(arrowstorageitem));	
 	}
 }
 }

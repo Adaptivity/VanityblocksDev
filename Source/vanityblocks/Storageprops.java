@@ -34,10 +34,13 @@ public class Storageprops {
         bigredrupee200 = config.getItem(items, "Big Red Rupee - 200 Rupees", 19005).getInt(19005);
         
         String generalitems = "General Item config";
-        enableflintitem = config.get(generalitems, "Enable Flint Item?", true).getBoolean(true);
-        flintitem = config.getItem(generalitems, "Flint Storage Item Id", 19010).getInt(19010);
         enablecoalstorageitem = config.get(generalitems, "Enable the coal storage item?", true).getBoolean(true);
         coalstorageitem = config.getItem(generalitems, "Coal Storage Item Id", 19009).getInt(19009);
+        enableflintitem = config.get(generalitems, "Enable Flint Item?", true).getBoolean(true);
+        flintitem = config.getItem(generalitems, "Flint Storage Item Id", 19010).getInt(19010);
+        enablearrowstorageitem = config.get(generalitems, "Enable the arrow storage item?", true).getBoolean(true);
+        arrowstorageitem = config.get(generalitems, "Arrow storage item Id?", 19011).getInt(19011);
+
         
 		String category1 = "Blocks Enable or disable";
 //		storageblocking = config.get(category1,"Storage blocks enabled?", true).getBoolean(true);
@@ -180,8 +183,10 @@ public class Storageprops {
 // #### General Item ints and booleans ####
 	public static boolean enableflintitem;
 	public static boolean enablecoalstorageitem;
+	public static boolean enablearrowstorageitem;
 	public static int flintitem;
 	public static int coalstorageitem;
+	public static int arrowstorageitem;
 	
 // #####  Rupee id ints and booleans ###
 	public static boolean enablerupees;

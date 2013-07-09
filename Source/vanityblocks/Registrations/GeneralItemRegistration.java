@@ -12,11 +12,13 @@ import vanityblocks.Items.arrowstorageitem;
 import vanityblocks.Items.bigbluerupee;
 import vanityblocks.Items.biggreenrupee;
 import vanityblocks.Items.bigredrupee;
+import vanityblocks.Items.blazestorageitem;
 import vanityblocks.Items.bluerupee;
 import vanityblocks.Items.coalstorageitem;
 import vanityblocks.Items.flintitem;
 import vanityblocks.Items.greenrupee;
 import vanityblocks.Items.redrupee;
+import vanityblocks.Items.blazestorageitem;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -24,6 +26,7 @@ public class GeneralItemRegistration {
 	public static Item flintitem;
 	public static Item coalstorageitem;
     public static Item arrowstorageitem;
+    public static Item blazestorageitem;
 	
 	public static void generalitemregistration() {
 		if (Storageprops.enableflintitem) {
@@ -36,7 +39,11 @@ public class GeneralItemRegistration {
 		}
 		if (Storageprops.enablearrowstorageitem) {
 			arrowstorageitem = new arrowstorageitem(Storageprops.arrowstorageitem - 256).setUnlocalizedName("ArrowStorageItem");
-			LanguageRegistry.addName(arrowstorageitem, "Arrow Storage Item");
+			LanguageRegistry.addName(arrowstorageitem, "Arrow Bundle");
+		}
+		if (Storageprops.enableblazestorageitem) {
+			blazestorageitem = new blazestorageitem(Storageprops.blazestorageitem - 256).setUnlocalizedName("BlazeStorageItem");
+			LanguageRegistry.addName(blazestorageitem, "Blaze Rod Bundle");
 		}
 }
 	public static void additemrecipes() {
@@ -54,6 +61,10 @@ public class GeneralItemRegistration {
 	if (Storageprops.enablearrowstorageitem) {
 	GameRegistry.addRecipe(new ItemStack(arrowstorageitem,1), "xxx", "xxx", "xxx", 'x', new ItemStack(Item.arrow,1));
 	GameRegistry.addShapelessRecipe(new ItemStack(Item.arrow,9), new ItemStack(arrowstorageitem));	
+	}
+	if (Storageprops.enableblazestorageitem) {
+    GameRegistry.addRecipe(new ItemStack(blazestorageitem,1), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.blazeRod)});
+    GameRegistry.addShapelessRecipe(new ItemStack(Item.blazeRod, 9), new ItemStack(blazestorageitem));	
 	}
 }
 }

@@ -38,21 +38,26 @@ public class Storageprops {
         coalstorageitem = config.getItem(generalitems, "Coal Storage Item Id", 19009).getInt(19009);
         enableflintitem = config.get(generalitems, "Enable Flint Item?", true).getBoolean(true);
         flintitem = config.getItem(generalitems, "Flint Storage Item Id", 19010).getInt(19010);
-        enablearrowstorageitem = config.get(generalitems, "Enable the arrow storage item?", true).getBoolean(true);
-        arrowstorageitem = config.get(generalitems, "Arrow storage item Id?", 19011).getInt(19011);
+        enablearrowstorageitem = config.get(generalitems, "Enable the arrow bundle item?", true).getBoolean(true);
+        arrowstorageitem = config.get(generalitems, "Arrow bundle item Id?", 19011).getInt(19011);
+    	enableblazestorageitem = config.get(generalitems, "Enable Blaze rod bundle?", true).getBoolean(true);
+    	blazestorageitem = config.get(generalitems, "Blaze Rod bundle", 19012).getInt(19012);
+    	
+    	String generalfooditems = "General Food Item Config";
+    	enableclaymugstuff = config.get(generalfooditems, "Enable the Mug stuff(like hot chocolate)", true).getBoolean(true);
+    	mugunfired = config.get(generalfooditems, "Mug Id", 19020).getInt(19020);
+
+
+
 
         
 		String category1 = "Blocks Enable or disable";
-//		storageblocking = config.get(category1,"Storage blocks enabled?", true).getBoolean(true);
-//		enablecoal = config.get(category1,"Enable Coal Block crafting?", true).getBoolean(true);
 		enablecharcoal = config.get(category1,"Enable CharCoal Block crafting?", true).getBoolean(true);
     	enableenderpearl = config.get(category1,"Enable Ender Parl Block crafting?", true).getBoolean(true);
     	enableslime = config.get(category1,"Enable Slime Block crafting?", true).getBoolean(true);
- //   	enablewheatbale = config.get(category1, "Enable Wheat Bale crafting?", true).getBoolean(true);
     	enablesugar = config.get(category1, "Enable Sugar Block crafting?", true).getBoolean(true);
     	enablesugarcane = config.get(category1, "Enable Sugar Cane Block crafting?", true).getBoolean(true);
     	enablecocoa = config.get(category1, "Enable Cocoa Block crafting?", true).getBoolean(true);
-    	enableblaze = config.get(category1, "Enable Blaze Block crafting?", true).getBoolean(true);
     	enableleather = config.get(category1, "Enable Leather Block crafting?", true).getBoolean(true);
     	enablebone = config.get(category1, "Enable Bone Block crafting?", true).getBoolean(true);
 		enabletin = config.get(category1,"Enable Tin Block crafting?", true).getBoolean(true);
@@ -68,8 +73,6 @@ public class Storageprops {
 		enablelavalamp = config.get(category1,"Enable Lavalamp crafting?", true).getBoolean(true);
 		enablewhitesoulsand = config.get(category1, "Enable White Soul sand?", true).getBoolean(true);
 		String category2 = "Specific Blocks mod compatibility";
-//		enablecoalcoke = config.get(category2,"Enable CoalCoke Block from Railcraft?", true).getBoolean(true);
-//		enableosmium = config.get(category2,"Enable Osmium Block from Universal Electricity?",true).getBoolean(true);
 		enablebrass = config.get(category2,"Enable Brass Block from various mods?", true).getBoolean(true);
 		enableapatite = config.get(category2,"Enable Apatite block from Forestry?", true).getBoolean(true);
 		enablehoneydrop = config.get(category2,"Enable Honeydrop Block from Forestry?", true).getBoolean(true);
@@ -143,7 +146,6 @@ public class Storageprops {
 	public static boolean enableslime;
 	public static boolean enablesugar;
 	public static boolean enablecocoa;
-	public static boolean enableblaze;
 	public static boolean enableleather;
 	public static boolean enablebone;
 	public static boolean enabletin;
@@ -182,11 +184,17 @@ public class Storageprops {
 	public static boolean saddletoleather;
 // #### General Item ints and booleans ####
 	public static boolean enableflintitem;
-	public static boolean enablecoalstorageitem;
-	public static boolean enablearrowstorageitem;
 	public static int flintitem;
+	public static boolean enablecoalstorageitem;
 	public static int coalstorageitem;
+	public static boolean enablearrowstorageitem;
 	public static int arrowstorageitem;
+	public static boolean enableblazestorageitem;
+	public static int blazestorageitem;
+	
+// ### General Food Item Ints and Booleans ###
+	public static boolean enableclaymugstuff;
+	public static int mugunfired;
 	
 // #####  Rupee id ints and booleans ###
 	public static boolean enablerupees;

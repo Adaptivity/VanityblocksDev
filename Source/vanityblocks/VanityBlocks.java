@@ -3,6 +3,7 @@ package vanityblocks;
 import vanityblocks.FuelHandler.VanityForestryFuelHandler;
 import vanityblocks.FuelHandler.VanitymodFuelHandler;
 import vanityblocks.FuelHandler.VanityvanFuelHandler;
+import vanityblocks.Registrations.GeneralFoodItemsRegistration;
 import vanityblocks.Registrations.GeneralItemRegistration;
 import vanityblocks.Registrations.RupeeRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
@@ -50,8 +51,7 @@ add mossy planks
 Hold f3 and hit h for item id's
 user suggestion
 make fish block, maybe smooth version of end stone-vanity,double stone slab crafting - vanity
-maybe arrow bundle, yay first item idea XD, liquid water thats colored -waiting on forge api for it
- humus and bog earth, not ore dictioned, would require api
+liquid water thats colored -waiting on forge api for it
 maybe- potatoe, carrot, seeds, clay block 9x clayballs
 Villager that trades modded items
 Vanity - Chiseled sandstone blocks, chairs? redstone lamps diff colored, curtains maybe?, inverted redstone lamps, colored sand/glass
@@ -59,6 +59,10 @@ spling wants enchant for bow that teleports the mob, and potion of swimming,  ..
 To add info to the bottom of blocks = https://github.com/mDiyo/Natura/blob/master/mods/natura/blocks/CloudItem.java
 ADD STONEHENGE!!!!!!!!!!
 !!!!!!!!
+
+
+
+Item.doorWood.setMaxStackSize(16); - way to change stacksize of vannila
  */
 
 
@@ -104,6 +108,9 @@ public class VanityBlocks {
 		/* General Item Registrations */
 		GeneralItemRegistration.generalitemregistration();
 		GeneralItemRegistration.additemrecipes();
+		/* General Foot Item Registrations */
+		GeneralFoodItemsRegistration.generalitemregistration();
+		GeneralFoodItemsRegistration.additemrecipes();
 		/* Rupee Registration */
 		if (Storageprops.enablerupees) {
 		RupeeRegistration.rupeeregistration();

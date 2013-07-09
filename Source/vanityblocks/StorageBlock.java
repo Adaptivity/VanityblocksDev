@@ -30,27 +30,27 @@ public class StorageBlock extends Block {
 	@Override
 	public boolean isFireSource(World world, int x, int y, int z, int metadata, ForgeDirection side)
     {
-        if (metadata == 6 && side == UP)
-        {
-            return true;
-        }
+//       if (metadata == 6 && side == UP)
+//        {
+//            return true;
+//        }
         if (metadata == 0 && side == UP)
         {
             return true;
         }
         return false;
     }
-	public int getLightValue (IBlockAccess world, int x, int y, int z)
-	{
-		int metadata = world.getBlockMetadata(x, y, z);
-		if (metadata == 6) {
-			return !isActive(world.getBlockMetadata(x, y, z)) ? 0 : 15;
-		}
-		return 0;
-	}
-	private boolean isActive(int blockMetadata) {
-		return true;
-	}
+//	public int getLightValue (IBlockAccess world, int x, int y, int z)
+//	{
+//		int metadata = world.getBlockMetadata(x, y, z);
+//		if (metadata == 6) {
+//			return !isActive(world.getBlockMetadata(x, y, z)) ? 0 : 15;
+//		}
+//		return 0;
+//	}
+//	private boolean isActive(int blockMetadata) {
+//		return true;
+//	}
 	@Override
 	public float getBlockHardness (World par1World, int par2, int par3, int par4)
 	{
@@ -62,10 +62,9 @@ public class StorageBlock extends Block {
 		if (metadata == 3) return .8f;
 		if (metadata == 4) return .8f;
 		if (metadata == 5) return .8f;
-		if (metadata == 6) return 1.8f;
+		if (metadata == 6) return .8f;
 		if (metadata == 7) return .8f;
 		if (metadata == 8) return .8f;
-		if (metadata == 9) return .8f;
 
 		return 2f;
 	}
@@ -93,19 +92,19 @@ public class StorageBlock extends Block {
    @Override
    public void registerIcons(IconRegister par1IconRegister)
 	    {
-	        iconBuffer = new Icon[12]; 
+	        iconBuffer = new Icon[9]; 
 	        
 			iconBuffer[0] = par1IconRegister.registerIcon("vanityblocks:charcoalblock"); 
 			iconBuffer[1] = par1IconRegister.registerIcon("vanityblocks:enderpearlblock"); 
 			iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:slimeblock"); 
 			iconBuffer[3] = par1IconRegister.registerIcon("vanityblocks:sugarblock"); 
 			iconBuffer[4] = par1IconRegister.registerIcon("vanityblocks:cocoablock"); 
-			iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:blazeblock"); 
-			iconBuffer[6] = par1IconRegister.registerIcon("vanityblocks:leatherblock");
-			iconBuffer[7] = par1IconRegister.registerIcon("vanityblocks:boneblock");
-			iconBuffer[8] = par1IconRegister.registerIcon("vanityblocks:reedtop");
-			iconBuffer[9] = par1IconRegister.registerIcon("vanityblocks:reedside");
-			iconBuffer[10] = par1IconRegister.registerIcon("vanityblocks:claybrick");
+//			iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:blazeblock"); 
+			iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:leatherblock");
+			iconBuffer[6] = par1IconRegister.registerIcon("vanityblocks:boneblock");
+			iconBuffer[7] = par1IconRegister.registerIcon("vanityblocks:reedtop");
+			iconBuffer[8] = par1IconRegister.registerIcon("vanityblocks:reedside");
+//			iconBuffer[9] = par1IconRegister.registerIcon("vanityblocks:claybrick");
 	    }
 	@Override
 //	public Icon getBlockTextureFromSideAndMetadata (int side, int metadata) {
@@ -140,11 +139,11 @@ public class StorageBlock extends Block {
 		if (metadata == 5){
 			switch (side) {
 			case 0:
-				return iconBuffer[8];
+				return iconBuffer[7];
 			case 1:
-				return iconBuffer[8];
+				return iconBuffer[7];
 			default:
-				return iconBuffer[9];
+				return iconBuffer[8];
 		}
 		}
 		if (metadata == 6){
@@ -153,12 +152,12 @@ public class StorageBlock extends Block {
 		if (metadata == 7){
 			return iconBuffer[6];
 		}
-		if (metadata == 8){
-			return iconBuffer[7];
-		}
-		if (metadata == 9){
-			return iconBuffer[10];
-		}
+//		if (metadata == 8){
+//			return iconBuffer[7];
+//		}
+//		if (metadata == 9){
+///			return iconBuffer[10];
+//		}
 		return blockIcon;
 	}
 	@Override
@@ -167,7 +166,7 @@ public class StorageBlock extends Block {
 	}
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int ix = 0; ix < 10; ix++) {
+		for (int ix = 0; ix < 8; ix++) {
 			subItems.add(new ItemStack(this, 1, ix));
 		}
 	}

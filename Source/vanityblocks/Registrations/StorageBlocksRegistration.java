@@ -30,7 +30,7 @@ public class StorageBlocksRegistration {
 
 	String[] vannilastorageBlockNames = { 
 		"Sugar Cane Block", "Charcoal Block", "Enderpearl Block", "Slime Block",
-		"Sugar Block", "Cocoa Block", "Blaze Block", "Leather Block", "Bone Block", "Clay Brick", "", ""
+		"Sugar Block", "Cocoa Block", "", "Leather Block", "Bone Block", "", "", ""
 	};
 	String[] modstorageBlockNames = { 
 		"Tin Block", "Copper Block", "Silver Block",
@@ -50,10 +50,10 @@ public class StorageBlocksRegistration {
 	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 3), "Sugar Block");
 	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 4), "Cocoa chunk");	
 	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 5), "Sugar Cane Block");
-	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 6), "Blaze Block");
-	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 7), "Leather Block");
-	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 8), "Bone Block");
-	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 9), "Clay Brick");
+//	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 6), "Blaze Block");
+	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 6), "Leather Block");
+	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 7), "Bone Block");
+//	LanguageRegistry.addName(new ItemStack(StorageBlock, 1, 8), "Clay Brick");
 /* ########### Modded #### */ 
 	GameRegistry.registerBlock(StorageBlockMod, vanityblocks.StorageItemModBlock.class, "Modded Storage Block");
 	LanguageRegistry.addName(new ItemStack(StorageBlockMod, 1, 0), "Tin Block");
@@ -72,13 +72,6 @@ public static void addVanillaRecipes()
 	{
 		System.out.println("Block Registration loaded");
 		/*############### Vannila Storage blocking ####### */
-//		if (Storageprops.enablecoal) {
-//		GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 0), "xxx", "xxx", "xxx", 'x', Item.coal);
-//		GameRegistry.addShapelessRecipe(new ItemStack(Item.coal, 9), new ItemStack(StorageBlock,1,0));
-//		if (Storageprops.gregtechcompat) {
-//			OreDictionary.registerOre("blockCoal", new ItemStack(StorageBlock,1,0)); 
-//		}
-//		}
 		if (Storageprops.enablecharcoal) {
 		GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 0), "xxx", "xxx", "xxx", 'x', new ItemStack(Item.coal,1,1));
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.coal, 9, 1), new ItemStack(StorageBlock,1,0));
@@ -100,13 +93,6 @@ public static void addVanillaRecipes()
 			OreDictionary.registerOre("blockSlime", new ItemStack(StorageBlock,1,2));
 		}
 		}
-//		if (Storageprops.enablewheatbale) {
-//		GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 4), "xxx", "xxx", "xxx", 'x', new ItemStack(Item.wheat));
-//		GameRegistry.addShapelessRecipe(new ItemStack(Item.wheat, 9), new ItemStack(StorageBlock,1,4));
-//		if (Storageprops.gregtechcompat) { 
-//			OreDictionary.registerOre("blockWheat", new ItemStack(StorageBlock,1,4));
-//		}
-//		}
 		if (Storageprops.enablesugar) {
 		GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 3), "xxx", "xxx", "xxx", 'x', new ItemStack(Item.sugar));
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.sugar, 9), new ItemStack(StorageBlock,1,3));
@@ -133,36 +119,36 @@ public static void addVanillaRecipes()
     	GameRegistry.addRecipe(new ItemStack(Block.dragonEgg,1), new Object [] {"xxx", "xyx", "xxx", 'x', new ItemStack(StorageBlock,1,1), 'y', Item.egg});
         }
         }
-        if (Storageprops.enableblaze) {
-    	GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 6), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.blazeRod)});
-    	GameRegistry.addShapelessRecipe(new ItemStack(Item.blazeRod, 9), new ItemStack(StorageBlock,1,6));		
-    	if (Storageprops.gregtechcompat) { 
-    		OreDictionary.registerOre("blockBlazerod", new ItemStack(StorageBlock,1,6));
-    	}
-        }
+//        if (Storageprops.enableblaze) {
+//    	GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 6), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.blazeRod)});
+//    	GameRegistry.addShapelessRecipe(new ItemStack(Item.blazeRod, 9), new ItemStack(StorageBlock,1,6));		
+//    	if (Storageprops.gregtechcompat) { 
+//    		OreDictionary.registerOre("blockBlazerod", new ItemStack(StorageBlock,1,6));
+//    	}
+//      }
         if (Storageprops.enableleather) {
-    	GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 7), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.leather)});
-    	GameRegistry.addShapelessRecipe(new ItemStack(Item.leather, 9), new ItemStack(StorageBlock,1,7));		
+    	GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 6), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.leather)});
+    	GameRegistry.addShapelessRecipe(new ItemStack(Item.leather, 9), new ItemStack(StorageBlock,1,6));		
     	if (Storageprops.gregtechcompat) { 
     		OreDictionary.registerOre("blockLeather", new ItemStack(StorageBlock,1,7));
     	}
         }
         if (Storageprops.enablebone) {
-    	GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 8), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.bone)});
-    	GameRegistry.addShapelessRecipe(new ItemStack(Item.bone, 9), new ItemStack(StorageBlock,1,8));		
+    	GameRegistry.addRecipe(new ItemStack(StorageBlock, 1, 7), new Object [] {"xxx", "xxx", "xxx", 'x', new ItemStack(Item.bone)});
+    	GameRegistry.addShapelessRecipe(new ItemStack(Item.bone, 9), new ItemStack(StorageBlock,1,7));		
     	if (Storageprops.gregtechcompat) { 
     		OreDictionary.registerOre("blockBone", new ItemStack(StorageBlock,1,8));
     	}
         }
-        if (Storageprops.enableclaybrick) {
-        GameRegistry.addRecipe(new ItemStack(StorageBlock, 4, 9), new Object [] {"xx", "xx", 'x', new ItemStack(Block.blockClay)});
-        GameRegistry.addShapelessRecipe(new ItemStack(Block.blockClay), new ItemStack(StorageBlock,1,9));
-        GameRegistry.addShapelessRecipe(new ItemStack(Item.clay,4), new ItemStack(Block.blockClay));
-        GameRegistry.addRecipe(new ItemStack(Item.clay,16), new Object [] {"xx", "xx", 'x', new ItemStack(StorageBlock, 1, 9)});
-    	if (Storageprops.gregtechcompat) { 
-    		OreDictionary.registerOre("blockClayBrick", new ItemStack(StorageBlock,1,9));
-    	}
-        }
+//        if (Storageprops.enableclaybrick) {
+//        GameRegistry.addRecipe(new ItemStack(StorageBlock, 4, 9), new Object [] {"xx", "xx", 'x', new ItemStack(Block.blockClay)});
+//        GameRegistry.addShapelessRecipe(new ItemStack(Block.blockClay), new ItemStack(StorageBlock,1,9));
+//        GameRegistry.addShapelessRecipe(new ItemStack(Item.clay,4), new ItemStack(Block.blockClay));
+//        GameRegistry.addRecipe(new ItemStack(Item.clay,16), new Object [] {"xx", "xx", 'x', new ItemStack(StorageBlock, 1, 9)});
+//    	if (Storageprops.gregtechcompat) { 
+//    		OreDictionary.registerOre("blockClayBrick", new ItemStack(StorageBlock,1,9));
+//    	}
+//      }
 	}
 public static void addModRecipes() {
 		/* ############### Modded Storage blocks ############ */

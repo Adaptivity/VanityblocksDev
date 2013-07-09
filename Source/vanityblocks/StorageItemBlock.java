@@ -7,7 +7,7 @@ public class StorageItemBlock extends ItemBlock {
 	
 	private final static String[] subNames = {
 		"SugarCane Block", "Coal Block", "Charcoal Block", "Enderpearl Block", "Slime Block",
-		"Bale of Wheat", "Sugar Block", "Cocoa Block", "Blaze Block", "Leather Block", "Bone Block", "Clay Brick", "", "", "", ""
+		"Bale of Wheat", "Sugar Block", "Cocoa Block", "", "Leather Block", "Bone Block", "", "", "", "", ""
 	};
 
 	public StorageItemBlock(int id) {

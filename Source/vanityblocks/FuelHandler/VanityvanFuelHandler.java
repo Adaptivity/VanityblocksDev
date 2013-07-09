@@ -12,9 +12,9 @@ public class VanityvanFuelHandler implements IFuelHandler {
 		if (fuel.getItemDamage() == (0)){
 			return 14400;
 		}
-		if (fuel.getItemDamage() == (6)){
-			return 21600;
-		}
+//		if (fuel.getItemDamage() == (6)){
+//			return 21600;
+//		}
 		}
 		return 0;
 	}

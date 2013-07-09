@@ -91,7 +91,7 @@ public class Dungeonlootspawning {
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,7),3,5,9));
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,7),3,5,9));		
 		}
-		if (Storageprops.enableblaze) {
+/*		if (Storageprops.enableblaze) {
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,8),3,5,3));
 		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,8),3,5,9));
 		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,8),3,5,9));
@@ -99,7 +99,7 @@ public class Dungeonlootspawning {
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,8),3,5,9));
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,8),3,5,9));
 		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,8),3,5,9));		
-		}
+		} */
 		if (Storageprops.enableleather) {
 		ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,9),2,3,6));
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(StorageBlocksRegistration.StorageBlock,0,9),3,4,9));

@@ -3,6 +3,7 @@ package vanityblocks.Registrations;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 import vanityblocks.Storageprops;
 import vanityblocks.Items.ClayMugItem;
@@ -20,12 +21,10 @@ public class GeneralFoodItemsRegistration {
 		}
 }
 	public static void additemrecipes() {
-	
-//	if (Storageprops.enableflintitem) {		
-	// ############# to make the flint item
-//	GameRegistry.addRecipe(new ItemStack(flintitem,1), "xxx", "xxx", "xxx", 'x', new ItemStack(Item.flint,1));
-//	GameRegistry.addShapelessRecipe(new ItemStack(Item.flint,9), new ItemStack(flintitem));
+		if (Storageprops.enableclaymugstuff) {
+	GameRegistry.addRecipe(new ItemStack(claymugitem,0), "x x", " x ", 'x', new ItemStack(Item.clay,1));
+    FurnaceRecipes.smelting().addSmelting(claymugitem.itemID, 0, new ItemStack(claymugitem, 1, 1), 0.0f); //Concecrated Soil
 //	GameRegistry.addShapelessRecipe(new ItemStack(bluerupee5), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1));
-//	}
-}
+		}
+	}
 }

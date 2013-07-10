@@ -8,6 +8,7 @@ import java.util.List;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -23,7 +24,7 @@ import vanityblocks.Registrations.GeneralFoodItemsRegistration;
 public class ClayMugItem extends ItemFood
 {
 	public Icon[] icons;
-	public String[] textureNames = new String[] { "unfired", "ceramic", "mugwithwater", "hotchocowater", "hotchocowatersweet", "mugwithmilk", "hotchocomilk" };//, "haste"
+	public String[] textureNames = new String[] { "unfired", "ceramic", "mugwithwater", "hotchocowater", "hotchocowatersweet", "mugwithmilk", "hotchocomilk" };
 	
     public ClayMugItem(int id, int heal)
     {
@@ -87,11 +88,14 @@ public class ClayMugItem extends ItemFood
 	    		break;
 	    		
 	    	case 5:
-	    		potion = player.getActivePotionEffect(Potion.regeneration);
-	    		if (potion != null)
-	    			duration = potion.duration;
-//	            player.curePotionEffects(stack);
-	    		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 8*20, 0));
+//	    		potion = player.getActivePotionEffect(Potion.poison);
+//	Failed    		if (potion != null)
+//	    			duration = potion.duration;
+	            player.curePotionEffects(stack);
+//	    		potion = player.getActivePotionEffect(Potion.regeneration);
+//	    		if (potion != null)
+//	    			duration = potion.duration;
+//	    		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 8*20, 0));
 	    		break;
 	    		
 	    	case 6:
@@ -101,10 +105,40 @@ public class ClayMugItem extends ItemFood
 	    		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 8*20, 0));
 	    		break;
 	    	}
+	    	
+	        if (!player.capabilities.isCreativeMode)
+	        {
+	            --stack.stackSize;
+	        }
+	        
+	    	switch (stack.getItemDamage()) {
+	    	case 0:
+	    		break;
+	    	case 1:
+	    		break;
+	    	case 2:
+	            player.inventory.addItemStackToInventory(new ItemStack(vanityblocks.Registrations.GeneralFoodItemsRegistration.claymugitem,1,1));
+	            break;
+	    	case 3:
+	            player.inventory.addItemStackToInventory(new ItemStack(vanityblocks.Registrations.GeneralFoodItemsRegistration.claymugitem,1,1));
+	            break;
+	    	case 4:
+	            player.inventory.addItemStackToInventory(new ItemStack(vanityblocks.Registrations.GeneralFoodItemsRegistration.claymugitem,1,1));
+	            break;
+	    	case 5:
+	            player.inventory.addItemStackToInventory(new ItemStack(vanityblocks.Registrations.GeneralFoodItemsRegistration.claymugitem,1,1));
+	            break;
+	    	case 6:
+	            player.inventory.addItemStackToInventory(new ItemStack(vanityblocks.Registrations.GeneralFoodItemsRegistration.claymugitem,1,1));    	
+	            break;
+	    	}
     	}
     }
-    
-    public ItemStack onEaten(ItemStack ItemStack, World world, EntityPlayer par3EntityPlayer)
+    public EnumAction getItemUseAction(ItemStack par1ItemStack)
+    {
+        return EnumAction.drink;
+    }    
+ /*   public ItemStack onEaten(ItemStack ItemStack, World world, EntityPlayer par3EntityPlayer)
     {
         if (!par3EntityPlayer.capabilities.isCreativeMode)
         {
@@ -133,7 +167,7 @@ public class ClayMugItem extends ItemFood
     	}
 
         return ItemStack;
-    }
+    } */
 
     @Override
     public int getMaxItemUseDuration(ItemStack itemstack)
@@ -141,15 +175,15 @@ public class ClayMugItem extends ItemFood
         return 24;
     }
 	
-	@Override
+/*	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation (ItemStack stack, EntityPlayer player, List list, boolean par4)
 	{
-//		list.add("A little bit evil");
+		list.add("A little bit evil");
     	switch (stack.getItemDamage())
     	{
     	case 0: 
-//    		list.add("Killer healing");
+    		list.add("Killer healing");
     		break;
     	case 1:
     		break;
@@ -158,7 +192,7 @@ public class ClayMugItem extends ItemFood
     	case 3:
     		break;
     	}
-	}
+	} */
 	@SideOnly(Side.CLIENT)
 	@Override
     public void registerIcons(IconRegister iconRegister)

@@ -1,4 +1,5 @@
 package vanityblocks.Items;
+
 import java.util.List;
 
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -11,26 +12,28 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class coalstorageitem extends Item
 {
-	public Icon[] icons;
-	public String[] textureNames = new String[] { "coalstorageitem" };
+    public Icon[] icons;
+    public String[] textureNames = new String[] { "coalstorageitem" };
+
     public coalstorageitem(int par1)
     {
         super(par1);
         this.setHasSubtypes(true);
-		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
+        setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
     }
+
     @SideOnly(Side.CLIENT)
-	@Override
-	public Icon getIconFromDamage(int meta)
-	{
-		return icons[meta];
-	}
-	
-	@SideOnly(Side.CLIENT)
-	@Override
-    public void registerIcons(IconRegister iconRegister)
+    @Override
+    public Icon getIconFromDamage (int meta)
     {
-		this.icons = new Icon[textureNames.length];
+        return icons[meta];
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons (IconRegister iconRegister)
+    {
+        this.icons = new Icon[textureNames.length];
 
         for (int i = 0; i < this.icons.length; ++i)
         {

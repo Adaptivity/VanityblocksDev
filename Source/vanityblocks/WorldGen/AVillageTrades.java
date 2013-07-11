@@ -18,16 +18,16 @@ public class AVillageTrades implements IVillageTradeHandler
     @Override
     public void manipulateTradesForVillager (EntityVillager villager, MerchantRecipeList recipeList, Random random)
     {
- //   	recipeList.addToListWithCheck(new MerchantRecipe(new ItemStack(Whattogive,howmany), new ItemStack(whattoreceive, howmany, metaifany)));
-//		
+        //   	recipeList.addToListWithCheck(new MerchantRecipe(new ItemStack(Whattogive,howmany), new ItemStack(whattoreceive, howmany, metaifany)));
+        //		
         if (villager.getProfession() == 56789)
         {
-		ItemStack arrow = new ItemStack(Item.arrow);
-//		recipeList.addToListWithCheck(new MerchantRecipe(silverNugget, new ItemStack(TContent.materials, 1, 1)));
-//    	recipeList.addToListWithCheck(new MerchantRecipe(arrow, new ItemStack(Block.stone, 2, 1)));
-    	recipeList.addToListWithCheck(new MerchantRecipe(new ItemStack(Item.arrow,5), new ItemStack(Block.stone, 2)));
+            ItemStack arrow = new ItemStack(Item.arrow);
+            //		recipeList.addToListWithCheck(new MerchantRecipe(silverNugget, new ItemStack(TContent.materials, 1, 1)));
+            //    	recipeList.addToListWithCheck(new MerchantRecipe(arrow, new ItemStack(Block.stone, 2, 1)));
+            recipeList.addToListWithCheck(new MerchantRecipe(new ItemStack(Item.arrow, 5), new ItemStack(Block.stone, 2)));
+
+        }
 
     }
-
-}
 }

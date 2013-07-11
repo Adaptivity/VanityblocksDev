@@ -8,12 +8,12 @@ import net.minecraft.world.gen.structure.ComponentVillage;
 import net.minecraft.world.gen.structure.ComponentVillageStartPiece;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
- 
+
 // /Minecraft/src/net/minecraft/world/gen/structure/ComponentVillageHouse1.java is the libarian
 ///Minecraft/src/net/minecraft/world/gen/structure/ComponentVillageHouse2.java is blacksmith
 ///Minecraft/src/net/minecraft/world/gen/structure/ComponentVillageHall.java is the stone slab house
 
-public class ComponentModtraderhouse extends ComponentVillage 
+public class ComponentModtraderhouse extends ComponentVillage
 {
     private int averageGroundLevel = -1;
     private final boolean isRoofAccessible;
@@ -26,17 +26,18 @@ public class ComponentModtraderhouse extends ComponentVillage
         this.isRoofAccessible = par3Random.nextBoolean();
     }
 
-    public static ComponentModtraderhouse func_74912_a(ComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+    public static ComponentModtraderhouse func_74912_a (ComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
     {
         StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 5, 6, 5, par6);
-        return StructureComponent.findIntersecting(par1List, structureboundingbox) != null ? null : new ComponentModtraderhouse(par0ComponentVillageStartPiece, par7, par2Random, structureboundingbox, par6);
+        return StructureComponent.findIntersecting(par1List, structureboundingbox) != null ? null : new ComponentModtraderhouse(par0ComponentVillageStartPiece, par7, par2Random, structureboundingbox,
+                par6);
     }
 
     /**
      * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes Mineshafts at
      * the end, it adds Fences...
      */
-    public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
+    public boolean addComponentParts (World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
     {
         if (this.averageGroundLevel < 0)
         {
@@ -47,7 +48,7 @@ public class ComponentModtraderhouse extends ComponentVillage
                 return true;
             }
 
- //           this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 7 - 1, 0);
+            //           this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 7 - 1, 0);
             this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 4, 0);
         }
 
@@ -137,7 +138,7 @@ public class ComponentModtraderhouse extends ComponentVillage
     /**
      * Returns the villager type to spawn in this component, based on the number of villagers already spawned.
      */
-    protected int getVillagerType(int par1)
+    protected int getVillagerType (int par1)
     {
         return 56789;
     }

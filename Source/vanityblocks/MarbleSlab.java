@@ -23,85 +23,107 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 //public class MarbleSlab extends BlockHalfSlab {
 
-	public class Marbleslab extends Block {
-		public Marbleslab (int id) {
-			super(id, Material.rock);
-			setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
-            this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
-		}
-		@Override
-		public float getBlockHardness (World par1World, int par2, int par3, int par4)
-		{
-			int metadata = par1World.getBlockMetadata(par2, par3, par4);
-			return 2f;
-		}    
-	    public boolean renderAsNormalBlock()
-	    {
-	        return false;
-	    }
-	    public boolean isOpaqueCube()
-	    {
-	        return false;
-	    }
-	    private Icon[] iconBuffer;
-	   @Override
-	   public void registerIcons(IconRegister par1IconRegister)
-		    {
-		        iconBuffer = new Icon[6]; 
-		        iconBuffer[0] = par1IconRegister.registerIcon("vanityblocks:marble"); 
-		        iconBuffer[1] = par1IconRegister.registerIcon("vanityblocks:marblebrick");
-		        iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:marblechisel");
-		        iconBuffer[3] = par1IconRegister.registerIcon("vanityblocks:blackmarble");
-		        iconBuffer[4] = par1IconRegister.registerIcon("vanityblocks:blackmarblebrick");
-		        iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:blackmarblechisel");
-		    }
-		@Override
-		public Icon getIcon (int side, int metadata) {
+public class Marbleslab extends Block
+{
+    public Marbleslab(int id)
+    {
+        super(id, Material.rock);
+        setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
+        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+    }
 
-			if (metadata == 0){
-				return iconBuffer[0];
-			}
-			if (metadata == 1){
-				return iconBuffer[1];
-			}
-			if (metadata == 2){
-//				return iconBuffer[2];
-		        switch (side) {
-		        case 0:
-		            return iconBuffer[2];
-		        case 1:
-		            return iconBuffer[2];
-		        default:
-		            return iconBuffer[0];
-			}
-			}
-			if (metadata == 3){
-				return iconBuffer[3];
-			}
-			if (metadata == 4){
-				return iconBuffer[4];
-			}
-			if (metadata == 5){
-//				return iconBuffer[5];
-		        switch (side) {
-		        case 0:
-		            return iconBuffer[5];
-		        case 1:
-		            return iconBuffer[5];
-		        default:
-		            return iconBuffer[3];				
-			}
-			}
-			return blockIcon;
-		}
-		@Override
-		public int damageDropped (int metadata) {
-			return metadata;
-		}
-		@SideOnly(Side.CLIENT)
-		public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-			for (int ix = 0; ix < 6; ix++) {
-				subItems.add(new ItemStack(this, 1, ix));
-			}
-		}
-	}
+    @Override
+    public float getBlockHardness (World par1World, int par2, int par3, int par4)
+    {
+        int metadata = par1World.getBlockMetadata(par2, par3, par4);
+        return 2f;
+    }
+
+    public boolean renderAsNormalBlock ()
+    {
+        return false;
+    }
+
+    public boolean isOpaqueCube ()
+    {
+        return false;
+    }
+
+    private Icon[] iconBuffer;
+
+    @Override
+    public void registerIcons (IconRegister par1IconRegister)
+    {
+        iconBuffer = new Icon[6];
+        iconBuffer[0] = par1IconRegister.registerIcon("vanityblocks:marble");
+        iconBuffer[1] = par1IconRegister.registerIcon("vanityblocks:marblebrick");
+        iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:marblechisel");
+        iconBuffer[3] = par1IconRegister.registerIcon("vanityblocks:blackmarble");
+        iconBuffer[4] = par1IconRegister.registerIcon("vanityblocks:blackmarblebrick");
+        iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:blackmarblechisel");
+    }
+
+    @Override
+    public Icon getIcon (int side, int metadata)
+    {
+
+        if (metadata == 0)
+        {
+            return iconBuffer[0];
+        }
+        if (metadata == 1)
+        {
+            return iconBuffer[1];
+        }
+        if (metadata == 2)
+        {
+            //				return iconBuffer[2];
+            switch (side)
+            {
+            case 0:
+                return iconBuffer[2];
+            case 1:
+                return iconBuffer[2];
+            default:
+                return iconBuffer[0];
+            }
+        }
+        if (metadata == 3)
+        {
+            return iconBuffer[3];
+        }
+        if (metadata == 4)
+        {
+            return iconBuffer[4];
+        }
+        if (metadata == 5)
+        {
+            //				return iconBuffer[5];
+            switch (side)
+            {
+            case 0:
+                return iconBuffer[5];
+            case 1:
+                return iconBuffer[5];
+            default:
+                return iconBuffer[3];
+            }
+        }
+        return blockIcon;
+    }
+
+    @Override
+    public int damageDropped (int metadata)
+    {
+        return metadata;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks (int par1, CreativeTabs tab, List subItems)
+    {
+        for (int ix = 0; ix < 6; ix++)
+        {
+            subItems.add(new ItemStack(this, 1, ix));
+        }
+    }
+}

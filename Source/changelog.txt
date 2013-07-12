@@ -3,7 +3,7 @@ V4.0: Condensed down three modules to single mod. Moved some files around. Chang
 Todo: 
 Added steps of the marble blocks. 
 Add more brick blocks? Lapis, emerald, move clay brick,ice brick,lapis block/brick(using old texture(1.6lameness))
-add hot chocolate, use cocoa beans, make clay cup, fire in furnace, add water(via right click water/crafting), 
+add hot chocolate, use cocoa beans, make clay cup, fire in furnace, add water(via right click water/crafting), done, time to add recipes to them
 heat in furnace, add cocoa, viola, make it remove status ailement? 
 Maybe a block with status effects? like slow, heal etc
 Add a mushroom biome underground in mushroom biome similiar to terraria

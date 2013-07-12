@@ -16,12 +16,12 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class mugmilkchoco extends ItemFood
+public class mugmilkhotchoco extends ItemFood
 {
     public Icon[] icons;
-    public String[] textureNames = new String[] { "mugmilkchoco" };
+    public String[] textureNames = new String[] { "mugmilkhotchoco" };
 
-    public mugmilkchoco(int id, int heal)
+    public mugmilkhotchoco(int id, int heal)
     {
         super(id, heal, 0.0F, false);
         this.setHasSubtypes(true);
@@ -51,11 +51,18 @@ public class mugmilkchoco extends ItemFood
             {
                 int duration = 0;
                 PotionEffect potion;
-                par3EntityPlayer.removePotionEffect(19);
+                par3EntityPlayer.removePotionEffect(2); //removes potion effect slowness
+                par3EntityPlayer.removePotionEffect(4); //removes potion effect mining fatique
+                par3EntityPlayer.removePotionEffect(9); //removes potion effect confusion
+                par3EntityPlayer.removePotionEffect(15); //removes potion effect blindness
+                par3EntityPlayer.removePotionEffect(17); //removes potion effect hunger
+                par3EntityPlayer.removePotionEffect(18); //removes potion effect weakness
+                par3EntityPlayer.removePotionEffect(19); //removes potion effect poison
+                par3EntityPlayer.removePotionEffect(20); //removes potion effect wither
                 potion = par3EntityPlayer.getActivePotionEffect(Potion.regeneration);
                 if (potion != null)
                     duration = potion.duration;
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 5 * 20, 0));
+                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 10 * 20, 0));
             }
             if (par1ItemStack.stackSize <= 0)
             {
@@ -87,7 +94,7 @@ public class mugmilkchoco extends ItemFood
 
         for (int i = 0; i < this.icons.length; ++i)
         {
-            this.icons[i] = iconRegister.registerIcon("vanityblocks:mugmilkchoco");
+            this.icons[i] = iconRegister.registerIcon("vanityblocks:mugmilkhotchoco");
         }
     }
 }

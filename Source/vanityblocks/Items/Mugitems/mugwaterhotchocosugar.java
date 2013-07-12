@@ -16,12 +16,12 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class mugmilkchocosugar extends ItemFood
+public class mugwaterhotchocosugar extends ItemFood
 {
     public Icon[] icons;
-    public String[] textureNames = new String[] { "mugmilkchocosugar" };
+    public String[] textureNames = new String[] { "mugwaterhotchocosugar" };
 
-    public mugmilkchocosugar(int id, int heal)
+    public mugwaterhotchocosugar(int id, int heal)
     {
         super(id, heal, 0.0F, false);
         this.setHasSubtypes(true);
@@ -51,11 +51,15 @@ public class mugmilkchocosugar extends ItemFood
             {
                 int duration = 0;
                 PotionEffect potion;
-                par3EntityPlayer.removePotionEffect(19);
                 potion = par3EntityPlayer.getActivePotionEffect(Potion.regeneration);
                 if (potion != null)
                     duration = potion.duration;
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 3 * 20, 0));
+                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 10 * 20, 0));
+
+                potion = par3EntityPlayer.getActivePotionEffect(Potion.moveSpeed);
+                if (potion != null)
+                    duration = potion.duration;
+                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, duration + 15 * 20, 0));
             }
             if (par1ItemStack.stackSize <= 0)
             {
@@ -87,7 +91,7 @@ public class mugmilkchocosugar extends ItemFood
 
         for (int i = 0; i < this.icons.length; ++i)
         {
-            this.icons[i] = iconRegister.registerIcon("vanityblocks:mugmilkchocosugar");
+            this.icons[i] = iconRegister.registerIcon("vanityblocks:mugwaterhotchocosugar");
         }
     }
 }

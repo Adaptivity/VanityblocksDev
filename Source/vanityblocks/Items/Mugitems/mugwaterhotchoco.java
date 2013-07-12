@@ -16,12 +16,12 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class mugwaterchocosugar extends ItemFood
+public class mugwaterhotchoco extends ItemFood
 {
     public Icon[] icons;
-    public String[] textureNames = new String[] { "mugwaterchocosugar" };
+    public String[] textureNames = new String[] { "mugwaterhotchoco" };
 
-    public mugwaterchocosugar(int id, int heal)
+    public mugwaterhotchoco(int id, int heal)
     {
         super(id, heal, 0.0F, false);
         this.setHasSubtypes(true);
@@ -86,7 +86,7 @@ public class mugwaterchocosugar extends ItemFood
 
         for (int i = 0; i < this.icons.length; ++i)
         {
-            this.icons[i] = iconRegister.registerIcon("vanityblocks:mugwaterchocosugar");
+            this.icons[i] = iconRegister.registerIcon("vanityblocks:mugwaterhotchoco");
         }
     }
 }

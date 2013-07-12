@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.oredict.OreDictionary;
 import vanityblocks.Storageprops;
 import vanityblocks.Items.Mugitems.*;
@@ -18,20 +19,22 @@ public class GeneralFoodItemsRegistration
     public static Item emptymug;
     public static Item mugwater;
     public static Item mugwaterhot;
-    public static Item mugwaterchoco;
-    public static Item mugwaterchocosugar;
+    public static Item mugwaterhotchoco;
+    public static Item mugwaterhotchocosugar;
     public static Item mugmilk;
     public static Item mugmilkhot;
-    public static Item mugmilkchoco;
-    public static Item mugmilkchocosugar;
+    public static Item mugmilkhotchoco;
+    public static Item mugmilkhotchocosugar;
 
     /*
-     * To do: add recipes, make textures, finish item files
+     * To do: make textures
+     * Potion.waterBreathing.id for fish item
      */
     public static void generalitemregistration ()
     {
         if (Storageprops.enableclaymugstuff)
         {
+            // For info, 1.25s per heart with regen
             unfiredmug = new unfiredmug(Storageprops.mugunfired - 256).setUnlocalizedName("unfiremug");
             LanguageRegistry.addName(unfiredmug, "Unfired Mug");
             emptymug = new emptymug(Storageprops.emptymug - 256).setUnlocalizedName("emptymug");
@@ -40,18 +43,18 @@ public class GeneralFoodItemsRegistration
             LanguageRegistry.addName(mugwater, "Mug with water");
             mugwaterhot = new mugwaterhot(Storageprops.mugwaterhot - 256, 0).setUnlocalizedName("mugwaterhot");
             LanguageRegistry.addName(mugwaterhot, "Mug with hot water");
-            mugwaterchoco = new mugwaterchoco(Storageprops.mugwaterhotchoco - 256, 0).setUnlocalizedName("mugwaterchoco");
-            LanguageRegistry.addName(mugwaterchoco, "Hot Chocolate with water");
-            mugwaterchocosugar = new mugwaterchocosugar(Storageprops.mugwaterhotchocosugar - 256, 0).setUnlocalizedName("mugwaterchocosugar");
-            LanguageRegistry.addName(mugwaterchocosugar, "Sweetend Hot Chocolate with water");
+            mugwaterhotchoco = new mugwaterhotchoco(Storageprops.mugwaterhotchoco - 256, 0).setUnlocalizedName("mugwaterchoco");
+            LanguageRegistry.addName(mugwaterhotchoco, "Hot Chocolate with water");
+            mugwaterhotchocosugar = new mugwaterhotchocosugar(Storageprops.mugwaterhotchocosugar - 256, 0).setUnlocalizedName("mugwaterchocosugar");
+            LanguageRegistry.addName(mugwaterhotchocosugar, "Sweetend Hot Chocolate with water");
             mugmilk = new mugmilk(Storageprops.mugmilk - 256, 0).setUnlocalizedName("mugmilk");
             LanguageRegistry.addName(mugmilk, "Mug with milk");
             mugmilkhot = new mugmilk(Storageprops.mugmilkhot - 256, 0).setUnlocalizedName("mugmilkhot");
             LanguageRegistry.addName(mugmilkhot, "Mug with hot milk");
-            mugmilkchoco = new mugmilkchoco(Storageprops.mugmilkhotchoco - 256, 0).setUnlocalizedName("mugmilkchoco");
-            LanguageRegistry.addName(mugmilkchoco, "Hot Chocolate with milk");
-            mugmilkchocosugar = new mugmilkchocosugar(Storageprops.mugmilkhotchocosugar - 256, 0).setUnlocalizedName("mugmilkchocosugar");
-            LanguageRegistry.addName(mugmilkchocosugar, "Sweetend Hot Chocolate with milk");
+            mugmilkhotchoco = new mugmilkhotchoco(Storageprops.mugmilkhotchoco - 256, 0).setUnlocalizedName("mugmilkchoco");
+            LanguageRegistry.addName(mugmilkhotchoco, "Hot Chocolate with milk");
+            mugmilkhotchocosugar = new mugmilkhotchocosugar(Storageprops.mugmilkhotchocosugar - 256, 0).setUnlocalizedName("mugmilkchocosugar");
+            LanguageRegistry.addName(mugmilkhotchocosugar, "Sweetend Hot Chocolate with milk");
         }
     }
 
@@ -59,9 +62,26 @@ public class GeneralFoodItemsRegistration
     {
         if (Storageprops.enableclaymugstuff)
         {
-            //	GameRegistry.addRecipe(new ItemStack(claymugitem,0), "x x", " x ", 'x', new ItemStack(Item.clay,1));
-            //    FurnaceRecipes.smelting().addSmelting(claymugitem.itemID, 0, new ItemStack(claymugitem, 1, 1), 0.0f); 
-            //	GameRegistry.addShapelessRecipe(new ItemStack(bluerupee5), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1), new ItemStack(greenrupee1));
+            GameRegistry.addRecipe(new ItemStack(unfiredmug), "x x", " x ", 'x', new ItemStack(Item.clay, 1)); //Basic mug unfired
+            FurnaceRecipes.smelting().addSmelting(unfiredmug.itemID, 0, new ItemStack(emptymug, 1), 0.0f); // to cook unfired into Empty mug
+
+            /*
+             * This is the code that turns empty mug into water based items
+             */
+            GameRegistry.addShapelessRecipe(new ItemStack(mugwater), new ItemStack(emptymug), new ItemStack(Item.bucketWater));
+            FurnaceRecipes.smelting().addSmelting(mugwater.itemID, 0, new ItemStack(mugwaterhot, 1), 0.0f);
+            GameRegistry.addShapelessRecipe(new ItemStack(mugwaterhotchoco), new ItemStack(mugwaterhot), new ItemStack(Item.dyePowder, 1, 3));
+            GameRegistry.addShapelessRecipe(new ItemStack(mugwaterhotchocosugar), new ItemStack(mugwaterhotchoco), new ItemStack(Item.sugar));
+            GameRegistry.addShapelessRecipe(new ItemStack(mugwaterhotchocosugar), new ItemStack(mugwaterhot), new ItemStack(Item.sugar), new ItemStack(Item.dyePowder, 1, 3));
+
+            /*
+             * This is the code that turns empty mug into milk based items
+             */
+            GameRegistry.addShapelessRecipe(new ItemStack(mugmilk), new ItemStack(emptymug), new ItemStack(Item.bucketMilk));
+            FurnaceRecipes.smelting().addSmelting(mugmilk.itemID, 0, new ItemStack(mugmilkhot, 1), 0.0f);
+            GameRegistry.addShapelessRecipe(new ItemStack(mugmilkhotchoco), new ItemStack(mugmilkhot), new ItemStack(Item.dyePowder, 1, 3));
+            GameRegistry.addShapelessRecipe(new ItemStack(mugmilkhotchocosugar), new ItemStack(mugmilkhotchoco), new ItemStack(Item.sugar));
+            GameRegistry.addShapelessRecipe(new ItemStack(mugmilkhotchocosugar), new ItemStack(mugmilkhot), new ItemStack(Item.sugar), new ItemStack(Item.dyePowder, 1, 3));
         }
     }
 }

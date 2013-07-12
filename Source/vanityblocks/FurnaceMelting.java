@@ -36,27 +36,6 @@ public class FurnaceMelting
             FurnaceRecipes.smelting().addSmelting(Item.plateGold.itemID, 0, new ItemStack(Item.ingotGold, 8), 0.0F);
             FurnaceRecipes.smelting().addSmelting(Item.legsGold.itemID, 0, new ItemStack(Item.ingotGold, 7), 0.0F);
             FurnaceRecipes.smelting().addSmelting(Item.bootsGold.itemID, 0, new ItemStack(Item.ingotGold, 4), 0.0F);
-            /*    	GameRegistry.addSmelting((Block.fenceIron.blockID, 8), new ItemStack(Item.ingotIron, 1), 0.5F);
-                	GameRegistry.addSmelting(Item.swordIron.itemID, new ItemStack(Item.ingotIron, 2), 0.0F);
-                	GameRegistry.addSmelting(Item.pickaxeIron.itemID, new ItemStack(Item.ingotIron, 3), 0.0F);
-                	GameRegistry.addSmelting(Item.shovelIron.itemID, new ItemStack(Item.ingotIron, 2), 0.0F);
-                	GameRegistry.addSmelting(Item.hoeIron.itemID, new ItemStack(Item.ingotIron, 2), 0.0F);
-                	GameRegistry.addSmelting(Item.axeIron.itemID, new ItemStack(Item.ingotIron, 3), 0.0F);
-                	GameRegistry.addSmelting(Item.helmetIron.itemID, new ItemStack(Item.ingotIron, 5), 0.0F);
-                	GameRegistry.addSmelting(Item.plateIron.itemID, new ItemStack(Item.ingotIron, 8), 0.0F);
-                	GameRegistry.addSmelting(Item.legsIron.itemID, new ItemStack(Item.ingotIron, 7), 0.0F);
-                	GameRegistry.addSmelting(Item.bootsIron.itemID, new ItemStack(Item.ingotIron, 4), 0.0F);
-                	GameRegistry.addSmelting(Item.swordGold.itemID, new ItemStack(Item.ingotGold, 2), 0.0F);
-                	GameRegistry.addSmelting(Item.pickaxeGold.itemID, new ItemStack(Item.ingotGold, 3), 0.0F);
-                	GameRegistry.addSmelting(Item.shovelGold.itemID, new ItemStack(Item.ingotGold, 2), 0.0F);
-                	GameRegistry.addSmelting(Item.hoeGold.itemID, new ItemStack(Item.ingotGold, 2), 0.0F);
-                	GameRegistry.addSmelting(Item.axeGold.itemID, new ItemStack(Item.ingotGold, 3), 0.0F);
-                	GameRegistry.addSmelting(Item.helmetGold.itemID, new ItemStack(Item.ingotGold, 5), 0.0F);
-                	GameRegistry.addSmelting(Item.plateGold.itemID, new ItemStack(Item.ingotGold, 8), 0.0F);
-                	GameRegistry.addSmelting(Item.legsGold.itemID, new ItemStack(Item.ingotGold, 7), 0.0F);
-                	GameRegistry.addSmelting(Item.bootsGold.itemID, new ItemStack(Item.ingotGold, 4), 0.0F);
-                	GameRegistry.addSmelting(Block.hopperBlock.blockID, new ItemStack(Item.ingotIron, 5), 0.0F);
-                	*/
         }
     }
 }

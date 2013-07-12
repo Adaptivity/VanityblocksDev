@@ -49,13 +49,14 @@ public class mugmilkhot extends ItemFood
         {
             if (!par2World.isRemote)
             {
-                int duration = 0;
-                PotionEffect potion;
+                par3EntityPlayer.removePotionEffect(2);
+                par3EntityPlayer.removePotionEffect(4);
+                par3EntityPlayer.removePotionEffect(9);
+                par3EntityPlayer.removePotionEffect(15);
+                par3EntityPlayer.removePotionEffect(17);
+                par3EntityPlayer.removePotionEffect(18);
                 par3EntityPlayer.removePotionEffect(19);
-                potion = par3EntityPlayer.getActivePotionEffect(Potion.regeneration);
-                if (potion != null)
-                    duration = potion.duration;
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 3 * 20, 0));
+                par3EntityPlayer.removePotionEffect(20);
             }
             if (par1ItemStack.stackSize <= 0)
             {

@@ -22,7 +22,7 @@ public class Storageprops
         vanityentityconfig = config.getBlock(blocks, "Vanity Blocks Tile Entity(such as melting core)", 3060).getInt(3058);
         vanitydesignworldslabconfig = config.getBlock(blocks, "Vanity Blocks World Gen slabs", 3061).getInt(3061);
         vanitydesignworldWallconfig = config.getBlock(blocks, "Vanity Blocks World Gen walls", 3062).getInt(3062);
-
+        vanitydesignworldStairsconfig = config.getBlock(blocks, "Vanity Blocks World gen stairs",3063).getInt(3062);
         String items = "Item id's";
         //config.getItem("Patterns and Misc", "Tinker's Manual", 14018).getInt(14018); use a second "" to add it to a sub category
         enablerupees = config.get(items, "Enabled the Rupees?", true).getBoolean(true);
@@ -88,6 +88,7 @@ public class Storageprops
         Property gregtechcomp = config.get(category2, "If you have gregtech and recipes arent deblocking(after changing gregtechs config)?", true);
         gregtechcomp.comment = "Please note, this will only work if you set gregtechs config to this... http://pastebin.com/92FmiGHm  Type true if no gregtech, false if gregtech is added(THIS IS only relevant in gregtechs case). Do this below)";
         gregtechcompat = config.get(category2, "Set the true/false here as well for the gregtech option ^", true).getBoolean(true);
+        enablegregtechbypass = config.get(category2, "Set this to true if you want to unnerf gregtechs planks and others(requires 2 logs(shapeless)", false).getBoolean(false);
 
         String category3 = "Recipe enable or disable";
         dragoneggrecipe = config.get(category3, "Crafting Dragon Egg(Requires Ender Pearl Block enabled)", true).getBoolean(true);
@@ -125,7 +126,7 @@ public class Storageprops
         String category8 = "World Generation - Slabs/stairs/Walls";
         marbleslabs = config.get(category8, "Allowed to make Marble slabs?", true).getBoolean(true);
         marblewalls = config.get(category8, "Allowed to make Marble Walls?", true).getBoolean(true);
-
+        
         //		String category7 = "Texture swapping";
         //		Property blackmarbletextures = config.get(category6,"Do you want to use my textures for black marble or alt textures? type true for mine, false for alt",true);
         //		blackmarbletextures.comment = "Type true for main textures, false for alt textures";
@@ -145,6 +146,7 @@ public class Storageprops
     public static int vanitydesignworldconfig;
     public static int vanitydesignworldslabconfig;
     public static int vanitydesignworldWallconfig;
+    public static int vanitydesignworldStairsconfig;
     public static boolean enablesugarcane;
     public static boolean enablecharcoal;
     public static boolean enableenderpearl;
@@ -170,6 +172,7 @@ public class Storageprops
     public static boolean enablepeat;
     public static boolean enableclaybrick;
     public static boolean gregtechcompat;
+    public static boolean enablegregtechbypass;
     public static boolean enablemeltingcore;
     public static boolean enablelavalamp;
     public static boolean enablewhitesoulsand;
@@ -234,4 +237,5 @@ public class Storageprops
     public static int ruinchance;
     public static boolean marbleslabs;
     public static boolean marblewalls;
+    public static boolean marblestairs;
 }

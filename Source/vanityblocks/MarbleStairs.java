@@ -3,6 +3,7 @@ package vanityblocks;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,14 +14,22 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class VanityDesignworldblock extends Block
+public class MarbleStairs extends BlockStairs
 {
-    public VanityDesignworldblock(int id)
-    {
-        super(id, Material.rock);
+    public MarbleStairs(int id, Block block, int meta) {
+        super(id, block, meta);
         setHardness(2f);
         setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 
+    }
+    public boolean renderAsNormalBlock ()
+    {
+        return false;
+    }
+
+    public boolean isOpaqueCube ()
+    {
+        return false;
     }
     private Icon[] iconBuffer;
 

@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
@@ -94,9 +95,6 @@ public class StorageBlockMod extends Block
         return blockIcon;
     }
 
-    //	public int getBlockTextureFromSideAndMetadata (int side, int metadata) {
-    //		return metadata + 0;
-    //	}
     @Override
     public float getBlockHardness (World par1World, int par2, int par3, int par4)
     {
@@ -111,27 +109,25 @@ public class StorageBlockMod extends Block
     {
         return metadata;
     }
-
-    //	@Override
-    //    public void onEntityWalking(World world, int i, int j, int k, Entity entity)
-    //    {
-    //		if (metadata == 12) {
-    //       double boost = 2.2D;
-    //        if(world.getBlockMetadata(i, j, k) == 12)
-    //            boost = 2.65D;
-    //          double mY = entity.motionY;
-    //        double mY = Math.abs(entity.motionY);
-    //        double mZ = Math.abs(entity.motionZ);
-    //        if(mX < 0.3D)
-    //        {
-    //            entity.motionX *= boost;
-    //        }
-    //       if(mY < 0.0D)
-    //        {
-    //            entity.motionY *= boost;
-    //      	entity.motionY = Math.abs(mY*boost);
-    //       }
-    //   }
+    @Override
+    public void onEntityCollidedWithBlock (World world, int x, int y, int z, Entity entity)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+        if (meta == 10)
+        {
+            if (entity.motionY < 0)
+                entity.motionY *= -1.2F;
+            entity.fallDistance = 0;
+        }
+    }
+    @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool (World world, int x, int y, int z)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+        if (meta == 10)
+            return AxisAlignedBB.getBoundingBox(x, y, z, (double) x + 1.0D, (double) y + 0.625D, (double) z + 1.0D);
+        return super.getCollisionBoundingBoxFromPool(world, x, y, z);
+    }
 
     @SideOnly(Side.CLIENT)
     public void getSubBlocks (int par1, CreativeTabs tab, List subItems)

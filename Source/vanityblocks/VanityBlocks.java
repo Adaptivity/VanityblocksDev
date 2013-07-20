@@ -5,6 +5,7 @@ import vanityblocks.FuelHandler.VanitymodFuelHandler;
 import vanityblocks.FuelHandler.VanityvanFuelHandler;
 import vanityblocks.Registrations.GeneralFoodItemsRegistration;
 import vanityblocks.Registrations.GeneralItemRegistration;
+import vanityblocks.Registrations.Modbypass;
 import vanityblocks.Registrations.RupeeRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
 import vanityblocks.Registrations.TEBlocksRegistration;
@@ -73,16 +74,6 @@ public class VanityBlocks
     @SidedProxy(clientSide = "vanityblocks.ProxyClient", serverSide = "vanityblocks.Proxy")
     public static Proxy proxy;
 
-    /*	public static int storageblockconfig;
-    	public static int storageblockmodconfig;
-    	public static boolean storageblockint;
-    	public static Block StorageBlock;
-    	public static Block StorageBlockMod;
-    	public static Block ForestryBlock;
-    	public static int StorageBlockId;
-    	public static int StorageBlockModId;
-    	public static int ForestryBlockId; */
-
     @PreInit
     public void preInit (FMLPreInitializationEvent event)
     {
@@ -128,7 +119,7 @@ public class VanityBlocks
         //		VillagerRegistry.instance().registerVillagerType(56789, "/mods/vanityblocks/textures/mob/villager.png");
         //        VillagerRegistry.instance().registerVillageCreationHandler(new VillageModHandler());
         //        VillagerRegistry.instance().registerVillageTradeHandler(56789, trades);
-        //###Creative tab related
+        /*Creative tab related */
         LanguageRegistry.instance().addStringLocalization("itemGroup.vanityblocks", "en_US", "Anarchys Vanity Blocks");
     }
 
@@ -147,7 +138,13 @@ public class VanityBlocks
         StorageBlocksRegistration.addForestryRecipes();
         //		Dungeonlootspawning.chestHooks();
         GameRegistry.registerFuelHandler(new VanityForestryFuelHandler());
-        //		GameRegistry.registerFuelHandler(new VanitymodFuelHandler());
-        FMLLog.info("Vanity Blocks seems to have loaded well.!");
+        GameRegistry.registerFuelHandler(new VanitymodFuelHandler());
+        /* Mod bypassing */
+        if (Storageprops.enablegregtechbypass)
+        {
+            Modbypass.bypassrecipes();
+            FMLLog.info("[VanityBlocks] Bypass recipes are enabled");
+        }
+        FMLLog.info("[VanityBlocks] Seems to have loaded well!");
     }
 }

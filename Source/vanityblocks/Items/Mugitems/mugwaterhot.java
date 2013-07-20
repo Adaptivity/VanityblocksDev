@@ -23,7 +23,7 @@ public class mugwaterhot extends ItemFood
 
     public mugwaterhot(int id, int heal)
     {
-        // super(id, -10, 0, false); //use this to remove hunger for testing
+        //super(id, -10, 0, false); //use this to remove hunger for testing
         super(id, heal, 0.0F, false);
         this.setHasSubtypes(true);
         this.maxStackSize = 16;
@@ -48,16 +48,16 @@ public class mugwaterhot extends ItemFood
 
         if (!par3EntityPlayer.capabilities.isCreativeMode)
         {
-            if (!par2World.isRemote)
-            {
-                int duration = 0;
-                PotionEffect potion;
-                par3EntityPlayer.removePotionEffect(19);
-                potion = par3EntityPlayer.getActivePotionEffect(Potion.regeneration);
-                if (potion != null)
-                    duration = potion.duration;
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 3 * 20, 0));
-            }
+            /*            if (!par2World.isRemote)
+                        {
+                            int duration = 0;
+                            PotionEffect potion;
+                            par3EntityPlayer.removePotionEffect(19);
+                            potion = par3EntityPlayer.getActivePotionEffect(Potion.regeneration);
+                            if (potion != null)
+                                duration = potion.duration;
+                            par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 3 * 20, 0));
+                        } */
             if (par1ItemStack.stackSize <= 0)
             {
                 return new ItemStack(vanityblocks.Registrations.GeneralFoodItemsRegistration.emptymug);
@@ -68,6 +68,7 @@ public class mugwaterhot extends ItemFood
         return stack;
     }
 
+    @Override
     public EnumAction getItemUseAction (ItemStack par1ItemStack)
     {
         return EnumAction.drink;

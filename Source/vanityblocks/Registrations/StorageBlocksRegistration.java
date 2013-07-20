@@ -346,82 +346,86 @@ public class StorageBlocksRegistration
 
     public static void addForestryRecipes ()
     {
-        //	if (Loader.isModLoaded("Forestry")) {
-        //		try {
-        GameRegistry.registerBlock(ForestryBlock, vanityblocks.StorageItemForestryBlock.class, "ForestryStorage Block");
-        LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 0), "Apatite Block");
-        LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 1), "Honey Block");
-        LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 2), "Honeydew Block");
-        LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 3), "Peat Block");
-        if (Storageprops.enableapatite)
+        if (Loader.isModLoaded("Forestry"))
         {
-            if (!OreDictionary.getOres("gemApatite").isEmpty())
+            try
             {
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 0), "xxx", "xxx", "xxx", 'x', "gemApatite"));
-                ItemStack gemapatite;
-                gemapatite = OreDictionary.getOres("gemApatite").get(0);
-                ItemStack result = gemapatite.copy();
-                result.stackSize = 9;
-                GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 0));
-                if (Storageprops.gregtechcompat)
+                GameRegistry.registerBlock(ForestryBlock, vanityblocks.StorageItemForestryBlock.class, "ForestryStorage Block");
+                LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 0), "Apatite Block");
+                LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 1), "Honey Block");
+                LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 2), "Honeydew Block");
+                LanguageRegistry.addName(new ItemStack(ForestryBlock, 1, 3), "Peat Block");
+                if (Storageprops.enableapatite)
                 {
-                    OreDictionary.registerOre("blockApatite", new ItemStack(ForestryBlock, 1, 0));
+                    if (!OreDictionary.getOres("gemApatite").isEmpty())
+                    {
+                        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 0), "xxx", "xxx", "xxx", 'x', "gemApatite"));
+                        ItemStack gemapatite;
+                        gemapatite = OreDictionary.getOres("gemApatite").get(0);
+                        ItemStack result = gemapatite.copy();
+                        result.stackSize = 9;
+                        GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 0));
+                        if (Storageprops.gregtechcompat)
+                        {
+                            OreDictionary.registerOre("blockApatite", new ItemStack(ForestryBlock, 1, 0));
+                        }
+                    }
+                }
+                if (Storageprops.enablehoneydrop)
+                {
+                    if (!OreDictionary.getOres("dropHoney").isEmpty())
+                    {
+                        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 1), "xxx", "xxx", "xxx", 'x', "dropHoney"));
+                        ItemStack honeydrop;
+                        honeydrop = OreDictionary.getOres("dropHoney").get(0);
+                        ItemStack result = honeydrop.copy();
+                        result.stackSize = 9;
+                        GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 1));
+                        if (Storageprops.gregtechcompat)
+                        {
+                            OreDictionary.registerOre("blockHoney", new ItemStack(ForestryBlock, 1, 1));
+                        }
+                    }
+                }
+                if (Storageprops.enablehoneydew)
+                {
+                    if (!OreDictionary.getOres("dropHoneydew").isEmpty())
+                    {
+                        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 2), "xxx", "xxx", "xxx", 'x', "dropHoneydew"));
+                        ItemStack honeydewdrop;
+                        honeydewdrop = OreDictionary.getOres("dropHoneydew").get(0);
+                        ItemStack result = honeydewdrop.copy();
+                        result.stackSize = 9;
+                        GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 2));
+                        if (Storageprops.gregtechcompat)
+                        {
+                            OreDictionary.registerOre("blockHoneydew", new ItemStack(ForestryBlock, 1, 2));
+                        }
+                    }
+                }
+                if (Storageprops.enablepeat)
+                {
+                    //		OreDictionary.registerOre("brickPeat", new ItemStack(Item.arrow));	
+                    if (!OreDictionary.getOres("brickPeat").isEmpty())
+                    {
+                        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 3), "xxx", "xxx", "xxx", 'x', "brickPeat"));
+                        ItemStack brickPeat;
+                        brickPeat = OreDictionary.getOres("brickPeat").get(0);
+                        ItemStack result = brickPeat.copy();
+                        result.stackSize = 9;
+                        GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 3));
+                        if (Storageprops.gregtechcompat)
+                        {
+                            OreDictionary.registerOre("blockPeat", new ItemStack(ForestryBlock, 1, 3));
+                        }
+                    }
                 }
             }
-        }
-        if (Storageprops.enablehoneydrop)
-        {
-            if (!OreDictionary.getOres("dropHoney").isEmpty())
+            catch (Exception e)
             {
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 1), "xxx", "xxx", "xxx", 'x', "dropHoney"));
-                ItemStack honeydrop;
-                honeydrop = OreDictionary.getOres("dropHoney").get(0);
-                ItemStack result = honeydrop.copy();
-                result.stackSize = 9;
-                GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 1));
-                if (Storageprops.gregtechcompat)
-                {
-                    OreDictionary.registerOre("blockHoney", new ItemStack(ForestryBlock, 1, 1));
-                }
+                // pokemon!
             }
         }
-        if (Storageprops.enablehoneydew)
-        {
-            if (!OreDictionary.getOres("dropHoneydew").isEmpty())
-            {
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 2), "xxx", "xxx", "xxx", 'x', "dropHoneydew"));
-                ItemStack honeydewdrop;
-                honeydewdrop = OreDictionary.getOres("dropHoneydew").get(0);
-                ItemStack result = honeydewdrop.copy();
-                result.stackSize = 9;
-                GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 2));
-                if (Storageprops.gregtechcompat)
-                {
-                    OreDictionary.registerOre("blockHoneydew", new ItemStack(ForestryBlock, 1, 2));
-                }
-            }
-        }
-        if (Storageprops.enablepeat)
-        {
-            //		OreDictionary.registerOre("brickPeat", new ItemStack(Item.arrow));	
-            if (!OreDictionary.getOres("brickPeat").isEmpty())
-            {
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ForestryBlock, 1, 3), "xxx", "xxx", "xxx", 'x', "brickPeat"));
-                ItemStack brickPeat;
-                brickPeat = OreDictionary.getOres("brickPeat").get(0);
-                ItemStack result = brickPeat.copy();
-                result.stackSize = 9;
-                GameRegistry.addShapelessRecipe(result, new ItemStack(ForestryBlock, 1, 3));
-                if (Storageprops.gregtechcompat)
-                {
-                    OreDictionary.registerOre("blockPeat", new ItemStack(ForestryBlock, 1, 3));
-                }
-            }
-        }
-        //   catch (Exception e) {
-        // pokemon!
-        //   }
-        //}
     }
 
     public static Block StorageBlock;

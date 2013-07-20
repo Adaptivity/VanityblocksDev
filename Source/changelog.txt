@@ -1,8 +1,9 @@
 1.6
-V4.0: Condensed down three modules to single mod. Moved some files around. Changed some metadatas. Removed duplicate blocks- coal, wheat, coal coke, osmium(main mods added them). Added the bouncing effect to entities on slime blocks(mobs/players/blocks/items). Added Liquid destroying capabilities to Melting Core. Added slabs for the marble types(what a pain).Added Rupee as a side part(Currency for servers, disable with the config).Fixed recipe with dragon egg. Added a flint and a coal item for storage.Added recipe to break saddle down to leather. Added Marble and ashford marble walls.Added arrow storage item.
+V4.0: Condensed down three modules to single mod. Moved some files around. Changed some metadatas. Removed duplicate blocks- coal, wheat, coal coke, osmium(main mods added them). Added the bouncing effect to entities on slime blocks(mobs/players/blocks/items). Added Liquid destroying capabilities to Melting Core. Added slabs for the marble types(what a pain).Added Rupee as a side part(Currency for servers, disable with the config).Fixed recipe with dragon egg. Added a flint and a coal item for storage.Added recipe to break saddle down to leather. Added Marble and ashford marble walls.Added arrow storage item. Added ability to bypass some mod nerf recipes, check config to enable(disabled by default).Attempting to add marble stairs.
 Todo: 
 Added steps of the marble blocks. 
 Add more brick blocks? Lapis, emerald, move clay brick,ice brick,lapis block/brick(using old texture(1.6lameness))
+Add white marble tile and black marble.
 add hot chocolate, use cocoa beans, make clay cup, fire in furnace, add water(via right click water/crafting), done, time to add recipes to them
 heat in furnace, add cocoa, viola, make it remove status ailement? 
 Maybe a block with status effects? like slow, heal etc

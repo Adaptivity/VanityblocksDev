@@ -74,6 +74,7 @@ public class mugmilkhotchoco extends ItemFood
         return stack;
     }
 
+    @Override
     public EnumAction getItemUseAction (ItemStack par1ItemStack)
     {
         return EnumAction.drink;

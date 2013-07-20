@@ -27,7 +27,7 @@ public class GeneralFoodItemsRegistration
     public static Item mugmilkhotchocosugar;
 
     /*
-     * To do: make textures
+     * To do: make textures, figure out random dupe shit
      * Potion.waterBreathing.id for fish item
      */
     public static void generalitemregistration ()
@@ -39,21 +39,21 @@ public class GeneralFoodItemsRegistration
             LanguageRegistry.addName(unfiredmug, "Unfired Mug");
             emptymug = new emptymug(Storageprops.emptymug - 256).setUnlocalizedName("emptymug");
             LanguageRegistry.addName(emptymug, "Empty Mug");
-            mugwater = new mugwater(Storageprops.mugwater - 256, 0).setUnlocalizedName("mugwater");
+            mugwater = new mugwater(Storageprops.mugwater - 256, 2).setUnlocalizedName("mugwater");
             LanguageRegistry.addName(mugwater, "Mug with water");
-            mugwaterhot = new mugwaterhot(Storageprops.mugwaterhot - 256, 0).setUnlocalizedName("mugwaterhot");
+            mugwaterhot = new mugwaterhot(Storageprops.mugwaterhot - 256, 2).setUnlocalizedName("mugwaterhot");
             LanguageRegistry.addName(mugwaterhot, "Mug with hot water");
-            mugwaterhotchoco = new mugwaterhotchoco(Storageprops.mugwaterhotchoco - 256, 0).setUnlocalizedName("mugwaterchoco");
+            mugwaterhotchoco = new mugwaterhotchoco(Storageprops.mugwaterhotchoco - 256, 2).setUnlocalizedName("mugwaterchoco");
             LanguageRegistry.addName(mugwaterhotchoco, "Hot Chocolate with water");
-            mugwaterhotchocosugar = new mugwaterhotchocosugar(Storageprops.mugwaterhotchocosugar - 256, 0).setUnlocalizedName("mugwaterchocosugar");
+            mugwaterhotchocosugar = new mugwaterhotchocosugar(Storageprops.mugwaterhotchocosugar - 256, 2).setUnlocalizedName("mugwaterchocosugar");
             LanguageRegistry.addName(mugwaterhotchocosugar, "Sweetend Hot Chocolate with water");
-            mugmilk = new mugmilk(Storageprops.mugmilk - 256, 0).setUnlocalizedName("mugmilk");
+            mugmilk = new mugmilk(Storageprops.mugmilk - 256, 2).setUnlocalizedName("mugmilk");
             LanguageRegistry.addName(mugmilk, "Mug with milk");
-            mugmilkhot = new mugmilk(Storageprops.mugmilkhot - 256, 0).setUnlocalizedName("mugmilkhot");
+            mugmilkhot = new mugmilkhot(Storageprops.mugmilkhot - 256, 2).setUnlocalizedName("mugmilkhot");
             LanguageRegistry.addName(mugmilkhot, "Mug with hot milk");
-            mugmilkhotchoco = new mugmilkhotchoco(Storageprops.mugmilkhotchoco - 256, 0).setUnlocalizedName("mugmilkchoco");
+            mugmilkhotchoco = new mugmilkhotchoco(Storageprops.mugmilkhotchoco - 256, 2).setUnlocalizedName("mugmilkchoco");
             LanguageRegistry.addName(mugmilkhotchoco, "Hot Chocolate with milk");
-            mugmilkhotchocosugar = new mugmilkhotchocosugar(Storageprops.mugmilkhotchocosugar - 256, 0).setUnlocalizedName("mugmilkchocosugar");
+            mugmilkhotchocosugar = new mugmilkhotchocosugar(Storageprops.mugmilkhotchocosugar - 256, 2).setUnlocalizedName("mugmilkchocosugar");
             LanguageRegistry.addName(mugmilkhotchocosugar, "Sweetend Hot Chocolate with milk");
         }
     }

@@ -12,8 +12,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBlockMarbleWall extends ItemBlock
 {
-    private final static String[] subNames = { "Marble Wall", "Marble Brick Wall", "Chiseled Marble Wall", "Ashford Black Marble Wall", "Ashford Black Marble Brick Wall",
-            "Chiseled Ashford Black Marble Wall", "", "", "", "", "", "", "", "", "", "" };
+    private final static String[] subNames = { "Marble Wall", "Marble Brick Wall", "Chiseled Marble Wall", "Marble Pillar Wall", "Marble Tile Wall", 
+        "Ashford Black Marble Wall", "Ashford Black Marble Brick Wall","Chiseled Ashford Black Marble Wall", "Ashford Black Marble Pillar Wall", "Ashford Black Marble Tile Wall",
+        "", "", "", "", "", "" };
 
     public ItemBlockMarbleWall(int id)
     {

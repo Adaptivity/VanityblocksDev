@@ -12,8 +12,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBlockMarbleSlab extends ItemBlock
 {
-    private final static String[] subNames = { "Marble Slab", "Marble Brick Slab", "Chiseled Marble Slab", "Ashford Black Marble Slab", "Ashford Black Marble Brick Slab",
-            "Chiseled Ashford Black Marble Slab", "", "", "", "", "", "", "", "", "", "" };
+    private final static String[] subNames = { "Marble Slab", "Marble Brick Slab", "Chiseled Marble Slab", "Marble Pillar Slab", "Marble Tile Slab",
+        "Ashford Black Marble Slab", "Ashford Black Marble Brick Slab", "Chiseled Ashford Black Marble Slab", "Ashford Black Marble Pillar Slab", "Ashford Black Marble Tile Slab",
+        "", "", "", "", "", "" };
 
     public ItemBlockMarbleSlab(int id)
     {

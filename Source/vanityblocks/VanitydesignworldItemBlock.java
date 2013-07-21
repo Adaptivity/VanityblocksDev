@@ -11,8 +11,9 @@ import net.minecraft.item.ItemStack;
 public class VanitydesignworldItemBlock extends ItemBlock
 {
 
-    private final static String[] subNames = { "Marble", "Marble Brick", "Chiseled Marble", "Ashford Black Marble", "Ashford Black Marble Brick", "Chiseled Ashford Black Marble", "", "", "", "", "",
-            "", "", "", "" };
+    private final static String[] subNames = { "Marble", "Marble Brick", "Chiseled Marble", "Marble Pillar", "Marble Tile",
+        "Ashford Black Marble", "Ashford Black Marble Brick", "Chiseled Ashford Black Marble", "Ashford Black Marble Pillar", "Ashford Black Marble Tile", "", "", "",
+      };
 
     public VanitydesignworldItemBlock(int id)
     {
@@ -37,7 +38,7 @@ public class VanitydesignworldItemBlock extends ItemBlock
         //getItemName() + "." + 
     }
 
-    @Override
+ /*   @Override
     @SideOnly(Side.CLIENT)
     public void addInformation (ItemStack stack, EntityPlayer player, List list, boolean par4)
     {
@@ -60,5 +61,5 @@ public class VanitydesignworldItemBlock extends ItemBlock
         case 6:
             break;
         }
-    }
+    }*/
 }

@@ -63,12 +63,12 @@ public class mugmilkhotchocosugar extends ItemFood
                 potion = par3EntityPlayer.getActivePotionEffect(Potion.regeneration);
                 if (potion != null)
                     duration = potion.duration;
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 10 * 20, 0));
+                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, duration + 15 * 20, 0));
 
                 potion = par3EntityPlayer.getActivePotionEffect(Potion.moveSpeed);
                 if (potion != null)
                     duration = potion.duration;
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, duration + 15 * 20, 0));
+                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, duration + 20 * 20, 0));
                 if (par1ItemStack.stackSize <= 0)
                 {
                     return new ItemStack(vanityblocks.Registrations.GeneralFoodItemsRegistration.emptymug);

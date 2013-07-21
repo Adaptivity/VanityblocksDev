@@ -21,7 +21,7 @@ public class MarbleGen implements IWorldGenerator
         //cobalt = new ManhattanOreGenerator(TContent.oreSlag.blockID, 1, 2, 4, 100, true, false, Block.netherrack.blockID);
         //ardite = new ManhattanOreGenerator(TContent.oreSlag.blockID, 2, 2, 4, 100, true, false, Block.netherrack.blockID);
         marble = new WorldGenMinable(vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignworldblock.blockID, 0, (Storageprops.marblevein), Block.stone.blockID);
-        blackmarble = new WorldGenMinable(vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignworldblock.blockID, 3, (Storageprops.blackmarblevein), Block.stone.blockID);
+        blackmarble = new WorldGenMinable(vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignworldblock.blockID, 5, (Storageprops.blackmarblevein), Block.stone.blockID);
     }
 
     public void generate (Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
@@ -29,8 +29,6 @@ public class MarbleGen implements IWorldGenerator
         if (Storageprops.generatemarble)
         {
             if (world.provider.dimensionId == 0)
-                //				generateNether(random, chunkX*16, chunkZ*16, world);
-                //			else
                 generateSurface(random, chunkX * 16, chunkZ * 16, world);
             generateblackmarble(random, chunkX * 16, chunkZ * 16, world);
         }
@@ -69,61 +67,6 @@ public class MarbleGen implements IWorldGenerator
             }
         }
     }
-
-    /*		void generateSurfacebasalt(Random random, int xChunk, int zChunk, World world)
-    		{
-    			int heightBand;
-    			int xPos, yPos, zPos;
-    			if (Storageprops.generatebasalt)
-    			{
-    				for (int q = 0; q < (Storageprops.marblerarity); q++)
-    				{						
-    					xPos = xChunk + random.nextInt(16); yPos = (Storageprops.marbleheight) + random.nextInt(Storageprops.marblerange); zPos = zChunk + random.nextInt(16);
-
-    					marble.generate(world, random, xPos, yPos, zPos);
-    				}
-    			}
-    /*			if (Storageprops.generateTin)
-    		{
-    			for (int q = 0; q < Storageprops.tinDensity; q++)
-    			{
-    				xPos = xChunk + random.nextInt(16); yPos = PHConstruct.tinHeight + random.nextInt(Storageprops.tinRange); zPos = zChunk + random.nextInt(16);
-    				tin.generate(world, random, xPos, yPos, zPos);
-    			}
-    		} */
-    //		}
-
-    /*		void generateNether(Random random, int xChunk, int zChunk, World world)
-    		{
-    			int xPos, yPos, zPos;
-    			for (int i = 0; i < Storageprops.netherDensity; i++)
-    			{
-    				if (Storageprops.generateCobalt)
-    				{
-    					xPos = xChunk + random.nextInt(16); yPos = random.nextInt(64)+32; zPos = zChunk + random.nextInt(16);
-    					cobalt.generate(world, random, xPos, yPos, zPos);
-    				}
-    				if (Storageprops.generateArdite)
-    				{
-    					xPos = xChunk + random.nextInt(16); yPos = random.nextInt(64)+32; zPos = zChunk + random.nextInt(16);
-    					ardite.generate(world, random, xPos, yPos, zPos);
-    				}
-    			}
-    			for (int i = 0; i < Storageprops.netherDensity; i++)
-    			{
-    				if (Storageprops.generateCobalt)
-    				{
-    					xPos = xChunk + random.nextInt(16); yPos = random.nextInt(128); zPos = zChunk + random.nextInt(16);
-    					cobalt.generate(world, random, xPos, yPos, zPos);
-    				}
-    				if (Storageprops.generateArdite)
-    				{
-    					xPos = xChunk + random.nextInt(16); yPos = random.nextInt(128); zPos = zChunk + random.nextInt(16);
-    					ardite.generate(world, random, xPos, yPos, zPos);
-    				}
-    			}
-    		}
-    		*/
     WorldGenMinable marble;
     WorldGenMinable blackmarble;
 }

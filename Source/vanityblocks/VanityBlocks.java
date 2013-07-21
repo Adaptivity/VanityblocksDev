@@ -12,7 +12,6 @@ import vanityblocks.Registrations.TEBlocksRegistration;
 import vanityblocks.Registrations.VanityBlocksRegistration;
 import vanityblocks.WorldGen.AVillageTrades;
 import vanityblocks.WorldGen.MarbleGen;
-import vanityblocks.WorldGen.UnderWaterRuinHandler;
 import vanityblocks.WorldGen.VillageModHandler;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -47,21 +46,10 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 /* 				
 TO DO
-add mossy planks
 Hold f3 and hit h for item id's
-user suggestion
-make fish block, maybe smooth version of end stone-vanity,double stone slab crafting - vanity
-liquid water thats colored -waiting on forge api for it
-maybe- potatoe, carrot, seeds, clay block 9x clayballs
 Villager that trades modded items
 Vanity - Chiseled sandstone blocks, chairs? redstone lamps diff colored, curtains maybe?, inverted redstone lamps, colored sand/glass
-spling wants enchant for bow that teleports the mob, and potion of swimming,  ..SubSide.. Anarchy, you could make it that only if they are in water, they get a speed potion boost.
-To add info to the bottom of blocks = https://github.com/mDiyo/Natura/blob/master/mods/natura/blocks/CloudItem.java
 ADD STONEHENGE!!!!!!!!!!
-!!!!!!!!
-
-
-
 Item.doorWood.setMaxStackSize(16); - way to change stacksize of vannila
  */
 public class VanityBlocks
@@ -111,14 +99,18 @@ public class VanityBlocks
 
         /* ######################## World Gen Registration ###### */
         GameRegistry.registerWorldGenerator(new MarbleGen(0));
-        GameRegistry.registerWorldGenerator(new UnderWaterRuinHandler());
         GameRegistry.registerFuelHandler(new VanityvanFuelHandler());
-        //		Dungeonlootspawning.chestHooks();
-        // ### Villager/village Related
-        //		AVillageTrades trades = new AVillageTrades();
-        //		VillagerRegistry.instance().registerVillagerType(56789, "/mods/vanityblocks/textures/mob/villager.png");
-        //        VillagerRegistry.instance().registerVillageCreationHandler(new VillageModHandler());
-        //        VillagerRegistry.instance().registerVillageTradeHandler(56789, trades);
+        /*
+         * Removed code for time being.
+         *GameRegistry.registerWorldGenerator(new UnderWaterRuinHandler()); //Registration of world gen for ruins(removed)
+         *Dungeonlootspawning.chestHooks();
+         *Villager/village Related
+         *AVillageTrades trades = new AVillageTrades();
+         *VillagerRegistry.instance().registerVillagerType(56789, "/mods/vanityblocks/textures/mob/villager.png");
+         *VillagerRegistry.instance().registerVillageCreationHandler(new VillageModHandler());
+         *VillagerRegistry.instance().registerVillageTradeHandler(56789, trades);
+         */
+
         /*Creative tab related */
         LanguageRegistry.instance().addStringLocalization("itemGroup.vanityblocks", "en_US", "Anarchys Vanity Blocks");
     }
@@ -136,7 +128,6 @@ public class VanityBlocks
     {
         StorageBlocksRegistration.addModRecipes();
         StorageBlocksRegistration.addForestryRecipes();
-        //		Dungeonlootspawning.chestHooks();
         GameRegistry.registerFuelHandler(new VanityForestryFuelHandler());
         GameRegistry.registerFuelHandler(new VanitymodFuelHandler());
         /* Mod bypassing */

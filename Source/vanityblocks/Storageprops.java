@@ -22,7 +22,7 @@ public class Storageprops
         vanityentityconfig = config.getBlock(blocks, "Vanity Blocks Tile Entity(such as melting core)", 3060).getInt(3058);
         vanitydesignworldslabconfig = config.getBlock(blocks, "Vanity Blocks World Gen slabs", 3061).getInt(3061);
         vanitydesignworldWallconfig = config.getBlock(blocks, "Vanity Blocks World Gen walls", 3062).getInt(3062);
-        vanitydesignworldStairsconfig = config.getBlock(blocks, "Vanity Blocks World gen stairs",3063).getInt(3062);
+
         String items = "Item id's";
         //config.getItem("Patterns and Misc", "Tinker's Manual", 14018).getInt(14018); use a second "" to add it to a sub category
         enablerupees = config.get(items, "Enabled the Rupees?", true).getBoolean(true);
@@ -146,7 +146,6 @@ public class Storageprops
     public static int vanitydesignworldconfig;
     public static int vanitydesignworldslabconfig;
     public static int vanitydesignworldWallconfig;
-    public static int vanitydesignworldStairsconfig;
     public static boolean enablesugarcane;
     public static boolean enablecharcoal;
     public static boolean enableenderpearl;
@@ -237,5 +236,4 @@ public class Storageprops
     public static int ruinchance;
     public static boolean marbleslabs;
     public static boolean marblewalls;
-    public static boolean marblestairs;
 }

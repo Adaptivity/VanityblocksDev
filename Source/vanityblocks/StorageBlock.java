@@ -32,28 +32,12 @@ public class StorageBlock extends Block
     @Override
     public boolean isFireSource (World world, int x, int y, int z, int metadata, ForgeDirection side)
     {
-        //       if (metadata == 6 && side == UP)
-        //        {
-        //            return true;
-        //        }
         if (metadata == 0 && side == UP)
         {
             return true;
         }
         return false;
     }
-
-    //	public int getLightValue (IBlockAccess world, int x, int y, int z)
-    //	{
-    //		int metadata = world.getBlockMetadata(x, y, z);
-    //		if (metadata == 6) {
-    //			return !isActive(world.getBlockMetadata(x, y, z)) ? 0 : 15;
-    //		}
-    //		return 0;
-    //	}
-    //	private boolean isActive(int blockMetadata) {
-    //		return true;
-    //	}
     @Override
     public float getBlockHardness (World par1World, int par2, int par3, int par4)
     {
@@ -114,12 +98,10 @@ public class StorageBlock extends Block
         iconBuffer[2] = par1IconRegister.registerIcon("vanityblocks:slimeblock");
         iconBuffer[3] = par1IconRegister.registerIcon("vanityblocks:sugarblock");
         iconBuffer[4] = par1IconRegister.registerIcon("vanityblocks:cocoablock");
-        //			iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:blazeblock"); 
         iconBuffer[5] = par1IconRegister.registerIcon("vanityblocks:leatherblock");
         iconBuffer[6] = par1IconRegister.registerIcon("vanityblocks:boneblock");
         iconBuffer[7] = par1IconRegister.registerIcon("vanityblocks:reedtop");
         iconBuffer[8] = par1IconRegister.registerIcon("vanityblocks:reedside");
-        //			iconBuffer[9] = par1IconRegister.registerIcon("vanityblocks:claybrick");
     }
 
     @Override
@@ -143,17 +125,6 @@ public class StorageBlock extends Block
         {
             return iconBuffer[3];
         }
-        //		if (metadata == 4){
-        //			return iconBuffer[5];
-        //	        switch (side) {
-        //        case 0:
-        //           return iconBuffer[9];
-        //       case 1:
-        //            return iconBuffer[9];
-        //        default:
-        //            return iconBuffer[10];
-        //		}
-        //		}
         if (metadata == 4)
         {
             return iconBuffer[4];
@@ -178,12 +149,6 @@ public class StorageBlock extends Block
         {
             return iconBuffer[6];
         }
-        //		if (metadata == 8){
-        //			return iconBuffer[7];
-        //		}
-        //		if (metadata == 9){
-        ///			return iconBuffer[10];
-        //		}
         return blockIcon;
     }
 

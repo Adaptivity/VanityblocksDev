@@ -19,14 +19,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.liquids.LiquidDictionary;
-import net.minecraftforge.liquids.LiquidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.FMLLog;
 //import railcraft.common.api.crafting.RailcraftCraftingManager;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -57,18 +56,18 @@ public class VanityBlocks
 
     @Instance("VanityBlocks")
     public static VanityBlocks instance;
-    public static final String modid = "VanityBlocks";
+    public static final String modid = "vanityblocks";
 
     @SidedProxy(clientSide = "vanityblocks.ProxyClient", serverSide = "vanityblocks.Proxy")
     public static Proxy proxy;
 
-    @PreInit
+    @EventHandler
     public void preInit (FMLPreInitializationEvent event)
     {
         Storageprops.initProps();
     }
 
-    @Init
+    @EventHandler
     public void load (FMLInitializationEvent event)
     {
         proxy.registerRenderInformation();
@@ -123,7 +122,7 @@ public class VanityBlocks
         }
     };
 
-    @PostInit
+    @EventHandler
     public void postInit (FMLPostInitializationEvent event)
     {
         StorageBlocksRegistration.addModRecipes();

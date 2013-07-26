@@ -43,98 +43,95 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 
 @Mod(modid = "VanityBlocks", name = "Anarchys Vanity Blocks", version = DefaultProps.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-/* 				
-TO DO
-Hold f3 and hit h for item id's
-Villager that trades modded items
-Vanity - Chiseled sandstone blocks, chairs? redstone lamps diff colored, curtains maybe?, inverted redstone lamps, colored sand/glass
-ADD STONEHENGE!!!!!!!!!!
-Item.doorWood.setMaxStackSize(16); - way to change stacksize of vannila
+/*
+ * TO DO Hold f3 and hit h for item id's Villager that trades modded items
+ * Vanity - Chiseled sandstone blocks, chairs? redstone lamps diff colored,
+ * curtains maybe?, inverted redstone lamps, colored sand/glass ADD
+ * STONEHENGE!!!!!!!!!! Item.doorWood.setMaxStackSize(16); - way to change
+ * stacksize of vannila
  */
-public class VanityBlocks
-{
+public class VanityBlocks {
 
-    @Instance("VanityBlocks")
-    public static VanityBlocks instance;
-    public static final String modid = "vanityblocks";
+	@Instance("VanityBlocks")
+	public static VanityBlocks instance;
+	public static final String modid = "vanityblocks";
 
-    @SidedProxy(clientSide = "vanityblocks.ProxyClient", serverSide = "vanityblocks.Proxy")
-    public static Proxy proxy;
+	@SidedProxy(clientSide = "vanityblocks.ProxyClient", serverSide = "vanityblocks.Proxy")
+	public static Proxy proxy;
 
-    @EventHandler
-    public void preInit (FMLPreInitializationEvent event)
-    {
-        Storageprops.initProps();
-    }
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		Storageprops.initProps();
+	}
 
-    @EventHandler
-    public void load (FMLInitializationEvent event)
-    {
-        proxy.registerRenderInformation();
-        proxy.addNames();
-        /* ########### Storage Block Registration ######### */
-        StorageBlocksRegistration.blockregistration();
-        StorageBlocksRegistration.addVanillaRecipes();
-        /* ####### Furnace melting Registration ### */
-        FurnaceMelting.addFurnaceMelts();
-        /* Vanity Block Registrations */
-        VanityBlocksRegistration.vanityregistration();
-        VanityBlocksRegistration.addVanityRecipes();
-        /* ######## Tile Entity Registration ###### */
-        TEBlocksRegistration.teregistration();
-        TEBlocksRegistration.addTeRecipes();
-        /* General Item Registrations */
-        GeneralItemRegistration.generalitemregistration();
-        GeneralItemRegistration.additemrecipes();
-        /* General Foot Item Registrations */
-        GeneralFoodItemsRegistration.generalitemregistration();
-        GeneralFoodItemsRegistration.additemrecipes();
-        /* Rupee Registration */
-        if (Storageprops.enablerupees)
-        {
-            RupeeRegistration.rupeeregistration();
-            RupeeRegistration.addrupeerecipes();
-        }
+	@EventHandler
+	public void load(FMLInitializationEvent event) {
+		proxy.registerRenderInformation();
+		proxy.addNames();
+		/* ########### Storage Block Registration ######### */
+		StorageBlocksRegistration.blockregistration();
+		StorageBlocksRegistration.addVanillaRecipes();
+		/* ####### Furnace melting Registration ### */
+		FurnaceMelting.addFurnaceMelts();
+		/* Vanity Block Registrations */
+		VanityBlocksRegistration.vanityregistration();
+		VanityBlocksRegistration.addVanityRecipes();
+		/* ######## Tile Entity Registration ###### */
+		TEBlocksRegistration.teregistration();
+		TEBlocksRegistration.addTeRecipes();
+		/* General Item Registrations */
+		GeneralItemRegistration.generalitemregistration();
+		GeneralItemRegistration.additemrecipes();
+		/* General Foot Item Registrations */
+		GeneralFoodItemsRegistration.generalitemregistration();
+		GeneralFoodItemsRegistration.additemrecipes();
+		/* Rupee Registration */
+		if (Storageprops.enablerupees) {
+			RupeeRegistration.rupeeregistration();
+			RupeeRegistration.addrupeerecipes();
+		}
 
-        /* ######################## World Gen Registration ###### */
-        GameRegistry.registerWorldGenerator(new MarbleGen(0));
-        GameRegistry.registerFuelHandler(new VanityvanFuelHandler());
-        /*
-         * Removed code for time being.
-         *GameRegistry.registerWorldGenerator(new UnderWaterRuinHandler()); //Registration of world gen for ruins(removed)
-         *Dungeonlootspawning.chestHooks();
-         *Villager/village Related
-         *AVillageTrades trades = new AVillageTrades();
-         *VillagerRegistry.instance().registerVillagerType(56789, "/mods/vanityblocks/textures/mob/villager.png");
-         *VillagerRegistry.instance().registerVillageCreationHandler(new VillageModHandler());
-         *VillagerRegistry.instance().registerVillageTradeHandler(56789, trades);
-         */
+		/* ######################## World Gen Registration ###### */
+		GameRegistry.registerWorldGenerator(new MarbleGen(0));
+		GameRegistry.registerFuelHandler(new VanityvanFuelHandler());
+		/*
+		 * Removed code for time being.
+		 * GameRegistry.registerWorldGenerator(new
+		 * UnderWaterRuinHandler()); //Registration of world gen for
+		 * ruins(removed)Dungeonlootspawning.chestHooks();Villager/village
+		 * RelatedAVillageTrades trades = new AVillageTrades();
+		 * VillagerRegistry.instance().registerVillagerType(56789,
+		 * "/mods/vanityblocks/textures/mob/villager.png");
+		 * VillagerRegistry.instance().registerVillageCreationHandler(new
+		 * VillageModHandler());
+		 * VillagerRegistry.instance().registerVillageTradeHandler(56789,
+		 * trades);
+		 */
 
-        /*Creative tab related */
-        LanguageRegistry.instance().addStringLocalization("itemGroup.vanityblocks", "en_US", "Anarchys Vanity Blocks");
-    }
+		/* Creative tab related */
+		LanguageRegistry.instance().addStringLocalization(
+				"itemGroup.vanityblocks", "en_US", "Anarchys Vanity Blocks");
+	}
 
-    public static CreativeTabs tabCustom = new CreativeTabs("vanityblocks")
-    {
-        public ItemStack getIconItemStack ()
-        {
-            return new ItemStack(vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignblock, 1, 0);
-        }
-    };
+	public static CreativeTabs tabCustom = new CreativeTabs("vanityblocks") {
+		public ItemStack getIconItemStack() {
+			return new ItemStack(
+					vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignblock,
+					1, 0);
+		}
+	};
 
-    @EventHandler
-    public void postInit (FMLPostInitializationEvent event)
-    {
-        StorageBlocksRegistration.addModRecipes();
-        StorageBlocksRegistration.addForestryRecipes();
-        GameRegistry.registerFuelHandler(new VanityForestryFuelHandler());
-        GameRegistry.registerFuelHandler(new VanitymodFuelHandler());
-        /* Mod bypassing */
-        if (Storageprops.enablegregtechbypass)
-        {
-            Modbypass.bypassrecipes();
-            FMLLog.info("[VanityBlocks] Bypass recipes are enabled");
-        }
-        FMLLog.info("[VanityBlocks] Seems to have loaded well!");
-    }
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		StorageBlocksRegistration.addModRecipes();
+		StorageBlocksRegistration.addForestryRecipes();
+		GameRegistry.registerFuelHandler(new VanityForestryFuelHandler());
+		GameRegistry.registerFuelHandler(new VanitymodFuelHandler());
+		/* Mod bypassing */
+		if (Storageprops.enablegregtechbypass) {
+			Modbypass.bypassrecipes();
+			FMLLog.info("[VanityBlocks] Bypass recipes are enabled");
+		}
+		FMLLog.info("[VanityBlocks] Seems to have loaded well!");
+	}
 }

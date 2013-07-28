@@ -42,15 +42,15 @@ public class VanityBlocksRegistration {
 		VanityDesignworldWallblock = new MarbleWall(VanityDesignworldWallId,
 				VanityDesignworldblock);
 
-		/* Block registration and naming for vanity  */
+		/* Block registration and naming for vanity */
 		GameRegistry.registerBlock(VanityDesignblock,
 				VanitydesignItemBlock.class, "Vanity Blocks Design blocks");
 		LanguageRegistry.addName(new ItemStack(VanityDesignblock, 1, 0),
 				"Lava Lamp");
-		LanguageRegistry.addName(new ItemStack(VanityDesignblock, 1, 1),
-				"Clay Brick");
+		// LanguageRegistry.addName(new ItemStack(VanityDesignblock, 1, 1),
+		// "Blue Lava Lamp");
 
-		/*  Block registration and naming for world gen  */
+		/* Block registration and naming for world gen */
 		if (Storageprops.generatemarble && Storageprops.generateblackmarble) {
 			GameRegistry.registerBlock(VanityDesignworldblock,
 					VanitydesignworldItemBlock.class,
@@ -85,8 +85,7 @@ public class VanityBlocksRegistration {
 					"Ashford Black Marble Tile");
 		}
 		/*
-		 *  Block Registration of Slabs
-		 *
+		 * Block Registration of Slabs
 		 */
 		if (Storageprops.generatemarble && Storageprops.generateblackmarble
 				&& Storageprops.marbleslabs) {
@@ -115,7 +114,7 @@ public class VanityBlocksRegistration {
 					1, 9), "Ashford Black Marble Tile Slab");
 		}
 		/*
-		 *  Block Registration of Marble walls
+		 * Block Registration of Marble walls
 		 */
 		if (Storageprops.generatemarble && Storageprops.generateblackmarble
 				&& Storageprops.marblewalls) {

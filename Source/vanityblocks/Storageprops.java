@@ -30,6 +30,8 @@ public class Storageprops {
 				"Vanity Blocks World Gen slabs", 3061).getInt(3061);
 		vanitydesignworldWallconfig = config.getBlock(blocks,
 				"Vanity Blocks World Gen walls", 3062).getInt(3062);
+		randomblocksconfig = config.getBlock(blocks,
+				"Vanityblocks random blocks id", 3064).getInt(3064);
 
 		String items = "Item id's";
 		// config.getItem("Patterns and Misc", "Tinker's Manual",
@@ -50,6 +52,8 @@ public class Storageprops {
 				19005).getInt(19005);
 
 		String generalitems = "General Item config";
+		enablegeneralitems = config.get(generalitems,
+				"Enable the general items?", true).getBoolean(true);
 		enablecoalstorageitem = config.get(generalitems,
 				"Enable the coal storage item?", true).getBoolean(true);
 		coalstorageitem = config.getItem(generalitems, "Coal Storage Item Id",
@@ -95,6 +99,8 @@ public class Storageprops {
 				"Sweetend Hot Chocolate with milk Id", 19029).getInt(19029);
 
 		String category1 = "Blocks Enable or disable";
+		enablestorageblocks = config.get(category1, "Enable Storageblocks?",
+				true).getBoolean(true);
 		enablecharcoal = config.get(category1,
 				"Enable CharCoal Block crafting?", true).getBoolean(true);
 		enableenderpearl = config.get(category1,
@@ -127,13 +133,10 @@ public class Storageprops {
 				"Enable Platinum/shiny Block crafting?", true).getBoolean(true);
 		enablerubber = config.get(category1, "Enable Rubber Block crafting?",
 				true).getBoolean(true);
-		enableclaybrick = config.get(category1, "Enable clay brick crafting",
-				true).getBoolean(true);
 		enablemeltingcore = config.get(category1,
-				"Enable Melting Core crafting?", true).getBoolean(true);
+				"Enable Melting Core crafting?/Enable it", true).getBoolean(
+				true);
 		enablelavalamp = config.get(category1, "Enable Lavalamp crafting?",
-				true).getBoolean(true);
-		enablewhitesoulsand = config.get(category1, "Enable White Soul sand?",
 				true).getBoolean(true);
 		String category2 = "Specific Blocks mod compatibility";
 		enablebrass = config.get(category2,
@@ -188,17 +191,19 @@ public class Storageprops {
 				true);
 
 		String category4 = "Random things";
-		dungeonlootenablevannila = config.get(category4,
-				"Allow vannila storage blocks to spawn in dungeon loot?", true)
-				.getBoolean(true);
-		dungeonlootenablemod = config.get(category4,
-				"Allow modded storage blocks to spawn in dungeon loot?", true)
-				.getBoolean(true);
+		// dungeonlootenablevannila = config.get(category4,
+		// "Allow vannila storage blocks to spawn in dungeon loot?", true)
+		// .getBoolean(true);
+		// dungeonlootenablemod = config.get(category4,
+		// "Allow modded storage blocks to spawn in dungeon loot?", true)
+		// .getBoolean(true);
 		furnacemelts = config.get(category4,
 				"Allow furnace melting of stuff like iron doors?", true)
 				.getBoolean(true);
 
 		String category5 = "World Generation - Marble";
+		enableworldgen = config.get(category5, "Allow Worldgen?", true)
+				.getBoolean(true);
 		generatemarble = config.get(category5,
 				"Allow marble to generate in the world?", true)
 				.getBoolean(true);
@@ -237,13 +242,13 @@ public class Storageprops {
 						"Rarity- How often should black marble generate in a chunk, good value is below 5",
 						1).getInt();
 
-		String category7 = "World Generation - Underwater Ruins";
-		generateruin = config.get(category7,
-				"Allow Underwater Ruins to generate?", true).getBoolean(true);
-		ruinchance = config
-				.get(category7,
-						"One in how many chance of the ruins to generate. Such as 20 will make it a 1 in 20, play in ssp to find a good value(i suggest 150+)",
-						150).getInt();
+		// String category7 = "World Generation - Underwater Ruins";
+		// generateruin = config.get(category7,
+		// "Allow Underwater Ruins to generate?", true).getBoolean(true);
+		// ruinchance = config
+		// .get(category7,
+		// "One in how many chance of the ruins to generate. Such as 20 will make it a 1 in 20, play in ssp to find a good value(i suggest 150+)",
+		// 150).getInt();
 
 		String category8 = "World Generation - Slabs/stairs/Walls";
 		marbleslabs = config.get(category8, "Allowed to make Marble slabs?",
@@ -262,6 +267,20 @@ public class Storageprops {
 		// Configflags = config.get(Configuration.CATEGORY_GENERAL,
 		// "SomeConfigFlag", false).getBoolean(false);
 
+		String category9 = "Random vanity blocks";
+		enablerandomblocks = config.get(category9, "Enable the random blocks?",
+				true).getBoolean(true);
+		enableclaybrick = config.get(category9, "Enable clay brick crafting",
+				true).getBoolean(true);
+		enableoldlapisblock = config.get(category9,
+				"Enable crafting for block with old lapis texture(2x2 lapis)",
+				true).getBoolean(true);
+		enablewhitesoulsand = config.get(category9,
+				"Enable white soul sand crafting?", true).getBoolean(true);
+		enablewhitesoulsandspeed = config.get(category9,
+				"Enable the white soul sand speed boost?", true).getBoolean(
+				true);
+
 		config.save();
 	}
 
@@ -274,6 +293,8 @@ public class Storageprops {
 	public static int vanitydesignworldconfig;
 	public static int vanitydesignworldslabconfig;
 	public static int vanitydesignworldWallconfig;
+	public static int randomblocksconfig;
+	public static boolean enablestorageblocks;
 	public static boolean enablesugarcane;
 	public static boolean enablecharcoal;
 	public static boolean enableenderpearl;
@@ -297,12 +318,10 @@ public class Storageprops {
 	public static boolean enablehoneydrop;
 	public static boolean enablehoneydew;
 	public static boolean enablepeat;
-	public static boolean enableclaybrick;
 	public static boolean gregtechcompat;
 	public static boolean enablegregtechbypass;
 	public static boolean enablemeltingcore;
 	public static boolean enablelavalamp;
-	public static boolean enablewhitesoulsand;
 	// #### Recipe booleans
 	public static boolean magmacreamtoslime;
 	public static boolean dragoneggrecipe;
@@ -318,6 +337,7 @@ public class Storageprops {
 	public static boolean furnacemelts;
 	public static boolean saddletoleather;
 	// #### General Item ints and booleans ####
+	public static boolean enablegeneralitems;
 	public static boolean enableflintitem;
 	public static int flintitem;
 	public static boolean enablecoalstorageitem;
@@ -350,6 +370,7 @@ public class Storageprops {
 	public static int bigredrupee200;
 
 	// #### World gen ints and booleans
+	public static boolean enableworldgen;
 	public static boolean generatemarble;
 	public static int marbleheight;
 	public static int marblerange;
@@ -364,4 +385,12 @@ public class Storageprops {
 	public static int ruinchance;
 	public static boolean marbleslabs;
 	public static boolean marblewalls;
+
+	// ### Random vanity blocks int and booleans
+	public static boolean enablerandomblocks;
+	public static boolean enableclaybrick;
+	public static boolean enableoldlapisblock;
+	public static boolean enablewhitesoulsand;
+	public static boolean enablewhitesoulsandspeed;
+
 }

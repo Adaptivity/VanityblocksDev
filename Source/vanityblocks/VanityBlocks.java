@@ -10,6 +10,8 @@ import vanityblocks.Registrations.RupeeRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
 import vanityblocks.Registrations.TEBlocksRegistration;
 import vanityblocks.Registrations.VanityBlocksRegistration;
+import vanityblocks.Registrations.RandomBlockRegistrations;
+import vanityblocks.Registrations.VanityBlocksRegistration;
 import vanityblocks.WorldGen.AVillageTrades;
 import vanityblocks.WorldGen.MarbleGen;
 import vanityblocks.WorldGen.VillageModHandler;
@@ -22,7 +24,6 @@ import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.FMLLog;
-//import railcraft.common.api.crafting.RailcraftCraftingManager;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -37,14 +38,12 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-//import railcraft.common.api.core.items.ItemRegistry;
-//import railcraft.common.api.crafting.ICokeOvenCraftingManager;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 
 @Mod(modid = "VanityBlocks", name = "Anarchys Vanity Blocks", version = DefaultProps.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 /*
- * TO DO Hold f3 and hit h for item id's Villager that trades modded items
+ * TO DO Hold f3 and hit h for item id's, Villager that trades modded items
  * Vanity - Chiseled sandstone blocks, chairs? redstone lamps diff colored,
  * curtains maybe?, inverted redstone lamps, colored sand/glass ADD
  * STONEHENGE!!!!!!!!!! Item.doorWood.setMaxStackSize(16); - way to change
@@ -69,22 +68,34 @@ public class VanityBlocks {
 		proxy.registerRenderInformation();
 		proxy.addNames();
 		/* ########### Storage Block Registration ######### */
-		StorageBlocksRegistration.blockregistration();
-		StorageBlocksRegistration.addVanillaRecipes();
+		if (Storageprops.enablestorageblocks) {
+			StorageBlocksRegistration.blockregistration();
+			StorageBlocksRegistration.addVanillaRecipes();
+		}
 		/* ####### Furnace melting Registration ### */
-		FurnaceMelting.addFurnaceMelts();
+		if (Storageprops.furnacemelts) {
+			FurnaceMelting.addFurnaceMelts();
+		}
 		/* Vanity Block Registrations */
-		VanityBlocksRegistration.vanityregistration();
-		VanityBlocksRegistration.addVanityRecipes();
+		if (Storageprops.enableworldgen) {
+			VanityBlocksRegistration.vanityregistration();
+			VanityBlocksRegistration.addVanityRecipes();
+		}
 		/* ######## Tile Entity Registration ###### */
-		TEBlocksRegistration.teregistration();
-		TEBlocksRegistration.addTeRecipes();
+		if (Storageprops.enablemeltingcore) {
+			TEBlocksRegistration.teregistration();
+			TEBlocksRegistration.addTeRecipes();
+		}
 		/* General Item Registrations */
-		GeneralItemRegistration.generalitemregistration();
-		GeneralItemRegistration.additemrecipes();
+		if (Storageprops.enablegeneralitems) {
+			GeneralItemRegistration.generalitemregistration();
+			GeneralItemRegistration.additemrecipes();
+		}
 		/* General Foot Item Registrations */
-		GeneralFoodItemsRegistration.generalitemregistration();
-		GeneralFoodItemsRegistration.additemrecipes();
+		if (Storageprops.enableclaymugstuff) {
+			GeneralFoodItemsRegistration.generalitemregistration();
+			GeneralFoodItemsRegistration.additemrecipes();
+		}
 		/* Rupee Registration */
 		if (Storageprops.enablerupees) {
 			RupeeRegistration.rupeeregistration();
@@ -94,9 +105,16 @@ public class VanityBlocks {
 		/* ######################## World Gen Registration ###### */
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));
 		GameRegistry.registerFuelHandler(new VanityvanFuelHandler());
+
 		/*
-		 * Removed code for time being.
-		 * GameRegistry.registerWorldGenerator(new
+		 * Registration of the Random blocks
+		 */
+		if (Storageprops.enablerandomblocks) {
+			RandomBlockRegistrations.randomblockregistration();
+			RandomBlockRegistrations.addRecipes();
+		}
+		/*
+		 * Removed code for time being. GameRegistry.registerWorldGenerator(new
 		 * UnderWaterRuinHandler()); //Registration of world gen for
 		 * ruins(removed)Dungeonlootspawning.chestHooks();Villager/village
 		 * RelatedAVillageTrades trades = new AVillageTrades();

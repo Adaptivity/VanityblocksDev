@@ -3,12 +3,12 @@ package vanityblocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class VanitydesignItemBlock extends ItemBlock {
+public class VanityRandomItemBlock extends ItemBlock {
 
-	private final static String[] subNames = { "Lava Lamp", "", "", "", "", "",
+	private final static String[] subNames = { "Clay Brick", "Lapis Block - Old", "White SoulSand", "", "", "",
 			"", "", "", "", "", "", "", "", "", "", "", "" };
 
-	public VanitydesignItemBlock(int id) {
+	public VanityRandomItemBlock(int id) {
 		super(id);
 		setHasSubtypes(true);
 		// setItemName("vanitydesignblocks");

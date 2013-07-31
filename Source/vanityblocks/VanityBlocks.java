@@ -35,12 +35,14 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
+import cpw.mods.fml.relauncher.Side;
 
-@Mod(modid = "VanityBlocks", name = "Anarchys Vanity Blocks", version = DefaultProps.VERSION)
+@Mod(modid = "VanityBlocks", name = "Anarchys Vanity Blocks", version = DefaultProps.LOCALMAJVERSION + "." + DefaultProps.LOCALMINVERSION + "." + DefaultProps.LOCALBUILDVERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 /*
  * TO DO Hold f3 and hit h for item id's, Villager that trades modded items
@@ -57,7 +59,11 @@ public class VanityBlocks {
 
 	@SidedProxy(clientSide = "vanityblocks.ProxyClient", serverSide = "vanityblocks.Proxy")
 	public static Proxy proxy;
-
+	
+    public static void checkVersion(Side side)
+    {
+        VersionCheck.startCheck(side);
+    }
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		Storageprops.initProps();
@@ -67,6 +73,10 @@ public class VanityBlocks {
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderInformation();
 		proxy.addNames();
+		/* 
+		 * Starts the Version Check
+		 */
+//		VersionCheck.startCheck(Side.SERVER);
 		/* ########### Storage Block Registration ######### */
 		if (Storageprops.enablestorageblocks) {
 			StorageBlocksRegistration.blockregistration();
@@ -129,6 +139,10 @@ public class VanityBlocks {
 		/* Creative tab related */
 		LanguageRegistry.instance().addStringLocalization(
 				"itemGroup.vanityblocks", "en_US", "Anarchys Vanity Blocks");
+	}
+	@EventHandler
+	public void serverInit(FMLServerStartedEvent event) {
+	VersionCheck.startCheck(Side.SERVER);
 	}
 
 	public static CreativeTabs tabCustom = new CreativeTabs("vanityblocks") {

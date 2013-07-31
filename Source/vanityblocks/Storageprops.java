@@ -280,7 +280,7 @@ public class Storageprops {
 		enablewhitesoulsandspeed = config.get(category9,
 				"Enable the white soul sand speed boost?", true).getBoolean(
 				true);
-
+		
 		config.save();
 	}
 

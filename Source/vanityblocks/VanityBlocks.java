@@ -56,6 +56,7 @@ public class VanityBlocks {
 	@Instance("VanityBlocks")
 	public static VanityBlocks instance;
 	public static final String modid = "vanityblocks";
+    public static final String LANGUAGE_PATH = "/assets/vanityblocks/lang/";
 
 	@SidedProxy(clientSide = "vanityblocks.ProxyClient", serverSide = "vanityblocks.Proxy")
 	public static Proxy proxy;
@@ -67,6 +68,7 @@ public class VanityBlocks {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		Storageprops.initProps();
+		
 	}
 
 	@EventHandler

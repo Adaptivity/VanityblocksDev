@@ -70,11 +70,12 @@ public class VersionCheck extends Thread
 
                             if (sideToCheck.equals(Side.CLIENT))
                             {
-                                FMLClientHandler.instance().getClient().thePlayer.addChatMessage(LanguageRegistry.instance().getStringLocalization("newversion.message1.name", "en_US") + String.valueOf(DefaultProps.remoteMajVer) + "." + String.valueOf(DefaultProps.remoteMinVer) + "." + String.valueOf(DefaultProps.remoteBuildVer) + " \u00a71http://micdoodle8.com/");
+                                FMLClientHandler.instance().getClient().thePlayer.addChatMessage(LanguageRegistry.instance().getStringLocalization("newversion.message1.name", "en_US") + String.valueOf(DefaultProps.remoteMajVer) + "." + String.valueOf(DefaultProps.remoteMinVer) + "." + String.valueOf(DefaultProps.remoteBuildVer) + " http://www.minecraftforum.net/topic/1631527-");
                             }
                             else if (sideToCheck.equals(Side.SERVER))
                             {
                             	VbLog.severe(LanguageRegistry.instance().getStringLocalization("newversion.message2.name", "en_US") + String.valueOf(DefaultProps.remoteMajVer) + "." + String.valueOf(DefaultProps.remoteMinVer) + "." + String.valueOf(DefaultProps.remoteBuildVer) + " http://www.minecraftforum.net/topic/1631527-");
+
                             }
                         }
                     }
@@ -82,6 +83,7 @@ public class VersionCheck extends Thread
             }
             catch (final Exception e)
             {
+            	e.printStackTrace();
             }
 
             if (DefaultProps.remoteBuildVer == 0)

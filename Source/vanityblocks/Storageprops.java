@@ -7,21 +7,21 @@ import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
 
 public class Storageprops {
-	public static void initProps() {
-		Configuration config = new Configuration(new File(
+	public static void initProps(File configBase) {
+		Configuration config = new Configuration(new File(configBase,
 				DefaultProps.FILE_CONFIG));
 
 		config.load();
 
 		String enabled = "0:What to enable/disable";
-		enablestorageblocks = config.get(enabled, "Enable Storageblocks?",
-				true).getBoolean(true);
+		enablestorageblocks = config
+				.get(enabled, "Enable Storageblocks?", true).getBoolean(true);
 		enablerupees = config.get(enabled, "Enabled the Rupees?", true)
 				.getBoolean(true);
 		enableclaymugstuff = config.get(enabled,
 				"Enable the Mug stuff(like hot chocolate)", true).getBoolean(
 				true);
-		
+
 		String blocks = "Block id's";
 		storageblockconfig = config.getBlock(blocks, "Vannila Storage Blocks",
 				3050).getInt(3050);

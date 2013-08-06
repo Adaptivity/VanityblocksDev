@@ -41,7 +41,7 @@ public class VersionCheck extends Thread
         {
             try
             {
-                final URL url = new URL("https://www.dropbox.com/s/tkd6nu5ckgddsrq/VersionCheck.txt");
+                final URL url = new URL("https://dl.dropboxusercontent.com/u/126429646/VersionCheck.html");
                 final HttpURLConnection http = (HttpURLConnection) url.openConnection();
                 http.addRequestProperty("User-Agent", "Mozilla/4.76");
                 final BufferedReader in = new BufferedReader(new InputStreamReader(http.getInputStream()));
@@ -70,11 +70,11 @@ public class VersionCheck extends Thread
 
                             if (sideToCheck.equals(Side.CLIENT))
                             {
-                                FMLClientHandler.instance().getClient().thePlayer.addChatMessage(LanguageRegistry.instance().getStringLocalization("newversion.message1.name", "en_US") + String.valueOf(DefaultProps.remoteMajVer) + "." + String.valueOf(DefaultProps.remoteMinVer) + "." + String.valueOf(DefaultProps.remoteBuildVer) + " http://www.minecraftforum.net/topic/1631527-");
+                                FMLClientHandler.instance().getClient().thePlayer.addChatMessage("\u00a77New \u00a73VanityBlocks \u00a77version available! v" + String.valueOf(DefaultProps.remoteMajVer) + "." + String.valueOf(DefaultProps.remoteMinVer) + "." + String.valueOf(DefaultProps.remoteBuildVer) + " http://www.minecraftforum.net/topic/1631527-");
                             }
                             else if (sideToCheck.equals(Side.SERVER))
                             {
-                            	VbLog.severe(LanguageRegistry.instance().getStringLocalization("newversion.message2.name", "en_US") + String.valueOf(DefaultProps.remoteMajVer) + "." + String.valueOf(DefaultProps.remoteMinVer) + "." + String.valueOf(DefaultProps.remoteBuildVer) + " http://www.minecraftforum.net/topic/1631527-");
+                            	VbLog.severe("New VanityBlocks version available! v" + String.valueOf(DefaultProps.remoteMajVer) + "." + String.valueOf(DefaultProps.remoteMinVer) + "." + String.valueOf(DefaultProps.remoteBuildVer) + " http://www.minecraftforum.net/topic/1631527-");
 
                             }
                         }
@@ -90,7 +90,7 @@ public class VersionCheck extends Thread
             {
                 try
                 {
-                	VbLog.severe(LanguageRegistry.instance().getStringLocalization("newversion.failed.name", "en_US"));
+                	VbLog.severe("VanityBlocks update check failed! Trying again in 15 seconds");
                     Thread.sleep(15000);
                 }
                 catch (final InterruptedException e)
@@ -99,7 +99,7 @@ public class VersionCheck extends Thread
             }
             else
             {
-                VbLog.info(LanguageRegistry.instance().getStringLocalization("newversion.success.name", "en_US") + " " + DefaultProps.remoteMajVer + "." + DefaultProps.remoteMinVer + "." + DefaultProps.remoteBuildVer);
+                VbLog.info("VanityBlocks remote version found:" + " " + DefaultProps.remoteMajVer + "." + DefaultProps.remoteMinVer + "." + DefaultProps.remoteBuildVer);
             }
 
             this.count++;

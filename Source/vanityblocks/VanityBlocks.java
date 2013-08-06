@@ -56,7 +56,9 @@ public class VanityBlocks {
 	@Instance("VanityBlocks")
 	public static VanityBlocks instance;
 	public static final String modid = "vanityblocks";
-    public static final String LANGUAGE_PATH = "/assets/vanityblocks/lang/";
+//    public static final String LANGUAGE_PATH = "assets/vanityblocks/lang/";
+//    private static final String[] LANGUAGES_SUPPORTED = new String[] {  "en_US" };
+
 
 	@SidedProxy(clientSide = "vanityblocks.ProxyClient", serverSide = "vanityblocks.Proxy")
 	public static Proxy proxy;

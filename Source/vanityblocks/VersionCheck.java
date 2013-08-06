@@ -24,7 +24,7 @@ public class VersionCheck extends Thread
     {
         final Thread thread = new Thread(VersionCheck.instance);
         thread.start();
-        System.out.println("Check Starting");
+        //System.out.println("Check Starting");
     }
 
     @Override
@@ -41,7 +41,7 @@ public class VersionCheck extends Thread
         {
             try
             {
-                final URL url = new URL("https://dl.dropboxusercontent.com/u/126429646/VersionCheck.html");
+                final URL url = new URL("https://dl.dropboxusercontent.com/u/126429646/VersionCheck.txt");
                 final HttpURLConnection http = (HttpURLConnection) url.openConnection();
                 http.addRequestProperty("User-Agent", "Mozilla/4.76");
                 final BufferedReader in = new BufferedReader(new InputStreamReader(http.getInputStream()));
@@ -103,7 +103,7 @@ public class VersionCheck extends Thread
             }
 
             this.count++;
-            System.out.println("Check Ran");
+            //System.out.println("Check Ran");
         }
     }
 

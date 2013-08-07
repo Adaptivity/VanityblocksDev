@@ -76,10 +76,6 @@ public class VanityBlocks {
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderInformation();
 		proxy.addNames();
-		/* 
-		 * Starts the Version Check
-		 */
-//		VersionCheck.startCheck(Side.SERVER);
 		/* ########### Storage Block Registration ######### */
 		if (Storageprops.enablestorageblocks) {
 			StorageBlocksRegistration.blockregistration();

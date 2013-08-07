@@ -55,7 +55,7 @@ public class VersionCheck extends Thread
                     {
                         str = str.replace("Version=", "");
 
-                        str2 = str.split("#");
+                        str2 = str.split("\\.");
 
                         if (str2 != null && str2.length == 3)
                         {
@@ -66,7 +66,7 @@ public class VersionCheck extends Thread
 
                         if (DefaultProps.remoteMajVer > DefaultProps.LOCALMAJVERSION || DefaultProps.remoteMajVer == DefaultProps.LOCALMAJVERSION && DefaultProps.remoteMinVer > DefaultProps.LOCALMINVERSION || DefaultProps.remoteMajVer == DefaultProps.LOCALMAJVERSION && DefaultProps.remoteMinVer == DefaultProps.LOCALMINVERSION && DefaultProps.remoteBuildVer > DefaultProps.LOCALBUILDVERSION)
                         {
-                            Thread.sleep(5000);
+                            Thread.sleep(15000);
 
                             if (sideToCheck.equals(Side.CLIENT))
                             {

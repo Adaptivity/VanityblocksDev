@@ -18,10 +18,10 @@ public class RandomBlockRegistrations {
 		randomblocksconfig = Storageprops.randomblocksconfig;
 		RandomBlocks = new VanityRandomBlocks(randomblocksconfig);
 
-		// String[] vannilastorageBlockNames = { "Sugar Cane Block",
-		// "", "Enderpearl Block", "Slime Block",
-		// "", "", "", "Leather Block",
-		// "", "", "", "" };
+		 String[] randomblocknames = { "Clay Brick",
+		 "White Soul Sand", "Lapis block - old", "Lapis Brick - old",
+		 "", "", "", "",
+		 "", "", "", "" };
 		/* ##### Vannila ##### */
 		GameRegistry.registerBlock(RandomBlocks,
 				vanityblocks.VanityRandomItemBlock.class, "Random Blocks");
@@ -33,6 +33,8 @@ public class RandomBlockRegistrations {
 				"Lapis Block - Old");
 		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 3),
 				"Lapis Brick - Old");
+		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 4),
+				"Lapis Brick - Current");
 	}
 
 	public static void addRecipes() {
@@ -59,8 +61,7 @@ public class RandomBlockRegistrations {
 		}
 		if (Storageprops.enableoldlapisblock) {
 			GameRegistry.addRecipe(new ItemStack(RandomBlocks, 1, 2),
-					new Object[] { "xx", "xx", 'x',
-							new ItemStack(Item.dyePowder, 1, 4) });
+					new Object[] { "xx", "xx", 'x', new ItemStack(Item.dyePowder, 1, 4) });
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(Item.dyePowder, 4, 4), new ItemStack(
 							RandomBlocks, 1, 2));
@@ -71,6 +72,9 @@ public class RandomBlockRegistrations {
 			GameRegistry.addShapelessRecipe(
 					new ItemStack(RandomBlocks, 1, 2), new ItemStack(
 							RandomBlocks, 1, 3));
+			// lapis brick current
+			GameRegistry.addRecipe(new ItemStack(RandomBlocks, 1, 4),
+					new Object[] { "xx", "xx", 'x', new ItemStack(Block.blockLapis) });
 		}
 
 	}

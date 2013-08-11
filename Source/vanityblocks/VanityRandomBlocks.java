@@ -27,7 +27,7 @@ public class VanityRandomBlocks extends Block {
 		if (Storageprops.enablewhitesoulsandspeed) {
 			double boost = 2.2D;
 			int metadata = world.getBlockMetadata(x, y, z);
-			if (metadata == 2)
+			if (metadata == 1)
 				boost = 5D;
 
 			double mX = Math.abs(entity.motionX);

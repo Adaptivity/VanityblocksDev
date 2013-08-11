@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 
 public class VanityRandomItemBlock extends ItemBlock {
 
-	private final static String[] subNames = { "Clay Brick", "Lapis Block - Old", "White SoulSand", "", "", "",
+	private final static String[] subNames = { "Clay Brick", "White Soul Sand", "Lapis Block - Old", "Lapis Brick - Old", "Lapis Brick", "",
 			"", "", "", "", "", "", "", "", "", "", "", "" };
 
 	public VanityRandomItemBlock(int id) {

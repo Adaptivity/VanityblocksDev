@@ -55,8 +55,8 @@ public class GeneralItemRegistration {
 					.setUnlocalizedName("BlazeStorageItem");
 			LanguageRegistry.addName(blazestorageitem, "Blaze Rod Bundle");
 		}
-			worldgenitem = new worldgenitem(19500).setUnlocalizedName("BlazeStorageItem");
-			LanguageRegistry.addName(blazestorageitem, "Blaze Rod Bundle");
+			worldgenitem = new worldgenitem(19500).setUnlocalizedName("worldgenitem");
+			LanguageRegistry.addName(worldgenitem, "Worldgen Test Item");
 	}
 
 	public static void additemrecipes() {

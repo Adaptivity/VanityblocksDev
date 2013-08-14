@@ -43,6 +43,24 @@ public class Storageprops {
 		randomblocksconfig = config.getBlock(blocks,
 				"Vanityblocks random blocks id", 3064).getInt(3064);
 
+		String blockstairs = "Marble Stair id's";
+		marblestair = config.getBlock(blockstairs, "Marble Stair id", 3038)
+				.getInt(3038);
+		marblebrickstair = config.getBlock(blockstairs,
+				"Marble Brick Stair id", 3039).getInt(3039);
+		marblepillarstair = config.getBlock(blockstairs,
+				"Marble Pillar Stair id", 3040).getInt(3040);
+		marbletilestair = config.getBlock(blockstairs, "Marble Tile Stair id",
+				3041).getInt(3041);
+		blackmarblestair = config.getBlock(blockstairs,
+				"Ashford Black Marble Stair id", 3042).getInt(3042);
+		blackmarblebrickstair = config.getBlock(blockstairs,
+				"Ashford Black Marble Brick Stair id", 3043).getInt(3043);
+		blackmarblepillarstair = config.getBlock(blockstairs,
+				"Ashford Black Marble Pillar Stair id", 3044).getInt(3044);
+		blackmarbletilestair = config.getBlock(blockstairs,
+				"Ashford Black Marble Tile Stair id", 3045).getInt(3045);
+
 		String items = "Item id's";
 		// config.getItem("Patterns and Misc", "Tinker's Manual",
 		// 14018).getInt(14018); use a second "" to add it to a sub category
@@ -141,7 +159,9 @@ public class Storageprops {
 				true);
 		enablelavalamp = config.get(category1, "Enable Lavalamp crafting?",
 				true).getBoolean(true);
-		enablestoneglowstone = config.get(category1, "Enable Stone Trimmed Glowstone crafting?", true).getBoolean(true);
+		enablestoneglowstone = config.get(category1,
+				"Enable Stone Trimmed Glowstone crafting?", true).getBoolean(
+				true);
 
 		String category2 = "Specific Blocks mod compatibility";
 		enablebrass = config.get(category2,
@@ -260,17 +280,19 @@ public class Storageprops {
 				true).getBoolean(true);
 		marblewalls = config.get(category8, "Allowed to make Marble Walls?",
 				true).getBoolean(true);
-
+		marblestairs = config
+				.get(category8,
+						"Enabled/allow White marble stairs?(note marble needs to be enabled)",
+						true).getBoolean(true);
+		blackmarblestairs = config
+				.get(category8,
+						"Enabled/Allow Black marble stairs?(note black marble needs to be enabled)",
+						true).getBoolean(true);
 		// String category7 = "Texture swapping";
 		// Property blackmarbletextures =
 		// config.get(category6,"Do you want to use my textures for black marble or alt textures? type true for mine, false for alt",true);
 		// blackmarbletextures.comment =
 		// "Type true for main textures, false for alt textures";
-
-		// Since this flag is a boolean, we can read it into the variable
-		// directly from the config.
-		// Configflags = config.get(Configuration.CATEGORY_GENERAL,
-		// "SomeConfigFlag", false).getBoolean(false);
 
 		String category9 = "Random vanity blocks";
 		enablerandomblocks = config.get(category9, "Enable the random blocks?",
@@ -299,6 +321,16 @@ public class Storageprops {
 	public static int vanitydesignworldslabconfig;
 	public static int vanitydesignworldWallconfig;
 	public static int randomblocksconfig;
+	// #### Marble stair ints //
+	public static int marblestair;
+	public static int marblebrickstair;
+	public static int marblepillarstair;
+	public static int marbletilestair;
+	public static int blackmarblestair;
+	public static int blackmarblebrickstair;
+	public static int blackmarblepillarstair;
+	public static int blackmarbletilestair;
+	// Enabled blocks?
 	public static boolean enablestorageblocks;
 	public static boolean enablesugarcane;
 	public static boolean enablecharcoal;
@@ -391,6 +423,8 @@ public class Storageprops {
 	public static int ruinchance;
 	public static boolean marbleslabs;
 	public static boolean marblewalls;
+	public static boolean marblestairs;
+	public static boolean blackmarblestairs;
 
 	// ### Random vanity blocks int and booleans
 	public static boolean enablerandomblocks;

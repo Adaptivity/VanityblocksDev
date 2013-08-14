@@ -141,6 +141,7 @@ public class Storageprops {
 				true);
 		enablelavalamp = config.get(category1, "Enable Lavalamp crafting?",
 				true).getBoolean(true);
+		enablestoneglowstone = config.get(category1, "Enable Stone Trimmed Glowstone crafting?", true).getBoolean(true);
 
 		String category2 = "Specific Blocks mod compatibility";
 		enablebrass = config.get(category2,
@@ -326,6 +327,7 @@ public class Storageprops {
 	public static boolean enablegregtechbypass;
 	public static boolean enablemeltingcore;
 	public static boolean enablelavalamp;
+	public static boolean enablestoneglowstone;
 	// #### Recipe booleans
 	public static boolean magmacreamtoslime;
 	public static boolean dragoneggrecipe;

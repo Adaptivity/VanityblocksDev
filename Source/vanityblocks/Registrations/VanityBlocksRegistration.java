@@ -47,8 +47,8 @@ public class VanityBlocksRegistration {
 				VanitydesignItemBlock.class, "Vanity Blocks Design blocks");
 		LanguageRegistry.addName(new ItemStack(VanityDesignblock, 1, 0),
 				"Lava Lamp");
-		// LanguageRegistry.addName(new ItemStack(VanityDesignblock, 1, 1),
-		// "Blue Lava Lamp");
+		LanguageRegistry.addName(new ItemStack(VanityDesignblock, 1, 1),
+				"Stone Trimmed GlowStone");
 
 		/* Block registration and naming for world gen */
 		if (Storageprops.generatemarble && Storageprops.generateblackmarble) {
@@ -152,6 +152,10 @@ public class VanityBlocksRegistration {
 			GameRegistry.addRecipe(new ItemStack(VanityDesignblock, 4, 0),
 					"zxz", "xyx", "zxz", 'x', glasspane, 'y', lavabukkit, 'z',
 					Block.stone);
+		}
+		if (Storageprops.enablestoneglowstone) {
+			GameRegistry.addRecipe(new ItemStack(VanityDesignblock, 1, 1),
+					" x ", "xyx", " x ", 'x', Block.stone, 'y', Block.glowStone);
 		}
 		// ##### This is world gen recipes for marble/black marble
 		if (Storageprops.generatemarble) {

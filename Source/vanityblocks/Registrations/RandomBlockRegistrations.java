@@ -20,7 +20,7 @@ public class RandomBlockRegistrations {
 
 		 String[] randomblocknames = { "Clay Brick",
 		 "White Soul Sand", "Lapis block - old", "Lapis Brick - old",
-		 "", "", "", "",
+		 "Lapis Brick - Current", "Invisible Glass", "", "",
 		 "", "", "", "" };
 		/* ##### Vannila ##### */
 		GameRegistry.registerBlock(RandomBlocks,
@@ -38,7 +38,7 @@ public class RandomBlockRegistrations {
 	}
 
 	public static void addRecipes() {
-		System.out.println("Random Block Registration loaded");
+	//	System.out.println("Random Block Registration loaded");
 		if (Storageprops.enableclaybrick) {
 			GameRegistry.addRecipe(new ItemStack(RandomBlocks, 4, 0),
 					new Object[] { "xx", "xx", 'x',

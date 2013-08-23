@@ -110,7 +110,6 @@ public class VanityBlocks {
 			RupeeRegistration.rupeeregistration();
 			RupeeRegistration.addrupeerecipes();
 		}
-
 		/* ######################## World Gen Registration ###### */
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));
 		GameRegistry.registerFuelHandler(new VanityvanFuelHandler());

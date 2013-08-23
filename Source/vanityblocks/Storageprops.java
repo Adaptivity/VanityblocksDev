@@ -21,6 +21,11 @@ public class Storageprops {
 		enableclaymugstuff = config.get(enabled,
 				"Enable the Mug stuff(like hot chocolate)", true).getBoolean(
 				true);
+		furnacemelts = config.get(enabled,
+				"Allow furnace melting of stuff like iron doors?", true)
+				.getBoolean(true);
+//		enablefences = config.get(enabled, "Enable the fences?", true)
+//				.getBoolean(true);
 
 		String blocks = "Block id's";
 		storageblockconfig = config.getBlock(blocks, "Vannila Storage Blocks",
@@ -42,6 +47,8 @@ public class Storageprops {
 				"Vanity Blocks World Gen walls", 3062).getInt(3062);
 		randomblocksconfig = config.getBlock(blocks,
 				"Vanityblocks random blocks id", 3064).getInt(3064);
+//		vanityfenceconfig = config.getBlock(blocks,
+//				"Vanity Fences", 3065).getInt(3065);
 
 		String blockstairs = "Marble Stair id's";
 		marblestair = config.getBlock(blockstairs, "Marble Stair id", 3038)
@@ -222,9 +229,9 @@ public class Storageprops {
 		// dungeonlootenablemod = config.get(category4,
 		// "Allow modded storage blocks to spawn in dungeon loot?", true)
 		// .getBoolean(true);
-		furnacemelts = config.get(category4,
-				"Allow furnace melting of stuff like iron doors?", true)
-				.getBoolean(true);
+		// furnacemelts = config.get(category4,
+		// "Allow furnace melting of stuff like iron doors?", true)
+		// .getBoolean(true);
 
 		String category5 = "World Generation - Marble";
 		enableworldgen = config.get(category5, "Allow Worldgen?", true)
@@ -321,6 +328,7 @@ public class Storageprops {
 	public static int vanitydesignworldslabconfig;
 	public static int vanitydesignworldWallconfig;
 	public static int randomblocksconfig;
+	public static int vanityfenceconfig;
 	// #### Marble stair ints //
 	public static int marblestair;
 	public static int marblebrickstair;
@@ -360,6 +368,7 @@ public class Storageprops {
 	public static boolean enablemeltingcore;
 	public static boolean enablelavalamp;
 	public static boolean enablestoneglowstone;
+	public static boolean enablefences;
 	// #### Recipe booleans
 	public static boolean magmacreamtoslime;
 	public static boolean dragoneggrecipe;

@@ -24,8 +24,11 @@ public class Storageprops {
 		furnacemelts = config.get(enabled,
 				"Allow furnace melting of stuff like iron doors?", true)
 				.getBoolean(true);
-//		enablefences = config.get(enabled, "Enable the fences?", true)
-//				.getBoolean(true);
+		versioncheck = config.get(enabled,
+				"Turn this to false to turn off the version check", true)
+				.getBoolean(true);
+		// enablefences = config.get(enabled, "Enable the fences?", true)
+		// .getBoolean(true);
 
 		String blocks = "Block id's";
 		storageblockconfig = config.getBlock(blocks, "Vannila Storage Blocks",
@@ -47,8 +50,8 @@ public class Storageprops {
 				"Vanity Blocks World Gen walls", 3062).getInt(3062);
 		randomblocksconfig = config.getBlock(blocks,
 				"Vanityblocks random blocks id", 3064).getInt(3064);
-//		vanityfenceconfig = config.getBlock(blocks,
-//				"Vanity Fences", 3065).getInt(3065);
+		// vanityfenceconfig = config.getBlock(blocks,
+		// "Vanity Fences", 3065).getInt(3065);
 
 		String blockstairs = "Marble Stair id's";
 		marblestair = config.getBlock(blockstairs, "Marble Stair id", 3038)
@@ -317,7 +320,12 @@ public class Storageprops {
 
 		config.save();
 	}
-
+	// Enabled sections?
+	public static boolean enablestorageblocks;
+	public static boolean enablerupees;
+	public static boolean enableclaymugstuff;
+	public static boolean furnacemelts;
+	public static boolean versioncheck;
 	// #### Block id ints and booleans###
 	public static int storageblockconfig;
 	public static int storageblockmodconfig;
@@ -339,7 +347,6 @@ public class Storageprops {
 	public static int blackmarblepillarstair;
 	public static int blackmarbletilestair;
 	// Enabled blocks?
-	public static boolean enablestorageblocks;
 	public static boolean enablesugarcane;
 	public static boolean enablecharcoal;
 	public static boolean enableenderpearl;
@@ -381,7 +388,6 @@ public class Storageprops {
 	public static boolean storageblocking;
 	public static boolean dungeonlootenablevannila;
 	public static boolean dungeonlootenablemod;
-	public static boolean furnacemelts;
 	public static boolean saddletoleather;
 	// #### General Item ints and booleans ####
 	public static boolean enablegeneralitems;
@@ -395,7 +401,6 @@ public class Storageprops {
 	public static int blazestorageitem;
 
 	// ### General Food Item Ints and Booleans ###
-	public static boolean enableclaymugstuff;
 	public static int mugunfired;
 	public static int emptymug;
 	public static int mugwater;
@@ -408,7 +413,6 @@ public class Storageprops {
 	public static int mugmilkhotchocosugar;
 
 	// ##### Rupee id ints and booleans ###
-	public static boolean enablerupees;
 	public static int greenrupee1;
 	public static int bluerupee5;
 	public static int redrupee20;

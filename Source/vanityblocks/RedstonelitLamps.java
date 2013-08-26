@@ -13,16 +13,18 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import vanityblocks.Registrations.RedstoneLampRegistrations;
 
 public class RedstonelitLamps extends BlockRedstoneLight {
+	private final boolean powered;
 
 	public RedstonelitLamps(int par1, boolean par2) {
 		super(par1, par2);
+        this.powered = par2;
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 		this.setLightValue(1.0F);
 	}
 	private Icon[] iconBuffer;
-
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		iconBuffer = new Icon[9];
@@ -86,11 +88,11 @@ public class RedstonelitLamps extends BlockRedstoneLight {
 
 	        if (!par1World.isRemote)
 	        {
-	            if (!par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+	            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
 	            {
 	                par1World.scheduleBlockUpdate(par2, par3, par4, blockID, metadata);
 	            }
-	            else if (par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+	            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
 	            {
 	                par1World.setBlock(par2, par3, par4, metadata);
 	            }
@@ -107,11 +109,11 @@ public class RedstonelitLamps extends BlockRedstoneLight {
 
         if (!par1World.isRemote)
         {
-            if (!par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
                 par1World.scheduleBlockUpdate(par2, par3, par4, blockID, metadata);
             }
-            else if (par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
                 par1World.setBlock(par2, par3, par4, metadata);
             }
@@ -125,10 +127,14 @@ public class RedstonelitLamps extends BlockRedstoneLight {
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
 	    int metadata = par1World.getBlockMetadata(par2, par3, par4);
-
-        if (!par1World.isRemote && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+		
+        if (!par1World.isRemote && this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
         {
-            par1World.setBlock(par2, par3, par4, vanityblocks.Registrations.RedstoneLampRegistrations.RedstoneLampDim, metadata);
+        	  par1World.setBlock(par2, par3, par4, vanityblocks.Registrations.RedstoneLampRegistrations.RedstoneLampDim, metadata);
+//            par1World.setBlock(par2, par3, par4, Block.stone.blockID, 0, 2);
+//            par1World.setBlock(par2, par3, par4, RedstoneLampDim.blockID, metadata);
+//            par1World.setBlock(par2, par3, par4, Block.redstoneLampIdle.blockID, 0, 2);
+//            par1World.setBlock(par2, par3, par4, metadata);
         }
     }
 

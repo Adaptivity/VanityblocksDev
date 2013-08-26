@@ -6,6 +6,7 @@ import vanityblocks.FuelHandler.VanityvanFuelHandler;
 import vanityblocks.Registrations.GeneralFoodItemsRegistration;
 import vanityblocks.Registrations.GeneralItemRegistration;
 import vanityblocks.Registrations.Modbypass;
+import vanityblocks.Registrations.RedstoneLampRegistrations;
 import vanityblocks.Registrations.RupeeRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
 import vanityblocks.Registrations.TEBlocksRegistration;
@@ -124,6 +125,10 @@ public class VanityBlocks {
 		if (Storageprops.enablerandomblocks) {
 			RandomBlockRegistrations.randomblockregistration();
 			RandomBlockRegistrations.addRecipes();
+		}
+		if (Storageprops.enableredstonelamps) {
+		RedstoneLampRegistrations.redstonelampregistration();
+		RedstoneLampRegistrations.addRecipes();
 		}
 		/*
 		 * Removed code for time being. GameRegistry.registerWorldGenerator(new

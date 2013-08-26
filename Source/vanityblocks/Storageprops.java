@@ -27,6 +27,8 @@ public class Storageprops {
 		versioncheck = config.get(enabled,
 				"Turn this to false to turn off the version check", true)
 				.getBoolean(true);
+		enableredstonelamps = config.get(enabled,
+				"Enable the redstone lamp colors?", true).getBoolean(true);
 		// enablefences = config.get(enabled, "Enable the fences?", true)
 		// .getBoolean(true);
 
@@ -39,6 +41,10 @@ public class Storageprops {
 				"Forestry Storage Blocks", 3053).getInt(3053);
 		vanitydesignconfig = config.getBlock(blocks, "Vanity design blocks",
 				3055).getInt(3055);
+		redstonelampdimconfig = config.getBlock(blocks, "Redstone Lamp Dim Id",
+				3056).getInt(3056);
+		redstonelamplitconfig = config.getBlock(blocks, "Redstone lamp Lit id",
+				3057).getInt(3057);
 		vanitydesignworldconfig = config.getBlock(blocks,
 				"Vanity Blocks World Generation blocks", 3058).getInt(3058);
 		vanityentityconfig = config.getBlock(blocks,
@@ -320,18 +326,22 @@ public class Storageprops {
 
 		config.save();
 	}
+
 	// Enabled sections?
 	public static boolean enablestorageblocks;
 	public static boolean enablerupees;
 	public static boolean enableclaymugstuff;
 	public static boolean furnacemelts;
 	public static boolean versioncheck;
+	public static boolean enableredstonelamps;
 	// #### Block id ints and booleans###
 	public static int storageblockconfig;
 	public static int storageblockmodconfig;
 	public static int forestryblockconfig;
 	public static int vanityentityconfig;
 	public static int vanitydesignconfig;
+	public static int redstonelampdimconfig;
+	public static int redstonelamplitconfig;
 	public static int vanitydesignworldconfig;
 	public static int vanitydesignworldslabconfig;
 	public static int vanitydesignworldWallconfig;

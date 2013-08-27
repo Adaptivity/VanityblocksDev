@@ -13,7 +13,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import vanityblocks.Registrations.RedstoneLampRegistrations;
+import vanityblocks.Registrations.*;
 
 public class RedstonelitLamps extends BlockRedstoneLight {
 	private final boolean powered;
@@ -82,19 +82,19 @@ public class RedstonelitLamps extends BlockRedstoneLight {
 		return blockIcon;
 	}
 	@Override
-	public void onBlockAdded(World par1World, int par2, int par3, int par4)
+	public void onBlockAdded(World par1World, int x, int y, int z)
 	    {
-		int metadata = par1World.getBlockMetadata(par2, par3, par4);
+		int metadata = par1World.getBlockMetadata(x, y, z);
 
 	        if (!par1World.isRemote)
 	        {
-	            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+	            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(x, y, z))
 	            {
-	                par1World.scheduleBlockUpdate(par2, par3, par4, blockID, metadata);
+	                par1World.scheduleBlockUpdate(x, y, z, blockID, metadata);
 	            }
-	            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+	            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(x, y, z))
 	            {
-	                par1World.setBlock(par2, par3, par4, metadata);
+	                par1World.setBlock(x, y, z, metadata);
 	            }
 	        }
 	    }
@@ -103,19 +103,19 @@ public class RedstonelitLamps extends BlockRedstoneLight {
      * their own) Args: x, y, z, neighbor blockID
      */
 	@Override
-    public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
+    public void onNeighborBlockChange(World par1World, int x, int y, int z, int par5)
     {
-    int metadata = par1World.getBlockMetadata(par2, par3, par4);
+    int metadata = par1World.getBlockMetadata(x, y, z);
 
         if (!par1World.isRemote)
         {
-            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(x, y, z))
             {
-                par1World.scheduleBlockUpdate(par2, par3, par4, blockID, metadata);
+                par1World.scheduleBlockUpdate(x, y, z, blockID, metadata);
             }
-            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(x, y, z))
             {
-                par1World.setBlock(par2, par3, par4, metadata);
+                par1World.setBlock(x, y, z, metadata);
             }
         }
     }
@@ -124,13 +124,13 @@ public class RedstonelitLamps extends BlockRedstoneLight {
      * Ticks the block if it's been scheduled
      */
 	@Override
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    public void updateTick(World par1World, int x, int y, int z, Random par5Random)
     {
-	    int metadata = par1World.getBlockMetadata(par2, par3, par4);
+	    int metadata = par1World.getBlockMetadata(x, y, z);
 		
-        if (!par1World.isRemote && this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+        if (!par1World.isRemote && this.powered && !par1World.isBlockIndirectlyGettingPowered(x, y, z))
         {
-        	  par1World.setBlock(par2, par3, par4, vanityblocks.Registrations.RedstoneLampRegistrations.RedstoneLampDim, metadata);
+        	  par1World.setBlock(x, y, z, RedstoneLampRegistrations.RedstoneLampDim.blockID, metadata, 3);
 //            par1World.setBlock(par2, par3, par4, Block.stone.blockID, 0, 2);
 //            par1World.setBlock(par2, par3, par4, RedstoneLampDim.blockID, metadata);
 //            par1World.setBlock(par2, par3, par4, Block.redstoneLampIdle.blockID, 0, 2);

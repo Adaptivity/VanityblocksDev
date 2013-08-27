@@ -24,7 +24,13 @@ public class StorageBlockMod extends Block {
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 
 	}
-
+    public boolean isBeaconBase(World worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
+		int metadata = worldObj.getBlockMetadata(x, y, z);
+		if (metadata == 7) {
+			return true;
+		}
+		return false;  	
+    }
 	private Icon[] iconBuffer;
 
 	@Override

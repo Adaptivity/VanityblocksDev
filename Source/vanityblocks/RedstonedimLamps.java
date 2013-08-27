@@ -12,6 +12,7 @@ import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
@@ -21,12 +22,11 @@ public class RedstonedimLamps extends BlockRedstoneLight {
 
 	public RedstonedimLamps(int par1, boolean par2) {
 		super(par1, par2);
-        this.powered = par2;
+		this.powered = par2;
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 	}
 
 	private Icon[] iconBuffer;
-
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		iconBuffer = new Icon[9];
@@ -82,68 +82,77 @@ public class RedstonedimLamps extends BlockRedstoneLight {
 		}
 		return blockIcon;
 	}
+
 	@Override
-	public void onBlockAdded(World par1World, int x, int y, int z)
-	    {
+	public void onBlockAdded(World par1World, int x, int y, int z) {
 		int metadata = par1World.getBlockMetadata(x, y, z);
 
-	        if (!par1World.isRemote)
-	        {
-	            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(x, y, z))
-	            {
-	                par1World.scheduleBlockUpdate(x, y, z, RedstoneLampRegistrations.RedstoneLampLit.blockID, metadata);
-	            }
-	            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(x, y, z))
-	            {
-	                par1World.setBlock(x, y, z, RedstoneLampRegistrations.RedstoneLampLit.blockID, metadata, 3);
-	            }
-	        }
-	    }
-	   /**
-     * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
-     * their own) Args: x, y, z, neighbor blockID
-     */
-	@Override
-    public void onNeighborBlockChange(World par1World, int x, int y, int z, int par5)
-    {
-    int metadata = par1World.getBlockMetadata(x, y, z);
+		if (!par1World.isRemote) {
+			if (this.powered
+					&& !par1World.isBlockIndirectlyGettingPowered(x, y, z)) {
+				par1World.scheduleBlockUpdate(x, y, z,
+						RedstoneLampRegistrations.RedstoneLampLit.blockID,
+						metadata);
+			} else if (!this.powered
+					&& par1World.isBlockIndirectlyGettingPowered(x, y, z)) {
+				par1World.setBlock(x, y, z,
+						RedstoneLampRegistrations.RedstoneLampLit.blockID,
+						metadata, 3);
+			}
+		}
+	}
 
-        if (!par1World.isRemote)
-        {
-            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(x, y, z))
-            {
-                par1World.scheduleBlockUpdate(x, y, z, RedstoneLampRegistrations.RedstoneLampLit.blockID, metadata);
-            }
-            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(x, y, z))
-            {
-                par1World.setBlock(x, y, z, RedstoneLampRegistrations.RedstoneLampLit.blockID, metadata, 3);
-            }
-        }
-    }
-
-    /**
-     * Ticks the block if it's been scheduled
-     */
+	/**
+	 * Lets the block know when one of its neighbor changes. Doesn't know which
+	 * neighbor changed (coordinates passed are their own) Args: x, y, z,
+	 * neighbor blockID
+	 */
 	@Override
-    public void updateTick(World par1World, int x, int y, int z, Random par5Random)
-    {
-	    int metadata = par1World.getBlockMetadata(x, y, z);
-		
-        if (!par1World.isRemote && this.powered && !par1World.isBlockIndirectlyGettingPowered(x, y, z))
-        {
-      	  par1World.setBlock(x, y, z, RedstoneLampRegistrations.RedstoneLampLit.blockID, metadata, 3);
-        }
-    }
+	public void onNeighborBlockChange(World par1World, int x, int y, int z,
+			int par5) {
+		int metadata = par1World.getBlockMetadata(x, y, z);
+
+		if (!par1World.isRemote) {
+			if (this.powered
+					&& !par1World.isBlockIndirectlyGettingPowered(x, y, z)) {
+				par1World.scheduleBlockUpdate(x, y, z,
+						RedstoneLampRegistrations.RedstoneLampLit.blockID,
+						metadata);
+			} else if (!this.powered
+					&& par1World.isBlockIndirectlyGettingPowered(x, y, z)) {
+				par1World.setBlock(x, y, z,
+						RedstoneLampRegistrations.RedstoneLampLit.blockID,
+						metadata, 3);
+			}
+		}
+	}
+
+	/**
+	 * Ticks the block if it's been scheduled
+	 */
+	@Override
+	public void updateTick(World par1World, int x, int y, int z,
+			Random par5Random) {
+		int metadata = par1World.getBlockMetadata(x, y, z);
+
+		if (!par1World.isRemote && this.powered
+				&& !par1World.isBlockIndirectlyGettingPowered(x, y, z)) {
+			par1World.setBlock(x, y, z,
+					RedstoneLampRegistrations.RedstoneLampLit.blockID,
+					metadata, 3);
+		}
+	}
+
 	@Override
 	public int damageDropped(int metadata) {
 		return metadata;
 	}
+
 	@Override
-    public int idPicked(World par1World, int x, int y, int z)
-    {
-		int metadata = par1World.getBlockMetadata(x, y, z);
-        return metadata;
-    }
+	public int idPicked(World par1World, int x, int y, int z) {
+		return blockID;
+	}
+
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
 		for (int ix = 0; ix < 9; ix++) {

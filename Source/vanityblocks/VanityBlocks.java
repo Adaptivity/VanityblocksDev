@@ -127,8 +127,8 @@ public class VanityBlocks {
 			RandomBlockRegistrations.addRecipes();
 		}
 		if (Storageprops.enableredstonelamps) {
-		RedstoneLampRegistrations.redstonelampregistration();
-		RedstoneLampRegistrations.addRecipes();
+			RedstoneLampRegistrations.redstonelampregistration();
+			RedstoneLampRegistrations.addRecipes();
 		}
 		/*
 		 * Removed code for time being. GameRegistry.registerWorldGenerator(new

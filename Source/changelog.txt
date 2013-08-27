@@ -1,5 +1,5 @@
 1.6
-V4.0.3: Added a bit of info to the Version checker. Added a config to disable it checking, disable in the config.
+V4.0.3: Added a bit of info to the Version checker. Added a config to disable it checking, disable in the config. Added config to enable/disable redstone lamp colors, also added redstone lamps with colors(some colors missing).
 V4.0.2: Fixed a name issue with rubber blocks. Added a Lapis brick for current lapis block. Added another light source, Stone Trimmed Glowstone. Added marble/black marble stairs using single id for each(config option disables/enables all).
 V4.0.1: Fixed a config issue breaking McUpdater. Made blaze rod storage and coal storage items burnable for the item x 9 ticks. Removed recipe to make coal storage item for 1.6's coal block(will remove fully soon). Added a version checker(will check to see if version is old, if so, says so). Added Old Lapis block with brick texture, new lapis with brick texture(id had to shift, sorry).
 V4.0:Updated to 1.6.X 

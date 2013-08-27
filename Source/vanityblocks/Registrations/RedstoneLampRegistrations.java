@@ -25,13 +25,13 @@ public class RedstoneLampRegistrations {
 	public static void redstonelampregistration() {
 		redstonelampdimconfig = Storageprops.redstonelampdimconfig;
 		RedstoneLampDim = new RedstonedimLamps(redstonelampdimconfig, false);
-		
+
 		redstonelamplitconfig = Storageprops.redstonelamplitconfig;
 		RedstoneLampLit = new RedstonelitLamps(redstonelamplitconfig, true);
-//		 String[] randomblocknames = { "Clay Brick",
-//		 "White Soul Sand", "Lapis block - old", "Lapis Brick - old",
-//		 "Lapis Brick - Current", "Invisible Glass", "", "",
-//		 "", "", "", "" };
+		// String[] randomblocknames = { "Clay Brick",
+		// "White Soul Sand", "Lapis block - old", "Lapis Brick - old",
+		// "Lapis Brick - Current", "Invisible Glass", "", "",
+		// "", "", "", "" };
 		/* ##### Dim Lamps ##### */
 		GameRegistry.registerBlock(RedstoneLampDim,
 				RedstoneLampDimItemBlock.class, "Redstone Lamp Dim");
@@ -53,7 +53,7 @@ public class RedstoneLampRegistrations {
 				"Dim Light Blue Redstone Lamp");
 		LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 8),
 				"Dim Magenta Redstone Lamp");
-		//#### Lit Lamps ###
+		// #### Lit Lamps ###
 		GameRegistry.registerBlock(RedstoneLampLit,
 				RedstoneLampLitItemBlock.class, "Redstone Lamp Lit");
 		LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 0),
@@ -73,11 +73,12 @@ public class RedstoneLampRegistrations {
 		LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 7),
 				"Lit Light Blue Redstone Lamp");
 		LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 8),
-				"Lit Magenta Redstone Lamp"); 
+				"Lit Magenta Redstone Lamp");
 	}
 
 	public static void addRecipes() {
 	}
+
 	public static Block RedstoneLampDim;
 	public static int redstonelampdimconfig;
 	public static Block RedstoneLampLit;

@@ -52,11 +52,12 @@ public class VanityRandomBlocks extends Block {
 		}
 		return 3f;
 	}
+
 	@Override
-    public int getMobilityFlag()
-    {
-        return 0;
-    }
+	public int getMobilityFlag() {
+		return 0;
+	}
+
 	private Icon[] iconBuffer;
 
 	@Override
@@ -93,6 +94,7 @@ public class VanityRandomBlocks extends Block {
 		}
 		return blockIcon;
 	}
+
 	@Override
 	public int damageDropped(int metadata) {
 		return metadata;

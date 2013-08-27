@@ -21,7 +21,9 @@ public class VanityDesignblock extends Block {
 		setResistance(10.0F);
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 	}
-// To get past the light value on all blocks, change it so meta 0 is not a lighted block.
+
+	// To get past the light value on all blocks, change it so meta 0 is not a
+	// lighted block.
 	@Override
 	public int getLightValue(IBlockAccess world, int x, int y, int z) {
 		if (world.getBlockMetadata(x, y, z) == 0) {

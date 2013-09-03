@@ -1,9 +1,12 @@
 package vanityblocks.Registrations;
 
 import vanityblocks.VanityRandomBlocks;
-import vanityblocks.VanityRandomItemBlock;
 import vanityblocks.Storageprops;
+import vanityblocks.VanityTrapDoors;
+import vanityblocks.ItemBlocks.TrapdoorItemBlock;
+import vanityblocks.ItemBlocks.VanityRandomItemBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -24,7 +27,7 @@ public class RandomBlockRegistrations {
 				"" };
 		/* ##### Vannila ##### */
 		GameRegistry.registerBlock(RandomBlocks,
-				vanityblocks.VanityRandomItemBlock.class, "Random Blocks");
+				vanityblocks.ItemBlocks.VanityRandomItemBlock.class, "Random Blocks");
 		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 0),
 				"Clay Brick");
 		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 1),
@@ -36,7 +39,15 @@ public class RandomBlockRegistrations {
 		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 4),
 				"Lapis Brick - Current");
 	}
-
+	public static void trapdoorregistration() {
+		trapdoorconfigs = Storageprops.trapdoorconfigs;
+		Trapdoors = new VanityTrapDoors(trapdoorconfigs, Material.wood, "textureName");
+		
+		GameRegistry.registerBlock(Trapdoors,
+				TrapdoorItemBlock.class, "Trapdoors");
+		LanguageRegistry.addName(new ItemStack(Trapdoors, 1, 0),
+				"Birch TrapDoor");
+	}
 	public static void addRecipes() {
 		// System.out.println("Random Block Registration loaded");
 		if (Storageprops.enableclaybrick) {
@@ -76,10 +87,13 @@ public class RandomBlockRegistrations {
 			GameRegistry.addRecipe(new ItemStack(RandomBlocks, 1, 4),
 					new Object[] { "xx", "xx", 'x',
 							new ItemStack(Block.blockLapis) });
+		//if (Storageprops.enabletrapdoors)
 		}
 
 	}
 
 	public static Block RandomBlocks;
+	public static Block Trapdoors;
+	public static int trapdoorconfigs;
 	public static int randomblocksconfig;
 }

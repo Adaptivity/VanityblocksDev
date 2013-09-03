@@ -1,17 +1,17 @@
-package vanityblocks;
+package vanityblocks.ItemBlocks;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class VanitytileItemBlock extends ItemBlock {
+public class VanitydesignItemBlock extends ItemBlock {
 
-	private final static String[] subNames = { "Melting Core", "", "", "", "",
-			"", "", "", "", "", "", "", "", "", "", "" };
+	private final static String[] subNames = { "Lava Lamp", "", "", "", "", "",
+			"", "", "", "", "", "", "", "", "", "", "", "" };
 
-	public VanitytileItemBlock(int id) {
+	public VanitydesignItemBlock(int id) {
 		super(id);
 		setHasSubtypes(true);
-		// setItemName("storageblock");
+		// setItemName("vanitydesignblocks");
 	}
 
 	@Override

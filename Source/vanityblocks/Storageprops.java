@@ -29,6 +29,8 @@ public class Storageprops {
 				.getBoolean(true);
 		enableredstonelamps = config.get(enabled,
 				"Enable the redstone lamp colors?", true).getBoolean(true);
+		enabletrapdoors = config.get(enabled, "Enable trap doors", true)
+				.getBoolean(true);
 		// enablefences = config.get(enabled, "Enable the fences?", true)
 		// .getBoolean(true);
 
@@ -56,6 +58,8 @@ public class Storageprops {
 				"Vanity Blocks World Gen walls", 3062).getInt(3062);
 		randomblocksconfig = config.getBlock(blocks,
 				"Vanityblocks random blocks id", 3064).getInt(3064);
+		trapdoorconfigs = config.getBlock(blocks, "Vanityblocks trapdoors id",
+				3065).getInt(3065);
 		// vanityfenceconfig = config.getBlock(blocks,
 		// "Vanity Fences", 3065).getInt(3065);
 
@@ -334,6 +338,7 @@ public class Storageprops {
 	public static boolean furnacemelts;
 	public static boolean versioncheck;
 	public static boolean enableredstonelamps;
+	public static boolean enabletrapdoors;
 	// #### Block id ints and booleans###
 	public static int storageblockconfig;
 	public static int storageblockmodconfig;
@@ -346,7 +351,7 @@ public class Storageprops {
 	public static int vanitydesignworldslabconfig;
 	public static int vanitydesignworldWallconfig;
 	public static int randomblocksconfig;
-	public static int vanityfenceconfig;
+	public static int trapdoorconfigs;
 	// #### Marble stair ints //
 	public static int marblestair;
 	public static int marblebrickstair;

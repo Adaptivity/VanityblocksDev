@@ -1,4 +1,4 @@
-package vanityblocks;
+package vanityblocks.ItemBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;

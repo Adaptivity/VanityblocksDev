@@ -4,13 +4,13 @@
  */
 package vanityblocks.Registrations;
 
-import vanityblocks.RedstoneLampDimItemBlock;
-import vanityblocks.RedstoneLampLitItemBlock;
 import vanityblocks.RedstonedimLamps;
 import vanityblocks.RedstonelitLamps;
 import vanityblocks.VanityRandomBlocks;
-import vanityblocks.VanityRandomItemBlock;
 import vanityblocks.Storageprops;
+import vanityblocks.ItemBlocks.RedstoneLampDimItemBlock;
+import vanityblocks.ItemBlocks.RedstoneLampLitItemBlock;
+import vanityblocks.ItemBlocks.VanityRandomItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -28,10 +28,7 @@ public class RedstoneLampRegistrations {
 
 		redstonelamplitconfig = Storageprops.redstonelamplitconfig;
 		RedstoneLampLit = new RedstonelitLamps(redstonelamplitconfig, true);
-		// String[] randomblocknames = { "Clay Brick",
-		// "White Soul Sand", "Lapis block - old", "Lapis Brick - old",
-		// "Lapis Brick - Current", "Invisible Glass", "", "",
-		// "", "", "", "" };
+
 		/* ##### Dim Lamps ##### */
 		GameRegistry.registerBlock(RedstoneLampDim,
 				RedstoneLampDimItemBlock.class, "Redstone Lamp Dim");
@@ -77,6 +74,42 @@ public class RedstoneLampRegistrations {
 	}
 
 	public static void addRecipes() {
+		// Recipes for Black Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 0),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 0));
+		// Recipes for Red Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 1),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 1));
+		// Recipes For Green Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 2),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 2));
+		// Recipes for Brown Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 3),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 3));
+		// Recipes for Blue Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 4),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 4));
+		// Recipes for Purple Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 5),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 5));
+		// Recipes for Pink Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 6),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 9));
+		// Recipes for Light Blue Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 7),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 12));
+		// Recipes for Magenta Lamp
+		GameRegistry.addShapelessRecipe(new ItemStack(RedstoneLampDim, 1, 8),
+				new ItemStack(Block.redstoneLampIdle), new ItemStack(
+						Item.dyePowder, 1, 13));
 	}
 
 	public static Block RedstoneLampDim;

@@ -25,7 +25,7 @@ public class TEBlocksRegistration {
 		String[] vannilastorageBlockNames = { "Melting Core" };
 
 		GameRegistry.registerBlock(Vanitytileblock,
-				vanityblocks.VanitytileItemBlock.class, "Vanity TE ");
+				vanityblocks.ItemBlocks.VanitytileItemBlock.class, "Vanity TE ");
 		GameRegistry.registerTileEntity(TileMeltingcore.class,
 				"Vanityblocks MeltingCore");
 		LanguageRegistry.addName(new ItemStack(Vanitytileblock, 1, 0),

@@ -115,10 +115,6 @@ public class VanityBlocks {
 			RupeeRegistration.rupeeregistration();
 			RupeeRegistration.addrupeerecipes();
 		}
-		/* ######################## World Gen Registration ###### */
-		GameRegistry.registerWorldGenerator(new MarbleGen(0));
-		GameRegistry.registerFuelHandler(new VanityvanFuelHandler());
-
 		/*
 		 * Registration of the Random blocks
 		 */
@@ -126,10 +122,19 @@ public class VanityBlocks {
 			RandomBlockRegistrations.randomblockregistration();
 			RandomBlockRegistrations.addRecipes();
 		}
+		/* Registration of the redstone lamps */
 		if (Storageprops.enableredstonelamps) {
 			RedstoneLampRegistrations.redstonelampregistration();
 			RedstoneLampRegistrations.addRecipes();
 		}
+		/*Registration of the Trapdoors*/
+		if (Storageprops.enabletrapdoors) {
+			RandomBlockRegistrations.trapdoorregistration();
+		}
+		/* ######################## World Gen Registration ###### */
+		GameRegistry.registerWorldGenerator(new MarbleGen(0));
+		GameRegistry.registerFuelHandler(new VanityvanFuelHandler());
+
 		/*
 		 * Removed code for time being. GameRegistry.registerWorldGenerator(new
 		 * UnderWaterRuinHandler()); //Registration of world gen for

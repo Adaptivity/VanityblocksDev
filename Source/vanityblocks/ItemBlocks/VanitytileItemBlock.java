@@ -1,16 +1,14 @@
-package vanityblocks;
+package vanityblocks.ItemBlocks;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class StorageItemBlock extends ItemBlock {
+public class VanitytileItemBlock extends ItemBlock {
 
-	private final static String[] subNames = { "SugarCane Block", "Coal Block",
-			"Charcoal Block", "Enderpearl Block", "Slime Block",
-			"Bale of Wheat", "Sugar Block", "Cocoa Block", "", "Leather Block",
-			"Bone Block", "", "", "", "", "" };
+	private final static String[] subNames = { "Melting Core", "", "", "", "",
+			"", "", "", "", "", "", "", "", "", "", "" };
 
-	public StorageItemBlock(int id) {
+	public VanitytileItemBlock(int id) {
 		super(id);
 		setHasSubtypes(true);
 		// setItemName("storageblock");

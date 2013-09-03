@@ -1,4 +1,4 @@
-package vanityblocks;
+package vanityblocks.ItemBlocks;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

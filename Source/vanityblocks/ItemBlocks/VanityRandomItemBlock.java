@@ -1,4 +1,4 @@
-package vanityblocks;
+package vanityblocks.ItemBlocks;
 
 import java.util.List;
 

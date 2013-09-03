@@ -1,4 +1,4 @@
-package vanityblocks;
+package vanityblocks.ItemBlocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -9,14 +9,13 @@ import net.minecraft.util.Icon;
 
 import java.util.List;
 
-public class StorageItemModBlock extends ItemBlock {
+public class StorageItemForestryBlock extends ItemBlock {
 
-	private final static String[] subNames = { "Tin Block", "Copper Block",
-			"Silver Block", "Lead Block", "Nikolite Block", "Nickel Block",
-			"Electrum Block", "Platinum Block", "Invar Block", "Brass Block",
-			"Rubber Block", "", "", "", "", "" };
+	private final static String[] subNames = { "Apatite Block", "Honey Block",
+			"Honeydew Block", "Peat Block", "", "", "", "", "", "", "", "", "",
+			"", "", "" };
 
-	public StorageItemModBlock(int id) {
+	public StorageItemForestryBlock(int id) {
 		super(id);
 		setHasSubtypes(true);
 		// setItemName("storageblockmod");
@@ -49,12 +48,11 @@ public class StorageItemModBlock extends ItemBlock {
 		case 4:
 			break;
 		case 5:
-			list.add("Some mods call it Ferrous");
+			// list.add("Some mods call it Ferrous");
 			break;
 		case 6:
 			break;
 		case 7:
-			list.add("Some mods call it Shiny");
 			break;
 		case 8:
 			break;
@@ -64,10 +62,9 @@ public class StorageItemModBlock extends ItemBlock {
 			break;
 		case 11:
 			break;
-		case 12:
-			break;
 		/*
-		 * case 13: list.add("Some mods call it Shiny"); break; case 14:
+		 * case 12: list.add("Some mods call it Shiny"); break; case 13:
+		 * list.add("Some mods call it Shiny"); break; case 14:
 		 * list.add("Some mods call it Shiny"); break; case 15:
 		 * list.add("Some mods call it Shiny"); break; case 16:
 		 * list.add("Some mods call it Shiny"); break;

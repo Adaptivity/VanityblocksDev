@@ -29,8 +29,10 @@ public class Storageprops {
 				.getBoolean(true);
 		enableredstonelamps = config.get(enabled,
 				"Enable the redstone lamp colors?", true).getBoolean(true);
-		enabletrapdoors = config.get(enabled, "Enable trap doors", true)
+		enabletrapdoors = config.get(enabled, "Enable hidden trap doors", true)
 				.getBoolean(true);
+		enablerandomrecipes = config.get(enabled,
+				"Enable random recipes load?", true).getBoolean(true);
 		// enablefences = config.get(enabled, "Enable the fences?", true)
 		// .getBoolean(true);
 
@@ -59,7 +61,7 @@ public class Storageprops {
 		randomblocksconfig = config.getBlock(blocks,
 				"Vanityblocks random blocks id", 3064).getInt(3064);
 		trapdoorconfigs = config.getBlock(blocks, "Vanityblocks trapdoors id",
-				3065).getInt(3065);
+				3049).getInt(3049);
 		// vanityfenceconfig = config.getBlock(blocks,
 		// "Vanity Fences", 3065).getInt(3065);
 
@@ -234,8 +236,23 @@ public class Storageprops {
 		saddletoleather = config.get(category3,
 				"Allow saddles to break down to leather?", true).getBoolean(
 				true);
+		nametag = config.get(category3,
+				"Allow Nametags to be crafted(sign + string)", true)
+				.getBoolean(true);
+		ironhorsearmor = config
+				.get(category3,
+						"Allow Iron Horse armor to be crafted(upside down iron chestplate)",
+						true).getBoolean(true);
+		goldhorsearmor = config
+				.get(category3,
+						"Allow Gold Horse armor to be crafted(upside down Gold chestplate)",
+						true).getBoolean(true);
+		diamondhorsearmor = config
+				.get(category3,
+						"Allow Diamond Horse armor to be crafted(upside down Diamond chestplate)",
+						true).getBoolean(true);
 
-		String category4 = "Random things";
+		// String category4 = "Random things";
 		// dungeonlootenablevannila = config.get(category4,
 		// "Allow vannila storage blocks to spawn in dungeon loot?", true)
 		// .getBoolean(true);
@@ -339,6 +356,7 @@ public class Storageprops {
 	public static boolean versioncheck;
 	public static boolean enableredstonelamps;
 	public static boolean enabletrapdoors;
+	public static boolean enablerandomrecipes;
 	// #### Block id ints and booleans###
 	public static int storageblockconfig;
 	public static int storageblockmodconfig;
@@ -404,6 +422,10 @@ public class Storageprops {
 	public static boolean dungeonlootenablevannila;
 	public static boolean dungeonlootenablemod;
 	public static boolean saddletoleather;
+	public static boolean nametag;
+	public static boolean ironhorsearmor;
+	public static boolean goldhorsearmor;
+	public static boolean diamondhorsearmor;
 	// #### General Item ints and booleans ####
 	public static boolean enablegeneralitems;
 	public static boolean enableflintitem;

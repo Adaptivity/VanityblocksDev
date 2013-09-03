@@ -6,6 +6,7 @@ import vanityblocks.FuelHandler.VanityvanFuelHandler;
 import vanityblocks.Registrations.GeneralFoodItemsRegistration;
 import vanityblocks.Registrations.GeneralItemRegistration;
 import vanityblocks.Registrations.Modbypass;
+import vanityblocks.Registrations.RandomRecipes;
 import vanityblocks.Registrations.RedstoneLampRegistrations;
 import vanityblocks.Registrations.RupeeRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
@@ -127,12 +128,20 @@ public class VanityBlocks {
 			RedstoneLampRegistrations.redstonelampregistration();
 			RedstoneLampRegistrations.addRecipes();
 		}
-		/*Registration of the Trapdoors*/
+		/*Registration of the Trapdoors */
 		if (Storageprops.enabletrapdoors) {
 			RandomBlockRegistrations.trapdoorregistration();
+		} 
+		/*Registration of the random recipes */
+		if (Storageprops.enablerandomrecipes) {
+			RandomRecipes.addRandomRecipes();
 		}
+		
 		/* ######################## World Gen Registration ###### */
+		if (Storageprops.enableworldgen) {
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));
+		}
+		/* Fuel handler for vannila stuff */
 		GameRegistry.registerFuelHandler(new VanityvanFuelHandler());
 
 		/*

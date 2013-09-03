@@ -2,8 +2,7 @@ package vanityblocks.Registrations;
 
 import vanityblocks.VanityRandomBlocks;
 import vanityblocks.Storageprops;
-import vanityblocks.VanityTrapDoors;
-import vanityblocks.ItemBlocks.TrapdoorItemBlock;
+import vanityblocks.Blocks.HiddenTrapdoor;
 import vanityblocks.ItemBlocks.VanityRandomItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -27,7 +26,8 @@ public class RandomBlockRegistrations {
 				"" };
 		/* ##### Vannila ##### */
 		GameRegistry.registerBlock(RandomBlocks,
-				vanityblocks.ItemBlocks.VanityRandomItemBlock.class, "Random Blocks");
+				vanityblocks.ItemBlocks.VanityRandomItemBlock.class,
+				"Random Blocks");
 		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 0),
 				"Clay Brick");
 		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 1),
@@ -39,15 +39,19 @@ public class RandomBlockRegistrations {
 		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 4),
 				"Lapis Brick - Current");
 	}
+
 	public static void trapdoorregistration() {
-		trapdoorconfigs = Storageprops.trapdoorconfigs;
-		Trapdoors = new VanityTrapDoors(trapdoorconfigs, Material.wood, "textureName");
-		
-		GameRegistry.registerBlock(Trapdoors,
-				TrapdoorItemBlock.class, "Trapdoors");
-		LanguageRegistry.addName(new ItemStack(Trapdoors, 1, 0),
-				"Birch TrapDoor");
+		// Trapdoors = new VanityTrapDoors(trapdoorconfigs, Material.wood,
+		// "textureName");
+		hiddentrapdoor = new HiddenTrapdoor(Storageprops.trapdoorconfigs);
+		hiddentrapdoor.setHardness(3.0F).setStepSound(Block.soundWoodFootstep)
+				.setUnlocalizedName("trapdoor.hidden");
+		GameRegistry.registerBlock(hiddentrapdoor, "trapdoor.hidden");
+		LanguageRegistry.addName(hiddentrapdoor, "Hidden Trapdoor");
+		GameRegistry.addShapelessRecipe(new ItemStack(hiddentrapdoor),
+				new ItemStack(Block.trapdoor));
 	}
+
 	public static void addRecipes() {
 		// System.out.println("Random Block Registration loaded");
 		if (Storageprops.enableclaybrick) {
@@ -87,13 +91,12 @@ public class RandomBlockRegistrations {
 			GameRegistry.addRecipe(new ItemStack(RandomBlocks, 1, 4),
 					new Object[] { "xx", "xx", 'x',
 							new ItemStack(Block.blockLapis) });
-		//if (Storageprops.enabletrapdoors)
+			// if (Storageprops.enabletrapdoors)
 		}
 
 	}
 
 	public static Block RandomBlocks;
-	public static Block Trapdoors;
-	public static int trapdoorconfigs;
+	public static Block hiddentrapdoor;
 	public static int randomblocksconfig;
 }

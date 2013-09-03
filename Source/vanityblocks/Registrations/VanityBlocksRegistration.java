@@ -408,40 +408,6 @@ public class VanityBlocksRegistration {
 					"x   ", "xx ", "xxx", 'x', new ItemStack(
 							VanityDesignworldblock, 0, 9));
 		}
-		/* This is Random Recipes */
-		if (Storageprops.arrowtofeather) {
-			GameRegistry.addRecipe(new ItemStack(Item.feather, 1), "xx", "xx",
-					'x', new ItemStack(Item.arrow, 1));
-		}
-		if (Storageprops.fleshtoleather) {
-			GameRegistry.addSmelting(Item.rottenFlesh.itemID, new ItemStack(
-					Item.leather, 1), 0.5F);
-		}
-		if (Storageprops.quartzblocktoquartz) {
-			GameRegistry.addShapelessRecipe(
-					new ItemStack(Item.netherQuartz, 4), new ItemStack(
-							Block.blockNetherQuartz));
-		}
-		if (Storageprops.greendye) {
-			GameRegistry.addShapelessRecipe(
-					new ItemStack(Item.dyePowder, 1, 2), new ItemStack(
-							Item.dyePowder, 1, 4), new ItemStack(
-							Item.dyePowder, 1, 11));
-		}
-		if (Storageprops.wooltostring) {
-			GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4),
-					new ItemStack(Block.cloth, 1, Short.MAX_VALUE));
-			// Short.Maxvalue is required to use any meta in the block
-		}
-		if (Storageprops.magmacreamtoslime) {
-			GameRegistry.addShapelessRecipe(new ItemStack(Item.slimeBall, 1),
-					new ItemStack(Item.magmaCream, 1));
-		}
-		if (Storageprops.saddletoleather) {
-			GameRegistry.addShapelessRecipe(new ItemStack(Item.leather, 5),
-					new ItemStack(Item.saddle, 1));
-		}
-
 	}
 
 }

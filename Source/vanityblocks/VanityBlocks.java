@@ -3,6 +3,7 @@ package vanityblocks;
 import vanityblocks.FuelHandler.VanityForestryFuelHandler;
 import vanityblocks.FuelHandler.VanitymodFuelHandler;
 import vanityblocks.FuelHandler.VanityvanFuelHandler;
+import vanityblocks.Registrations.CurtainRegistrations;
 import vanityblocks.Registrations.GeneralFoodItemsRegistration;
 import vanityblocks.Registrations.GeneralItemRegistration;
 import vanityblocks.Registrations.Modbypass;
@@ -14,6 +15,7 @@ import vanityblocks.Registrations.TEBlocksRegistration;
 import vanityblocks.Registrations.VanityBlocksRegistration;
 import vanityblocks.Registrations.RandomBlockRegistrations;
 import vanityblocks.Registrations.VanityBlocksRegistration;
+import vanityblocks.Renders.BlockCurtainRender;
 import vanityblocks.WorldGen.AVillageTrades;
 import vanityblocks.WorldGen.MarbleGen;
 import vanityblocks.WorldGen.VillageModHandler;
@@ -25,6 +27,7 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -136,7 +139,11 @@ public class VanityBlocks {
 		if (Storageprops.enablerandomrecipes) {
 			RandomRecipes.addRandomRecipes();
 		}
-		
+		/* Registration of the Curtains */
+		if (Storageprops.enablecurtains) {
+			CurtainRegistrations.CurtainRegistration();
+			RenderingRegistry.registerBlockHandler(new BlockCurtainRender());
+		}
 		/* ######################## World Gen Registration ###### */
 		if (Storageprops.enableworldgen) {
 		GameRegistry.registerWorldGenerator(new MarbleGen(0));

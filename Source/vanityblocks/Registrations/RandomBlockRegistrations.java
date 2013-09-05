@@ -91,7 +91,6 @@ public class RandomBlockRegistrations {
 			GameRegistry.addRecipe(new ItemStack(RandomBlocks, 1, 4),
 					new Object[] { "xx", "xx", 'x',
 							new ItemStack(Block.blockLapis) });
-			// if (Storageprops.enabletrapdoors)
 		}
 
 	}

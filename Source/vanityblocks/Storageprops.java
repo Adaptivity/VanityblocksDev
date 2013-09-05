@@ -31,37 +31,41 @@ public class Storageprops {
 				"Enable the redstone lamp colors?", true).getBoolean(true);
 		enabletrapdoors = config.get(enabled, "Enable hidden trap doors", true)
 				.getBoolean(true);
+		enablecurtains = config.get(enabled, "Enable the curtains?", true)
+				.getBoolean(true);
 		enablerandomrecipes = config.get(enabled,
 				"Enable random recipes load?", true).getBoolean(true);
 		// enablefences = config.get(enabled, "Enable the fences?", true)
 		// .getBoolean(true);
 
 		String blocks = "Block id's";
-		storageblockconfig = config.getBlock(blocks, "Vannila Storage Blocks",
-				3050).getInt(3050);
+		trapdoorconfigs = config.getBlock(blocks, "Vanityblocks trapdoors id",
+				3049).getInt(3049);
+		storageblockconfig = config.getBlock(blocks,
+				"Vannila Storage Blocks ID", 3050).getInt(3050);
 		storageblockmodconfig = config.getBlock(blocks,
-				"Modded Storage Blocks", 3051).getInt(3051);
+				"Modded Storage Blocks ID", 3051).getInt(3051);
 		forestryblockconfig = config.getBlock(blocks,
-				"Forestry Storage Blocks", 3053).getInt(3053);
-		vanitydesignconfig = config.getBlock(blocks, "Vanity design blocks",
+				"Forestry Storage Blocks ID", 3053).getInt(3053);
+		vanitydesignconfig = config.getBlock(blocks, "Vanity design blocks ID",
 				3055).getInt(3055);
 		redstonelampdimconfig = config.getBlock(blocks, "Redstone Lamp Dim Id",
 				3056).getInt(3056);
 		redstonelamplitconfig = config.getBlock(blocks, "Redstone lamp Lit id",
 				3057).getInt(3057);
 		vanitydesignworldconfig = config.getBlock(blocks,
-				"Vanity Blocks World Generation blocks", 3058).getInt(3058);
+				"Vanity Blocks World Generation block ID", 3058).getInt(3058);
 		vanityentityconfig = config.getBlock(blocks,
-				"Vanity Blocks Tile Entity(such as melting core)", 3060)
+				"Vanity Blocks Tile Entity(such as melting core) ID", 3060)
 				.getInt(3058);
 		vanitydesignworldslabconfig = config.getBlock(blocks,
-				"Vanity Blocks World Gen slabs", 3061).getInt(3061);
+				"Vanity Blocks World Gen slabs ID", 3061).getInt(3061);
 		vanitydesignworldWallconfig = config.getBlock(blocks,
-				"Vanity Blocks World Gen walls", 3062).getInt(3062);
+				"Vanity Blocks World Gen walls ID", 3062).getInt(3062);
+		curtainblockconfig = config.get(blocks, "Vanity Curtain Id", 3063)
+				.getInt(3063);
 		randomblocksconfig = config.getBlock(blocks,
 				"Vanityblocks random blocks id", 3064).getInt(3064);
-		trapdoorconfigs = config.getBlock(blocks, "Vanityblocks trapdoors id",
-				3049).getInt(3049);
 		// vanityfenceconfig = config.getBlock(blocks,
 		// "Vanity Fences", 3065).getInt(3065);
 
@@ -357,6 +361,7 @@ public class Storageprops {
 	public static boolean enableredstonelamps;
 	public static boolean enabletrapdoors;
 	public static boolean enablerandomrecipes;
+	public static boolean enablecurtains;
 	// #### Block id ints and booleans###
 	public static int storageblockconfig;
 	public static int storageblockmodconfig;
@@ -370,6 +375,7 @@ public class Storageprops {
 	public static int vanitydesignworldWallconfig;
 	public static int randomblocksconfig;
 	public static int trapdoorconfigs;
+	public static int curtainblockconfig;
 	// #### Marble stair ints //
 	public static int marblestair;
 	public static int marblebrickstair;

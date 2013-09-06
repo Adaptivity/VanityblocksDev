@@ -18,16 +18,33 @@ public class BlockCurtainRender implements ISimpleBlockRenderingHandler {
 	public void renderInventoryBlock(Block block, int metadata, int modelID,
 			RenderBlocks renderer) {
 		if (modelID == curtainModelID) {
-			renderer.setRenderBounds(0.0F, 0.75F, 0.0F, 1.0F, 1.0F, 1.0F);
-			renderStandardInvBlock(renderer, block, metadata);
-			renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 0.25F, 0.75F, 0.25F);
-			renderStandardInvBlock(renderer, block, metadata);
-			renderer.setRenderBounds(0.75F, 0.0F, 0.0F, 1.0F, 0.75F, 0.25F);
-			renderStandardInvBlock(renderer, block, metadata);
-			renderer.setRenderBounds(0.0F, 0.0F, 0.75F, 0.25F, 0.75F, 1.0F);
-			renderStandardInvBlock(renderer, block, metadata);
-			renderer.setRenderBounds(0.75F, 0.0F, 0.75F, 1.0F, 0.75F, 1.0F);
-			renderStandardInvBlock(renderer, block, metadata);
+			  // Bar rod east-west
+			  renderer.setRenderBounds(0.0F, 0.85F, 0.375F, 1.0F, 1.0F, 0.625F);
+			  renderStandardInvBlock(renderer, block, metadata);
+			  //8 line
+		      renderer.setRenderBounds(0F, 0F, 0.5F, 0.125F, 1F, 0.57F);
+			  renderStandardInvBlock(renderer, block, metadata);
+		      // 7 line 
+		      renderer.setRenderBounds(0.25F, 0F, 0.5F, 0.125F, 1F, 0.43F);
+			  renderStandardInvBlock(renderer, block, metadata);
+		      // 6 line
+		      renderer.setRenderBounds(0.25F, 0F, 0.5F, 0.38F, 1F, 0.57F);
+			  renderStandardInvBlock(renderer, block, metadata);
+		      //5 line 
+		      renderer.setRenderBounds(0.5F, 0F, 0.5F, 0.38F, 1F, 0.43F);
+			  renderStandardInvBlock(renderer, block, metadata);
+		      //4 line
+		      renderer.setRenderBounds(0.5F, 0F, 0.5F, 0.625F, 1F, 0.57F);
+			  renderStandardInvBlock(renderer, block, metadata);
+		      //3 line
+		      renderer.setRenderBounds(0.75F, 0F, 0.5F, 0.625F, 1F, 0.43F);
+			  renderStandardInvBlock(renderer, block, metadata);
+		      //2 line
+		      renderer.setRenderBounds(0.75F, 0F, 0.5F, 0.875F, 1F, 0.57F);
+			  renderStandardInvBlock(renderer, block, metadata);
+		      //1 line
+		      renderer.setRenderBounds(1.0F, 0F, 0.5F, 0.875F, 1F, 0.43F);
+			  renderStandardInvBlock(renderer, block, metadata);
 		}
 	}
 
@@ -35,6 +52,8 @@ public class BlockCurtainRender implements ISimpleBlockRenderingHandler {
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z,
 			Block block, int modelID, RenderBlocks renderer) {
 		if (modelID == curtainModelID) {
+			
+			// This render is east-west
 			// int metadata = world.getBlockMetadata(x, y, z);
 			/*
 			 * 0.0F - Higher it is, goes farther on x+ to x- - right side0.75F -
@@ -42,66 +61,36 @@ public class BlockCurtainRender implements ISimpleBlockRenderingHandler {
 			 * higher it is, farther right it is on the z axis positive1.0F -
 			 * higher, longer it is going negative on left side1.0F - higher it
 			 * is, higher from bottom up on y axis1.0F - negative to postive on
-			 * z axisminX, minY, minZ, maxX, maxY, maxZ
+			 * z axis minX, minY, minZ, maxX, maxY, maxZ
 			 */
-			
-		      renderer.setRenderBounds(0F, 0F, 0F, 0.2F, 0.1F, 0.1F);
+			  //from right to left
+			  // Bar rod east-west
+			  renderer.setRenderBounds(0.0F, 0.85F, 0.375F, 1.0F, 1.0F, 0.625F);
+			  renderer.renderStandardBlock(block, x, y, z);
+			  //8 line
+		      renderer.setRenderBounds(0F, 0F, 0.5F, 0.125F, 1F, 0.57F);
 		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0.0F, 0F, 0F, 0.2F, 0.1F, 0.1F);
+		      // 7 line 
+		      renderer.setRenderBounds(0.25F, 0F, 0.5F, 0.125F, 1F, 0.43F);
 		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0F, 0F, 0F, 0.2F, 0.1F, 0.1F);
+		      // 6 line
+		      renderer.setRenderBounds(0.25F, 0F, 0.5F, 0.38F, 1F, 0.57F);
 		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0.2F, 0F, 0.1F, 0.2F, 0.1F, 0.1F);
+		      //5 line 
+		      renderer.setRenderBounds(0.5F, 0F, 0.5F, 0.38F, 1F, 0.43F);
 		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0F, 0F, 0F, 0.2F, 0.1F, 0.1F);
+		      //4 line
+		      renderer.setRenderBounds(0.5F, 0F, 0.5F, 0.625F, 1F, 0.57F);
 		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0.3F, 0F, 0F, 0.2F, 0.1F, 0.1F);
+		      //3 line
+		      renderer.setRenderBounds(0.75F, 0F, 0.5F, 0.625F, 1F, 0.43F);
 		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0.4F, 0F, 0F, 0.2F, 0.1F, 0.1F);
+		      //2 line
+		      renderer.setRenderBounds(0.75F, 0F, 0.5F, 0.875F, 1F, 0.57F);
 		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0F, 0F, 0F, 0.2F, 0.1F, 0.1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-/*		      renderer.setRenderBounds(0F, 0F, 0F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0F, 0F, 0F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0F, 0F, 0F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(-2F, 0F, -1F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0F, 0F, 0F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(3F, 0F, 0F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(4F, 0F, 0F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z);
-		      
-		      renderer.setRenderBounds(0F, 0F, 0F, 2F, 1F, 1F);
-		      renderer.renderStandardBlock(block, x, y, z); */
-			// renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-			// renderer.setRenderBounds(0.0F, 0.0F, 0.5F, 1.0F, 1.0F, 0.5F);
-			// renderer.renderStandardBlock(block, x, y, z);
-			// renderer.setRenderBounds(0.0F, 0.0F, 0.6F, 1.0F, 1.0F, 0.5F);
-			// renderer.renderStandardBlock(block, x, y, z);
-			// renderer.setRenderBounds(0.75F, 0.0F, 0.0F, 1.0F, 0.75F, 0.25F);
-			// renderer.renderStandardBlock(block, x, y, z);
-			// renderer.setRenderBounds(0.0F, 0.0F, 0.75F, 0.25F, 0.75F, 1.0F);
-			// renderer.renderStandardBlock(block, x, y, z);
-			// renderer.setRenderBounds(0.75F, 0.0F, 0.75F, 1.0F, 0.75F, 1.0F);
-			// renderer.renderStandardBlock(block, x, y, z);
+		      //1 line
+		      renderer.setRenderBounds(1.0F, 0F, 0.5F, 0.875F, 1F, 0.43F);
+		      renderer.renderStandardBlock(block, x, y, z); 
 		}
 		return true;
 	}

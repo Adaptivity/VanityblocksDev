@@ -73,6 +73,8 @@ public class VanityRandomBlocks extends Block {
 				.registerIcon("vanityblocks:oldlapisbrick");
 		iconBuffer[4] = par1IconRegister
 				.registerIcon("vanityblocks:lapisbrick");
+		iconBuffer[5] = par1IconRegister
+				.registerIcon("vanityblocks:boundsline");
 	}
 
 	@Override
@@ -92,6 +94,9 @@ public class VanityRandomBlocks extends Block {
 		if (metadata == 4) {
 			return iconBuffer[4];
 		}
+		if (metadata == 5) {
+			return iconBuffer[5];
+		}
 		return blockIcon;
 	}
 
@@ -102,7 +107,7 @@ public class VanityRandomBlocks extends Block {
 
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int ix = 0; ix < 5; ix++) {
+		for (int ix = 0; ix < 6; ix++) {
 			subItems.add(new ItemStack(this, 1, ix));
 		}
 	}

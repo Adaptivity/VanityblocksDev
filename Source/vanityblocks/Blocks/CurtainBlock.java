@@ -38,6 +38,7 @@ public class CurtainBlock extends Block {
 		return Block.cloth.getIcon(side, metadata);
 	}
     @Override
+    @SideOnly(Side.CLIENT)
     public int getRenderType ()
     {
         return BlockCurtainRender.curtainModelID;

@@ -28,6 +28,8 @@ public class VanityDesignblock extends Block {
 	public int getLightValue(IBlockAccess world, int x, int y, int z) {
 		if (world.getBlockMetadata(x, y, z) == 0) {
 			return 15;
+		} else if (world.getBlockMetadata(x, y, z) == 1) {
+			return 15;
 		} else {
 			return 0;
 		}

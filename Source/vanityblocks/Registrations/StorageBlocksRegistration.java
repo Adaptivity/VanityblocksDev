@@ -1,9 +1,9 @@
 package vanityblocks.Registrations;
 
-import vanityblocks.ForestryBlock;
-import vanityblocks.StorageBlock;
-import vanityblocks.StorageBlockMod;
 import vanityblocks.Storageprops;
+import vanityblocks.Blocks.ForestryBlock;
+import vanityblocks.Blocks.StorageBlock;
+import vanityblocks.Blocks.StorageBlockMod;
 import vanityblocks.ItemBlocks.StorageItemBlock;
 import vanityblocks.ItemBlocks.StorageItemForestryBlock;
 import vanityblocks.ItemBlocks.StorageItemModBlock;

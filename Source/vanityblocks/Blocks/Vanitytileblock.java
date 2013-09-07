@@ -1,6 +1,9 @@
-package vanityblocks;
+package vanityblocks.Blocks;
 
 import java.util.List;
+
+import vanityblocks.VanityBlocks;
+import vanityblocks.tileentitys.TileMeltingcore;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;

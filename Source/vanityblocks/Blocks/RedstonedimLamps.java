@@ -1,8 +1,9 @@
-package vanityblocks;
+package vanityblocks.Blocks;
 
 import java.util.List;
 import java.util.Random;
 
+import vanityblocks.VanityBlocks;
 import vanityblocks.Registrations.RedstoneLampRegistrations;
 
 import cpw.mods.fml.relauncher.Side;

@@ -4,10 +4,10 @@
  */
 package vanityblocks.Registrations;
 
-import vanityblocks.RedstonedimLamps;
-import vanityblocks.RedstonelitLamps;
-import vanityblocks.VanityRandomBlocks;
 import vanityblocks.Storageprops;
+import vanityblocks.Blocks.RedstonedimLamps;
+import vanityblocks.Blocks.RedstonelitLamps;
+import vanityblocks.Blocks.VanityRandomBlocks;
 import vanityblocks.ItemBlocks.RedstoneLampDimItemBlock;
 import vanityblocks.ItemBlocks.RedstoneLampLitItemBlock;
 import vanityblocks.ItemBlocks.VanityRandomItemBlock;

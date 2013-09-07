@@ -1,9 +1,9 @@
 package vanityblocks.Registrations;
 
-import vanityblocks.VanityRandomBlocks;
 import vanityblocks.Storageprops;
 import vanityblocks.Blocks.CurtainBlock;
 import vanityblocks.Blocks.HiddenTrapdoor;
+import vanityblocks.Blocks.VanityRandomBlocks;
 import vanityblocks.ItemBlocks.VanityRandomItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

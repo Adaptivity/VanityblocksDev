@@ -1,8 +1,10 @@
-package vanityblocks;
+package vanityblocks.Blocks;
 
 import static net.minecraftforge.common.ForgeDirection.UP;
 
 import java.util.List;
+
+import vanityblocks.VanityBlocks;
 
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;

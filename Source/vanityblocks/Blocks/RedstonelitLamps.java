@@ -1,4 +1,4 @@
-package vanityblocks;
+package vanityblocks.Blocks;
 
 import java.util.List;
 import java.util.Random;
@@ -13,6 +13,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import vanityblocks.VanityBlocks;
 import vanityblocks.Registrations.*;
 
 public class RedstonelitLamps extends BlockRedstoneLight {

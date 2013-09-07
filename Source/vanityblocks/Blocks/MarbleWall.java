@@ -1,49 +1,33 @@
-package vanityblocks;
-
-import static net.minecraftforge.common.ForgeDirection.UP;
+package vanityblocks.Blocks;
 
 import java.util.List;
-import java.util.Random;
+
+import vanityblocks.VanityBlocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockHalfSlab;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.BlockWall;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.Facing;
 import net.minecraft.util.Icon;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-//public class MarbleSlab extends BlockHalfSlab {
-
-public class Marbleslab extends Block {
-	public Marbleslab(int id) {
-		super(id, Material.rock);
-		setHardness(2.0F);
-		setResistance(10.0F);
+public class MarbleWall extends BlockWall {
+	public MarbleWall(int par1, Block par2Block) {
+		super(par1, par2Block);
+		this.setHardness(par2Block.blockHardness);
+		this.setResistance(par2Block.blockResistance / 3.0F);
+		this.setStepSound(par2Block.stepSound);
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
 	}
 
 	@Override
-	public float getBlockHardness(World par1World, int par2, int par3, int par4) {
-		int metadata = par1World.getBlockMetadata(par2, par3, par4);
-		return 2f;
-	}
-
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	public boolean isOpaqueCube() {
-		return false;
+	public boolean isBlockSolidOnSide(World world, int x, int y, int z,
+			ForgeDirection side) {
+		return side == ForgeDirection.UP;
 	}
 
 	private Icon[] iconBuffer;
@@ -86,14 +70,7 @@ public class Marbleslab extends Block {
 			return iconBuffer[1];
 		}
 		if (metadata == 2) {
-			switch (side) {
-			case 0:
-				return iconBuffer[2];
-			case 1:
-				return iconBuffer[2];
-			default:
-				return iconBuffer[0];
-			}
+			return iconBuffer[2];
 		}
 		if (metadata == 3) {
 			switch (side) {
@@ -116,14 +93,7 @@ public class Marbleslab extends Block {
 			return iconBuffer[6];
 		}
 		if (metadata == 7) {
-			switch (side) {
-			case 0:
-				return iconBuffer[7];
-			case 1:
-				return iconBuffer[7];
-			default:
-				return iconBuffer[5];
-			}
+			return iconBuffer[7];
 		}
 		if (metadata == 8) {
 			switch (side) {
@@ -142,15 +112,19 @@ public class Marbleslab extends Block {
 		return blockIcon;
 	}
 
-	@Override
-	public int damageDropped(int metadata) {
-		return metadata;
-	}
-
 	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int ix = 0; ix < 10; ix++) {
-			subItems.add(new ItemStack(this, 1, ix));
-		}
+	@Override
+	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs,
+			List par3List) {
+		par3List.add(new ItemStack(par1, 1, 0));
+		par3List.add(new ItemStack(par1, 1, 1));
+		par3List.add(new ItemStack(par1, 1, 2));
+		par3List.add(new ItemStack(par1, 1, 3));
+		par3List.add(new ItemStack(par1, 1, 4));
+		par3List.add(new ItemStack(par1, 1, 5));
+		par3List.add(new ItemStack(par1, 1, 6));
+		par3List.add(new ItemStack(par1, 1, 7));
+		par3List.add(new ItemStack(par1, 1, 8));
+		par3List.add(new ItemStack(par1, 1, 9));
 	}
 }

@@ -1,6 +1,9 @@
-package vanityblocks;
+package vanityblocks.Blocks;
 
 import java.util.List;
+
+import vanityblocks.Storageprops;
+import vanityblocks.VanityBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

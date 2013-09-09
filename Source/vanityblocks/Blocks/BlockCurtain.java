@@ -101,11 +101,12 @@ public class BlockCurtain extends Block {
 		if (!world.isRemote)
 		{
 			ItemStack itemStack = entityPlayer.getCurrentEquippedItem();
-			int side = BlockEventHandler.faceClicked;
+//			int side = BlockEventHandler.faceClicked;
 
 			TileCurtain TE = (TileCurtain) world.getBlockTileEntity(x, y, z);		
 			auxiliaryOnBlockClicked(TE, world, x, y, z, entityPlayer);			
 		}
+		return false;
 	}
 	@Override
 	public boolean hasTileEntity(int metadata)
@@ -113,7 +114,6 @@ public class BlockCurtain extends Block {
 		return true;
 	}
 
-	@Override
 	public void auxiliaryOnBlockClicked(TileCurtain TE, World world, int x, int y, int z, EntityPlayer entityPlayer) {}
 	
     @Override

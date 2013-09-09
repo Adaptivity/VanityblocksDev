@@ -1,24 +1,21 @@
 package vanityblocks.Util;
 
+import vanityblocks.Registrations.CurtainRegistrations;
+import vanityblocks.tileentitys.TileCurtain;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockPane;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.IBlockAccess;
-import vanityblocks.tileentitys.TileCurtain;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.IShearable;
 
-public class BlockProperties
-{
+public class BlockProperties {
 
-	/**
-	 * Suppresses block updates.
-	 */
-	private static boolean suppressBlockUpdates = false;
-	
 	/**
 	 * Ejects an item at given coordinates.
 	 */
@@ -30,20 +27,12 @@ public class BlockProperties
 			double rand1 = TE.worldObj.rand.nextFloat() * offset + (1.0F - offset) * 0.5D;
 			double rand2 = TE.worldObj.rand.nextFloat() * offset + (1.0F - offset) * 0.2D + 0.6D;
 			double rand3 = TE.worldObj.rand.nextFloat() * offset + (1.0F - offset) * 0.5D;
+			
+			EntityItem entityItem = new EntityItem(TE.worldObj, TE.xCoord + rand1, TE.yCoord + rand2, TE.zCoord + rand3, itemStack);
 
-			EntityItem entityEjectedItem = new EntityItem(TE.worldObj, TE.xCoord + rand1, TE.yCoord + rand2, TE.zCoord + rand3, itemStack);
-
-			entityEjectedItem.delayBeforeCanPickup = 10;
-			TE.worldObj.spawnEntityInWorld(entityEjectedItem);
+			entityItem.delayBeforeCanPickup = 10;
+			TE.worldObj.spawnEntityInWorld(entityItem);
 		}
-	}
-	
-	/**
-	 * Converts byte to unsigned integer.
-	 */
-	public static int unsignedToBytes(byte value)
-	{
-	    return value & 0xff;
 	}
 	
 	/**
@@ -57,97 +46,70 @@ public class BlockProperties
 			TE.worldObj.playSoundEffect(TE.xCoord + 0.5F, TE.yCoord + 0.5F, TE.zCoord + 0.5F, block.stepSound.getPlaceSound(), block.stepSound.getVolume() + 1.0F / 2.0F, block.stepSound.getPitch() * 0.8F);
 		}
 	}
-	
-	/**
-	 * Strips side of all properties.
-	 */
-	public final static void clearAttributes(TileCurtain TE, int side)
-	{
-		suppressBlockUpdates = true;
 		
-		setDyeColor(TE, side, DyeColorHandler.NO_COLOR);
-		setOverlay(TE, side, (ItemStack)null);
-		setCover(TE, side, (ItemStack)null);
-		setPattern(TE, side, 0);
-		
-		suppressBlockUpdates = false;
-		
-		TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
-	}
-				
-	/**
-	 * Returns cover block ID.
-	 */
-	public final static int getCoverID(TileCurtain TE, int side)
-	{
-		return TE.cover[side] & 0xfff;
-	}
-	
-	/**
-	 * Returns cover block metadata.
-	 */
-	public final static int getCoverMetadata(TileCurtain TE, int side)
-	{
-		return (TE.cover[side] & 0xf000) >>> 12;
-	}
-	
-	/**
-	 * Returns whether block has a cover.
-	 * Checks if block ID exists and whether it is a valid cover block.
-	 */
-	public final static boolean hasCover(TileCurtain TE, int side)
-	{
-		int coverID = getCoverID(TE, side);
-		int metadata = getCoverMetadata(TE, side);
-
-		return	coverID > 0 &&
-				Block.blocksList[coverID] != null &&
-				isCover(new ItemStack(coverID, 1, metadata));
-	}
-	
-	/**
-	 * Returns whether block has side covers.
-	 */
-	public final static boolean hasSideCovers(TileCurtain TE)
-	{
-		for (int side = 0; side < 6; ++side)
-			if (hasCover(TE, side))
-				return true;
-		
-		return false;
-	}
-	
 	/**
 	 * Returns cover block.
 	 */
-	public final static Block getCoverBlock(IBlockAccess blockAccess, int side, int x, int y, int z)
+	public final static Block getCoverBlock(TileCurtain TE)
 	{
-		TileCurtain TE = (TileCurtain) blockAccess.getBlockTileEntity(x, y, z);
-		
-		return getCoverBlock(TE, side);
+		return hasCover(TE) ? Block.blocksList[TE.curtainCover] : CurtainRegistrations.CurtainBlock;
 	}
 	
 	/**
-	 * Returns cover block.
+	 * Returns soil block.
 	 */
-	public final static Block getCoverBlock(TileCurtain TE, int side)
-	{
-		Block coverBlock;
-		
-		if (hasCover(TE, side))
-			coverBlock = Block.blocksList[getCoverID(TE, side)];
-		else
-			coverBlock = Block.blocksList[TE.worldObj.getBlockId(TE.xCoord, TE.yCoord, TE.zCoord)];
-		
-		return coverBlock;
-	}
-		
+//	public final static Block getSoilBlock(TileCurtain TE)
+//	{
+//		return Block.blocksList[TE.curtainSoil];
+//	}
+	
 	/**
-	 * Returns whether block is a cover.
+	 * Returns plant block.
+	 */
+//	public final static Block getPlantBlock(TileCurtain TE)
+//	{
+//		return Block.blocksList[TE.curtainPlant];
+//	}
+	
+	/**
+	 * Returns whether curtain has cover.
+	 */
+	public final static boolean hasCover(TileCurtain TE)
+	{
+		if (Block.blocksList[TE.curtainCover] == null)
+			TE.curtainCover = (short) CurtainRegistrations.CurtainBlock.blockID;
+		
+		return TE.curtainCover != CurtainRegistrations.CurtainBlock.blockID;
+	}
+	
+	/**
+	 * Returns whether curtain has cover.
+	 */
+//	public final static boolean hasSoil(TileCurtain TE)
+//	{
+//		if (Block.blocksList[TE.curtainSoil] == null)
+//			TE.curtainSoil = 0;
+//		
+//		return TE.curtainSoil > 0;
+//	}
+    
+    /**
+     * Returns whether curtain has plant.
+     */
+//    public static boolean hasPlant(TileCurtain TE)
+//    {
+//		if (Block.blocksList[TE.curtainPlant] == null)
+//			TE.curtainPlant = 0;
+//    	
+//    	return TE.curtainPlant != 0;
+//    }
+    
+	/**
+	 * Returns whether block is a cover
 	 */
 	public final static boolean isCover(ItemStack itemStack)
 	{
-		if (itemStack.getItem() instanceof ItemBlock && !isOverlay(itemStack))
+		if (itemStack.getItem() instanceof ItemBlock) //&& !isSoil(itemStack) && !isPlant(itemStack)
 		{
 			Block block = Block.blocksList[itemStack.getItem().itemID];
 			
@@ -162,169 +124,246 @@ public class BlockProperties
 
 		return false;
 	}
+	
+    /**
+     * Returns whether block is soil.
+     */
+//    public static boolean isSoil(ItemStack itemStack)
+//    {    	
+//		if (itemStack.getItem() instanceof ItemBlock && !isPlant(itemStack))
+//		{
+//	    	Block block = Block.blocksList[itemStack.itemID];
+//
+//	    	return	block.blockMaterial == Material.grass ||
+//	    			block.blockMaterial == Material.ground ||
+//	    			block.blockMaterial == Material.sand;
+//		}
+//   	
+//    	return false;
+//    }
+    
+    /**
+     * Returns whether block is plant.
+     */
+//    public static boolean isPlant(ItemStack itemStack)
+//    {
+//		if (itemStack.getItem() instanceof ItemBlock)
+//		{
+//			Block block = Block.blocksList[itemStack.getItem().itemID];
+//			
+//			return block instanceof IPlantable || block instanceof IShearable;
+//		}
+//
+//		return false;
+//   }
+    
+    /**
+     * Check if dye being applied matches existing dye on curtain.
+     */
+    public static boolean doDyeColorsMatch(TileCurtain TE, ItemStack itemStack)
+    {
+    	return TE.curtainDyeColor == itemStack.getItemDamage();
+    }
+    
+    /**
+     * Returns whether curtain has dye color.
+     */
+    public static boolean hasDyeColor(TileCurtain TE)
+    {
+    	return TE.curtainDyeColor >= 0;
+    }
+    
+    /**
+     * Ejects dye colors, special colors, or cover blocks from curtain.
+     */
+    public static void ejectCoverAttributes(TileCurtain TE)
+    {
+    	boolean alteredState = false;
+    	
+    	if (hasDyeColor(TE))
+    	{    		
+    		ejectEntity(TE, new ItemStack(Item.dyePowder, 1, TE.curtainDyeColor));
+    		TE.curtainDyeColor = -1;
+    		alteredState = true;
+    	}
+    	if (hasSpecialColor(TE))
+    	{
+    		ejectEntity(TE, new ItemStack(Item.itemsList[convertSpecialColorIDtoItemID(TE.curtainSpecialColor)]));
+    		TE.curtainSpecialColor = -1;
+    		alteredState = true;
+    	}
+    	if (hasCover(TE))
+    	{
+    		ejectEntity(TE, new ItemStack(TE.curtainCover, 1, TE.curtainCoverMetadata));
+    		TE.curtainCover = 0;
+    		TE.curtainCoverMetadata = 0;
+    		alteredState = true;
+    	}
+    	
+    	if (alteredState)
+    		TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
+    }
+    
+    /**
+     * Sets dye color on curtain.
+     */
+    public static void setDyeColor(TileCurtain TE, ItemStack itemStack)
+    {
+		ejectCoverAttributes(TE);
+    	
+		TE.curtainDyeColor = (byte) itemStack.getItemDamage();
+		TE.curtainSpecialColor = -1;
+		TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
+    }
+    
+    /**
+     * Check if special color being applied matches existing special color on curtain.
+     */
+    public static boolean doSpecialColorsMatch(TileCurtain TE, ItemStack itemStack)
+    {
+    	return convertItemIDtoSpecialColorID(itemStack.itemID) == TE.curtainSpecialColor;
+    }
+    
+    /**
+     * Returns whether curtain has special color.
+     */
+    public static boolean hasSpecialColor(TileCurtain TE)
+    {
+    	return TE.curtainSpecialColor >= 0;
+    }
+    
+    /**
+     * Sets special paint color on curtain.
+     */
+    public static void setSpecialColor(TileCurtain TE, ItemStack itemStack)
+    {
+		ejectCoverAttributes(TE);
+		
+		TE.curtainSpecialColor = (byte) convertItemIDtoSpecialColorID(itemStack.itemID);
+		TE.curtainDyeColor = -1;
+		TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
+    }
 
+    /**
+     * Will convert item to its special color ID.
+     */
+    public static int convertItemIDtoSpecialColorID(int itemID)
+    {
+    	if (itemID == Item.enderPearl.itemID)
+    		return 0;
+    	else if (itemID == Item.speckledMelon.itemID)
+    		return 1;
+    	else // itemID == Block.glass.blockID
+    		return 2;
+    }
+    
+    /**
+     * Will convert special color to its item ID.
+     */
+    private static int convertSpecialColorIDtoItemID(int specialColorID)
+    {
+    	if (specialColorID == 0)
+    		return Item.enderPearl.itemID;
+    	else
+    		return Item.speckledMelon.itemID;
+    }
+    
+    /**
+     * Check if cover being applied matches existing cover on curtain.
+     */
+    public static boolean doCoversMatch(TileCurtain TE, ItemStack itemStack)
+    {
+    	return TE.curtainCover == itemStack.itemID && TE.curtainCoverMetadata == itemStack.getItemDamage();
+    }
+    
+    /**
+     * Check if soil being placed matches existing soil on curtain.
+     */
+//    public static boolean doSoilsMatch(TileCurtain TE, ItemStack itemStack)
+//    {
+//    	return TE.curtainSoil == itemStack.itemID && TE.curtainSoilMetadata == itemStack.getItemDamage();
+//    }
+    
+    /**
+     * Check if plant being placed matches existing plant in curtain.
+     */
+//    public static boolean doPlantsMatch(TileCurtain TE, ItemStack itemStack)
+//    {
+//    	return TE.curtainPlant == itemStack.itemID && TE.worldObj.getBlockMetadata(TE.xCoord, TE.yCoord, TE.zCoord) == itemStack.getItemDamage();
+//    }
+	
 	/**
 	 * Sets cover block.
 	 */
-	public final static void setCover(TileCurtain TE, int side, ItemStack itemStack)
-	{		
-		if (hasCover(TE, side))
-			ejectEntity(TE, new ItemStack(getCoverID(TE, side), 1, getCoverMetadata(TE, side)));
+	public final static void setCover(TileCurtain TE, ItemStack itemStack)
+	{
+		playBlockPlacementSound(TE, itemStack == null ? getCoverBlock(TE).blockID : itemStack.itemID);
 		
-		int blockID = itemStack == null ? 0 : itemStack.itemID;
-		int metadata = itemStack == null ? 0 : itemStack.getItemDamage();
-		
-		if (itemStack != null)
-			playBlockPlacementSound(TE, blockID);
-
-		TE.cover[side] = (short) (blockID + (metadata << 12));
-		
-		if (!suppressBlockUpdates)
-			TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
-		
-		TE.worldObj.notifyBlocksOfNeighborChange(TE.xCoord, TE.yCoord, TE.zCoord, blockID);
-
-	}
-	
-	/**
-	 * Get block data.
-	 */
-	public final static int getData(TileCurtain TE)
-	{
-		return TE.data;
-	}
-	
-	/**
-	 * Set block data.
-	 */
-	public static void setData(TileCurtain TE, int data)
-	{
-		/*
-		 * No need to update if data hasn't changed.
-		 */
-		if (data != getData(TE))
-		{
-			TE.data = (short) data;
-			
-			if (!suppressBlockUpdates)
-				TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
-		}
-	}
-	
-	/**
-	 * Returns whether side has cover.
-	 */
-	public static boolean hasDyeColor(TileCurtain TE, int side)
-	{
-		return TE.color[side] > 0;
-	}
-	
-	/**
-	 * Sets color for side.
-	 */
-	public static void setDyeColor(TileCurtain TE, int side, int metadata)
-	{
-		if (TE.color[side] > 0)
-			ejectEntity(TE, new ItemStack(Item.dyePowder, 1, (15 - TE.color[side])));
-		
-		TE.color[side] = (byte) metadata;
-		
-		if (!suppressBlockUpdates)
-			TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
-	}
-	
-	/**
-	 * Returns dye color for side.
-	 */
-	public static int getDyeColor(TileCurtain TE, int side)
-	{
-		return TE.color[side];
-	}
-	
-	/**
-	 * Sets overlay.
-	 */
-	public static void setOverlay(TileCurtain TE, int side, ItemStack itemStack)
-	{
-		if (hasOverlay(TE, side))
-			ejectEntity(TE, OverlayHandler.getItemStack(TE.overlay[side]));
-
-		TE.overlay[side] = (byte) OverlayHandler.getKey(itemStack);
-		
-		if (!suppressBlockUpdates)
-			TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
-	}
-	
-	/**
-	 * Returns overlay.
-	 */
-	public static int getOverlay(TileCurtain TE, int side)
-	{
-		return TE.overlay[side];
-	}
-	
-	/**
-	 * Returns whether block has overlay.
-	 */
-	public static boolean hasOverlay(TileCurtain TE, int side)
-	{
-		return TE.overlay[side] > 0;
-	}
-	
-	/**
-	 * Returns whether ItemStack contains a valid overlay item or block.
-	 */
-	public static boolean isOverlay(ItemStack itemStack)
-	{
-		return OverlayHandler.overlayMap.containsValue(itemStack.itemID);
-	}
-	
-	/**
-	 * Returns whether block has pattern.
-	 */
-	public static boolean hasPattern(TileCurtain TE, int side)
-	{
-		return getPattern(TE, side) > 0;
-	}
-	
-	/**
-	 * Returns pattern.
-	 */
-	public static int getPattern(TileCurtain TE, int side)
-	{
-		return unsignedToBytes(TE.pattern[side]);
-	}
-	
-	/**
-	 * Sets pattern.
-	 */
-	public static void setPattern(TileCurtain TE, int side, int pattern)
-	{
-		TE.pattern[side] = (byte) pattern;
-		
-		if (!suppressBlockUpdates)
-			TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
-	}
-	
-    /**
-     * Returns whether side should render based on cover blocks
-     * of both source and adjacent block.
-     */
-    public static boolean shouldRenderSharedFaceBasedOnCovers(TileCurtain TE_adj, TileCurtain TE_src)
-    {
-		Block block_adj= BlockProperties.getCoverBlock(TE_adj, 6);
-		Block block_src = BlockProperties.getCoverBlock(TE_src, 6);
-    	
-		if (!BlockProperties.hasCover(TE_adj, 6)) {
-			return BlockProperties.hasCover(TE_src, 6);
+		int blockID, metadata;
+		if (itemStack == null) {
+			blockID = CurtainRegistrations.CurtainBlock.blockID;
+			metadata = 0;
 		} else {
-			if (!BlockProperties.hasCover(TE_src, 6) && block_adj.getRenderBlockPass() == 0)
-				return !block_adj.isOpaqueCube();
-			else if (BlockProperties.hasCover(TE_src, 6) && block_src.isOpaqueCube() == block_adj.isOpaqueCube() && block_src.getRenderBlockPass() == block_adj.getRenderBlockPass())
-				return false;
-			else
-				return true;
+			blockID = itemStack.itemID;
+			metadata = itemStack.getItemDamage();
 		}
-    }
+		
+		ejectCoverAttributes(TE);
+
+		TE.curtainCover = (short) blockID;
+		TE.curtainCoverMetadata = (byte) metadata;
+		TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
+	}
+	
+	/**
+	 * Sets soil block.
+	 */
+/*	public final static void setSoil(TileCurtain TE, ItemStack itemStack)
+	{
+		playBlockPlacementSound(TE, itemStack == null ? getSoilBlock(TE).blockID : itemStack.itemID);
+		
+		int blockID, metadata;
+		if (itemStack == null) {
+			blockID = 0;
+			metadata = 0;
+		} else {
+			blockID = itemStack.itemID;
+			metadata = itemStack.getItemDamage();
+		}
+		
+		if (hasSoil(TE)) {
+			if (hasPlant(TE))
+				setPlant(TE, (ItemStack)null);
+			ejectEntity(TE, new ItemStack(TE.curtainSoil, 1, TE.curtainSoilMetadata));
+		}
+
+		TE.curtainSoil = (short) blockID;
+		TE.curtainSoilMetadata = (byte) metadata;
+		TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
+	}
+	
+	/**
+	 * Sets plant block.
+	 */
+/*	public final static void setPlant(TileCurtain TE, ItemStack itemStack)
+	{
+		playBlockPlacementSound(TE, itemStack == null ? getPlantBlock(TE).blockID : itemStack.itemID);
+		
+		int blockID, metadata;
+		if (itemStack == null) {
+			blockID = 0;
+			metadata = 0;
+		} else {
+			blockID = itemStack.itemID;
+			metadata = itemStack.getItemDamage();
+		}
+		
+		if (hasPlant(TE))
+			ejectEntity(TE, new ItemStack(TE.curtainPlant, 1, TE.worldObj.getBlockMetadata(TE.xCoord, TE.yCoord, TE.zCoord)));
+
+		TE.curtainPlant = (short) blockID;
+		TE.worldObj.setBlockMetadataWithNotify(TE.xCoord, TE.yCoord, TE.zCoord, metadata, 2);
+		TE.worldObj.markBlockForUpdate(TE.xCoord, TE.yCoord, TE.zCoord);
+	} */
 		
 }

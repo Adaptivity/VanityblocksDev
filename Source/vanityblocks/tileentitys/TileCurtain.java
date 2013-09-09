@@ -1,5 +1,9 @@
 package vanityblocks.tileentitys;
 
+import vanityblocks.Blocks.VanityRandomBlocks;
+import vanityblocks.ItemBlocks.CurtainItemBlock;
+import vanityblocks.Registrations.CurtainRegistrations;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.INetworkManager;
@@ -7,73 +11,63 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.tileentity.TileEntity;
 
-
 public class TileCurtain extends TileEntity
 {
-
-	public short[] cover = new short[7];
-	public byte[] pattern = new byte[7];
-	public byte[] color = new byte[7];
-	public byte[] overlay = new byte[7];
+	public byte curtainDyeColor = -1;
+	public byte curtainSpecialColor = -1;
+	public short curtainCover = (short) CurtainRegistrations.CurtainBlock.blockID;
+	public byte curtainCoverMetadata = 0;
+//	public short curtainSoil = 0;
+//	public byte curtainSoilMetadata = 0;
+//	public short curtainPlant = 0;
 	
-	/**
-	 * Holds information like direction, block type, etc.
-	 */
-	public short data = 0;
-
 	@Override
 	public void readFromNBT(NBTTagCompound nbt)
 	{
-		super.readFromNBT(nbt);
-		
-//		if (!nbt.hasKey("color")) {
-//			CompatibilityHelper.convertData(this, nbt);
-//		} else {
-			for (int count = 0; count < 7; ++count)
-				cover[count] = nbt.getShort("cover_" + count);
-
-			pattern = nbt.getByteArray("pattern");
-			color = nbt.getByteArray("color");
-			overlay = nbt.getByteArray("overlay");
-			data = nbt.getShort("data");
-		}
-//	}
+		super.readFromNBT(nbt);		
+		curtainDyeColor = nbt.getByte("curtainDyeColor");
+		curtainSpecialColor = nbt.getByte("curtainSpecialColor");
+		curtainCover = nbt.getShort("curtainCover");
+		curtainCoverMetadata = nbt.getByte("curtainCoverMetadata");
+//		curtainSoil = nbt.getShort("curtainSoil");
+//		curtainSoilMetadata = nbt.getByte("curtainSoilMetadata");
+//		curtainPlant = nbt.getShort("curtainPlant");
+	}
 
 	@Override
 	public void writeToNBT(NBTTagCompound nbt)
 	{
 		super.writeToNBT(nbt);
-
-		for (int count = 0; count < 7; ++count)
-			nbt.setShort("cover_" + count, cover[count]);
-				
-		nbt.setByteArray("pattern", pattern);
-		nbt.setByteArray("color", color);
-		nbt.setByteArray("overlay", overlay);
-		nbt.setShort("data", data);
+		nbt.setByte("curtainDyeColor", curtainDyeColor);
+		nbt.setByte("curtainSpecialColor", curtainSpecialColor);
+		nbt.setShort("curtainCover", curtainCover);
+		nbt.setByte("curtainCoverMetadata", curtainCoverMetadata);
+//		nbt.setShort("curtainSoil", curtainSoil);
+//		nbt.setByte("curtainSoilMetadata", curtainSoilMetadata);
+//		nbt.setShort("curtainPlant", curtainPlant);
 	}
-
-    @Override
+	
     /**
      * Overridden in a sign to provide the text.
      */
+    @Override
 	public Packet getDescriptionPacket()
-    {
+    {    	
         NBTTagCompound nbt = new NBTTagCompound();
         this.writeToNBT(nbt);
         return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, nbt);
     }
-
-    @Override
+    
     /**
      * Called when you receive a TileEntityData packet for the location this
      * TileEntity is currently in. On the client, the NetworkManager will always
-     * be the remote server. On the server, it will be whomever is responsible for
+     * be the remote server. On the server, it will be whomever is responsible for 
      * sending the packet.
-     *
-     * @param net The NetworkManager the packet originated from
+     * 
+     * @param net The NetworkManager the packet originated from 
      * @param pkt The data packet
      */
+    @Override
 	public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt)
     {
     	readFromNBT(pkt.customParam1);
@@ -84,18 +78,4 @@ public class TileCurtain extends TileEntity
 			this.worldObj.updateAllLightTypes(this.xCoord, this.yCoord, this.zCoord);
 		}
     }
-    
-//    @Override
-    /**
-     * Allows the entity to update its state. Overridden in most subclasses, e.g. the mob spawner uses this to count
-     * ticks and creates a new spawn inside its implementation.
-     */
-/*	public void updateEntity()
-    {
-    	if (!this.worldObj.isRemote)
-	    	if (this.worldObj.getBlockId(this.xCoord, this.yCoord, this.zCoord) == CarpentersBlocks.blockCarpentersDaylightSensorID)	
-		    	if (this.worldObj.getTotalWorldTime() % 20L == 0L)
-		    		((BlockCarpentersDaylightSensor)this.getBlockType()).updateLightLevel(this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-    }*/
-    
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import vanityblocks.Storageprops;
 import vanityblocks.Renders.BlockCurtainRender;
-import vanityblocks.Util.BlockEventHandler;
 import vanityblocks.Util.BlockProperties;
 import vanityblocks.tileentitys.TileCurtain;
 import cpw.mods.fml.relauncher.Side;
@@ -17,6 +16,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
@@ -54,8 +54,117 @@ public class BlockCurtain extends Block {
 	public Icon getIcon(int side, int metadata) {
 		return Block.cloth.getIcon(side, metadata);
 	}
+    @Override
+	public void onBlockAdded(World world, int x, int y, int z)
+    {	
+    	world.setBlockTileEntity(x, y, z, this.createNewTileEntity(world));
+    }
 	public TileEntity createNewTileEntity(World var1) {
 		return new TileCurtain();
+	}
+	 /**
+     * Called upon block activation (right click on the block.)
+     */
+    @Override
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ)
+    {
+    	TileCurtain TE = (TileCurtain) world.getBlockTileEntity(x, y, z);
+		ItemStack itemStack = entityPlayer.getCurrentEquippedItem();
+		boolean actionPerformed = false;
+		boolean decrementInventory = false;
+
+    	if (itemStack != null)
+    	{
+        	// Check held item for dye color properties
+        	if (itemStack.itemID == Item.dyePowder.itemID)
+        	{
+    			if (BlockProperties.doDyeColorsMatch(TE, itemStack)) {
+    				actionPerformed = true;
+    			} else {
+    				BlockProperties.setDyeColor(TE, itemStack);
+    				actionPerformed = true;
+    				decrementInventory = true;
+    			}
+        	}
+        	
+        	// Check held item for special color properties
+        	if (itemStack.itemID == Item.speckledMelon.itemID || itemStack.itemID == Item.enderPearl.itemID)
+        	{
+    			if (BlockProperties.doSpecialColorsMatch(TE, itemStack)) {
+    				actionPerformed = true;
+    			} else {
+    				BlockProperties.setSpecialColor(TE, itemStack);
+    				actionPerformed = true;
+    				decrementInventory = true;
+    			}
+        	}
+    		
+    		if (itemStack.getItem() instanceof ItemBlock || itemStack.getItem() == Item.reed)
+    		{
+    			Block block;
+
+    			if (itemStack.getItem() == Item.reed) {
+    				block = Block.reed;
+    			} else {
+    				block = Block.blocksList[itemStack.itemID];
+    			}
+
+    			if (BlockProperties.isCover(itemStack))
+    			{
+    				if (BlockProperties.doCoversMatch(TE, itemStack)) {
+        				actionPerformed = true;
+    				} else {
+    					BlockProperties.setCover(TE, itemStack);
+        				actionPerformed = true;
+    					decrementInventory = true;
+    				}
+    			}
+
+//    			if (BlockProperties.isSoil(itemStack))
+//    			{
+//    				if (BlockProperties.doSoilsMatch(TE, itemStack)) {
+//        				actionPerformed = true;
+//    				} else {
+//    					BlockProperties.setSoil(TE, itemStack);
+//        				actionPerformed = true;
+//        				decrementInventory = true;
+//    				}
+//    			}
+
+//   			if (BlockProperties.hasSoil(TE))
+//   			{
+//    				if (BlockProperties.isPlant(itemStack))
+//    				{
+//    					Block soilBlock = BlockProperties.getSoilBlock(TE);
+//
+//    					if (BlockProperties.doPlantsMatch(TE, itemStack)) {
+//    	    				actionPerformed = true;
+//    					} else {
+//    						BlockProperties.setPlant(TE, itemStack);
+//    	    				actionPerformed = true;
+//    	    				decrementInventory = true;
+//    					}
+//    				}
+//    			}
+    		}
+    	}
+    	
+    	if (!world.isRemote && decrementInventory)
+    		if (!entityPlayer.capabilities.isCreativeMode && --itemStack.stackSize <= 0)
+    			entityPlayer.inventory.setInventorySlotContents(entityPlayer.inventory.currentItem, (ItemStack)null);
+
+    	return actionPerformed;
+    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	/**
+	 * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
+	 */
+	public Icon getBlockTexture(IBlockAccess blockAccess, int x, int y, int z, int side)
+	{
+		TileCurtain TE = (TileCurtain) blockAccess.getBlockTileEntity(x, y, z);
+		
+		return BlockProperties.getCoverBlock(TE).getIcon(side, blockAccess.getBlockMetadata(x, y, z));
 	}
 /*    @Override
     public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z)
@@ -92,30 +201,7 @@ public class BlockCurtain extends Block {
             return;
         }
     }*/
-	@Override
-	/**
-	 * Called upon block activation (right click on the block.)
-	 */
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ)
-	{
-		if (!world.isRemote)
-		{
-			ItemStack itemStack = entityPlayer.getCurrentEquippedItem();
-//			int side = BlockEventHandler.faceClicked;
 
-			TileCurtain TE = (TileCurtain) world.getBlockTileEntity(x, y, z);		
-			auxiliaryOnBlockClicked(TE, world, x, y, z, entityPlayer);			
-		}
-		return false;
-	}
-	@Override
-	public boolean hasTileEntity(int metadata)
-	{
-		return true;
-	}
-
-	public void auxiliaryOnBlockClicked(TileCurtain TE, World world, int x, int y, int z, EntityPlayer entityPlayer) {}
-	
     @Override
     @SideOnly(Side.CLIENT)
     public int getRenderType ()

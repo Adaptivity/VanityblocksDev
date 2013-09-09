@@ -14,6 +14,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.IShearable;
 
+/*
+ * Thanks to mineshopper, maker of carpenters blocks for all the help with this, if it wasnt for him, this wouldnt be done.
+ * As well as the base code for the texture grabbing.
+ */
 public class BlockProperties {
 
 	/**

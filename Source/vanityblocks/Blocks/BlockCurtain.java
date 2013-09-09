@@ -25,6 +25,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
+
+/*
+ * Thanks to mineshopper, maker of carpenters blocks for all the help with this, if it wasnt for him, this wouldnt be done.
+ * As well as the base code for the texture grabbing.
+ */
 public class BlockCurtain extends Block {
 	public BlockCurtain(int id) {
 		super(id, Material.cloth);

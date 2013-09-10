@@ -80,10 +80,10 @@ public class BlockProperties {
 	 */
 	public final static boolean hasCover(TileCurtain TE)
 	{
-		if (Block.blocksList[TE.curtainCover] == null)
+		if (Block.blocksList[TE.curtainCover] == null) {
 			TE.curtainCover = (short) CurtainRegistrations.CurtainBlock.blockID;
-		
-		return TE.curtainCover != CurtainRegistrations.CurtainBlock.blockID;
+		}
+			return TE.curtainCover != CurtainRegistrations.CurtainBlock.blockID;
 	}
 	
 	/**

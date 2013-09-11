@@ -55,8 +55,8 @@ import cpw.mods.fml.relauncher.Side;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 /*
  * TO DO Hold f3 and hit h for item id's, Villager that trades modded items
- * Vanity - Chiseled sandstone blocks, chairs? redstone lamps diff colored,
- * curtains maybe?, inverted redstone lamps, colored sand/glass ADD
+ * Vanity - Chiseled sandstone blocks, chairs? 
+ *  inverted redstone lamps, colored sand/glass ADD
  * STONEHENGE!!!!!!!!!! Item.doorWood.setMaxStackSize(16); - way to change
  * stacksize of vannila
  */

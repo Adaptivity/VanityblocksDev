@@ -9,6 +9,7 @@ import vanityblocks.tileentitys.TileCurtain;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -30,7 +31,7 @@ import net.minecraftforge.common.ForgeDirection;
  * Thanks to mineshopper, maker of carpenters blocks for all the help with this, if it wasnt for him, this wouldnt be done.
  * As well as the base code for the texture grabbing.
  */
-public class BlockCurtain extends Block {
+public class BlockCurtain extends BlockContainer {
 	public BlockCurtain(int id) {
 		super(id, Material.cloth);
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);

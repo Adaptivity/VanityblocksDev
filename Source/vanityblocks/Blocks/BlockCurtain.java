@@ -35,8 +35,8 @@ public class BlockCurtain extends BlockContainer {
 	public BlockCurtain(int id) {
 		super(id, Material.cloth);
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
-		this.setLightOpacity(5);
-        this.setBlockBounds(0F, 0.85F, 0.375F, 1F, 1F, 0.625F); // bar bounds
+//		this.setLightOpacity(0);
+//        this.setBlockBounds(0F, 0.85F, 0.375F, 1F, 1F, 0.625F); // bar bounds
         //this.setBlockBounds(0F, -2F, 0.375F, 1F, 1F, 0.625F); //full bound blocks
 	}
 	@Override
@@ -58,7 +58,8 @@ public class BlockCurtain extends BlockContainer {
 
 	@Override
 	public Icon getIcon(int side, int metadata) {
-		return Block.cloth.getIcon(side, metadata);
+//		return Block.cloth.getIcon(side, metadata); // use this for meta of theicon
+		return Block.cloth.getIcon(side, 0);
 	}
     @Override
 	public void onBlockAdded(World world, int x, int y, int z)
@@ -125,33 +126,6 @@ public class BlockCurtain extends BlockContainer {
     					decrementInventory = true;
     				}
     			}
-
-//    			if (BlockProperties.isSoil(itemStack))
-//    			{
-//    				if (BlockProperties.doSoilsMatch(TE, itemStack)) {
-//        				actionPerformed = true;
-//    				} else {
-//    					BlockProperties.setSoil(TE, itemStack);
-//        				actionPerformed = true;
-//        				decrementInventory = true;
-//    				}
-//    			}
-
-//   			if (BlockProperties.hasSoil(TE))
-//   			{
-//    				if (BlockProperties.isPlant(itemStack))
-//    				{
-//    					Block soilBlock = BlockProperties.getSoilBlock(TE);
-//
-//    					if (BlockProperties.doPlantsMatch(TE, itemStack)) {
-//    	    				actionPerformed = true;
-//    					} else {
-//    						BlockProperties.setPlant(TE, itemStack);
-//    	    				actionPerformed = true;
-//    	    				decrementInventory = true;
-//    					}
-//    				}
-//    			}
     		}
     	}
     	
@@ -172,41 +146,25 @@ public class BlockCurtain extends BlockContainer {
 		
 		return BlockProperties.getCoverBlock(TE).getIcon(side, blockAccess.getBlockMetadata(x, y, z));
 	}
-/*    @Override
+    @Override
     public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z)
     {
         int meta = world.getBlockMetadata(x, y, z);
         ForgeDirection direction = ForgeDirection.getOrientation(meta);
-        if (direction == ForgeDirection.UP)
+        if (direction == ForgeDirection.UP) // this is for meta 0
         {
-            this.setBlockBounds(0F, 0F, 0.375F, 1F, 1F, 0.625F);
+        	this.setBlockBounds(0.375F, 0.85F, 0.0F, 0.625F, 1.0F, 1.0F);
         }
-        else if (direction == ForgeDirection.DOWN)
+        else if (direction == ForgeDirection.DOWN) //this is for meta 1
         {
-            this.setBlockBounds(0F, 0F, 0.375F, 1F, 1F, 0.625F);
-        }
-        else if (direction == ForgeDirection.NORTH)
-        {
-            this.setBlockBounds(0F, 0F, 0.375F, 1F, 1F, 0.625F);
-        }
-        else if (direction == ForgeDirection.SOUTH)
-        {
-            this.setBlockBounds(0F, 0F, 0.375F, 1F, 1F, 0.625F);
-        }
-        else if (direction == ForgeDirection.EAST)
-        {
-            this.setBlockBounds(0F, 0F, 0.375F, 1F, 1F, 0.625F);
-        }
-        else if (direction == ForgeDirection.WEST)
-        {
-            this.setBlockBounds(0F, 0F, 0.375F, 1F, 1F, 0.625F);
+        	this.setBlockBounds(0F, 0.85F, 0.375F, 1F, 1F, 0.625F);
         }
         else
         {
-            this.setBlockBounds(1F, 1F, 1F, 1F, 1F, 1F);
+            this.setBlockBounds(0F, 0F, 0F, 1F, 1F, 1F);
             return;
         }
-    }*/
+    }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -222,7 +180,7 @@ public class BlockCurtain extends BlockContainer {
 
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
-		for (int ix = 0; ix < 1; ix++) {
+		for (int ix = 0; ix < 2; ix++) {
 			subItems.add(new ItemStack(this, 1, ix));
 		}
 	}

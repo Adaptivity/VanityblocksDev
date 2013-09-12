@@ -28,8 +28,10 @@ public class CurtainRegistrations {
 		GameRegistry.registerBlock(CurtainBlock,
 				vanityblocks.ItemBlocks.CurtainItemBlock.class,
 				"Curtain Blocks");
-//		LanguageRegistry.addName(new ItemStack(RandomBlocks, 1, 0),
-//				"Clay Brick");
+		LanguageRegistry.addName(new ItemStack(CurtainBlock, 1, 0),
+				"E-W Curtain");
+		LanguageRegistry.addName(new ItemStack(CurtainBlock, 1, 1),
+				"N-S Curtain");
     	GameRegistry.registerTileEntity(TileCurtain.class, "TileEntityCurtain");
 	}
 

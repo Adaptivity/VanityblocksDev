@@ -21,9 +21,6 @@ public class TileCurtain extends TileEntity
 	public byte curtainSpecialColor = -1;
 	public short curtainCover = (short) CurtainRegistrations.CurtainBlock.blockID;
 	public byte curtainCoverMetadata = 0;
-//	public short curtainSoil = 0;
-//	public byte curtainSoilMetadata = 0;
-//	public short curtainPlant = 0;
 	
 	@Override
 	public void readFromNBT(NBTTagCompound nbt)
@@ -33,9 +30,6 @@ public class TileCurtain extends TileEntity
 		curtainSpecialColor = nbt.getByte("curtainSpecialColor");
 		curtainCover = nbt.getShort("curtainCover");
 		curtainCoverMetadata = nbt.getByte("curtainCoverMetadata");
-//		curtainSoil = nbt.getShort("curtainSoil");
-//		curtainSoilMetadata = nbt.getByte("curtainSoilMetadata");
-//		curtainPlant = nbt.getShort("curtainPlant");
 	}
 
 	@Override
@@ -46,9 +40,6 @@ public class TileCurtain extends TileEntity
 		nbt.setByte("curtainSpecialColor", curtainSpecialColor);
 		nbt.setShort("curtainCover", curtainCover);
 		nbt.setByte("curtainCoverMetadata", curtainCoverMetadata);
-//		nbt.setShort("curtainSoil", curtainSoil);
-//		nbt.setByte("curtainSoilMetadata", curtainSoilMetadata);
-//		nbt.setShort("curtainPlant", curtainPlant);
 	}
 	
     /**

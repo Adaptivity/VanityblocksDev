@@ -18,6 +18,7 @@ public class BlockCurtainRender implements ISimpleBlockRenderingHandler {
 	public void renderInventoryBlock(Block block, int metadata, int modelID,
 			RenderBlocks renderer) {
 		if (modelID == curtainModelID) {
+			if (metadata == 0) {
 			  // Bar rod east-west
 			  renderer.setRenderBounds(0.0F, 0.85F, 0.375F, 1.0F, 1.0F, 0.625F);
 			  renderStandardInvBlock(renderer, block, metadata);
@@ -47,12 +48,44 @@ public class BlockCurtainRender implements ISimpleBlockRenderingHandler {
 			  renderStandardInvBlock(renderer, block, metadata);
 		}
 	}
-
+		if (modelID == curtainModelID) {
+			if (metadata == 1) {
+				  // Bar rod north-south
+	              renderer.setRenderBounds(0.375F, 0.85F, 0.0F, 0.625F, 1.0F, 1.0F);
+				  renderStandardInvBlock(renderer, block, metadata);
+				  //8 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.87F, 0.57F, 1F, 1F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			      // 7 line 
+			      renderer.setRenderBounds(0.5F, -1F, 0.87F, 0.43F, 1F, 0.75F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			      // 6 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.62F, 0.57F, 1F, 0.75F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			      //5 line 
+			      renderer.setRenderBounds(0.5F, -1F, 0.62F, 0.435F, 1F, 0.50F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			      //4 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.38F, 0.57F, 1F, 0.50F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			      //3 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.38F, 0.435F, 1F, 0.25F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			      //2 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.13F, 0.57F, 1F, 0.25F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			      //1 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.13F, 0.435F, 1F, 0.0F);
+				  renderStandardInvBlock(renderer, block, metadata);
+			}
+			}
+	}
 	@Override
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z,
 			Block block, int modelID, RenderBlocks renderer) {
+		int metadata = world.getBlockMetadata(x, y, z);
 		if (modelID == curtainModelID) {
-			
+			if (metadata == 0) {
 			// This render is east-west
 			// int metadata = world.getBlockMetadata(x, y, z);
 			/*
@@ -91,6 +124,38 @@ public class BlockCurtainRender implements ISimpleBlockRenderingHandler {
 		      //1 line
 		      renderer.setRenderBounds(1.0F, -1F, 0.5F, 0.875F, 1F, 0.43F);
 		      renderer.renderStandardBlock(block, x, y, z); 
+			}
+			if (modelID == curtainModelID) {
+				if (metadata == 1) {
+				  // Bar rod north-south
+	              renderer.setRenderBounds(0.375F, 0.85F, 0.0F, 0.625F, 1.0F, 1.0F);
+				  renderer.renderStandardBlock(block, x, y, z);
+				  //8 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.87F, 0.57F, 1F, 1F);
+			      renderer.renderStandardBlock(block, x, y, z);
+			      // 7 line 
+			      renderer.setRenderBounds(0.5F, -1F, 0.87F, 0.43F, 1F, 0.75F);
+			      renderer.renderStandardBlock(block, x, y, z);
+			      // 6 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.62F, 0.57F, 1F, 0.75F);
+			      renderer.renderStandardBlock(block, x, y, z);
+			      //5 line 
+			      renderer.setRenderBounds(0.5F, -1F, 0.62F, 0.435F, 1F, 0.50F);
+			      renderer.renderStandardBlock(block, x, y, z);
+			      //4 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.38F, 0.57F, 1F, 0.50F);
+			      renderer.renderStandardBlock(block, x, y, z);
+			      //3 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.38F, 0.435F, 1F, 0.25F);
+			      renderer.renderStandardBlock(block, x, y, z);
+			      //2 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.13F, 0.57F, 1F, 0.25F);
+			      renderer.renderStandardBlock(block, x, y, z);
+			      //1 line
+			      renderer.setRenderBounds(0.5F, -1F, 0.13F, 0.435F, 1F, 0.0F);
+			      renderer.renderStandardBlock(block, x, y, z);
+				}
+			}
 		}
 		return true;
 	}

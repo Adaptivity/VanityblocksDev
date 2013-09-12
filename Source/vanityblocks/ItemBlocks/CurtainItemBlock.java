@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 public class CurtainItemBlock extends ItemBlock {
 
-	private final static String[] subNames = { "White Curtain", "",
+	private final static String[] subNames = { "E-W Curtain", "N-S Curtain",
 			"", "", "", "", "",
 			"", "", "", "", "", "", "", "", "", "", "" };
 

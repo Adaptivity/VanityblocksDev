@@ -54,28 +54,28 @@ public class BlockCurtainRender implements ISimpleBlockRenderingHandler {
 	              renderer.setRenderBounds(0.375F, 0.85F, 0.0F, 0.625F, 1.0F, 1.0F);
 				  renderStandardInvBlock(renderer, block, metadata);
 				  //8 line
-			      renderer.setRenderBounds(0.5F, -1F, 0.87F, 0.57F, 1F, 1F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.87F, 0.57F, 1F, 1F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			      // 7 line 
-			      renderer.setRenderBounds(0.5F, -1F, 0.87F, 0.43F, 1F, 0.75F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.87F, 0.43F, 1F, 0.75F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			      // 6 line
-			      renderer.setRenderBounds(0.5F, -1F, 0.62F, 0.57F, 1F, 0.75F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.62F, 0.57F, 1F, 0.75F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			      //5 line 
-			      renderer.setRenderBounds(0.5F, -1F, 0.62F, 0.435F, 1F, 0.50F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.62F, 0.435F, 1F, 0.50F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			      //4 line
-			      renderer.setRenderBounds(0.5F, -1F, 0.38F, 0.57F, 1F, 0.50F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.38F, 0.57F, 1F, 0.50F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			      //3 line
-			      renderer.setRenderBounds(0.5F, -1F, 0.38F, 0.435F, 1F, 0.25F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.38F, 0.435F, 1F, 0.25F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			      //2 line
-			      renderer.setRenderBounds(0.5F, -1F, 0.13F, 0.57F, 1F, 0.25F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.13F, 0.57F, 1F, 0.25F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			      //1 line
-			      renderer.setRenderBounds(0.5F, -1F, 0.13F, 0.435F, 1F, 0.0F);
+			      renderer.setRenderBounds(0.5F, 0F, 0.13F, 0.435F, 1F, 0.0F);
 				  renderStandardInvBlock(renderer, block, metadata);
 			}
 			}

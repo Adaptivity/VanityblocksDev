@@ -17,9 +17,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class CurtainRegistrations {
-// https://raw.github.com/mDiyo/TinkersConstruct/master/src/tconstruct/client/block/TableRender.java
-// https://github.com/mDiyo/TinkersConstruct/blob/master/src/tconstruct/blocks/ToolStationBlock.java#L99
-// Use te's for it, so rewrite and follow carpenters way.
 	public static void CurtainRegistration() {
 		curtainblockconfig = Storageprops.curtainblockconfig;
 		CurtainBlock = new BlockCurtain(curtainblockconfig);
@@ -36,7 +33,10 @@ public class CurtainRegistrations {
 	}
 
 	public static void addCurtainRecipes() {
-		// System.out.println("Random Block Registration loaded");
+		GameRegistry.addRecipe(new ItemStack(CurtainBlock, 1, 0), "xx ", "xx ",
+				"xx ", 'x', new ItemStack(Block.cloth, 1, Short.MAX_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(CurtainBlock, 1, 1), new ItemStack(CurtainBlock, 0, 0));
+		GameRegistry.addShapelessRecipe(new ItemStack(CurtainBlock, 1, 0), new ItemStack(CurtainBlock, 0, 1));
 		}
 public static int curtainblockconfig;
 public static Block CurtainBlock;

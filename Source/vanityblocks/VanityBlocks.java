@@ -53,13 +53,7 @@ import cpw.mods.fml.relauncher.Side;
 		+ "."
 		+ DefaultProps.LOCALBUILDVERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-/*
- * TO DO Hold f3 and hit h for item id's, Villager that trades modded items
- * Vanity - Chiseled sandstone blocks, chairs? 
- *  inverted redstone lamps, colored sand/glass ADD
- * STONEHENGE!!!!!!!!!! Item.doorWood.setMaxStackSize(16); - way to change
- * stacksize of vannila
- */
+
 public class VanityBlocks {
 
 	@Instance("VanityBlocks")
@@ -142,6 +136,7 @@ public class VanityBlocks {
 		/* Registration of the Curtains */
 		if (Storageprops.enablecurtains) {
 			CurtainRegistrations.CurtainRegistration();
+			CurtainRegistrations.addCurtainRecipes();
 			RenderingRegistry.registerBlockHandler(new BlockCurtainRender());
 		}
 		/* ######################## World Gen Registration ###### */

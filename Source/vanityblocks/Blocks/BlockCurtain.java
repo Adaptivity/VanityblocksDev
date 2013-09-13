@@ -35,7 +35,7 @@ public class BlockCurtain extends BlockContainer {
 	public BlockCurtain(int id) {
 		super(id, Material.cloth);
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
-//		this.setLightOpacity(0);
+		this.setLightOpacity(0);
 //        this.setBlockBounds(0F, 0.85F, 0.375F, 1F, 1F, 0.625F); // bar bounds
         //this.setBlockBounds(0F, -2F, 0.375F, 1F, 1F, 0.625F); //full bound blocks
 	}
@@ -143,9 +143,8 @@ public class BlockCurtain extends BlockContainer {
 	public Icon getBlockTexture(IBlockAccess blockAccess, int x, int y, int z, int side)
 	{
 		TileCurtain TE = (TileCurtain) blockAccess.getBlockTileEntity(x, y, z);
-		
-		return BlockProperties.getCoverBlock(TE).getIcon(side, blockAccess.getBlockMetadata(x, y, z));
-	}
+		return BlockProperties.getCoverBlock(TE).getIcon(side, TE.curtainCoverMetadata);
+		}
     @Override
     public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z)
     {

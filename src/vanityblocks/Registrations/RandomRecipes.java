@@ -44,23 +44,19 @@ public class RandomRecipes {
 		}
 		if (Storageprops.nametag) {
 			GameRegistry.addShapelessRecipe(
-			// This is the nametag, update field when they add it
-					new ItemStack(Item.field_111212_ci, 1), new ItemStack(
+					new ItemStack(Item.nameTag, 1), new ItemStack(
 							Item.sign), new ItemStack(Item.silk));
 		}
 		if (Storageprops.ironhorsearmor) {
-			// This is the iron horse armor, change feild when they update
-			GameRegistry.addRecipe(new ItemStack(Item.field_111215_ce, 1),
+			GameRegistry.addRecipe(new ItemStack(Item.horseArmorIron, 1),
 					"xxx", "xxx", "x x", 'x', new ItemStack(Item.ingotIron));
 		}
 		if (Storageprops.goldhorsearmor) {
-			//this is gold horse armor, change when they update it
-			GameRegistry.addRecipe(new ItemStack(Item.field_111216_cf, 1),
+			GameRegistry.addRecipe(new ItemStack(Item.horseArmorGold, 1),
 					"xxx", "xxx", "x x", 'x', new ItemStack(Item.ingotGold));
 		}
 		if (Storageprops.diamondhorsearmor) {
-			//this is gold horse armor, change when they update it
-			GameRegistry.addRecipe(new ItemStack(Item.field_111213_cg, 1),
+			GameRegistry.addRecipe(new ItemStack(Item.horseArmorDiamond, 1),
 					"xxx", "xxx", "x x", 'x', new ItemStack(Item.diamond));
 		}
 	}

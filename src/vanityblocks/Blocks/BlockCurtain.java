@@ -36,6 +36,7 @@ public class BlockCurtain extends BlockContainer {
 		super(id, Material.cloth);
 		setCreativeTab(vanityblocks.VanityBlocks.tabCustom);
 		this.setLightOpacity(0);
+		this.setHardness(0.8F);
 //        this.setBlockBounds(0F, 0.85F, 0.375F, 1F, 1F, 0.625F); // bar bounds
         //this.setBlockBounds(0F, -2F, 0.375F, 1F, 1F, 0.625F); //full bound blocks
 	}

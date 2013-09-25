@@ -152,7 +152,7 @@
 		<!-- Copy resources -->
 		<copy todir="${classes.dir}" outputencoding="UTF-8">
 			<fileset dir="${classes.dir}">
-				<include name="assets/tinker/lang/*"/>
+				<include name="assets/vanityblocks/lang/*"/>
 			</fileset>
 		</copy>
 		<copy file="${resources.dir}/mcmod.info" todir="${classes.dir}" outputencoding="UTF-8">
@@ -177,7 +177,7 @@
 
 		<delete dir="${jar.dir}"/>
 		<mkdir dir="${jar.dir}"/>
-		<jar destfile="${jar.dir}/VanityBlocks-${mc.version}-${project.version.full}.jar" basedir="${classes.dir}"/>
+		<jar destfile="${jar.dir}/VanityBlocks-${mc.version}-B${project.version.full}.jar" basedir="${classes.dir}"/>
 
 	</target>
 

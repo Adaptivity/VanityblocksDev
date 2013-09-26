@@ -35,6 +35,7 @@ public class Storageprops {
 				.getBoolean(true);
 		enablerandomrecipes = config.get(enabled,
 				"Enable random recipes load?", true).getBoolean(true);
+		enablecompressblocks = config.get(enabled, "Enable the Common Compressed Blocks?", true).getBoolean(true);
 		// enablefences = config.get(enabled, "Enable the fences?", true)
 		// .getBoolean(true);
 
@@ -66,6 +67,7 @@ public class Storageprops {
 				.getInt(3063);
 		randomblocksconfig = config.getBlock(blocks,
 				"Vanityblocks random blocks id", 3064).getInt(3064);
+		compressblocksconfig = config.getBlock(blocks, "Common Compressed Blocks ID", 3066).getInt(3066);
 		// vanityfenceconfig = config.getBlock(blocks,
 		// "Vanity Fences", 3065).getInt(3065);
 
@@ -362,6 +364,7 @@ public class Storageprops {
 	public static boolean enabletrapdoors;
 	public static boolean enablerandomrecipes;
 	public static boolean enablecurtains;
+	public static boolean enablecompressblocks;
 	// #### Block id ints and booleans###
 	public static int storageblockconfig;
 	public static int storageblockmodconfig;
@@ -376,6 +379,7 @@ public class Storageprops {
 	public static int randomblocksconfig;
 	public static int trapdoorconfigs;
 	public static int curtainblockconfig;
+	public static int compressblocksconfig;
 	// #### Marble stair ints //
 	public static int marblestair;
 	public static int marblebrickstair;

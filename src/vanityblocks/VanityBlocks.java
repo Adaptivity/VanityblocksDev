@@ -3,6 +3,7 @@ package vanityblocks;
 import vanityblocks.FuelHandler.VanityForestryFuelHandler;
 import vanityblocks.FuelHandler.VanitymodFuelHandler;
 import vanityblocks.FuelHandler.VanityvanFuelHandler;
+import vanityblocks.Registrations.CompressedRegistrations;
 import vanityblocks.Registrations.CurtainRegistrations;
 import vanityblocks.Registrations.GeneralFoodItemsRegistration;
 import vanityblocks.Registrations.GeneralItemRegistration;
@@ -138,6 +139,11 @@ public class VanityBlocks {
 			CurtainRegistrations.CurtainRegistration();
 			CurtainRegistrations.addCurtainRecipes();
 			RenderingRegistry.registerBlockHandler(new BlockCurtainRender());
+		}
+		/* Registration of the Compressed common materials */
+		if (Storageprops.enablecompressblocks) {
+			CompressedRegistrations.compressblockregistration();
+			CompressedRegistrations.addRecipes();
 		}
 		/* ######################## World Gen Registration ###### */
 		if (Storageprops.enableworldgen) {

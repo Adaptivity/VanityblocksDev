@@ -75,7 +75,7 @@ public class VersionCheck extends Thread {
 												+ String.valueOf(DefaultProps.remoteMinVer)
 												+ "."
 												+ String.valueOf(DefaultProps.remoteBuildVer)
-												+ " http://www.minecraftforum.net/topic/1631527-");
+												+ " http://www.minecraftforum.net/topic/1631527- or http://rly.cc/yl8ky (Jenkins)");
 								FMLClientHandler.instance().getClient().thePlayer
 										.addChatMessage("\u00a73VanityBlocks: \u00a77Please remember to post ideas, bugs and just general bump the thread. More attention/bumps makes me wanna continue :)");
 							} else if (sideToCheck.equals(Side.SERVER)) {

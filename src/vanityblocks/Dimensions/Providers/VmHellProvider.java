@@ -2,6 +2,7 @@ package vanityblocks.Dimensions.Providers;
 
 import vanityblocks.Storageprops;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.WorldProviderHell;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -11,11 +12,13 @@ import net.minecraft.world.gen.ChunkProviderHell;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class VmHellProvider extends WorldProvider
+public class VmHellProvider extends WorldProviderHell
 {
     public void registerWorldChunkManager ()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.hell, 2.0F, 0.0F);
+        this.isHellWorld = true;
+        this.hasNoSky = true;
         this.dimensionId = Storageprops.vmhellid;
     }
 

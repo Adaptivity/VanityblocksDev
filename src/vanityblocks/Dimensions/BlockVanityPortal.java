@@ -168,82 +168,109 @@ public class BlockVanityPortal extends BlockBreakable
         if (id0 == Block.grass.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 0, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 0, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 0, 2);
-            return true;
+            if (Storageprops.vmenableplains)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 0, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 0, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 0, 2);
+                return true;
+            }
         }
         //portal creation statements for the deserthills biome dimension
         if (id0 == Block.sandStone.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 1, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 1, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 1, 2);
-            return true;
+            if (Storageprops.vmenabledeserthills)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 1, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 1, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 1, 2);
+                return true;
+            }
         }
         //portal creation statements for the extreme hills biome dimension
         if (id0 == Block.blockEmerald.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 2, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 2, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 2, 2);
-            return true;
+            if (Storageprops.vmenableextremehills)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 2, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 2, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 2, 2);
+                return true;
+            }
         }
         //portal creation statements for the forest biome dimension
         if (id0 == Block.wood.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 3, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 3, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 3, 2);
-            return true;
+            if (Storageprops.vmenableforest)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 3, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 3, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 3, 2);
+                return true;
+            }
         }
         //portal creation statements for the taiga biome dimension
         if (id0 == Block.blockSnow.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 4, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 4, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 4, 2);
-            return true;
+            if (Storageprops.vmenabletaiga)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 4, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 4, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 4, 2);
+                return true;
+            }
         }
         //portal creation statements for the swampland biome dimension
         if (id0 == Block.blockClay.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id5 == Block.waterStill.blockID && id6 == id7 && id7 == id8 && id8 == id9
                 && id9 == id10 && id10 == id11 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
-            return true;
+            if (Storageprops.vmenableswampland)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
+                return true;
+            }
         }
         //portal creation statements for the shroom island biome dimension 
         if (id0 == Block.mycelium.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 6, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 6, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 6, 2);
-            return true;
+            if (Storageprops.vmenableshroom)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 6, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 6, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 6, 2);
+                return true;
+            }
         }
         //portal creation statements for the jungle biome dimension
         if (id0 == Block.leaves.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 7, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 7, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 7, 2);
-            return true;
+            if (Storageprops.vmenablejungle)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 7, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 7, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 7, 2);
+                return true;
+            }
         }
         //portal creation statements for the hell biome dimension
         if (id0 == id1 && id1 == Block.blockNetherQuartz.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11 && id11 == id12
                 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.netherBrick.blockID)
         {
-            par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);
-            par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);
-            par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);
-            return true;
+            if (Storageprops.vmenablehell)
+            {
+                par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);
+                par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);
+                par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);
+                return true;
+            }
         }
         return false;
     }

@@ -29,7 +29,8 @@ public class VmExtremeHillsProvider extends WorldProvider
     @Override
     public boolean canRespawnHere ()
     {
-        if (Storageprops.vmrespawn) {
+        if (Storageprops.vmrespawn)
+        {
             return true;
         }
         return false;

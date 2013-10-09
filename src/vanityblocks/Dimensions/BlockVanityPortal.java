@@ -163,9 +163,7 @@ public class BlockVanityPortal extends BlockBreakable
         //    par1World.setBlock(par2, par3 + 2, par4, MiningWorldRegistrations.vanityportal.blockID, 0, 2);
         //    return true;
         //}
-        
-        
-        
+
         //portal creation statements for the plains biome dimension
         if (id0 == Block.grass.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
                 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
@@ -212,8 +210,8 @@ public class BlockVanityPortal extends BlockBreakable
             return true;
         }
         //portal creation statements for the swampland biome dimension
-        if (id0 == Block.blockClay.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id5 == Block.waterStill.blockID && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
-                && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
+        if (id0 == Block.blockClay.blockID && id1 == Block.blockLapis.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id5 == Block.waterStill.blockID && id6 == id7 && id7 == id8 && id8 == id9
+                && id9 == id10 && id10 == id11 && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.stone.blockID)
         {
             par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
             par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 5, 2);
@@ -239,8 +237,8 @@ public class BlockVanityPortal extends BlockBreakable
             return true;
         }
         //portal creation statements for the hell biome dimension
-        if (id0 == id1&& id1 == Block.blockNetherQuartz.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11
-                && id11 == id12 && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.netherBrick.blockID)
+        if (id0 == id1 && id1 == Block.blockNetherQuartz.blockID && id2 == id3 && id3 == id4 && id4 == id5 && id6 == id7 && id7 == id8 && id8 == id9 && id9 == id10 && id10 == id11 && id11 == id12
+                && id12 == id13 && id13 == id14 && id14 == id15 && id15 == id16 && id17 == Block.netherBrick.blockID)
         {
             par1World.setBlock(par2, par3, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);
             par1World.setBlock(par2, par3 + 1, par4, MiningWorldRegistrations.vanityportal.blockID, 8, 2);

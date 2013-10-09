@@ -45,7 +45,6 @@ public class RandomBlockRegistrations
 
     public static void addRecipes ()
     {
-        // System.out.println("Random Block Registration loaded");
         if (Storageprops.enableclaybrick)
         {
             GameRegistry.addRecipe(new ItemStack(RandomBlocks, 4, 0), new Object[] { "xx", "xx", 'x', new ItemStack(Block.blockClay) });

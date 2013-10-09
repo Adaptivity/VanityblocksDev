@@ -59,7 +59,6 @@ public class StorageBlocksRegistration
 
     public static void addVanillaRecipes ()
     {
-        System.out.println("Block Registration loaded");
         /* ############### Vannila Storage blocking ####### */
         if (Storageprops.enablecharcoal)
         {

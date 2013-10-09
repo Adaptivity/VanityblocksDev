@@ -225,7 +225,7 @@ public class PortalStarter extends Item
             {
                 par1ItemStack.damageItem(1, par2EntityPlayer);
             }
-        }        
+        }
         if (blockID == Block.blockSnow.blockID) //Builder for taiga
         {
             if (!MiningWorldRegistrations.vanityportal.tryToCreatePortal(par3World, par4, par5 + 1, par6))
@@ -264,7 +264,7 @@ public class PortalStarter extends Item
             {
                 par1ItemStack.damageItem(1, par2EntityPlayer);
             }
-        }        
+        }
         if (blockID == Block.blockClay.blockID) //Builder for swampland
         {
             if (!MiningWorldRegistrations.vanityportal.tryToCreatePortal(par3World, par4, par5 + 1, par6))
@@ -317,7 +317,7 @@ public class PortalStarter extends Item
                     par3World.setBlock(par4 - 1, par5 - 1, par6, Block.stone.blockID); // floor west pillar
                     par3World.setBlock(par4, par5 - 1, par6 + 1, Block.stone.blockID); // floor south pillar
                     par3World.setBlock(par4, par5 - 1, par6 - 1, Block.stone.blockID); // floor north pillar
-                    
+
                     par3World.setBlock(par4, par5 + 3, par6, Block.blockLapis.blockID); // middle top
 
                     par3World.setBlock(par4 - 2, par5 + 0, par6, Block.stone.blockID); //wfb
@@ -356,7 +356,7 @@ public class PortalStarter extends Item
                     par3World.setBlock(par4 - 1, par5 - 1, par6, Block.leaves.blockID); // floor west pillar
                     par3World.setBlock(par4, par5 - 1, par6 + 1, Block.leaves.blockID); // floor south pillar
                     par3World.setBlock(par4, par5 - 1, par6 - 1, Block.leaves.blockID); // floor north pillar
-                    
+
                     par3World.setBlock(par4, par5 + 3, par6, Block.blockLapis.blockID); // middle top
 
                     par3World.setBlock(par4 - 2, par5 + 0, par6, Block.stone.blockID); //wfb
@@ -395,7 +395,7 @@ public class PortalStarter extends Item
                     par3World.setBlock(par4 - 1, par5 - 1, par6, Block.netherBrick.blockID); // floor west pillar
                     par3World.setBlock(par4, par5 - 1, par6 + 1, Block.netherBrick.blockID); // floor south pillar
                     par3World.setBlock(par4, par5 - 1, par6 - 1, Block.netherBrick.blockID); // floor north pillar
-                    
+
                     par3World.setBlock(par4, par5 + 3, par6, Block.blockNetherQuartz.blockID); // middle top
 
                     par3World.setBlock(par4 - 2, par5 + 0, par6, Block.netherBrick.blockID); //wfb
@@ -423,20 +423,24 @@ public class PortalStarter extends Item
         }
         return true;
     }
+
     @Override
-    public boolean hasContainerItem() {
+    public boolean hasContainerItem ()
+    {
         return true;
     }
 
     @Override
-    public ItemStack getContainerItemStack(ItemStack itemStack) {
+    public ItemStack getContainerItemStack (ItemStack itemStack)
+    {
         ItemStack copyStack = itemStack.copy();
         copyStack.setItemDamage(copyStack.getItemDamage() + 1);
-        if(copyStack.getItemDamage() >= copyStack.getMaxDamage())
+        if (copyStack.getItemDamage() >= copyStack.getMaxDamage())
             return null;
 
         return copyStack;
     }
+
     @Override
     public void registerIcons (IconRegister par1IconRegister)
     {

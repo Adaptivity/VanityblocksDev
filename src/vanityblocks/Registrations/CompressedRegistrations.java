@@ -40,7 +40,6 @@ public class CompressedRegistrations
 
     public static void addRecipes ()
     {
-        // System.out.println("Random Block Registration loaded");
         //Cobble 
         GameRegistry.addRecipe(new ItemStack(CompressBlocks, 1, 0), new Object[] { "xxx", "xxx", "xxx", 'x', new ItemStack(Block.cobblestone) });
         GameRegistry.addShapelessRecipe(new ItemStack(Block.cobblestone, 9), new ItemStack(CompressBlocks, 1, 0));

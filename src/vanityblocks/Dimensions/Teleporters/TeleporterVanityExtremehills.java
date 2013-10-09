@@ -471,7 +471,7 @@ public class TeleporterVanityExtremehills extends Teleporter
                     k3 = i5 + (i3 - 1) * k5;
                     j3 = j5 + l2;
                     i4 = j2 + (i3 - 1) * l5;
-                    flag = i3 == 0 || i3 == 3 || l2 == -1 || l2 == 3;   
+                    flag = i3 == 0 || i3 == 3 || l2 == -1 || l2 == 3;
                     this.worldServerInstance.setBlock(k3, j3, i4, flag ? Block.stone.blockID : MiningWorldRegistrations.vanityportal.blockID, 2, 2);
                 }
             }

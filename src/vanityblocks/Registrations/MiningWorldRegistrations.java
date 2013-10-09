@@ -17,14 +17,14 @@ public class MiningWorldRegistrations
     public static BlockVanityPortal vanityportal;
     public static int vanityportalid;
     public static Item portalstarter;
-    public static void registrations () {
+
+    public static void registrations ()
+    {
         vanityportalid = Storageprops.vanityportalID;
         vanityportal = (BlockVanityPortal) new BlockVanityPortal(vanityportalid);
 
-        String[] vbportalnames = { "VB Plains Dimension Portal","VB Desert Hills Dimension Portal", 
-                "VB Extreme Hills Dimension Portal", "VB Forest Dimension Portal", 
-                "VB Taiga Dimension Portal", "VB Swampland Dimension Portal", 
-                "VB Shroom Dimension Portal", "VB Jungle Dimension Portal", "VB Hell Dimension Portal", "", "", "", "", "", "", "" };
+        String[] vbportalnames = { "VB Plains Dimension Portal", "VB Desert Hills Dimension Portal", "VB Extreme Hills Dimension Portal", "VB Forest Dimension Portal", "VB Taiga Dimension Portal",
+                "VB Swampland Dimension Portal", "VB Shroom Dimension Portal", "VB Jungle Dimension Portal", "VB Hell Dimension Portal", "", "", "", "", "", "", "" };
         /* ##### Registrys for the portal blocks ##### */
         GameRegistry.registerBlock(vanityportal, VanityPortalItemBlock.class, "Vanity Portal Blocks");
         LanguageRegistry.addName(new ItemStack(vanityportal, 1, 0), "VB Plains Dimension Portal ");
@@ -37,16 +37,20 @@ public class MiningWorldRegistrations
         LanguageRegistry.addName(new ItemStack(vanityportal, 1, 7), "VB Jungle Dimension Portal ");
         LanguageRegistry.addName(new ItemStack(vanityportal, 1, 8), "VB Hell Dimension Portal ");
 
-//        vanityportal = (BlockVanityPortal) new BlockVanityPortal(Storageprops.vanityportalID).setUnlocalizedName("VanityPortalBlock");
-//        GameRegistry.registerBlock(vanityportal, "vanityportal");
-//        LanguageRegistry.addName(vanityportal, "VanityBlocks Mining World Portal");
+        //        vanityportal = (BlockVanityPortal) new BlockVanityPortal(Storageprops.vanityportalID).setUnlocalizedName("VanityPortalBlock");
+        //        GameRegistry.registerBlock(vanityportal, "vanityportal");
+        //        LanguageRegistry.addName(vanityportal, "VanityBlocks Mining World Portal");
 
         portalstarter = new PortalStarter(Storageprops.portalstarterID - 256).setUnlocalizedName("PortalStarterItem");
         LanguageRegistry.addName(portalstarter, "VB Mining World Portal Lighter");
     }
-    public static void addRecipes() {
+
+    public static void addRecipes ()
+    {
         //GameRegistry.addShapelessRecipe(VbMwManual.manual, portalstarter, Item.book);
-        GameRegistry.addShapelessRecipe(VbMwManual.manual, new ItemStack (portalstarter, 1, Short.MAX_VALUE), Item.book);
+        GameRegistry.addShapelessRecipe(VbMwManual.manual, new ItemStack(portalstarter, 1, Short.MAX_VALUE), Item.book);
+        GameRegistry.addRecipe(new ItemStack(portalstarter), new Object[] { " y ", "xzx", "xzx", 'x', new ItemStack(Item.ingotIron), 'y', new ItemStack(Item.flintAndSteel), 'z',
+                new ItemStack(Item.coal) });
     }
 
 }

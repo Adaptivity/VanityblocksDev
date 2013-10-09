@@ -30,7 +30,8 @@ public class VmHellProvider extends WorldProvider
     @Override
     public boolean canRespawnHere ()
     {
-        if (Storageprops.vmrespawn) {
+        if (Storageprops.vmrespawn)
+        {
             return true;
         }
         return false;

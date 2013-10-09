@@ -5,26 +5,32 @@ import vanityblocks.Registrations.GeneralItemRegistration;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;
 
-public class VanityvanFuelHandler implements IFuelHandler {
-	@Override
-	public int getBurnTime(ItemStack fuel) {
-		// int var1 = fuel.itemID;
-		if (fuel.itemID == StorageBlocksRegistration.StorageBlock.blockID) {
-			if (fuel.getItemDamage() == (0)) {
-				return 14400;
-			}
-			// if (fuel.getItemDamage() == (6)){
-			// return 21600;
-			// }
-		}
-		if (fuel.itemID == GeneralItemRegistration.blazestorageitem.itemID) {
-			return 21600;
-		}
-		if (fuel.itemID == GeneralItemRegistration.coalstorageitem.itemID) {
-			return 12800;
-		}
-		return 0;
-	}
+public class VanityvanFuelHandler implements IFuelHandler
+{
+    @Override
+    public int getBurnTime (ItemStack fuel)
+    {
+        // int var1 = fuel.itemID;
+        if (fuel.itemID == StorageBlocksRegistration.StorageBlock.blockID)
+        {
+            if (fuel.getItemDamage() == (0))
+            {
+                return 14400;
+            }
+            // if (fuel.getItemDamage() == (6)){
+            // return 21600;
+            // }
+        }
+        if (fuel.itemID == GeneralItemRegistration.blazestorageitem.itemID)
+        {
+            return 21600;
+        }
+        if (fuel.itemID == GeneralItemRegistration.coalstorageitem.itemID)
+        {
+            return 12800;
+        }
+        return 0;
+    }
 }
 /*
  * You might have noticed items return nothing. This is pretty simple to fix,

@@ -3,25 +3,27 @@ package vanityblocks.ItemBlocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class StorageItemBlock extends ItemBlock {
+public class StorageItemBlock extends ItemBlock
+{
 
-	private final static String[] subNames = { "SugarCane Block", "Coal Block",
-			"Charcoal Block", "Enderpearl Block", "Slime Block",
-			"Bale of Wheat", "Sugar Block", "Cocoa Block", "", "Leather Block",
-			"Bone Block", "", "", "", "", "" };
+    private final static String[] subNames = { "SugarCane Block", "Coal Block", "Charcoal Block", "Enderpearl Block", "Slime Block", "Bale of Wheat", "Sugar Block", "Cocoa Block", "",
+            "Leather Block", "Bone Block", "", "", "", "", "" };
 
-	public StorageItemBlock(int id) {
-		super(id);
-		setHasSubtypes(true);
-	}
+    public StorageItemBlock(int id)
+    {
+        super(id);
+        setHasSubtypes(true);
+    }
 
-	@Override
-	public int getMetadata(int i) {
-		return i;
-	}
+    @Override
+    public int getMetadata (int i)
+    {
+        return i;
+    }
 
-	@Override
-	public String getUnlocalizedName(ItemStack itemstack) {
-		return subNames[itemstack.getItemDamage()];
-	}
+    @Override
+    public String getUnlocalizedName (ItemStack itemstack)
+    {
+        return subNames[itemstack.getItemDamage()];
+    }
 }

@@ -17,42 +17,42 @@ import net.minecraft.tileentity.TileEntity;
  */
 public class TileCurtain extends TileEntity
 {
-	public byte curtainDyeColor = -1;
-	public byte curtainSpecialColor = -1;
-	public short curtainCover = (short) CurtainRegistrations.CurtainBlock.blockID;
-	public byte curtainCoverMetadata = 0;
-	
-	@Override
-	public void readFromNBT(NBTTagCompound nbt)
-	{
-		super.readFromNBT(nbt);		
-		curtainDyeColor = nbt.getByte("curtainDyeColor");
-		curtainSpecialColor = nbt.getByte("curtainSpecialColor");
-		curtainCover = nbt.getShort("curtainCover");
-		curtainCoverMetadata = nbt.getByte("curtainCoverMetadata");
-	}
+    public byte curtainDyeColor = -1;
+    public byte curtainSpecialColor = -1;
+    public short curtainCover = (short) CurtainRegistrations.CurtainBlock.blockID;
+    public byte curtainCoverMetadata = 0;
 
-	@Override
-	public void writeToNBT(NBTTagCompound nbt)
-	{
-		super.writeToNBT(nbt);
-		nbt.setByte("curtainDyeColor", curtainDyeColor);
-		nbt.setByte("curtainSpecialColor", curtainSpecialColor);
-		nbt.setShort("curtainCover", curtainCover);
-		nbt.setByte("curtainCoverMetadata", curtainCoverMetadata);
-	}
-	
+    @Override
+    public void readFromNBT (NBTTagCompound nbt)
+    {
+        super.readFromNBT(nbt);
+        curtainDyeColor = nbt.getByte("curtainDyeColor");
+        curtainSpecialColor = nbt.getByte("curtainSpecialColor");
+        curtainCover = nbt.getShort("curtainCover");
+        curtainCoverMetadata = nbt.getByte("curtainCoverMetadata");
+    }
+
+    @Override
+    public void writeToNBT (NBTTagCompound nbt)
+    {
+        super.writeToNBT(nbt);
+        nbt.setByte("curtainDyeColor", curtainDyeColor);
+        nbt.setByte("curtainSpecialColor", curtainSpecialColor);
+        nbt.setShort("curtainCover", curtainCover);
+        nbt.setByte("curtainCoverMetadata", curtainCoverMetadata);
+    }
+
     /**
      * Overridden in a sign to provide the text.
      */
     @Override
-	public Packet getDescriptionPacket()
-    {    	
+    public Packet getDescriptionPacket ()
+    {
         NBTTagCompound nbt = new NBTTagCompound();
         this.writeToNBT(nbt);
         return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, nbt);
     }
-    
+
     /**
      * Called when you receive a TileEntityData packet for the location this
      * TileEntity is currently in. On the client, the NetworkManager will always
@@ -63,14 +63,14 @@ public class TileCurtain extends TileEntity
      * @param pkt The data packet
      */
     @Override
-	public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt)
+    public void onDataPacket (INetworkManager net, Packet132TileEntityData pkt)
     {
-    	readFromNBT(pkt.data);
+        readFromNBT(pkt.data);
 
-		if (this.worldObj.isRemote)
-		{
-			Minecraft.getMinecraft().renderGlobal.markBlockForRenderUpdate(this.xCoord, this.yCoord, this.zCoord);
-			this.worldObj.updateAllLightTypes(this.xCoord, this.yCoord, this.zCoord);
-		}
+        if (this.worldObj.isRemote)
+        {
+            Minecraft.getMinecraft().renderGlobal.markBlockForRenderUpdate(this.xCoord, this.yCoord, this.zCoord);
+            this.worldObj.updateAllLightTypes(this.xCoord, this.yCoord, this.zCoord);
+        }
     }
 }

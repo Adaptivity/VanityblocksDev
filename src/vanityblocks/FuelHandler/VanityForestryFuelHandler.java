@@ -4,17 +4,21 @@ import vanityblocks.Registrations.StorageBlocksRegistration;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;
 
-public class VanityForestryFuelHandler implements IFuelHandler {
-	@Override
-	public int getBurnTime(ItemStack fuel) {
-		// int var1 = fuel.itemID;
-		if (fuel.itemID == StorageBlocksRegistration.ForestryBlock.blockID) {
-			if (fuel.getItemDamage() == (3)) {
-				return 20000;
-			}
-		}
-		return 0;
-	}
+public class VanityForestryFuelHandler implements IFuelHandler
+{
+    @Override
+    public int getBurnTime (ItemStack fuel)
+    {
+        // int var1 = fuel.itemID;
+        if (fuel.itemID == StorageBlocksRegistration.ForestryBlock.blockID)
+        {
+            if (fuel.getItemDamage() == (3))
+            {
+                return 20000;
+            }
+        }
+        return 0;
+    }
 }
 /*
  * You might have noticed items return nothing. This is pretty simple to fix,

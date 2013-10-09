@@ -16,28 +16,27 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class CurtainRegistrations {
-	public static void CurtainRegistration() {
-		curtainblockconfig = Storageprops.curtainblockconfig;
-		CurtainBlock = new BlockCurtain(curtainblockconfig);
+public class CurtainRegistrations
+{
+    public static void CurtainRegistration ()
+    {
+        curtainblockconfig = Storageprops.curtainblockconfig;
+        CurtainBlock = new BlockCurtain(curtainblockconfig);
 
-		/* ##### Vannila ##### */
-		GameRegistry.registerBlock(CurtainBlock,
-				vanityblocks.ItemBlocks.CurtainItemBlock.class,
-				"Curtain Blocks");
-		LanguageRegistry.addName(new ItemStack(CurtainBlock, 1, 0),
-				"E-W Curtain");
-		LanguageRegistry.addName(new ItemStack(CurtainBlock, 1, 1),
-				"N-S Curtain");
-    	GameRegistry.registerTileEntity(TileCurtain.class, "TileEntityCurtain");
-	}
+        /* ##### Vannila ##### */
+        GameRegistry.registerBlock(CurtainBlock, vanityblocks.ItemBlocks.CurtainItemBlock.class, "Curtain Blocks");
+        LanguageRegistry.addName(new ItemStack(CurtainBlock, 1, 0), "E-W Curtain");
+        LanguageRegistry.addName(new ItemStack(CurtainBlock, 1, 1), "N-S Curtain");
+        GameRegistry.registerTileEntity(TileCurtain.class, "TileEntityCurtain");
+    }
 
-	public static void addCurtainRecipes() {
-		GameRegistry.addRecipe(new ItemStack(CurtainBlock, 1, 0), "xx ", "xx ",
-				"xx ", 'x', new ItemStack(Block.cloth, 1, Short.MAX_VALUE));
-		GameRegistry.addShapelessRecipe(new ItemStack(CurtainBlock, 1, 1), new ItemStack(CurtainBlock, 0, 0));
-		GameRegistry.addShapelessRecipe(new ItemStack(CurtainBlock, 1, 0), new ItemStack(CurtainBlock, 0, 1));
-		}
-public static int curtainblockconfig;
-public static Block CurtainBlock;
+    public static void addCurtainRecipes ()
+    {
+        GameRegistry.addRecipe(new ItemStack(CurtainBlock, 1, 0), "xx ", "xx ", "xx ", 'x', new ItemStack(Block.cloth, 1, Short.MAX_VALUE));
+        GameRegistry.addShapelessRecipe(new ItemStack(CurtainBlock, 1, 1), new ItemStack(CurtainBlock, 0, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(CurtainBlock, 1, 0), new ItemStack(CurtainBlock, 0, 1));
+    }
+
+    public static int curtainblockconfig;
+    public static Block CurtainBlock;
 }

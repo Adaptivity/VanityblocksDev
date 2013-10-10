@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 public class VanitydesignItemBlock extends ItemBlock
 {
 
-    private final static String[] subNames = { "Lava Lamp", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
+    private final static String[] subNames = { "Lava Lamp", "Stone Trimmed Glowstone", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
 
     public VanitydesignItemBlock(int id)
     {

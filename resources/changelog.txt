@@ -1,4 +1,5 @@
 1.6
+Build 27: Added if statements to the portal block to prevent portal apperance if dimensions is disabled.
 Build 26: Forgot recipe for lighter, and formatter ran on new stuff.
 Build 25: ADDED DIMENIONS BISHES! Several dimensions, make the book ingame with a lighter and a book, read it for more info/the thread.
 Build 23: Finished Compressed common materials.

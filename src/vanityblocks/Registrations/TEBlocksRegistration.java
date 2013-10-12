@@ -4,8 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import vanityblocks.Storageprops;
-import vanityblocks.Blocks.VanityDesignblock;
-import vanityblocks.Blocks.VanityDesignworldblock;
 import vanityblocks.Blocks.Vanitytileblock;
 import vanityblocks.tileentitys.TileMeltingcore;
 import cpw.mods.fml.common.registry.GameRegistry;

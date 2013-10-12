@@ -1,8 +1,8 @@
 package vanityblocks.FuelHandler;
 
-import vanityblocks.Registrations.StorageBlocksRegistration;
-import vanityblocks.Registrations.GeneralItemRegistration;
 import net.minecraft.item.ItemStack;
+import vanityblocks.Registrations.GeneralItemRegistration;
+import vanityblocks.Registrations.StorageBlocksRegistration;
 import cpw.mods.fml.common.IFuelHandler;
 
 public class VanityvanFuelHandler implements IFuelHandler

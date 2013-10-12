@@ -1,18 +1,15 @@
 package vanityblocks.Util;
 
-import vanityblocks.Registrations.CurtainRegistrations;
-import vanityblocks.tileentitys.TileCurtain;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockPane;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.IShearable;
+import vanityblocks.Registrations.CurtainRegistrations;
+import vanityblocks.tileentitys.TileCurtain;
 
 /*
  * Thanks to mineshopper, maker of carpenters blocks for all the help with this, if it wasnt for him, this wouldnt be done.

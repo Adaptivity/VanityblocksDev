@@ -1,7 +1,7 @@
 package vanityblocks.Dimensions.PortalPositions;
 
-import vanityblocks.Dimensions.Teleporters.TeleporterVanityTaiga;
 import net.minecraft.util.ChunkCoordinates;
+import vanityblocks.Dimensions.Teleporters.TeleporterVanityTaiga;
 
 public class VanityPortalPositionsTaiga extends ChunkCoordinates
 {

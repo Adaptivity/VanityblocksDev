@@ -1,25 +1,12 @@
 package vanityblocks.Registrations;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 import vanityblocks.Storageprops;
-import vanityblocks.Blocks.ForestryBlock;
-import vanityblocks.Blocks.StorageBlock;
-import vanityblocks.Blocks.StorageBlockMod;
 import vanityblocks.Items.arrowstorageitem;
-import vanityblocks.Items.bigbluerupee;
-import vanityblocks.Items.biggreenrupee;
-import vanityblocks.Items.bigredrupee;
 import vanityblocks.Items.blazestorageitem;
-import vanityblocks.Items.bluerupee;
 import vanityblocks.Items.coalstorageitem;
 import vanityblocks.Items.flintitem;
-import vanityblocks.Items.greenrupee;
-import vanityblocks.Items.redrupee;
-import vanityblocks.Items.blazestorageitem;
-import vanityblocks.Items.worldgenitem;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

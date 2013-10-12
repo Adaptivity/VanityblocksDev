@@ -2,6 +2,7 @@ package vanityblocks.WorldGen;
 
 import java.util.List;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.ComponentVillage;

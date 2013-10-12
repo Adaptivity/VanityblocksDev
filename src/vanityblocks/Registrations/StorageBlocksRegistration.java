@@ -1,17 +1,14 @@
 package vanityblocks.Registrations;
 
-import vanityblocks.Storageprops;
-import vanityblocks.Blocks.ForestryBlock;
-import vanityblocks.Blocks.StorageBlock;
-import vanityblocks.Blocks.StorageBlockMod;
-import vanityblocks.ItemBlocks.StorageItemBlock;
-import vanityblocks.ItemBlocks.StorageItemForestryBlock;
-import vanityblocks.ItemBlocks.StorageItemModBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import vanityblocks.Storageprops;
+import vanityblocks.Blocks.ForestryBlock;
+import vanityblocks.Blocks.StorageBlock;
+import vanityblocks.Blocks.StorageBlockMod;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;

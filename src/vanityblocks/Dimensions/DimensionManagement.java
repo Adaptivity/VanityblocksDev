@@ -1,8 +1,8 @@
 package vanityblocks.Dimensions;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import vanityblocks.Storageprops;
 import vanityblocks.Dimensions.Providers.VmDesertHillsProvider;
@@ -15,6 +15,7 @@ import vanityblocks.Dimensions.Providers.VmShroomIslandProvider;
 import vanityblocks.Dimensions.Providers.VmSwamplandProvider;
 import vanityblocks.Dimensions.Providers.VmTaigaProvider;
 import vanityblocks.Registrations.MiningWorldRegistrations;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class DimensionManagement
 {

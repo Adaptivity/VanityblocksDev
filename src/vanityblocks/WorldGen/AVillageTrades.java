@@ -2,15 +2,13 @@ package vanityblocks.WorldGen;
 
 import java.util.Random;
 
-import cpw.mods.fml.common.registry.VillagerRegistry;
-import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
+import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 
 public class AVillageTrades implements IVillageTradeHandler
 {

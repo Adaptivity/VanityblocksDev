@@ -1,16 +1,11 @@
 package vanityblocks.Dimensions.Providers;
 
-import vanityblocks.Storageprops;
-import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldProviderHell;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderEnd;
-import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.ChunkProviderHell;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import vanityblocks.Storageprops;
 
 public class VmHellProvider extends WorldProviderHell
 {
@@ -25,6 +20,12 @@ public class VmHellProvider extends WorldProviderHell
     public IChunkProvider createChunkGenerator ()
     {
         return new ChunkProviderHell(this.worldObj, this.worldObj.getSeed());
+    }
+
+    @Override
+    public String getSaveFolder ()
+    {
+        return (dimensionId == 0 ? null : "VBHell");
     }
 
     /**

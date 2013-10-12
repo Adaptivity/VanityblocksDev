@@ -1,17 +1,23 @@
 package vanityblocks.Registrations;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.potion.Potion;
-import net.minecraftforge.oredict.OreDictionary;
 import vanityblocks.Storageprops;
-import vanityblocks.Items.Mugitems.*;
-//import vanityblocks.Items.Mugitems.emptymug;
-//import vanityblocks.Items.ClayMugItem;
+import vanityblocks.Items.Mugitems.emptymug;
+import vanityblocks.Items.Mugitems.mugmilk;
+import vanityblocks.Items.Mugitems.mugmilkhot;
+import vanityblocks.Items.Mugitems.mugmilkhotchoco;
+import vanityblocks.Items.Mugitems.mugmilkhotchocosugar;
+import vanityblocks.Items.Mugitems.mugwater;
+import vanityblocks.Items.Mugitems.mugwaterhot;
+import vanityblocks.Items.Mugitems.mugwaterhotchoco;
+import vanityblocks.Items.Mugitems.mugwaterhotchocosugar;
+import vanityblocks.Items.Mugitems.unfiredmug;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+//import vanityblocks.Items.Mugitems.emptymug;
+//import vanityblocks.Items.ClayMugItem;
 
 public class GeneralFoodItemsRegistration
 {

@@ -1,7 +1,7 @@
 package vanityblocks.Dimensions.PortalPositions;
 
-import vanityblocks.Dimensions.Teleporters.TeleporterVanityDesertHills;
 import net.minecraft.util.ChunkCoordinates;
+import vanityblocks.Dimensions.Teleporters.TeleporterVanityDesertHills;
 
 public class VanityPortalPositionsDesertHills extends ChunkCoordinates
 {

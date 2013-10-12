@@ -1,17 +1,15 @@
 package vanityblocks.Dimensions.Providers;
 
-import vanityblocks.Storageprops;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderEnd;
 import net.minecraft.world.gen.ChunkProviderGenerate;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import vanityblocks.Storageprops;
 
 public class VmDesertHillsProvider extends WorldProvider
 {
+
     public void registerWorldChunkManager ()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.desertHills, 2.0F, 0.0F);
@@ -21,6 +19,25 @@ public class VmDesertHillsProvider extends WorldProvider
     public IChunkProvider createChunkGenerator ()
     {
         return new ChunkProviderGenerate(this.worldObj, this.worldObj.getSeed(), true);
+    }
+
+    @Override
+    public String getSaveFolder ()
+    {
+        return (dimensionId == 0 ? null : "VBDesHills");
+    }
+
+    @Override
+    public void setAllowedSpawnTypes (boolean allowHostile, boolean allowPeaceful)
+    {
+        if (Storageprops.vmpassive)
+        {
+            allowPeaceful = true;
+        }
+        if (Storageprops.vmhostile)
+        {
+            allowHostile = true;
+        }
     }
 
     /**

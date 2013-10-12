@@ -1,7 +1,7 @@
 package vanityblocks.Dimensions.PortalPositions;
 
-import vanityblocks.Dimensions.Teleporters.TeleporterVanitySwampland;
 import net.minecraft.util.ChunkCoordinates;
+import vanityblocks.Dimensions.Teleporters.TeleporterVanitySwampland;
 
 public class VanityPortalPositionsSwampland extends ChunkCoordinates
 {

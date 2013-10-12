@@ -1,7 +1,5 @@
 package vanityblocks.Registrations;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockPortal;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import vanityblocks.Storageprops;

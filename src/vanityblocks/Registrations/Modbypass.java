@@ -1,13 +1,8 @@
 package vanityblocks.Registrations;
 
-import java.util.HashMap;
-import java.util.List;
-
-import cpw.mods.fml.common.registry.GameRegistry;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Modbypass
 {

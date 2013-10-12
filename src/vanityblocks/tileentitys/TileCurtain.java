@@ -1,15 +1,12 @@
 package vanityblocks.tileentitys;
 
-import vanityblocks.Blocks.VanityRandomBlocks;
-import vanityblocks.ItemBlocks.CurtainItemBlock;
-import vanityblocks.Registrations.CurtainRegistrations;
-import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.tileentity.TileEntity;
+import vanityblocks.Registrations.CurtainRegistrations;
 
 /*
  * Thanks to mineshopper, maker of carpenters blocks for all the help with this, if it wasnt for him, this wouldnt be done.

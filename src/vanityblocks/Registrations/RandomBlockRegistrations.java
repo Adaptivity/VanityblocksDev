@@ -1,16 +1,12 @@
 package vanityblocks.Registrations;
 
-import vanityblocks.Storageprops;
-import vanityblocks.Blocks.HiddenTrapdoor;
-import vanityblocks.Blocks.VanityRandomBlocks;
-import vanityblocks.ItemBlocks.VanityRandomItemBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.Loader;
+import vanityblocks.Storageprops;
+import vanityblocks.Blocks.HiddenTrapdoor;
+import vanityblocks.Blocks.VanityRandomBlocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

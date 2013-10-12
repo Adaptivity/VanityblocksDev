@@ -2,17 +2,9 @@ package vanityblocks.WorldGen;
 
 import java.util.Random;
 
-import vanityblocks.Registrations.StorageBlocksRegistration;
-
 import net.minecraft.block.Block;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntityChest;
-import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.ChestGenHooks;
 
 //check biome decorates - lemming
 

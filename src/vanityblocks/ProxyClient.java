@@ -1,8 +1,5 @@
 package vanityblocks;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraftforge.client.MinecraftForgeClient;
-
 //import Vanityblocks.Proxy;
 
 public class ProxyClient extends Proxy

@@ -2,8 +2,6 @@ package vanityblocks.Blocks;
 
 import java.util.List;
 
-import vanityblocks.VanityBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockWall;
 import net.minecraft.client.renderer.texture.IconRegister;

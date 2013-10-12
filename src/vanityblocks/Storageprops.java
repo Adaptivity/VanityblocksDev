@@ -1,7 +1,6 @@
 package vanityblocks;
 
 import java.io.File;
-import java.util.Set;
 
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
@@ -193,18 +192,21 @@ public class Storageprops
         enableminingworld = config.get(miningdimension, "This will enable or disable all of the Mining dimension portion(Check the other config for values)", false).getBoolean(false);
         config.save();
     }
-    
+
     public static void dimensionconfig (File configBase)
     {
         Configuration config = new Configuration(new File(configBase, DefaultProps.FILE_CONFIGDIMENSION));
 
         config.load();
-        
+
         String miningdimension = "Mining Dimension Related";
         vanityportalID = config.get(miningdimension, "Vanity Mining world Portal ID", 3035).getInt(3035);
         portalstarterID = config.get(miningdimension, "Vanity Mining World Portal Lighter ID", 19008).getInt(19008);
         vmrespawn = config.get(miningdimension, "Allow respawn in the mining dimensions?", false).getBoolean(false);
-        
+        vmhostile = config.get(miningdimension, "Allow Hostile Mobs to spawn in the dimensions?(sets to all dimensions)", true).getBoolean(true);
+        vmpassive = config.get(miningdimension, "Allow Passive mobs to spawn in the dimensions?(sets to all dimensions)", true).getBoolean(true);
+        // vmtpcmd = config.get(miningdimension, "Allow ops to teleport to other dimensions?", true).getBoolean(true);
+
         String miningdimensionids = "Mining Dimension ID's";
         //VanityMiningID = config.get(miningdimensionids, "This is the Vanity Mining World ID", 255).getInt(255);
         vmplainsid = config.get(miningdimensionids, "Vanity Dimension Plains World ID", 255).getInt(255);
@@ -216,7 +218,7 @@ public class Storageprops
         vmhellid = config.get(miningdimensionids, "Vanity Dimension Hell World ID", 248).getInt(248);
         vmshroomislandid = config.get(miningdimensionids, "Vanity Dimension Shroom World ID", 247).getInt(247);
         vmjungleid = config.get(miningdimensionids, "Vanity Dimension Jungle World ID", 246).getInt(246);
-        
+
         String miningdimensionsenable = "Mining Dimensions Enabled";
         vmenableplains = config.get(miningdimensionsenable, "Enable the Plains mining dimension?", true).getBoolean(true);
         vmenabledeserthills = config.get(miningdimensionsenable, "Enable the Desert Hills mining dimension?", true).getBoolean(true);
@@ -230,7 +232,7 @@ public class Storageprops
 
         config.save();
     }
-    
+
     // Enabled sections?
     public static boolean enablestorageblocks;
     public static boolean enablerupees;
@@ -376,7 +378,10 @@ public class Storageprops
     public static int vanityportalID;
     public static int portalstarterID;
     public static boolean vmrespawn;
-    
+    public static boolean vmhostile;
+    public static boolean vmpassive;
+    //public static boolean vmtpcmd;
+
     // Dimension id's
     public static int vmplainsid;
     public static int vmdeserthillsid;

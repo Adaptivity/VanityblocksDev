@@ -1,6 +1,5 @@
 package vanityblocks.Blocks;
 
-import vanityblocks.VanityBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 

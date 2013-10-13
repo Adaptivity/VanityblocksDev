@@ -30,6 +30,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -175,16 +176,6 @@ public class VanityBlocks
         /* Creative tab related */
         LanguageRegistry.instance().addStringLocalization("itemGroup.vanityblocks", "en_US", "AnarchySage's Vanity Blocks");
     }
-
-    @EventHandler
-    public void serverInit (FMLServerStartedEvent event)
-    {
-        if (Storageprops.versioncheck)
-        {
-            VersionCheck.startCheck(Side.SERVER);
-        }
-    }
-
     public static CreativeTabs tabCustom = new CreativeTabs("vanityblocks")
     {
         public ItemStack getIconItemStack ()
@@ -200,6 +191,10 @@ public class VanityBlocks
         StorageBlocksRegistration.addForestryRecipes();
         GameRegistry.registerFuelHandler(new VanityForestryFuelHandler());
         GameRegistry.registerFuelHandler(new VanitymodFuelHandler());
+        // Dimension provider registrations
+        if (Storageprops.enableminingworld) {
+            DimensionManagement.providerregistrations();
+        }
         /* Mod bypassing */
         if (Storageprops.enablegregtechbypass)
         {
@@ -207,5 +202,21 @@ public class VanityBlocks
             FMLLog.info("[VanityBlocks] Bypass recipes are enabled");
         }
         FMLLog.info("[VanityBlocks] Seems to have loaded well!");
+    }
+    @EventHandler
+    public void serverInit (FMLServerStartedEvent event)
+    {
+        if (Storageprops.versioncheck)
+        {
+            VersionCheck.startCheck(Side.SERVER);
+        }
+    }
+    @EventHandler
+    public static void serverStarting(FMLServerStartingEvent event)
+    {
+        if (Storageprops.enableminingworld)
+        {
+            DimensionManagement.dimensionregistration();
+        }        
     }
 }

@@ -1,5 +1,7 @@
 package vanityblocks.Dimensions.Providers;
 
+import java.util.Random;
+
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;

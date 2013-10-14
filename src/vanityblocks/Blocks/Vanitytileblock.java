@@ -44,20 +44,25 @@ public class Vanitytileblock extends BlockContainer
         return blockIcon;
     }
 
-    // @Override
-    // public int getBlockTextureFromSideAndMetadata (int side, int metadata) {
-    // return metadata + 0;
-    // }
+
     public float getBlockHardness (World par1World, int par2, int par3, int par4)
     {
-        // return !isActive(par1World.getBlockMetadata(par2, par3, par4)) ? 0 :
-        // 3;
         int metadata = par1World.getBlockMetadata(par2, par3, par4);
         if (metadata == 0)
             return 2f;
         return 2f;
     }
-
+    @Override
+    public void onBlockAdded (World world, int x, int y, int z)
+    {
+        world.setBlockTileEntity(x, y, z, this.createNewTileEntity(world));
+    }
+    
+    public TileEntity createNewTileEntity (World var1)
+    {
+        return new TileMeltingcore();
+    }
+    
     @Override
     public int damageDropped (int metadata)
     {
@@ -71,10 +76,5 @@ public class Vanitytileblock extends BlockContainer
         {
             subItems.add(new ItemStack(this, 1, ix));
         }
-    }
-
-    public TileEntity createNewTileEntity (World var1)
-    {
-        return new TileMeltingcore();
     }
 }

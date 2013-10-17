@@ -1,6 +1,7 @@
 package vanityblocks.FuelHandler;
 
 import net.minecraft.item.ItemStack;
+import vanityblocks.Storageprops;
 import vanityblocks.Registrations.GeneralItemRegistration;
 import vanityblocks.Registrations.StorageBlocksRegistration;
 import cpw.mods.fml.common.IFuelHandler;
@@ -11,23 +12,32 @@ public class VanityvanFuelHandler implements IFuelHandler
     public int getBurnTime (ItemStack fuel)
     {
         // int var1 = fuel.itemID;
-        if (fuel.itemID == StorageBlocksRegistration.StorageBlock.blockID)
+        if (Storageprops.enablestorageblocks)
         {
-            if (fuel.getItemDamage() == (0))
+            if (fuel.itemID == StorageBlocksRegistration.StorageBlock.blockID)
             {
-                return 14400;
+                if (fuel.getItemDamage() == (0))
+                {
+                    return 14400;
+                }
+                // if (fuel.getItemDamage() == (6)){
+                // return 21600;
+                // }
             }
-            // if (fuel.getItemDamage() == (6)){
-            // return 21600;
-            // }
         }
-        if (fuel.itemID == GeneralItemRegistration.blazestorageitem.itemID)
+        if (Storageprops.enableblazestorageitem)
         {
-            return 21600;
+            if (fuel.itemID == GeneralItemRegistration.blazestorageitem.itemID)
+            {
+                return 21600;
+            }
         }
-        if (fuel.itemID == GeneralItemRegistration.coalstorageitem.itemID)
+        if (Storageprops.enablecoalstorageitem)
         {
-            return 12800;
+            if (fuel.itemID == GeneralItemRegistration.coalstorageitem.itemID)
+            {
+                return 12800;
+            }
         }
         return 0;
     }

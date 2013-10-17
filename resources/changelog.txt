@@ -1,4 +1,9 @@
 1.6
+Build 33: Fixed Npe related to fuel handler
+Build 32: Fixed Melting core, should work now with both liquid and items.
+Build 31: Fixed Dimension and providers loading place so less lag.
+Build 30: Fixed all imports, added some settings to the dimensions.
+Build 29: Fixed subnames so Stone Trimmed Glowstone was named correctly.
 Build 28: Stupid jenkins built before i wanted it to.
 Build 27: Added if statements to the portal block to prevent portal apperance if dimensions is disabled.
 Build 26: Forgot recipe for lighter, and formatter ran on new stuff.

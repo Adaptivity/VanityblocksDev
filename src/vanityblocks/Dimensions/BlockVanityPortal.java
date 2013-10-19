@@ -573,6 +573,7 @@ public class BlockVanityPortal extends BlockBreakable
                         else
                         {
                             minecraftserver.getConfigurationManager().transferPlayerToDimension((EntityPlayerMP) par5Entity, Storageprops.vmhellid, new TeleporterVanityHell(worldserver1));
+                            minecraftserver.getConfigurationManager().sendPacketToAllPlayers(PacketDimensionList.buildDimensionListPacket(array));
                             // par5Entity.travelToDimension(Storageprops.vmdeserthills);
                         }
 

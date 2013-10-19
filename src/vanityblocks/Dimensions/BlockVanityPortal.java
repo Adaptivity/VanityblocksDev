@@ -1,5 +1,6 @@
 package vanityblocks.Dimensions;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -553,6 +554,8 @@ public class BlockVanityPortal extends BlockBreakable
                 }
                 if (metadata == 8)
                 {
+                    final ArrayList<Integer> array = new ArrayList<Integer>();
+
                     if (par5Entity.timeUntilPortal == 0 && par5Entity instanceof EntityPlayerMP)
                     {
                         par5Entity.timeUntilPortal = 100;
@@ -563,6 +566,8 @@ public class BlockVanityPortal extends BlockBreakable
                         if (dimID == Storageprops.vmhellid)
                         {
                             minecraftserver.getConfigurationManager().transferPlayerToDimension((EntityPlayerMP) par5Entity, 0, new TeleporterVanityHell(worldserver));
+                            minecraftserver.getConfigurationManager().sendPacketToAllPlayers(PacketDimensionList.buildDimensionListPacket(array));
+
                             //par5Entity.travelToDimension(-1);
                         }
                         else

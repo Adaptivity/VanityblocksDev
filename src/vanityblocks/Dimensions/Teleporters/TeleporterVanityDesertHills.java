@@ -24,7 +24,7 @@ public class TeleporterVanityDesertHills extends Teleporter
     /** A private Random() function in Teleporter */
     private final Random random;
     private final LongHashMap field_85191_c = new LongHashMap();
-    private final List field_85190_d = new ArrayList();
+	private final List field_85190_d = new ArrayList();
 
     public static String[][] portalDesign = { { "XXXXX", "X   X", "X   X", "X   X", "XXXXX" }, { "X   X", "     ", "     ", "     ", "X   X" }, { "X   X", "     ", "     ", "     ", "X   X" } };
 

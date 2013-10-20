@@ -14,12 +14,13 @@ import cpw.mods.fml.relauncher.Side;
 
 public class PacketDimensionList implements IAdvancedPacket
 {
-    public static byte packetID = 19;
+    public static byte packetID = 0;
+	public static Object registeredPlanets;
 
     public static Packet buildDimensionListPacket(Collection<?> col)
     {
         final Packet250CustomPayload packet = new Packet250CustomPayload();
-        packet.channel = VanityBlocks.modid;
+        packet.channel = "VBPackets";
 
         final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         final DataOutputStream data = new DataOutputStream(bytes);

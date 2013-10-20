@@ -2,6 +2,7 @@ package vanityblocks;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import vanityblocks.Client.PacketHandler;
 import vanityblocks.Dimensions.DimensionManagement;
 import vanityblocks.FuelHandler.VanityForestryFuelHandler;
 import vanityblocks.FuelHandler.VanitymodFuelHandler;
@@ -37,13 +38,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = "VanityBlocks", name = "Anarchys Vanity Blocks", version = DefaultProps.LOCALMAJVERSION + "." + DefaultProps.LOCALMINVERSION + "." + DefaultProps.LOCALBUILDVERSION)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = {"VBPackets"}, packetHandler = PacketHandler.class)
 public class VanityBlocks
 {
 
     @Instance("VanityBlocks")
     public static VanityBlocks instance;
     public static final String modid = "vanityblocks";
+
     // public static final String LANGUAGE_PATH = "assets/vanityblocks/lang/";
     // private static final String[] LANGUAGES_SUPPORTED = new String[] {
     // "en_US" };

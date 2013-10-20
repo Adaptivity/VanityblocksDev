@@ -1,4 +1,6 @@
 1.6
+Build 51: Updated Changelog/github settings
+Build 36-50: New Jenkins Setup + Failure to fix dimensions
 Build 33: Fixed Npe related to fuel handler
 Build 32: Fixed Melting core, should work now with both liquid and items.
 Build 31: Fixed Dimension and providers loading place so less lag.

@@ -1,0 +1,64 @@
+itemGroup.vanityblocks.tabvanityblocks.name=Anarchy's VanityBlocks
+
+tile.null.charcoalblock.name=Charcoal Block
+tile.null.enderpearlblock.name=Ender pearl block
+tile.null.slimeblock.name=Slime block
+tile.null.sugarblock.name=Sugar Block
+tile.null.cocoablock.name=Cocoa chunk
+tile.null.sugarcaneblock.name=Sugar Cane Block
+tile.null.leatherblock.name=Leather Block
+tile.null.boneblock.name=Bone Block
+
+tile.null.tinblock.name=Tin Block
+tile.null.copperblock.name=Coppper Block
+tile.null.silverblock.name=Silver Block
+tile.null.leadblock.name=Lead Block
+tile.null.nikoliteblock.name=Nikolite Block
+tile.null.nickelblock.name=Nickel Block
+tile.null.electrumblock.name=Electrum Block
+tile.null.platinumblock.name=Platinum Block
+tile.null.invarblock.name=Invar Block
+tile.null.brassblock.name=Brass Block
+tile.null.rubberblock.name=Rubber Block
+
+tile.null.9xcobble.name=9X Compressed CobbleStone
+tile.null.81xcobble.name=81X Compressed CobbleStone
+tile.null.729xcobble.name=729X Compressed CobbleStone
+tile.null.9xdirt.name=9X Compressed Dirt
+tile.null.81xdirt.name=81X Compressed Dirt
+tile.null.729xdirt.name=729X Compressed Dirt
+tile.null.9xsand.name=9X Compressed Sand
+tile.null.81xsand.name=81X Compressed Sand
+tile.null.729xsand.name=729X Compressed Sand
+tile.null.9xgravel.name=9X Compressed Gravel
+tile.null.81xgravel.name=81X Compressed Gravel
+tile.null.729xgravel.name=729X Compressed Gravel
+
+item.greenrupee1.name=Green Rupee - 1 Rupee's
+item.bluerupee5.name=Blue Rupee - 5 Rupee's
+item.redrupee20.name=Red Rupee - 20 Rupee's
+item.biggreenrupee50.name=Big Green Rupee - 50 Rupee's
+item.bigbluerupee100.name=Big Blue Rupee - 100 Rupee's
+item.bigredrupee200.name=Big Red Rupee - 200 Rupee's
+
+item.flintitem.name=Flint Storage Item
+item.coalstorageitem.name=Coal Storage Item( 8pieces )
+item.arrowstorageitem.name=Arrow Bundle
+item.blazestorageitem.name=Blaze Rod Bundle
+
+tile.null.apatiteblock.name=Apatite Block
+tile.null.honeyblock.name=Honey Block
+tile.null.honeydewblock.name=Honeydew Block
+tile.null.peatblock.name=Peat Block
+
+tile.null.claybrick.name=Clay Brick
+tile.null.whitesoulsand.name=White Soul Sand
+tile.null.lapisblockold.name=Lapis Block - Old
+tile.null.lapisbrickold.name=Lapis Brick - Old
+tile.null.lapisbrickcurrent.name=Lapis Brick - Current
+tile.null.hiddentrapdoor.name=Hidden Trapdoor
+
+tile.null.lavalamp.name=Lava Lamp
+tile.null.stonetrimmedglowstone.name=Stone Trimmed GlowStone
+
+tile.null.meltingcore.name=Melting Core

@@ -1,0 +1,16 @@
+Things to remember
+
+[¤8:45:28:PM¤] ..DemoXin.. Anarchy: Rather than using "gradle(w) setupDevWorkspace", you use "gradle(w) setupDecompWorkspace"
+For it to be a te, i must extend blockcontainer or override hastileentity
+Hold f3 and hit h for item id's
+Renders can be done with metadata switching
+Item.doorWood.setMaxStackSize(16); - way to change stacksize of vannila
+Short.Maxvalue is required to use any meta in the block
+i can do if (flag) for true and using ! to make it false
+
+ System.out.println("Check Starting");
+ 
+ add build/ to the end of the rm -rf in configure on jenkins if the build folder derps
+ 
+ 
+ or under the project delete the workspace wipe out workspace.

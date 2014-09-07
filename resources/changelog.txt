@@ -1,3 +1,5 @@
+1.7.10
+Build : Updated to 1.7.10. Removed the slime block due to vannila's. Removed dimensions for now, since i cant get them to work. Removed the mug items, broken as hell and no clue why.
 1.6
 Build 51: Updated Changelog/github settings
 Build 36-50: New Jenkins Setup + Failure to fix dimensions

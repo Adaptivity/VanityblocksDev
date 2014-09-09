@@ -18,8 +18,8 @@ buildscript {
 apply plugin: 'forge'
 
 version = "3.2.8"
-group= "com.carpentersblocks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "carpentersblocks"
+group= "com.vanityblocks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "vanityblocks"
 
 minecraft {
     version = "1.7.10-10.13.0.1180"

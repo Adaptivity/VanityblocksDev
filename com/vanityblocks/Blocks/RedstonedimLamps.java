@@ -10,6 +10,7 @@ import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
@@ -117,23 +118,7 @@ public class RedstonedimLamps extends BlockRedstoneLight
      * neighbor changed (coordinates passed are their own) Args: x, y, z,
      * neighbor blockID
      */
-    /*@Override
-    public void onNeighborBlockChange (World par1World, int x, int y, int z, int par5)
-    {
-        int metadata = par1World.getBlockMetadata(x, y, z);
-
-        if (!par1World.isRemote)
-        {
-            if (this.powered && !par1World.isBlockIndirectlyGettingPowered(x, y, z))
-            {
-                par1World.scheduleBlockUpdate(x, y, z, RedstoneLampRegistrations.RedstoneLampLit, metadata);
-            }
-            else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(x, y, z))
-            {
-                par1World.setBlock(x, y, z, RedstoneLampRegistrations.RedstoneLampLit, metadata, 3);
-            }
-        }
-    } */
+    @Override
     /**
      * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
      * their own) Args: x, y, z, neighbor Block
@@ -149,7 +134,7 @@ public class RedstonedimLamps extends BlockRedstoneLight
             }
             else if (!this.field_150171_a && p_149695_1_.isBlockIndirectlyGettingPowered(p_149695_2_, p_149695_3_, p_149695_4_))
             {
-                p_149695_1_.setBlock(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.lit_redstone_lamp, 0, 2);
+                p_149695_1_.setBlock(p_149695_2_, p_149695_3_, p_149695_4_, RedstoneLampRegistrations.RedstoneLampLit, metadata, 2);
             }
         }
     }
@@ -182,11 +167,16 @@ public class RedstonedimLamps extends BlockRedstoneLight
     }
 
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks (int par1, CreativeTabs tab, List subItems)
+    public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_)
     {
-        for (int ix = 0; ix < 9; ix++)
-        {
-            subItems.add(new ItemStack(this, 1, ix));
-        }
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 0));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 1));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 2));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 3));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 4));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 5));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 6));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 7));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 8));
     }
 }

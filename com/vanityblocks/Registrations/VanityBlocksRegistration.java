@@ -31,8 +31,6 @@ public class VanityBlocksRegistration
     public static Block VanityDesignworldslabblock;
     public static int VanityDesignworldWallId;
     public static Block VanityDesignworldWallblock;
-    // public static int VanityDesignworldStairsId;
-    // public static Block VanityDesignworldStairsblock;
     public static Block marblestair;
     public static Block marblebrickstair;
     public static Block marblepillarstair;
@@ -56,9 +54,6 @@ public class VanityBlocksRegistration
         VanityDesignworldWallId = Storageprops.vanitydesignworldWallconfig;
         VanityDesignworldWallblock = new MarbleWall(VanityDesignworldWallId, VanityDesignworldblock);
 
-        // VanityDesignworldStairsId = Storageprops.vanitydesignworldWallconfig;
-        // VanityDesignworldWallblock = new MarbleWall(VanityDesignworldWallId,
-        // VanityDesignworldblock);
 
         /* Block registration and naming for vanity */
         GameRegistry.registerBlock(VanityDesignblock, DesignItemBlock.class, "Vanity Blocks Design blocks");
@@ -68,16 +63,6 @@ public class VanityBlocksRegistration
         if (Storageprops.generatemarble && Storageprops.generateblackmarble)
         {
             GameRegistry.registerBlock(VanityDesignworldblock, DesignWorldItemBlock.class, "Vanity Blocks World blocks");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 0), "Marble");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 1), "Marble Brick");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 2), "Chiseled Marble");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 3), "Marble Pillar");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 4), "Marble Tile");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 5), "Ashford Black Marble");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 6), "Ashford Black Marble Brick");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 7), "Chiseled Ashford Black Marble");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 8), "Ashford Black Marble Pillar");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldblock, 1, 9), "Ashford Black Marble Tile");
         }
         /*
          * Block Registration of Slabs
@@ -85,16 +70,7 @@ public class VanityBlocksRegistration
         if (Storageprops.generatemarble && Storageprops.generateblackmarble && Storageprops.marbleslabs)
         {
             GameRegistry.registerBlock(VanityDesignworldslabblock, ItemBlockMarbleSlab.class, "Vanity Blocks World Block slabs");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 0), "Marble Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 1), "Marble Brick Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 2), "Chiseled Marble Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 3), "Marble Pillar Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 4), "Marble Tile Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 5), "Ashford Black Marble Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 6), "Ashford Black Marble Brick Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 7), "Chiseled Ashford Black Marble Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 8), "Ashford Black Marble Pillar Slab");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldslabblock, 1, 9), "Ashford Black Marble Tile Slab");
+
         }
         /*
          * Block Registration of Marble walls
@@ -102,60 +78,42 @@ public class VanityBlocksRegistration
         if (Storageprops.generatemarble && Storageprops.generateblackmarble && Storageprops.marblewalls)
         {
             GameRegistry.registerBlock(VanityDesignworldWallblock, ItemBlockMarbleWall.class, "Vanity Blocks World Block Walls");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 0), "Marble Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 1), "Marble Brick Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 2), "Chiseled Marble Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 3), "Marble Pillar Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 4), "Marble Tile Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 5), "Ashford Black Marble Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 6), "Ashford Black Marble Brick Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 7), "Chiseled Ashford Black Marble Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 8), "Ashford Black Marble Pillar Wall");
-            LanguageRegistry.addName(new ItemStack(VanityDesignworldWallblock, 1, 9), "Ashford Black Marble Tile Wall");
         }
         if (Storageprops.generatemarble && Storageprops.marblestairs)
         {
             marblestair = new MarbleStair(Storageprops.marblestair, VanityDesignworldblock, 0).setBlockName("marblestair");
             marblestair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(marblestair, "marblestair");
-            LanguageRegistry.addName(new ItemStack(marblestair), "Marble Stair");
 
             marblebrickstair = new MarbleStair(Storageprops.marblebrickstair, VanityDesignworldblock, 1).setBlockName("marblebrickstair");
             marblebrickstair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(marblebrickstair, "marblebrickstair");
-            LanguageRegistry.addName(new ItemStack(marblebrickstair), "Marble Brick Stair");
 
             marblepillarstair = new MarbleStair(Storageprops.marblepillarstair, VanityDesignworldblock, 3).setBlockName("marblepillarstair");
             marblepillarstair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(marblepillarstair, "marblepillarstair");
-            LanguageRegistry.addName(new ItemStack(marblepillarstair), "Marble Pillar Stair");
 
             marbletilestair = new MarbleStair(Storageprops.marbletilestair, VanityDesignworldblock, 4).setBlockName("marbletilestair");
             marbletilestair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(marbletilestair, "marbletilestair");
-            LanguageRegistry.addName(new ItemStack(marbletilestair), "Marble Tile Stair");
         }
         if (Storageprops.generateblackmarble && Storageprops.marblestairs)
         {
             blackmarblestair = new MarbleStair(Storageprops.blackmarblestair, VanityDesignworldblock, 5).setBlockName("blackmarblestair");
             blackmarblestair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(blackmarblestair, "blackmarblestair");
-            LanguageRegistry.addName(new ItemStack(blackmarblestair), "Ashford Black Marble Stair");
 
             blackmarblebrickstair = new MarbleStair(Storageprops.blackmarblebrickstair, VanityDesignworldblock, 6).setBlockName("blackmarblebrickstair");
             blackmarblebrickstair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(blackmarblebrickstair, "blackmarblebrickstair");
-            LanguageRegistry.addName(new ItemStack(blackmarblebrickstair), "Ashford Black Marble Brick Stair");
 
             blackmarblepillarstair = new MarbleStair(Storageprops.blackmarblepillarstair, VanityDesignworldblock, 8).setBlockName("blackmarblepillarstair");
             blackmarblepillarstair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(blackmarblepillarstair, "blackmarblepillarstair");
-            LanguageRegistry.addName(new ItemStack(blackmarblepillarstair), "Ashford Black Marble Pillar Stair");
 
             blackmarbletilestair = new MarbleStair(Storageprops.blackmarbletilestair, VanityDesignworldblock, 9).setBlockName("blackmarbletilestair");
             blackmarbletilestair.stepSound = Block.soundTypeStone;
             GameRegistry.registerBlock(blackmarbletilestair, "blackmarbletilestair");
-            LanguageRegistry.addName(new ItemStack(blackmarbletilestair), "Ashford Black Marble Tile Stair");
         }
     }
 

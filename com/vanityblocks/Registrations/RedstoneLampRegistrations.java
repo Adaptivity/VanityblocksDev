@@ -31,26 +31,7 @@ public class RedstoneLampRegistrations
 
         /* ##### Dim Lamps ##### */
         GameRegistry.registerBlock(RedstoneLampDim, RedstoneLampDimItemBlock.class, "Redstone Lamp Dim");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 0), "Dim Black Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 1), "Dim Red Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 2), "Dim Green Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 3), "Dim Brown Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 4), "Dim Blue Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 5), "Dim Purple Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 6), "Dim Pink Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 7), "Dim Light Blue Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampDim, 1, 8), "Dim Magenta Redstone Lamp");
-        // #### Lit Lamps ###
         GameRegistry.registerBlock(RedstoneLampLit, RedstoneLampLitItemBlock.class, "Redstone Lamp Lit");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 0), "Lit Black Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 1), "Lit Red Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 2), "Lit Green Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 3), "Lit Brown Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 4), "Lit Blue Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 5), "Lit Purple Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 6), "Lit Pink Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 7), "Lit Light Blue Redstone Lamp");
-        LanguageRegistry.addName(new ItemStack(RedstoneLampLit, 1, 8), "Lit Magenta Redstone Lamp");
     }
 
     public static void addRecipes ()

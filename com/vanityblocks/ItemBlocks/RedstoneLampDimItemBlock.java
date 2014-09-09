@@ -23,9 +23,59 @@ public class RedstoneLampDimItemBlock extends ItemBlock
     }
 
     @Override
-    public String getUnlocalizedName (ItemStack itemstack)
+    public String getUnlocalizedName(ItemStack itemstack)
     {
-        return subNames[itemstack.getItemDamage()];
-        // getItemName() + "." +
+        String name = "";
+        switch (itemstack.getItemDamage())
+        {
+        case 0:
+        {
+            name = "blackLamp";
+            break;
+        }
+        case 1:
+        {
+            name = "redLamp";
+            break;
+        }
+        case 2:
+        {
+            name = "greenLamp";
+            break;
+        }        
+        case 3:
+        {
+            name = "brownLamp";
+            break;
+        }        
+        case 4:
+        {
+            name = "blueLamp";
+            break;
+        }        
+        case 5:
+        {
+            name = "purpleLamp";
+            break;
+        }        
+        case 6:
+        {
+            name = "pinkLamp";
+            break;
+        }        
+        case 7:
+        {
+            name = "lightBlueLamp";
+            break;
+        }        
+        case 8:
+        {
+            name = "magentaLamp";
+            break;
+        }        
+        default:
+            name = "Report_To_The_Author";
+        }
+        return getUnlocalizedName() + "." + name;
     }
 }

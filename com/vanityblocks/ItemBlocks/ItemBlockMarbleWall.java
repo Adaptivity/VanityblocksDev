@@ -6,9 +6,6 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockMarbleWall extends ItemBlock
 {
-    private final static String[] subNames = { "Marble Wall", "Marble Brick Wall", "Chiseled Marble Wall", "Marble Pillar Wall", "Marble Tile Wall", "Ashford Black Marble Wall",
-            "Ashford Black Marble Brick Wall", "Chiseled Ashford Black Marble Wall", "Ashford Black Marble Pillar Wall", "Ashford Black Marble Tile Wall", "", "", "", "", "", "" };
-
     public ItemBlockMarbleWall(Block id)
     {
         super(id);
@@ -20,10 +17,66 @@ public class ItemBlockMarbleWall extends ItemBlock
     {
         return i;
     }
-
+    // M = Marble, A = Ashford Black
     @Override
-    public String getUnlocalizedName (ItemStack itemstack)
+    public String getUnlocalizedName(ItemStack itemstack)
     {
-        return subNames[itemstack.getItemDamage()];
+        String name = "marblewalls";
+        switch (itemstack.getItemDamage())
+        {
+        case 0:
+        {
+            name = "mwall";
+            break;
+        }
+        case 1:
+        {
+            name = "mbrickwall";
+            break;
+        }
+        case 2:
+        {
+            name = "mchiseledwall";
+            break;
+        }        
+        case 3:
+        {
+            name = "mpillarwall";
+            break;
+        }        
+        case 4:
+        {
+            name = "mtilewall";
+            break;
+        }        
+        case 5:
+        {
+            name = "amarblewall";
+            break;
+        }        
+        case 6:
+        {
+            name = "amarblebrickwall";
+            break;
+        }        
+        case 7:
+        {
+            name = "amarblechiseledwall";
+            break;
+        }        
+        case 8:
+        {
+            name = "amarblepillarwall";
+            break;
+        }        
+        case 9:
+        {
+            name = "amarbletilewall";
+            break;
+        }
+        default:
+            name = "Report_To_The_Author";
+        }
+        return getUnlocalizedName() + "." + name;
     }
 }

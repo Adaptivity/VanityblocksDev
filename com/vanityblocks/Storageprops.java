@@ -48,14 +48,14 @@ public class Storageprops
         // "Vanity Fences", 3065).getInt(3065); */
 
         /* String blockstairs = "Marble Stair id's";
-        marblestair = config.getBlock(blockstairs, "Marble Stair id", 3038).getInt(3038);
-        marblebrickstair = config.getBlock(blockstairs, "Marble Brick Stair id", 3039).getInt(3039);
-        marblepillarstair = config.getBlock(blockstairs, "Marble Pillar Stair id", 3040).getInt(3040);
-        marbletilestair = config.getBlock(blockstairs, "Marble Tile Stair id", 3041).getInt(3041);
-        blackmarblestair = config.getBlock(blockstairs, "Ashford Black Marble Stair id", 3042).getInt(3042);
-        blackmarblebrickstair = config.getBlock(blockstairs, "Ashford Black Marble Brick Stair id", 3043).getInt(3043);
-        blackmarblepillarstair = config.getBlock(blockstairs, "Ashford Black Marble Pillar Stair id", 3044).getInt(3044);
-        blackmarbletilestair = config.getBlock(blockstairs, "Ashford Black Marble Tile Stair id", 3045).getInt(3045);
+        marblestair = config.get(blockstairs, "Marble Stair id", 3038).getInt(3038);
+        marblebrickstair = config.get(blockstairs, "Marble Brick Stair id", 3039).getInt(3039);
+        marblepillarstair = config.get(blockstairs, "Marble Pillar Stair id", 3040).getInt(3040);
+        marbletilestair = config.get(blockstairs, "Marble Tile Stair id", 3041).getInt(3041);
+        blackmarblestair = config.get(blockstairs, "Ashford Black Marble Stair id", 3042).getInt(3042);
+        blackmarblebrickstair = config.get(blockstairs, "Ashford Black Marble Brick Stair id", 3043).getInt(3043);
+        blackmarblepillarstair = config.get(blockstairs, "Ashford Black Marble Pillar Stair id", 3044).getInt(3044);
+        blackmarbletilestair = config.get(blockstairs, "Ashford Black Marble Tile Stair id", 3045).getInt(3045);
 		*/
         /*
         String items = "Item id's";
@@ -79,7 +79,7 @@ public class Storageprops
         enableblazestorageitem = config.get(generalitems, "Enable Blaze rod bundle?", true).getBoolean(true);
         blazestorageitem = config.get(generalitems, "Blaze Rod bundle", 19012).getInt(19012);
 
-        String generalfooditems = "General Food Item Config";
+        /* String generalfooditems = "General Food Item Config";
         mugunfired = config.get(generalfooditems, "Unfired Mug Id", 19020).getInt(19020);
         emptymug = config.get(generalfooditems, "Empty Mug Id", 19021).getInt(19021);
         mugwater = config.get(generalfooditems, "Mug with Water Id", 19022).getInt(19022);
@@ -90,7 +90,7 @@ public class Storageprops
         mugmilkhot = config.get(generalfooditems, "Mug with hot milk Id", 19027).getInt(19027);
         mugmilkhotchoco = config.get(generalfooditems, "Hot Chocolate with milk Id", 19028).getInt(19028);
         mugmilkhotchocosugar = config.get(generalfooditems, "Sweetend Hot Chocolate with milk Id", 19029).getInt(19029);
-
+		*/
         String category1 = "Blocks Enable or disable";
         enablecharcoal = config.get(category1, "Enable CharCoal Block crafting?", true).getBoolean(true);
         enableenderpearl = config.get(category1, "Enable Ender Parl Block crafting?", true).getBoolean(true);
@@ -139,16 +139,12 @@ public class Storageprops
         goldhorsearmor = config.get(category3, "Allow Gold Horse armor to be crafted(upside down Gold chestplate)", true).getBoolean(true);
         diamondhorsearmor = config.get(category3, "Allow Diamond Horse armor to be crafted(upside down Diamond chestplate)", true).getBoolean(true);
 
-        // String category4 = "Random things";
+         String category4 = "Random things";
         // dungeonlootenablevannila = config.get(category4,
         // "Allow vannila storage blocks to spawn in dungeon loot?", true)
         // .getBoolean(true);
-        // dungeonlootenablemod = config.get(category4,
-        // "Allow modded storage blocks to spawn in dungeon loot?", true)
-        // .getBoolean(true);
-        // furnacemelts = config.get(category4,
-        // "Allow furnace melting of stuff like iron doors?", true)
-        // .getBoolean(true);
+        dungeonlootenablemod = config.get(category4,"Allow modded storage blocks to spawn in dungeon loot?", true).getBoolean(true);
+        furnacemelts = config.get(category4, "Allow furnace melting of stuff like iron doors?", true).getBoolean(true);
 
         String category5 = "World Generation - Marble";
         enableworldgen = config.get(category5, "Allow Worldgen?", true).getBoolean(true);
@@ -192,7 +188,7 @@ public class Storageprops
         enablewhitesoulsandspeed = config.get(category9, "Enable the white soul sand speed boost?", true).getBoolean(true);
         
         String category10 = "Random texture Related";
-        sandstonetexture = config.get(category10, "Want to use different peice of sandstone texture, use minecraft:texturenamehere", "minecraft:sandstone_smooth").getString();
+        sandstonetexture = config.get(category10, "Want to use different peice of sandstone texture for the smooth sandstone pillar, use minecraft:texturenamehere", "minecraft:sandstone_smooth").getString();
         
         //String miningdimension = "Mining Dimension Related";
         //enableminingworld = config.get(miningdimension, "This will enable or disable all of the Mining dimension portion(Check the other config for values)", false).getBoolean(false);

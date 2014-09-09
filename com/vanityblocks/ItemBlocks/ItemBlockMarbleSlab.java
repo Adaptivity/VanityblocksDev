@@ -21,9 +21,66 @@ public class ItemBlockMarbleSlab extends ItemBlock
         return i;
     }
 
+ // M = Marble, A = Ashford Black
     @Override
-    public String getUnlocalizedName (ItemStack itemstack)
+    public String getUnlocalizedName(ItemStack itemstack)
     {
-        return subNames[itemstack.getItemDamage()];
+        String name = "marbleslab";
+        switch (itemstack.getItemDamage())
+        {
+        case 0:
+        {
+            name = "mslab";
+            break;
+        }
+        case 1:
+        {
+            name = "mbrickslab";
+            break;
+        }
+        case 2:
+        {
+            name = "mchiseledslab";
+            break;
+        }        
+        case 3:
+        {
+            name = "mpillarslab";
+            break;
+        }        
+        case 4:
+        {
+            name = "mtileslab";
+            break;
+        }        
+        case 5:
+        {
+            name = "amarbleslab";
+            break;
+        }        
+        case 6:
+        {
+            name = "amarblebrickslab";
+            break;
+        }        
+        case 7:
+        {
+            name = "amarblechiseledslab";
+            break;
+        }        
+        case 8:
+        {
+            name = "amarblepillarslab";
+            break;
+        }        
+        case 9:
+        {
+            name = "amarbletileslab";
+            break;
+        }
+        default:
+            name = "Report_To_The_Author";
+        }
+        return getUnlocalizedName() + "." + name;
     }
 }

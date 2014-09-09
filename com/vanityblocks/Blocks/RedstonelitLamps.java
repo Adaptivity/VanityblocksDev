@@ -9,6 +9,7 @@ import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
@@ -32,7 +33,8 @@ public class RedstonelitLamps extends BlockRedstoneLight
         if (p_i45421_1_)
         {
             this.setLightLevel(1.0F);
-        }    }
+        }    
+    }
 
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
@@ -158,18 +160,23 @@ public class RedstonelitLamps extends BlockRedstoneLight
         return metadata;
     }
 
-    //@Override
-    //public int idPicked (World par1World, int x, int y, int z)
-    //{
-    //    return blockID;
-    //}
+    public int idPicked (World par1World, int x, int y, int z)
+    {
+        int metadata = par1World.getBlockMetadata(x, y, z);
+        return metadata;
+    }
 
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks (int par1, CreativeTabs tab, List subItems)
+    public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_)
     {
-        for (int ix = 0; ix < 9; ix++)
-        {
-            subItems.add(new ItemStack(this, 1, ix));
-        }
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 0));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 1));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 2));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 3));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 4));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 5));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 6));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 7));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 8));
     }
 }

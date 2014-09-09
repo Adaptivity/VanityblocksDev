@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
@@ -120,11 +121,17 @@ public class DesignWorldblock extends Block
     }
 
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks (int par1, CreativeTabs tab, List subItems)
+    public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_)
     {
-        for (int ix = 0; ix < 10; ix++)
-        {
-            subItems.add(new ItemStack(this, 1, ix));
-        }
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 0));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 1));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 2));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 3));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 4));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 5));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 6));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 7));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 8));
+        p_149666_3_.add(new ItemStack(p_149666_1_, 1, 9));
     }
 }

@@ -80,11 +80,11 @@ public class VanityBlocks
             FurnaceMelting.addFurnaceMelts();
         }
         /* Vanity Block Registrations */
-        //if (Storageprops.enableworldgen)
-        //{
-        //   VanityBlocksRegistration.vanityregistration();
-        //   VanityBlocksRegistration.addVanityRecipes();
-        //}
+        if (Storageprops.enableworldgen)
+        {
+           VanityBlocksRegistration.vanityregistration();
+           VanityBlocksRegistration.addVanityRecipes();
+        }
         /* ######## Tile Entity Registration ###### */
         if (Storageprops.enablemeltingcore)
         {
@@ -153,17 +153,19 @@ public class VanityBlocks
         	PillarRegistrations.pillarregistrations();
         	PillarRegistrations.addRecipes();
         }
-        /* ######################## World Gen Registration ###### */
-        //if (Storageprops.enableworldgen)
-        //{
-        //    GameRegistry.registerWorldGenerator(new MarbleGen(0), 0);
+        /* Dungeon loot stuff */
+        //if (Storageprops.dungeonlootenablevannila) {
+        //	Dungeonlootspawning.chestHooks();
         //}
-        /* Vanity Mining World Dimension (check Dimensions.DimensionManagement for more stuff)
-        if (Storageprops.enableminingworld)
+        //if (Storageprops.dungeonlootenablemod) {
+        //	Dungeonlootspawning.chestHooks();
+        //}
+        
+        /* ######################## World Gen Registration ###### */
+        if (Storageprops.enableworldgen)
         {
-            DimensionManagement.registrations();
+            GameRegistry.registerWorldGenerator(new MarbleGen(0), 0);
         }
-		*/
         /*
          * Removed code for time being. GameRegistry.registerWorldGenerator(new
          * UnderWaterRuinHandler()); //Registration of world gen for
@@ -177,8 +179,6 @@ public class VanityBlocks
          * trades);
          */
 
-        /* Creative tab related */
-        //LanguageRegistry.instance().addStringLocalization("itemGroup.vanityblocks", "en_US", "AnarchySage's Vanity Blocks");
     }
     
     public static CreativeTabs tabvanityblocks = new CreativeTabs ("tabvanityblocks") {
@@ -186,7 +186,7 @@ public class VanityBlocks
     	@Override
 		public Item getTabIconItem() {
 			// TODO Auto-generated method stub
-			return Item.getItemFromBlock(Blocks.stone);
+			return Item.getItemFromBlock(VanityBlocksRegistration.VanityDesignblock);
 			//return new ItemStack(vanityblocks.Registrations.VanityBlocksRegistration.VanityDesignblock, 1, 0);
 
     	}

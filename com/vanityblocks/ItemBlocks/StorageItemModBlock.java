@@ -20,7 +20,7 @@ public class StorageItemModBlock extends ItemBlock
     @Override
     public String getUnlocalizedName(ItemStack itemstack)
     {
-        String name = "";
+        String name = "modded blocks";
         switch (itemstack.getItemDamage())
         {
         case 0:

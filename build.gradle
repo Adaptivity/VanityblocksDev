@@ -67,7 +67,7 @@ task rename(type: Copy) {
         if (fileName.endsWith('jar')) {
             String minecraftVersion = project.minecraft.version
             String newMinecraftVersion = minecraftVersion.split("-")[0]
-            String newName = "Carpenter's Blocks v" + project.version + " - MC " + newMinecraftVersion + ".zip"
+            String newName = "Vanityblocks v" + project.version + " - MC " + newMinecraftVersion + ".zip"
             newName
         }
     }

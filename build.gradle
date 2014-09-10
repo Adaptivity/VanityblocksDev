@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "${System.getenv().BUILD_NUMBER}"
+version = " B + ${System.getenv().BUILD_NUMBER}"
 //version = "${minecraft.version}--$version.${System.getenv().BUILD_NUMBER}"
 group= "com.vanityblocks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "VanityBlocks-V"
@@ -83,7 +83,7 @@ processResources
 //}
 
 jar {
-	archiveName = project.archivesBaseName + project.minecraft.version + B + project.version + ".jar"
+	archiveName = project.archivesBaseName + project.minecraft.version + project.version + ".jar"
 	//archiveName = project.archivesBaseName + project.version + project.minecraft.version + ".jar"
 	//destinationDir = project.getBuildDir()
 }

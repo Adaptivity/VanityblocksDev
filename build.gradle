@@ -18,7 +18,6 @@ buildscript {
 apply plugin: 'forge'
 
 version = "-B${System.getenv().BUILD_NUMBER}"
-//version = "${minecraft.version}--$version.${System.getenv().BUILD_NUMBER}"
 group= "com.vanityblocks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "VanityBlocks-V"
 
@@ -26,9 +25,6 @@ minecraft {
     version = "1.7.10-10.13.0.1180"
 }
 
-//jenkins {
-//	version = "5.${minecraft.version}--$version.${System.getenv().BUILDNUMBER}"
-//}
 
 
 dependencies {
@@ -64,26 +60,14 @@ processResources
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+		exclude 'resources/main/Todo-ideas.txt'
+		exclude 'resources/main/ToRemember.txt'
     }
 }
 
-//task rename(type: Copy) {
-//    from('build/libs/')
-//    rename { String fileName ->
-//        if (fileName.endsWith('jar')) {
-//            String minecraftVersion = project.minecraft.version
-//            String newMinecraftVersion = minecraftVersion.split("-")[0]
-//			String jenkinsversion = project.jenkins.version
-//            //String newName = "Vanityblocks v" + project.version + " - MC " + newMinecraftVersion + ".jar"
-//			String newName = "Vanityblocks-V" + jenkinsversion +".jar"
-//            newName
-//        }
-//    }
-//    into('build/')
-//}
+
 
 jar {
 	archiveName = project.archivesBaseName + project.minecraft.version + project.version + ".jar"
-	//archiveName = project.archivesBaseName + project.version + project.minecraft.version + ".jar"
 	//destinationDir = project.getBuildDir()
 }

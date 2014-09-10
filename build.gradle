@@ -25,6 +25,9 @@ minecraft {
     version = "1.7.10-10.13.0.1180"
 }
 
+jenkins {
+	version = "5.${minecraft.version}--$version.${System.getenv().BUILDNUMBER}"
+}
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
@@ -67,8 +70,9 @@ task rename(type: Copy) {
         if (fileName.endsWith('jar')) {
             String minecraftVersion = project.minecraft.version
             String newMinecraftVersion = minecraftVersion.split("-")[0]
+			String jenkinsversion = project.jenkins.version
             //String newName = "Vanityblocks v" + project.version + " - MC " + newMinecraftVersion + ".jar"
-			String newName = "Vanityblocks-V" + version +".jar"
+			String newName = "Vanityblocks-V" + jenkinsversion +".jar"
             newName
         }
     }

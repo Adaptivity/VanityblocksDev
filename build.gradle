@@ -83,5 +83,5 @@ processResources
 
 jar {
 	archiveName = project.archivesBaseName + project.version + project.minecraft.version + ".jar"
-	destinationDir = project.getBuildDir()
+	//destinationDir = project.getBuildDir()
 }

@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "3.2.8"
+version = "5.${minecraft.version}--$version.${System.getenv().BUILDNUMBER}"
 group= "com.vanityblocks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "vanityblocks"
 
@@ -67,7 +67,8 @@ task rename(type: Copy) {
         if (fileName.endsWith('jar')) {
             String minecraftVersion = project.minecraft.version
             String newMinecraftVersion = minecraftVersion.split("-")[0]
-            String newName = "Vanityblocks v" + project.version + " - MC " + newMinecraftVersion + ".zip"
+            //String newName = "Vanityblocks v" + project.version + " - MC " + newMinecraftVersion + ".jar"
+			String newName = "Vanityblocks-V" + version +".jar"
             newName
         }
     }

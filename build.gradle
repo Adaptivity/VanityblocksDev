@@ -17,17 +17,19 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "5.${minecraft.version}--$version.${System.getenv().BUILDNUMBER}"
+version = "${minecraft.version}--$version.${System.getenv().BUILD_NUMBER}"
 group= "com.vanityblocks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "vanityblocks"
+archivesBaseName = "VanityBlocks-V"
 
 minecraft {
     version = "1.7.10-10.13.0.1180"
 }
 
-jenkins {
-	version = "5.${minecraft.version}--$version.${System.getenv().BUILDNUMBER}"
-}
+//jenkins {
+//	version = "5.${minecraft.version}--$version.${System.getenv().BUILDNUMBER}"
+//}
+
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
@@ -64,19 +66,22 @@ processResources
     }
 }
 
-task rename(type: Copy) {
-    from('build/libs/')
-    rename { String fileName ->
-        if (fileName.endsWith('jar')) {
-            String minecraftVersion = project.minecraft.version
-            String newMinecraftVersion = minecraftVersion.split("-")[0]
-			String jenkinsversion = project.jenkins.version
-            //String newName = "Vanityblocks v" + project.version + " - MC " + newMinecraftVersion + ".jar"
-			String newName = "Vanityblocks-V" + jenkinsversion +".jar"
-            newName
-        }
-    }
-    into('build/')
-}
+//task rename(type: Copy) {
+//    from('build/libs/')
+//    rename { String fileName ->
+//        if (fileName.endsWith('jar')) {
+//            String minecraftVersion = project.minecraft.version
+//            String newMinecraftVersion = minecraftVersion.split("-")[0]
+//			String jenkinsversion = project.jenkins.version
+//            //String newName = "Vanityblocks v" + project.version + " - MC " + newMinecraftVersion + ".jar"
+//			String newName = "Vanityblocks-V" + jenkinsversion +".jar"
+//            newName
+//        }
+//    }
+//    into('build/')
+//}
 
-build.dependsOn rename
+jar {
+	archiveName = project.archivesBaseName + project.version + project.minecraft.version + ".jar"
+	destinationDir = project.getBuildDir()
+}

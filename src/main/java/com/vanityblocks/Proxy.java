@@ -1,20 +1,16 @@
 package com.vanityblocks;
 
-public class Proxy
-{
+public class Proxy {
 
-    public void registerRenderInformation ()
-    {
+	public void registerRenderInformation() {
 
-    }
+	}
 
-    public void addNames ()
-    {
-    }
+	public void addNames() {
+	}
 
-    public static String getMinecraftVersion ()
-    {
+	public static String getMinecraftVersion() {
 		return null;
-    //    return Loader.instance().getMinecraftModContainer().getVersion();
-    }
+		// return Loader.instance().getMinecraftModContainer().getVersion();
+	}
 }

@@ -12,16 +12,14 @@ import net.minecraft.util.MathHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class flintitem extends Item
-{
-    public String[] textureNames = new String[] { "flintitem" };
+public class flintitem extends Item {
+	public String[] textureNames = new String[] { "flintitem" };
 
-    public flintitem(int par1)
-    {
-        super();
+	public flintitem(int par1) {
+		super();
 		setUnlocalizedName("flintitem");
 		this.setHasSubtypes(true);
-        setCreativeTab(VanityBlocks.tabvanityblocks);
+		setCreativeTab(VanityBlocks.tabvanityblocks);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -29,27 +27,24 @@ public class flintitem extends Item
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IIconRegister par1IconRegister)
-	{
+	public void registerIcons(IIconRegister par1IconRegister) {
 		icons = new IIcon[2];
 
-		for (int i = 0; i < icons.length; i++)
-		{
+		for (int i = 0; i < icons.length; i++) {
 			icons[i] = par1IconRegister.registerIcon("vanityblocks:flintitem");
 		}
 	}
 
-	//@Override
-	//public String getUnlocalizedName(ItemStack par1ItemStack)
-	//{
-	//    final String modid = "vanityblocks";
-	//	int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
-	//	return modid + "." + super.getUnlocalizedName();
-	//}
-	
+	// @Override
+	// public String getUnlocalizedName(ItemStack par1ItemStack)
+	// {
+	// final String modid = "vanityblocks";
+	// int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
+	// return modid + "." + super.getUnlocalizedName();
+	// }
+
 	@Override
-	public IIcon getIconFromDamage(int par1)
-	{
+	public IIcon getIconFromDamage(int par1) {
 		return icons[par1];
 	}
 }

@@ -1,5 +1,6 @@
 1.7.10
-Build 51-79 : Updated to 1.7.10. Removed the slime block due to vannila's. Removed dimensions for now, since i cant get them to work. Removed the mug items, broken as hell and no clue why. Did localizations for all blocks/items so someone can translate if they wanted to. All blocks work atm as well(except dimensions and curtains(curtains will be back soon)). Removed version checker code, using straight jenkins from now, check every couple of days for a new build, may implement some sort of another update checker later on. Also version is now gonna be "VanityBlocks-V MCVERSIONHERE.B buildhere". Gradle script fun. First test build.
+Build 81: Added stained clay stairs. Recipes are the colored clay in a stair formation. Little simple addition i figured people would like.
+Build 51-80 : Updated to 1.7.10. Removed the slime block due to vannila's. Removed dimensions for now, since i cant get them to work. Removed the mug items, broken as hell and no clue why. Did localizations for all blocks/items so someone can translate if they wanted to. All blocks work atm as well(except dimensions and curtains(curtains will be back soon)). Removed version checker code, using straight jenkins from now, check every couple of days for a new build, may implement some sort of another update checker later on. Also version is now gonna be "VanityBlocks-V MCVERSIONHERE.B buildhere". Gradle script fun. First test build.
 1.6
 Build 51: Updated Changelog/github settings
 Build 36-50: New Jenkins Setup + Failure to fix dimensions

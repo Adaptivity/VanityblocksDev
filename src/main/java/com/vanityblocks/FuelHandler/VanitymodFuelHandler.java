@@ -10,24 +10,21 @@ import com.vanityblocks.Registrations.StorageBlocksRegistration;
 
 import cpw.mods.fml.common.IFuelHandler;
 
-public class VanitymodFuelHandler implements IFuelHandler
-{
-    @Override
-    public int getBurnTime (ItemStack fuel)
-    {
-   	 Item item = fuel.getItem();
-     if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
-         Block block = Block.getBlockFromItem(item);
-         	if (block == StorageBlocksRegistration.StorageBlockMod)
-        {
-            if (fuel.getItemDamage() == (9))
-            {
-                return 57600; // 288 items?
-            }
-        }
-     }
-        return 0;
-    }
+public class VanitymodFuelHandler implements IFuelHandler {
+	@Override
+	public int getBurnTime(ItemStack fuel) {
+		Item item = fuel.getItem();
+		if (item instanceof ItemBlock
+				&& Block.getBlockFromItem(item) != Blocks.air) {
+			Block block = Block.getBlockFromItem(item);
+			if (block == StorageBlocksRegistration.StorageBlockMod) {
+				if (fuel.getItemDamage() == (9)) {
+					return 57600; // 288 items?
+				}
+			}
+		}
+		return 0;
+	}
 }
 /*
  * You might have noticed items return nothing. This is pretty simple to fix,

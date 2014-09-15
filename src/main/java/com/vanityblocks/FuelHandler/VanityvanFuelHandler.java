@@ -12,50 +12,41 @@ import com.vanityblocks.Registrations.StorageBlocksRegistration;
 
 import cpw.mods.fml.common.IFuelHandler;
 
-public class VanityvanFuelHandler implements IFuelHandler
-{
-    @Override
-    public int getBurnTime (ItemStack fuel)
-    {
-       //if (fuel.getItem() == new ItemStack(floraSapling).getItem() 
-    	//	   || fuel.getItem() == new ItemStack(rareSapling).getItem())
-    	// Natura^
-    	   
-    	   
-        // int var1 = fuel.itemID;
-        if (Storageprops.enablestorageblocks)
-        {
-        	 Item item = fuel.getItem();
-             if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
-                 Block block = Block.getBlockFromItem(item);
-                 	if (block == StorageBlocksRegistration.StorageBlock)
-                 	{
-                 		if (fuel.getItemDamage() == (0))
-                 		{
-                 			return 14400;
-                 		}
-                // if (fuel.getItemDamage() == (6)){
-                // return 21600;
-                // }
-            }
-        }
-        if (Storageprops.enableblazestorageitem)
-        {
-            if (fuel.getItem() == GeneralItemRegistration.blazestorageitem)
-            {
-                return 21600;
-            }
-        }
-        if (Storageprops.enablecoalstorageitem)
-        {
-            if (fuel.getItem() == GeneralItemRegistration.coalstorageitem)
-            {
-                return 12800;
-            }
-        }
-        }
-        return 0;
-    }
+public class VanityvanFuelHandler implements IFuelHandler {
+	@Override
+	public int getBurnTime(ItemStack fuel) {
+		// if (fuel.getItem() == new ItemStack(floraSapling).getItem()
+		// || fuel.getItem() == new ItemStack(rareSapling).getItem())
+		// Natura^
+
+		// int var1 = fuel.itemID;
+		if (Storageprops.enablestorageblocks) {
+			Item item = fuel.getItem();
+			if (item instanceof ItemBlock
+					&& Block.getBlockFromItem(item) != Blocks.air) {
+				Block block = Block.getBlockFromItem(item);
+				if (block == StorageBlocksRegistration.StorageBlock) {
+					if (fuel.getItemDamage() == (0)) {
+						return 14400;
+					}
+					// if (fuel.getItemDamage() == (6)){
+					// return 21600;
+					// }
+				}
+			}
+			if (Storageprops.enableblazestorageitem) {
+				if (fuel.getItem() == GeneralItemRegistration.blazestorageitem) {
+					return 21600;
+				}
+			}
+			if (Storageprops.enablecoalstorageitem) {
+				if (fuel.getItem() == GeneralItemRegistration.coalstorageitem) {
+					return 12800;
+				}
+			}
+		}
+		return 0;
+	}
 }
 /*
  * You might have noticed items return nothing. This is pretty simple to fix,

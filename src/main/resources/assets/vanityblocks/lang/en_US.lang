@@ -1,4 +1,4 @@
-itemGroup.vanityblocks.tabvanityblocks.name=Anarchy's VanityBlocks
+itemGroup.tabvanityblocks=Anarchy's VanityBlocks
 
 tile.null.charcoalblock.name=Charcoal Block
 tile.null.enderpearlblock.name=Ender pearl block
@@ -62,3 +62,82 @@ tile.null.lavalamp.name=Lava Lamp
 tile.null.stonetrimmedglowstone.name=Stone Trimmed GlowStone
 
 tile.null.meltingcore.name=Melting Core
+
+tile.null.blackLamp_Lit.name=Lit Black Redstone Lamp
+tile.null.redLamp_Lit.name=Lit Red Redstone Lamp
+tile.null.greenLamp_Lit.name=Lit Green Redstone Lamp
+tile.null.brownLamp_Lit.name=Lit Brown Redstone Lamp
+tile.null.blueLamp_Lit.name=Lit Blue Redstone Lamp
+tile.null.purpleLamp_Lit.name=Lit Purple Redstone Lamp
+tile.null.pinkLamp_Lit.name=Lit Pink Redstone Lamp
+tile.null.lightBlueLamp_Lit.name=Lit Light Blue Redstone Lamp
+tile.null.magentaLamp_Lit.name=Lit Magenta Redstone Lamp
+
+tile.null.blackLamp.name=Dim Black Redstone Lamp
+tile.null.redLamp.name=Dim Red Redstone Lamp
+tile.null.greenLamp.name=Dim Green Redstone Lamp
+tile.null.brownLamp.name=Dim Brown Redstone Lamp
+tile.null.blueLamp.name=Dim Blue Redstone Lamp
+tile.null.purpleLamp.name=Dim Purple Redstone Lamp
+tile.null.pinkLamp.name=Dim Pink Redstone Lamp
+tile.null.lightBlueLamp.name=Dim Light Blue Redstone Lamp
+tile.null.magentaLamp.name=Dim Magenta Redstone Lamp
+
+tile.null.marble.name=Marble
+tile.null.mbrick.name=Marble Brick
+tile.null.mchiseled.name=Chiseled Marble
+tile.null.mpillar.name=Marble Pillar
+tile.null.mtile.name=Marble Tile
+tile.null.amarble.name=Ashford Black Marble
+tile.null.amarblebrick.name=Ashford Black Marble Brick
+tile.null.amarblechiseled.name=Chiseled Ashford Black Marble
+tile.null.amarblepillar.name=Ashford Black Marble Pillar
+tile.null.amarbletile.name=Ashford Black Marble Tile
+
+tile.marblestair.name=Marble Stair
+tile.marblebrickstair.name=Marble Brick Stair
+tile.marblepillarstair.name=Marble Pillar Stair
+tile.marbletilestair.name=Marble Tile Stair
+tile.blackmarblestair.name=Ashford Black Marble Stair
+tile.blackmarblebrickstair.name=Ashford Black Marble Brick Stair
+tile.blackmarblepillarstair.name=Ashford Black Marble Pillar Stair
+tile.blackmarbletilestair.name=Ashford Black Marble Tile Stair
+
+tile.null.mslab.name=Marble Slab
+tile.null.mbrickslab.name=Marble Brick Slab
+tile.null.mchiseledslab.name=Chiseled Marble Slab
+tile.null.mpillarslab.name=Marble Pillar Slab
+tile.null.mtileslab.name=Marble Tile Slab
+tile.null.amarbleslab.name=Ashford Black Marble Slab
+tile.null.amarblebrickslab.name=Ashford Black Marble Brick Slab
+tile.null.amarblechiseledslab.name=Chiseled Ashford Black Marble Slab
+tile.null.amarblepillarslab.name=Ashford Black Marble Pillar Slab
+tile.null.amarbletileslab.name=Ashford Black Marble Tile Slab
+			
+tile.null.mwall.name=Marble Wall
+tile.null.mbrickwall.name=Marble Brick Wall
+tile.null.mchiseledwall.name=Chiseled Marble Wall
+tile.null.mpillarwall.name=Marble Pillar Wall
+tile.null.mtilewall.name=Marble Tile Wall
+tile.null.amarblewall.name=Ashford Black Marble Wall
+tile.null.amarblebrickwall.name=Ashford Black Marble Brick Wall
+tile.null.amarblechiseledwall.name=Chiseled Ashford Black Marble Wall
+tile.null.amarblepillarwall.name=Ashford Black Marble Pillar Wall
+tile.null.amarbletilewall.name=Ashford Black Marble Tile Wall
+
+tile.stair.white.name=White Stained Clay Stair
+tile.stair.orange.name=Orange Stained Clay Stair
+tile.stair.magenta.name=Magenta Stained Clay Stair
+tile.stair.lightblue.name=Light Blue Stained Clay Stair
+tile.stair.yellow.name=Yellow Stained Clay Stair
+tile.stair.lime.name=Lime Stained Clay Stair
+tile.stair.pink.name=Pink Stained Clay Stair
+tile.stair.gray.name=Gray Stained Clay Stair
+tile.stair.lightgray.name=Light Gray Stained Clay Stair
+tile.stair.cyan.name=Cyan Stained Clay Stair
+tile.stair.purple.name=Purple Stained Clay Stair
+tile.stair.blue.name=Blue Stained Clay Stair
+tile.stair.brown.name=Brown Stained Clay Stair
+tile.stair.green.name=Green Stained Clay Stair
+tile.stair.red.name=Red Stained Clay Stair
+tile.stair.black.name=Black Stained Clay Stair

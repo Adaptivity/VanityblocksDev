@@ -1,63 +1,53 @@
 /*
-*** MADE BY MITHION'S .SCHEMATIC TO JAVA CONVERTING TOOL v1.6 ***
-*/
+ *** MADE BY MITHION'S .SCHEMATIC TO JAVA CONVERTING TOOL v1.6 ***
+ */
 
 package com.vanityblocks.WorldGen;
+
 import java.util.Random;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class VillageMineItem extends WorldGenerator
-{
-	//protected int[] GetValidSpawnBlocks() {
-	//	return new int[] {
-	//		Blocks.stone,
-	//		Blocks.grass,
-	//		Blocks.dirt,
-	//		Blocks.sand
-	//	};
-	//}
+public class VillageMineItem extends WorldGenerator {
+	// protected int[] GetValidSpawnBlocks() {
+	// return new int[] {
+	// Blocks.stone,
+	// Blocks.grass,
+	// Blocks.dirt,
+	// Blocks.sand
+	// };
+	// }
 
-	/*public boolean LocationIsValidSpawn(World world, int i, int j, int k){
-		int distanceToAir = 0;
-		int checkID = world.getBlockId(i, j, k);
+	/*
+	 * public boolean LocationIsValidSpawn(World world, int i, int j, int k){
+	 * int distanceToAir = 0; int checkID = world.getBlockId(i, j, k);
+	 * 
+	 * while (checkID != 0){ distanceToAir++; checkID = world.getBlockId(i, j +
+	 * distanceToAir, k); }
+	 * 
+	 * if (distanceToAir > 3){ return false; } j += distanceToAir - 1;
+	 * 
+	 * int blockID = world.getBlockId(i, j, k); int blockIDAbove =
+	 * world.getBlockId(i, j+1, k); int blockIDBelow = world.getBlockId(i, j-1,
+	 * k); for (int x : GetValidSpawnBlocks()){ if (blockIDAbove != 0){ return
+	 * false; } if (blockID == x){ return true; }else if (blockID == Blocks.snow
+	 * && blockIDBelow == x){ return true; } } return false; }
+	 */
 
-		while (checkID != 0){
-			distanceToAir++;
-			checkID = world.getBlockId(i, j + distanceToAir, k);
-		}
-
-		if (distanceToAir > 3){
-			return false;
-		}
-		j += distanceToAir - 1;
-
-		int blockID = world.getBlockId(i, j, k);
-		int blockIDAbove = world.getBlockId(i, j+1, k);
-		int blockIDBelow = world.getBlockId(i, j-1, k);
-		for (int x : GetValidSpawnBlocks()){
-			if (blockIDAbove != 0){
-				return false;
-			}
-			if (blockID == x){
-				return true;
-			}else if (blockID == Blocks.snow && blockIDBelow == x){
-				return true;
-			}
-		}
-		return false;
-	} */
-
-	public VillageMineItem() { }
+	public VillageMineItem() {
+	}
 
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-		//check that each corner is one of the valid spawn blocks
-		//if(!LocationIsValidSpawn(world, i, j, k) || !LocationIsValidSpawn(world, i + 9, j, k) || !LocationIsValidSpawn(world, i + 9, j, k + 23) || !LocationIsValidSpawn(world, i, j, k + 23))
-		//{
-		//	return false;
-		//}
+		// check that each corner is one of the valid spawn blocks
+		// if(!LocationIsValidSpawn(world, i, j, k) ||
+		// !LocationIsValidSpawn(world, i + 9, j, k) ||
+		// !LocationIsValidSpawn(world, i + 9, j, k + 23) ||
+		// !LocationIsValidSpawn(world, i, j, k + 23))
+		// {
+		// return false;
+		// }
 
 		world.setBlock(i + 0, j + 13, k + 0, Blocks.log);
 		world.setBlock(i + 0, j + 13, k + 1, Blocks.cobblestone);

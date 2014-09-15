@@ -10,12 +10,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class MarbleStair extends BlockStairs
-{
-    public MarbleStair(int par1, Block par2Block, int par3)
-    {
-        super(par2Block, par3);
-        setCreativeTab(VanityBlocks.tabvanityblocks);
-        this.setLightOpacity(0);
-    }
+public class MarbleStair extends BlockStairs {
+	public MarbleStair(int par1, Block par2Block, int par3) {
+		super(par2Block, par3);
+		setCreativeTab(VanityBlocks.tabvanityblocks);
+		this.setLightOpacity(0);
+	}
 }
